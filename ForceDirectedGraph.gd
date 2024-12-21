@@ -28,8 +28,19 @@ func _process(delta: float) -> void:
 	if alpha < alpha_min: return
 	step(delta)
 
-func apply_center_force() -> void:
-	pass
+func apply_center_force(delta: float) -> void:
+	var strength := 1.0
+	var center := Vector2.ZERO
+	var shift := Vector2.ZERO
+	
+	for node in nodes:
+		shift.x += node.position.x
+		shift.y += node.position.y
+	
+	var n := nodes.size()
+	shift = shift / n - center * strength
+	for node in nodes: 
+		node.position -= shift * delta
 
 func apply_many_body_force() -> void:
 	pass
@@ -38,7 +49,7 @@ func step(delta: float) -> void:
 	alpha += (alpha_target - alpha) * alpha_decay * delta
 	
 	apply_many_body_force()
-	apply_center_force()
+	apply_center_force(delta)
 	
 	for node in nodes: node.update_position(delta)
 
