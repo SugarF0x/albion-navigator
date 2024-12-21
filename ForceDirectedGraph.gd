@@ -1,7 +1,9 @@
 class_name ForceDirectedGraph extends Node2D
 
+const DUMMY_NODE = preload("res://DummyNode.tscn")
+
 @export_group("Initial Node Position")
-@export var initial_radius: float = 10.0
+@export var initial_radius: float = 100.0
 @export var initial_angle: float = PI * (3 - sqrt(5))
 
 @export_group("Graph Heat")
@@ -10,13 +12,17 @@ class_name ForceDirectedGraph extends Node2D
 @export var alpha_target := 0.0
 @export var velocity_decay := 0.6
 
-var alpha_decay := 1.0 - pow(alpha_min, 1 / 300)
+var alpha_decay := 1.0 - pow(alpha_min, 10)
 var nodes: Array[ForceGraphNode] = []
 var random := RandomNumberGenerator.new()
 
 func _ready() -> void:
 	random.seed = "peepee-poopoo".hash()
-	nodes = get_children().filter(func (child: Node) -> bool: return child is ForceGraphNode)
+	_mock_nodes()
+	
+	var new_nodes: Array[ForceGraphNode] = []
+	for child in get_children(): if child is ForceGraphNode: nodes.append(child)
+	initializeNodes()
 
 func _process(delta: float) -> void:
 	if alpha < alpha_min: return
@@ -35,6 +41,11 @@ func step(delta: float) -> void:
 	apply_center_force()
 	
 	for node in nodes: node.update_position(delta)
+
+func _mock_nodes() -> void:
+	for n in 10: 
+		var node: ForceGraphNode = DUMMY_NODE.instantiate()
+		add_child(node)
 
 func initializeNodes() -> void:
 	for i in nodes.size():
