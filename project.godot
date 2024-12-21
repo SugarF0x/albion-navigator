@@ -14,3 +14,7 @@ config/name="Albion Navigator"
 run/main_scene="res://home.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
