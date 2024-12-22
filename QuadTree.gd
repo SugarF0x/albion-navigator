@@ -1,19 +1,19 @@
 @tool
-class_name QuadTree extends EditorScript #Object
+class_name QuadTree extends Object
 
 var rect := Rect2()
 var root := QuadTreeNode.new()
 
 const Quadrant = QuadTreeNode.Quadrant
 
-func _run() -> void:
-	print('---- ', Time.get_datetime_string_from_system())
-	var foo := QuadTree.new()
-	foo.cover(Vector2(0, 0))
-	foo.cover(Vector2(-1.7, 1.3))
-	foo.cover(Vector2(2, 2))
-	foo.cover(Vector2(1, 1))
-	print(foo.root.nodes[0].nodes[1].nodes)
+#func _run() -> void:
+	#print('---- ', Time.get_datetime_string_from_system())
+	#var foo := QuadTree.new()
+	#foo.cover(Vector2(0, 0))
+	#foo.cover(Vector2(-1.7, 1.3))
+	#foo.cover(Vector2(2, 2))
+	#foo.cover(Vector2(1, 1))
+	#print(foo.root.nodes[0].nodes[1].nodes)
 
 func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
 	if target.y < source.y:
