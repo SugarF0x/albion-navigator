@@ -1,3 +1,4 @@
+# TODO: make this RigitBody2D instead? question mark?
 class_name ForceGraphNode extends Node2D
 
 @export var fixed := false
