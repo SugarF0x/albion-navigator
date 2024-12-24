@@ -21,7 +21,7 @@ func set_leaf_data(value: ForceGraphNode) -> void:
 	data = value
 	type = Type.LEAF
 
-func init_branch() -> void:
+func create_empty_branch() -> void:
 	nodes.clear()
 	for quadrant in Quadrant.values() as Array[int]: nodes.append(QuadTreeNode.new())
 	type = Type.BRANCH
@@ -32,6 +32,14 @@ func set_node(quadrant: Quadrant, value: QuadTreeNode) -> void:
 		return
 	
 	nodes[quadrant] = value
+
+func branch_off(quadrant: Quadrant) -> void:
+	if not is_leaf():
+		push_error("Cant branch off: not a leaf")
+		return
+	
+	create_empty_branch()
+	nodes[quadrant].set_leaf_data(data)
 
 func set_nodes(value: Array[QuadTreeNode]) -> void:
 	nodes = value
