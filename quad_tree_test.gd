@@ -1,6 +1,7 @@
 extends Node2D
 
 var tree := QuadTree.new()
+var start_offset := Vector2.ZERO
 
 func _ready() -> void:
 	tree.cover(Vector2(0, 0))
@@ -8,15 +9,15 @@ func _ready() -> void:
 	tree.cover(Vector2(1, -1))
 	tree.cover(Vector2(1, 1))
 	tree.cover(Vector2(-2, -2))
+	start_offset = Vector2.ONE - tree.rect.position
 
 func _draw() -> void:
-	var shifted_draw_rect := Rect2(tree.rect)
-	shifted_draw_rect.position = Vector2(1, 1)
-	draw_cell(tree.root, shifted_draw_rect)
+	draw_cell(tree.root, tree.rect)
 
 func draw_cell(cell: QuadTreeNode, rect: Rect2) -> void:
 	if cell.is_void():
 		var expanded_rect := Rect2(rect)
+		expanded_rect.position += start_offset
 		expanded_rect.position *= Vector2(50, 50)
 		expanded_rect.size *= Vector2(50, 50)
 		draw_rect(expanded_rect, Color.RED, false)
