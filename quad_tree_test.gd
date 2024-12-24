@@ -1,18 +1,20 @@
 extends Node2D
 
+@onready var button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/Button
+
 var tree := QuadTree.new()
 var start_offset := Vector2.ZERO
 
 const SIZE_MULTIPLIER := 50
 const VECTOR_MULTIPLIER := Vector2(SIZE_MULTIPLIER, SIZE_MULTIPLIER)
 
-func _ready() -> void:
-	tree.add(ForceGraphNode.new(Vector2(-0.5, -0.5)))
-	tree.add(ForceGraphNode.new(Vector2(0.5, -0.5)))
-	tree.add(ForceGraphNode.new(Vector2(1.5, 1.5)))
-	tree.add(ForceGraphNode.new(Vector2(-1.5, -1.5)))
-	tree.add(ForceGraphNode.new(Vector2(-2.5, -2.5)))
+func add_new_node() -> void:
+	tree.add(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
 	start_offset = Vector2.ONE - tree.rect.position
+	queue_redraw()
+
+func _ready() -> void:
+	button.pressed.connect(add_new_node)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)

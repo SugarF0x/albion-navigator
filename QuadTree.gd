@@ -51,6 +51,7 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 		var new_leaf := QuadTreeNode.new()
 		new_leaf.set_leaf_data(node)
 		new_leaf.attach_next_leaf(explored_node)
+		# TODO: fix this, crashed if the first two nodes are same nodes
 		explored_node_parent.nodes[explored_node_quadrant] = new_leaf
 		return self
 	
