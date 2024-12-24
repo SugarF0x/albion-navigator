@@ -14,6 +14,7 @@ enum Quadrant {
 }
 
 var data: ForceGraphNode
+var next_leaf: QuadTreeNode
 var nodes: Array[QuadTreeNode] = []
 var type: Type = Type.VOID
 
@@ -40,14 +41,23 @@ func branch_off(quadrant: Quadrant) -> void:
 	
 	create_empty_branch()
 	nodes[quadrant].set_leaf_data(data)
+	nodes[quadrant].attach_next_leaf(next_leaf)
 
 func set_nodes(value: Array[QuadTreeNode]) -> void:
 	nodes = value
 	type = Type.BRANCH
 
+func attach_next_leaf(leaf: QuadTreeNode) -> void:
+	if not is_leaf() or not leaf or not leaf.is_leaf():
+		push_error("Cant attach leaf: not a leaf")
+		return
+	
+	next_leaf = leaf
+
 func is_void() -> bool: return type == Type.VOID
 func is_branch() -> bool: return type == Type.BRANCH
 func is_leaf() -> bool: return type == Type.LEAF
+func has_next_leaf() -> bool: return type == Type.LEAF and !!next_leaf
 
 func _to_string() -> String:
 	return "QuadTreeNode(%d)" % [type]
