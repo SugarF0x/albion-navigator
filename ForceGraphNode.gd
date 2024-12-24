@@ -13,3 +13,6 @@ func apply_force(force: Vector2) -> void:
 func update_position(delta: float) -> void: 
 	if fixed: return
 	position += velocity * delta
+
+func _init(position: Vector2 = Vector2.ZERO) -> void:
+	self.position = position
