@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/Button
+@onready var add_random_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddRandomNodeButton
+@onready var add_dozen_random_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddDozenRandomNodesButton
 
 var tree := QuadTree.new()
 var start_offset := Vector2.ZERO
@@ -13,8 +14,16 @@ func add_new_node() -> void:
 	start_offset = Vector2.ONE - tree.rect.position
 	queue_redraw()
 
+func add_dozen_random_nodes() -> void:
+	var nodes: Array[ForceGraphNode] = []
+	for n in 12: nodes.append(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
+	tree.add_all(nodes)
+	start_offset = Vector2.ONE - tree.rect.position
+	queue_redraw()
+
 func _ready() -> void:
-	button.pressed.connect(add_new_node)
+	add_random_node_button.pressed.connect(add_new_node)
+	add_dozen_random_nodes_button.pressed.connect(add_dozen_random_nodes)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
