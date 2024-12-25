@@ -56,13 +56,23 @@ func create_empty_branches() -> void:
 	branches.clear()
 	for quadrant in Quadrant.values() as Array[int]: branches.append(QuadTreeNode.new())
 
-## Returns `true` if branches were trimmed successfully
-func trim_branches() -> bool:
-	for branch in branches:
-		if not branch.is_void(): return false
+func trim_branches() -> void:
+	if not is_branch():
+		push_error('Cant trim branches: not a branch')
+		return
+	
+	var populated_branches: Array[QuadTreeNode] = branches.filter(func (node: QuadTreeNode) -> bool: return not node.is_void())
+	if populated_branches.size() > 1: return
+	
+	if populated_branches.size() == 1:
+		var only_branch := populated_branches[0]
+		if not only_branch.is_leaf(): return
+		
+		branches.clear()
+		for leaf in only_branch.leaves: attach_leaf(leaf)
+		return
 	
 	branches.clear()
-	return true
 
 func get_type() -> Type:
 	if leaves.size(): return Type.LEAF
