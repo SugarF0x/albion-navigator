@@ -58,3 +58,7 @@ text = "Remove last node"
 [node name="RemoveAllNodesButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Remove all nodes"
+
+[node name="VisitAfterButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Log visit after"

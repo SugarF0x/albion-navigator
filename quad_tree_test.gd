@@ -4,6 +4,7 @@ extends Node2D
 @onready var add_dozen_random_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddDozenRandomNodesButton
 @onready var remove_last_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveLastNodeButton
 @onready var remove_all_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveAllNodesButton
+@onready var visit_after_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/VisitAfterButton
 
 var tree := QuadTree.new()
 var start_offset := Vector2.ZERO
@@ -17,6 +18,7 @@ func _ready() -> void:
 	add_dozen_random_nodes_button.pressed.connect(add_dozen_random_nodes)
 	remove_last_node_button.pressed.connect(remove_last_node)
 	remove_all_nodes_button.pressed.connect(remove_all_nodes)
+	visit_after_button.pressed.connect(run_visit_after)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
@@ -78,3 +80,9 @@ func remove_last_node() -> void:
 func remove_all_nodes() -> void:
 	tree.remove_all(nodes)
 	redraw()
+
+func log_node(node: QuadTreeNode, rect: Rect2) -> void:
+	print(node, ' ', rect)
+
+func run_visit_after() -> void:
+	tree.visit_after(log_node)
