@@ -35,15 +35,15 @@ func draw_leaf(node: ForceGraphNode) -> void:
 func draw_branch(cell: QuadTreeNode, rect: Rect2) -> void:
 	draw_void(rect)
 	if cell.is_void(): return draw_void(rect)
-	if cell.is_leaf(): return draw_leaf(cell.data)
+	if cell.is_leaf(): return draw_leaf(cell.leaves[0])
 	
 	var sub_rect := Rect2(rect)
 	sub_rect.size /= 2
 	
-	draw_branch(cell.nodes[QuadTreeNode.Quadrant.TOP_LEFT], move_rect(sub_rect, Vector2.ZERO))
-	draw_branch(cell.nodes[QuadTreeNode.Quadrant.TOP_RIGHT], move_rect(sub_rect, Vector2(sub_rect.size.x, 0)))
-	draw_branch(cell.nodes[QuadTreeNode.Quadrant.BOTTOM_LEFT], move_rect(sub_rect, Vector2(0, sub_rect.size.y)))
-	draw_branch(cell.nodes[QuadTreeNode.Quadrant.BOTTOM_RIGHT], move_rect(sub_rect, sub_rect.size))
+	draw_branch(cell.branches[QuadTreeNode.Quadrant.TOP_LEFT], move_rect(sub_rect, Vector2.ZERO))
+	draw_branch(cell.branches[QuadTreeNode.Quadrant.TOP_RIGHT], move_rect(sub_rect, Vector2(sub_rect.size.x, 0)))
+	draw_branch(cell.branches[QuadTreeNode.Quadrant.BOTTOM_LEFT], move_rect(sub_rect, Vector2(0, sub_rect.size.y)))
+	draw_branch(cell.branches[QuadTreeNode.Quadrant.BOTTOM_RIGHT], move_rect(sub_rect, sub_rect.size))
 
 func move_rect(rect: Rect2, direction: Vector2) -> Rect2:
 	var moved_rect := Rect2(rect)

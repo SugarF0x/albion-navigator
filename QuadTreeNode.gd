@@ -1,4 +1,4 @@
-class_name QuadTreeNode extends Object
+class_name QuadTreeNode extends RefCounted
 
 enum Type {
 	VOID,
@@ -13,51 +13,76 @@ enum Quadrant {
 	BOTTOM_RIGHT,
 }
 
-var data: ForceGraphNode
-var next_leaf: QuadTreeNode
-var nodes: Array[QuadTreeNode] = []
-var type: Type = Type.VOID
+var stem: WeakRef
+var leaves: Array[ForceGraphNode] = []
+var branches: Array[QuadTreeNode] = []
 
-func set_leaf_data(value: ForceGraphNode) -> void:
-	data = value
-	type = Type.LEAF
+func _init(node_stem := self) -> void:
+	self.stem = weakref(stem)
 
-func create_empty_branch() -> void:
-	nodes.clear()
-	for quadrant in Quadrant.values() as Array[int]: nodes.append(QuadTreeNode.new())
-	type = Type.BRANCH
+func attach_to_stem(new_stem: QuadTreeNode) -> void:
+	stem = weakref(new_stem)
 
-func set_node(quadrant: Quadrant, value: QuadTreeNode) -> void:
-	if not is_branch():
-		push_error('Cant set node: not a branch')
+func attach_leaf(leaf: ForceGraphNode) -> void:
+	if is_branch():
+		push_error('Cant attach leaf: not a branch')
 		return
 	
-	nodes[quadrant] = value
+	leaves.append(leaf)
 
-func branch_off(quadrant: Quadrant) -> void:
+func branch_out(quadrant: Quadrant = -1) -> void:
+	if is_branch():
+		push_error('Cant branch out: already a branch')
+		return
+	
+	if is_leaf():
+		if quadrant < 0:
+			push_error('Cant branch out: existing leaf requires quadrant to be assigned')
+			return
+		
+		create_empty_branches()
+		for leaf in leaves: 
+			branches[quadrant].attach_leaf(leaf)
+			
+		leaves.clear()
+		return
+	
+	create_empty_branches()
+
+func remove_leaf(target_leaf: ForceGraphNode) -> void:
 	if not is_leaf():
-		push_error("Cant branch off: not a leaf")
+		push_error('Cant remove leaf: not a leaf')
 		return
 	
-	create_empty_branch()
-	nodes[quadrant].set_leaf_data(data)
-	nodes[quadrant].attach_next_leaf(next_leaf)
-
-func set_nodes(value: Array[QuadTreeNode]) -> void:
-	nodes = value
-	type = Type.BRANCH
-
-func attach_next_leaf(leaf: QuadTreeNode) -> void:
-	if not is_leaf() or not leaf or not leaf.is_leaf():
-		push_error("Cant attach leaf: not a leaf")
-		return
+	var leaf_index := leaves.find(target_leaf)
+	if leaf_index < 0: return
 	
-	next_leaf = leaf
+	leaves.remove_at(leaf_index)
 
-func is_void() -> bool: return type == Type.VOID
-func is_branch() -> bool: return type == Type.BRANCH
-func is_leaf() -> bool: return type == Type.LEAF
-func has_next_leaf() -> bool: return type == Type.LEAF and !!next_leaf
+func create_empty_branches() -> void:
+	branches.clear()
+	for quadrant in Quadrant.values() as Array[int]: branches.append(QuadTreeNode.new(self))
 
-func _to_string() -> String:
-	return "QuadTreeNode(%d)" % [type]
+func trim_branches() -> void:
+	for branch in branches:
+		if not branch.is_void(): return
+	
+	branches.clear()
+	var parent: QuadTreeNode = stem.get_ref()
+	if parent and parent != self: parent.trim_branches()
+
+func get_type() -> Type:
+	if leaves.size(): return Type.LEAF
+	if branches.size(): return Type.BRANCH
+	return Type.VOID
+
+func is_void() -> bool: return get_type() == Type.VOID
+func is_branch() -> bool: return get_type() == Type.BRANCH
+func is_leaf() -> bool: return get_type() == Type.LEAF
+
+func _to_string() -> String: 
+	return "QuadTreeNode(type: {type}, leaves: {leaves}, branches: {branches})".format({
+			"type": Type.find_key(get_type()),
+			"leaves": leaves.size(),
+			"branches": branches.size(),
+		})
