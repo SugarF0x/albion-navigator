@@ -82,6 +82,45 @@ func add_all(nodes: Array[ForceGraphNode]) -> QuadTree:
 	
 	return self
 
+func remove(node: ForceGraphNode) -> QuadTree:
+	if root.is_void(): return self
+	
+	var explored_node := root
+	var explored_rect := Rect2(rect)
+	var explored_node_parent_stack: Array[QuadTreeNode]
+	var explored_node_quadrant: Quadrant
+	
+	while explored_node.is_branch():
+		var mid_point := explored_rect.get_center()
+		explored_node_quadrant = get_relative_quadrant(mid_point, node.position)
+		explored_rect = shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
+		explored_node_parent_stack.append(explored_node)
+		explored_node = explored_node.branches[explored_node_quadrant]
+	
+	## return if node is not in leaves
+	if explored_node.is_void(): return self
+	
+	## find if node is in leaf stack and return if not
+	var target_node_index := explored_node.leaves.find(node)
+	if target_node_index < 0: return self
+	
+	## remove node and exit if there are other leaves left
+	explored_node.leaves.remove_at(target_node_index)
+	if explored_node.is_leaf(): return self
+	
+	## trim branches upstream as long as branches are void
+	while true:
+		explored_node = explored_node_parent_stack.pop_back()
+		if not explored_node: break
+		explored_node.trim_branches()
+		if not explored_node.is_void(): break
+	
+	return self
+
+func remove_all(nodes: Array[ForceGraphNode]) -> QuadTree:
+	for node in nodes: remove(node)
+	return self
+
 func cover(point: Vector2) -> QuadTree:
 	if not rect.has_area():
 		rect.position = Vector2(floor(point.x), floor(point.y))
