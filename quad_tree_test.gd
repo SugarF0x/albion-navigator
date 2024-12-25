@@ -2,9 +2,12 @@ extends Node2D
 
 @onready var add_random_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddRandomNodeButton
 @onready var add_dozen_random_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddDozenRandomNodesButton
+@onready var remove_last_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveLastNodeButton
+@onready var remove_all_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveAllNodesButton
 
 var tree := QuadTree.new()
 var start_offset := Vector2.ZERO
+var nodes: Array[ForceGraphNode] = []
 
 const SIZE_MULTIPLIER := 50
 const VECTOR_MULTIPLIER := Vector2(SIZE_MULTIPLIER, SIZE_MULTIPLIER)
@@ -12,6 +15,8 @@ const VECTOR_MULTIPLIER := Vector2(SIZE_MULTIPLIER, SIZE_MULTIPLIER)
 func _ready() -> void:
 	add_random_node_button.pressed.connect(add_new_node)
 	add_dozen_random_nodes_button.pressed.connect(add_dozen_random_nodes)
+	remove_last_node_button.pressed.connect(remove_last_node)
+	remove_all_nodes_button.pressed.connect(remove_all_nodes)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
@@ -51,11 +56,25 @@ func move_rect(rect: Rect2, direction: Vector2) -> Rect2:
 	return moved_rect
 
 func add_new_node() -> void:
-	tree.add(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
+	var node := ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2)))
+	tree.add(node)
+	nodes.append(node)
 	redraw()
 
 func add_dozen_random_nodes() -> void:
-	var nodes: Array[ForceGraphNode] = []
-	for n in 12: nodes.append(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
-	tree.add_all(nodes)
+	var new_nodes: Array[ForceGraphNode] = []
+	for n in 12: new_nodes.append(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
+	tree.add_all(new_nodes)
+	nodes.append_array(new_nodes)
+	redraw()
+
+func remove_last_node() -> void:
+	var node_to_remove: ForceGraphNode = nodes.pop_back()
+	if not node_to_remove: return
+	
+	tree.remove(node_to_remove)
+	redraw()
+
+func remove_all_nodes() -> void:
+	tree.remove_all(nodes)
 	redraw()

@@ -50,3 +50,11 @@ text = "Add random node"
 [node name="AddDozenRandomNodesButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Add 12 random nodes"
+
+[node name="RemoveLastNodeButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Remove last node"
+
+[node name="RemoveAllNodesButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Remove all nodes"
