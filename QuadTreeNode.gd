@@ -13,15 +13,8 @@ enum Quadrant {
 	BOTTOM_RIGHT,
 }
 
-var stem: WeakRef
 var leaves: Array[ForceGraphNode] = []
 var branches: Array[QuadTreeNode] = []
-
-func _init(node_stem := self) -> void:
-	self.stem = weakref(stem)
-
-func attach_to_stem(new_stem: QuadTreeNode) -> void:
-	stem = weakref(new_stem)
 
 func attach_leaf(leaf: ForceGraphNode) -> void:
 	if is_branch():
@@ -61,15 +54,15 @@ func remove_leaf(target_leaf: ForceGraphNode) -> void:
 
 func create_empty_branches() -> void:
 	branches.clear()
-	for quadrant in Quadrant.values() as Array[int]: branches.append(QuadTreeNode.new(self))
+	for quadrant in Quadrant.values() as Array[int]: branches.append(QuadTreeNode.new())
 
-func trim_branches() -> void:
+## Returns `true` if branches were trimmed successfully
+func trim_branches() -> bool:
 	for branch in branches:
-		if not branch.is_void(): return
+		if not branch.is_void(): return false
 	
 	branches.clear()
-	var parent: QuadTreeNode = stem.get_ref()
-	if parent and parent != self: parent.trim_branches()
+	return true
 
 func get_type() -> Type:
 	if leaves.size(): return Type.LEAF

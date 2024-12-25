@@ -96,7 +96,6 @@ func cover(point: Vector2) -> QuadTree:
 		var parent := QuadTreeNode.new()
 		parent.create_empty_branches()
 		parent.branches[quadrant] = node
-		node.attach_to_stem(parent)
 		node = parent
 		rect.size *= 2
 		match quadrant:
