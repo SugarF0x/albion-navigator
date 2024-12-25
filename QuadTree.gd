@@ -75,6 +75,22 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 	
 	return self
 
+func add_all(nodes: Array[ForceGraphNode]) -> QuadTree:
+	if not nodes.size(): return self
+	if nodes.size() == 1: return add(nodes[0])
+	
+	var first_node: ForceGraphNode = nodes.pop_back()
+	var bounding_box := Rect2(first_node.position, Vector2.ZERO)
+	
+	for node in nodes:
+		bounding_box.position = bounding_box.position.min(node.position)
+		bounding_box.end = bounding_box.end.max(node.position)
+	
+	cover(bounding_box.position).cover(bounding_box.end)
+	for node in nodes: add(node, false)
+	
+	return self
+
 func cover(point: Vector2) -> QuadTree:
 	if not rect.has_area():
 		rect.position = Vector2(floor(point.x), floor(point.y))
