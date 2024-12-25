@@ -146,5 +146,35 @@ func cover(point: Vector2) -> QuadTree:
 	root = node
 	return self
 
+class Quad:
+	var node: QuadTreeNode
+	var rect: Rect2
+	
+	func _init(node: QuadTreeNode, rect: Rect2) -> void:
+		self.node = node
+		self.rect = rect
+
+func visit_after(callback: Callable) -> QuadTree:
+	var quads: Array[Quad] = []
+	var next: Array[Quad] = []
+	
+	if not root.is_void(): quads.append(Quad.new(root, rect))
+	
+	while true:
+		var quad: Quad = quads.pop_back()
+		if not quad: break
+		
+		if quad.node.is_void(): continue
+		next.append(quad)
+		
+		for branch_quadrant in quad.node.branches.size() as Quadrant:
+			var branch := quad.node.branches[branch_quadrant]
+			if branch.is_void(): continue
+			quads.append(Quad.new(branch, shrink_rect_to_quadrant(rect, branch_quadrant)))
+	
+	next.reverse()
+	for quad in next: callback.call(quad.node, quad.rect)
+	return self
+
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
