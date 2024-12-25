@@ -197,3 +197,9 @@ func visit(callback: Callable) -> QuadTree:
 
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
+
+func _to_dict() -> Dictionary:
+	return {
+		"rect": rect,
+		"root": root._to_dict()
+	}

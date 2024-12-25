@@ -89,3 +89,9 @@ func _to_string() -> String:
 			"leaves": leaves.size(),
 			"branches": branches.size(),
 		})
+
+func _to_dict() -> Dictionary:
+	return {
+		"leaves": leaves.map(func(node: ForceGraphNode) -> Dictionary: return node._to_dict()),
+		"branches": branches.map(func(branch: QuadTreeNode) -> Dictionary: return branch._to_dict())
+	}

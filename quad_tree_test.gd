@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var to_json_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/ToJsonButton
 @onready var add_random_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddRandomNodeButton
 @onready var add_dozen_random_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AddDozenRandomNodesButton
 @onready var remove_last_node_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveLastNodeButton
@@ -21,6 +22,7 @@ func _ready() -> void:
 	remove_all_nodes_button.pressed.connect(remove_all_nodes)
 	visit_after_button.pressed.connect(run_visit_after)
 	visit_button.pressed.connect(run_visit)
+	to_json_button.pressed.connect(log_tree_as_json)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
@@ -91,3 +93,6 @@ func run_visit_after() -> void:
 
 func run_visit() -> void:
 	tree.visit(log_node)
+
+func log_tree_as_json() -> void:
+	print(JSON.stringify(tree._to_dict(), "  "))

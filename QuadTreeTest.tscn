@@ -43,6 +43,10 @@ layout_mode = 2
 text = "controls"
 horizontal_alignment = 1
 
+[node name="ToJsonButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "To JSON"
+
 [node name="AddRandomNodeButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Add random node"

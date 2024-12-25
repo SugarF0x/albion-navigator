@@ -16,3 +16,11 @@ func update_position(delta: float) -> void:
 
 func _init(position: Vector2 = Vector2.ZERO) -> void:
 	self.position = position
+
+func _to_dict() -> Dictionary:
+	return {
+		"position": position,
+		"fixed": fixed,
+		"mass": mass,
+		"velocity": velocity
+	}
