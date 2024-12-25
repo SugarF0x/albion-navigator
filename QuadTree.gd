@@ -176,5 +176,24 @@ func visit_after(callback: Callable) -> QuadTree:
 	for quad in next: callback.call(quad.node, quad.rect)
 	return self
 
+func visit(callback: Callable) -> QuadTree:
+	var quads: Array[Quad] = []
+	
+	if not root.is_void(): quads.append(Quad.new(root, rect))
+	
+	while true:
+		var quad: Quad = quads.pop_back()
+		if not quad: break
+		
+		var should_process_further: bool = not callback.call(quad.node, quad.rect) and not quad.node.is_void()
+		if not should_process_further: continue
+		
+		for branch_quadrant in quad.node.branches.size() as Quadrant:
+			var branch := quad.node.branches[branch_quadrant]
+			if branch.is_void(): continue
+			quads.append(Quad.new(branch, shrink_rect_to_quadrant(rect, branch_quadrant)))
+	
+	return self
+
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
