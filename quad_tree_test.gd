@@ -9,18 +9,6 @@ var start_offset := Vector2.ZERO
 const SIZE_MULTIPLIER := 50
 const VECTOR_MULTIPLIER := Vector2(SIZE_MULTIPLIER, SIZE_MULTIPLIER)
 
-func add_new_node() -> void:
-	tree.add(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
-	start_offset = Vector2.ONE - tree.rect.position
-	queue_redraw()
-
-func add_dozen_random_nodes() -> void:
-	var nodes: Array[ForceGraphNode] = []
-	for n in 12: nodes.append(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
-	tree.add_all(nodes)
-	start_offset = Vector2.ONE - tree.rect.position
-	queue_redraw()
-
 func _ready() -> void:
 	add_random_node_button.pressed.connect(add_new_node)
 	add_dozen_random_nodes_button.pressed.connect(add_dozen_random_nodes)
@@ -28,6 +16,10 @@ func _ready() -> void:
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
 	draw_branch(tree.root, tree.rect)
+
+func redraw() -> void:
+	start_offset = Vector2.ONE - tree.rect.position
+	queue_redraw()
 
 func draw_void(rect: Rect2) -> void:
 	var expanded_rect := Rect2(rect)
@@ -57,3 +49,13 @@ func move_rect(rect: Rect2, direction: Vector2) -> Rect2:
 	var moved_rect := Rect2(rect)
 	moved_rect.position += direction
 	return moved_rect
+
+func add_new_node() -> void:
+	tree.add(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
+	redraw()
+
+func add_dozen_random_nodes() -> void:
+	var nodes: Array[ForceGraphNode] = []
+	for n in 12: nodes.append(ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2))))
+	tree.add_all(nodes)
+	redraw()
