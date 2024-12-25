@@ -61,8 +61,10 @@ func move_rect(rect: Rect2, direction: Vector2) -> Rect2:
 	moved_rect.position += direction
 	return moved_rect
 
+## TODO: fix this, sometimes the old node gets placed into a wrong quadrant upon expanding the tree via cover
 func add_new_node() -> void:
 	var node := ForceGraphNode.new(Vector2(randf_range(-2, 2), randf_range(-2, 2)))
+	print("Adding new node at: ", node.position)
 	tree.add(node)
 	nodes.append(node)
 	redraw()
@@ -91,8 +93,13 @@ func log_node(node: QuadTreeNode, rect: Rect2) -> void:
 func run_visit_after() -> void:
 	tree.visit_after(log_node)
 
+func log_only_negative_node(node: QuadTreeNode, rect: Rect2) -> bool:
+	var is_negative: bool = rect.position.x < 0 and rect.position.y < 0
+	print("Visited ", node.Type.find_key(node.get_type()), " ", rect, " | It is ", "negative - proceeding" if is_negative else "positive - aborting")
+	return not is_negative
+
 func run_visit() -> void:
-	tree.visit(log_node)
+	tree.visit(log_only_negative_node)
 
 func log_tree_as_json() -> void:
 	print(JSON.stringify(tree._to_dict(), "  "))

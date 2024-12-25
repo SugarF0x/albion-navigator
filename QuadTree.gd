@@ -185,13 +185,13 @@ func visit(callback: Callable) -> QuadTree:
 		var quad: Quad = quads.pop_back()
 		if not quad: break
 		
-		var should_process_further: bool = not callback.call(quad.node, quad.rect) and not quad.node.is_void()
-		if not should_process_further: continue
+		if quad.node.is_void(): continue
+		if callback.call(quad.node, quad.rect): continue
 		
-		for branch_quadrant in quad.node.branches.size() as Quadrant:
+		for branch_quadrant in range(quad.node.branches.size() - 1, -1, -1) as Array[Quadrant]:
 			var branch := quad.node.branches[branch_quadrant]
 			if branch.is_void(): continue
-			quads.append(Quad.new(branch, shrink_rect_to_quadrant(rect, branch_quadrant)))
+			quads.append(Quad.new(branch, shrink_rect_to_quadrant(quad.rect, branch_quadrant)))
 	
 	return self
 
