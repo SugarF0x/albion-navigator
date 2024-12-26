@@ -10,6 +10,7 @@ var BUTTON_TEXT_TO_CALLBACK_MAP: Dictionary = {
 	"Log visit after": run_visit_after,
 	"Log visit": run_visit,
 	"Log data": log_data,
+	"Log tree size": log_tree_size,
 	"To JSON": log_tree_as_json,
 }
 
@@ -116,5 +117,8 @@ func log_tree_as_json() -> void:
 
 func log_data() -> void:
 	print(JSON.stringify(tree.get_data().map(func(node: ForceGraphNode) -> Dictionary: return node._to_dict()), "  "))
+
+func log_tree_size() -> void:
+	print("Size: ", tree.get_size())
 
 #endregion
