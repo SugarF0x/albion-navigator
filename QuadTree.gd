@@ -109,23 +109,15 @@ func cover(point: Vector2) -> QuadTree:
 		rect = rect.grow_individual(0,0,1,1)
 		return self
 	
-	var z := rect.size.x
-	var node := root
-	
 	while not rect.has_point(point):
 		var quadrant := Quad.get_relative_quadrant(point, rect.position)
-		var parent := QuadTreeNode.new()
-		parent.create_empty_branches()
-		parent.branches[quadrant] = node
-		node = parent
-		rect.size *= 2
-		match quadrant:
-			Quadrant.TOP_LEFT: pass
-			Quadrant.TOP_RIGHT: rect.position.x -= z;
-			Quadrant.BOTTOM_LEFT: rect.position.y -= z;
-			Quadrant.BOTTOM_RIGHT: rect.position -= Vector2(z, z);
+		rect = Quad.expand_rect_from_quadrant(rect, quadrant)
+		if not root.is_void():
+			var parent := QuadTreeNode.new()
+			parent.create_empty_branches()
+			parent.branches[quadrant] = root
+			root = parent
 	
-	root = node
 	return self
 
 func visit_after(callback: Callable) -> QuadTree:

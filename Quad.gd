@@ -32,3 +32,15 @@ static func shrink_rect_to_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
 		Quadrant.BOTTOM_LEFT: new_rect.position.y += new_rect.size.y
 		Quadrant.BOTTOM_RIGHT: new_rect.position += new_rect.size
 	return new_rect
+
+## Expand the rect in the direction opposite of the given quadrant (quadrant argument is quadrant origin) -> returns new rect
+static func expand_rect_from_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
+	var new_rect := Rect2(rect)
+	var offset := new_rect.size.x
+	new_rect.size *= 2
+	match quadrant:
+		Quadrant.TOP_LEFT: pass
+		Quadrant.TOP_RIGHT: new_rect.position.x -= offset
+		Quadrant.BOTTOM_LEFT: new_rect.position.y -= offset
+		Quadrant.BOTTOM_RIGHT: new_rect.position -= Vector2(offset, offset)
+	return new_rect
