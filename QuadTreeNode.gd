@@ -1,16 +1,11 @@
 class_name QuadTreeNode extends RefCounted
 
+const Quadrant := Quad.Quadrant
+
 enum Type {
 	VOID,
 	BRANCH,
 	LEAF,
-}
-
-enum Quadrant {
-	TOP_LEFT,
-	TOP_RIGHT,
-	BOTTOM_LEFT,
-	BOTTOM_RIGHT,
 }
 
 var leaves: Array[ForceGraphNode] = []

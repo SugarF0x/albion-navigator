@@ -1,0 +1,34 @@
+class_name Quad extends RefCounted
+
+enum Quadrant {
+	TOP_LEFT,
+	TOP_RIGHT,
+	BOTTOM_LEFT,
+	BOTTOM_RIGHT,
+}
+
+var node: QuadTreeNode
+var rect: Rect2
+
+func _init(node: QuadTreeNode, rect: Rect2) -> void:
+	self.node = node
+	self.rect = rect
+
+## Returns target quadrant relative to source
+static func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
+	if target.y < source.y:
+		if target.x < source.x: return Quadrant.TOP_LEFT
+		return Quadrant.TOP_RIGHT
+	if target.x < source.x: return Quadrant.BOTTOM_LEFT
+	return Quadrant.BOTTOM_RIGHT
+
+## Half the quadrant size and set position to respective quadrant -> returns new rect
+static func shrink_rect_to_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
+	var new_rect := Rect2(rect)
+	new_rect.size /= 2
+	match quadrant:
+		Quadrant.TOP_LEFT: pass
+		Quadrant.TOP_RIGHT: new_rect.position.x += new_rect.size.x
+		Quadrant.BOTTOM_LEFT: new_rect.position.y += new_rect.size.y
+		Quadrant.BOTTOM_RIGHT: new_rect.position += new_rect.size
+	return new_rect

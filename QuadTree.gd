@@ -3,25 +3,7 @@ class_name QuadTree extends RefCounted
 var rect := Rect2()
 var root := QuadTreeNode.new()
 
-const Quadrant = QuadTreeNode.Quadrant
-
-## Returns target quadrant relative to source
-func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
-	if target.y < source.y:
-		if target.x < source.x: return Quadrant.TOP_LEFT
-		return Quadrant.TOP_RIGHT
-	if target.x < source.x: return Quadrant.BOTTOM_LEFT
-	return Quadrant.BOTTOM_RIGHT
-
-static func shrink_rect_to_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
-	var new_rect := Rect2(rect)
-	new_rect.size /= 2
-	match quadrant:
-		Quadrant.TOP_LEFT: pass
-		Quadrant.TOP_RIGHT: new_rect.position.x += new_rect.size.x
-		Quadrant.BOTTOM_LEFT: new_rect.position.y += new_rect.size.y
-		Quadrant.BOTTOM_RIGHT: new_rect.position += new_rect.size
-	return new_rect
+const Quadrant := Quad.Quadrant
 
 func add(node: ForceGraphNode, cover := true) -> QuadTree:
 	if cover: cover(node.position)
@@ -37,8 +19,8 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 	
 	while explored_node.is_branch():
 		var mid_point := explored_rect.get_center()
-		explored_node_quadrant = get_relative_quadrant(mid_point, node.position)
-		explored_rect = shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
+		explored_node_quadrant = Quad.get_relative_quadrant(mid_point, node.position)
+		explored_rect = Quad.shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
 		explored_node_parent = explored_node
 		explored_node = explored_node.branches[explored_node_quadrant]
 	
@@ -52,8 +34,8 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 	
 	while true:
 		var mid_point := explored_rect.get_center()
-		var old_node_quadrant := get_relative_quadrant(mid_point, explored_node.leaves[0].position)
-		var new_node_quadrant := get_relative_quadrant(mid_point, node.position)
+		var old_node_quadrant := Quad.get_relative_quadrant(mid_point, explored_node.leaves[0].position)
+		var new_node_quadrant := Quad.get_relative_quadrant(mid_point, node.position)
 		
 		if old_node_quadrant != new_node_quadrant:
 			explored_node.branch_out(old_node_quadrant)
@@ -62,7 +44,7 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 		
 		explored_node.branch_out(old_node_quadrant)
 		explored_node = explored_node.branches[old_node_quadrant]
-		explored_rect = shrink_rect_to_quadrant(explored_rect, new_node_quadrant)
+		explored_rect = Quad.shrink_rect_to_quadrant(explored_rect, new_node_quadrant)
 	
 	return self
 
@@ -92,8 +74,8 @@ func remove(node: ForceGraphNode) -> QuadTree:
 	
 	while explored_node.is_branch():
 		var mid_point := explored_rect.get_center()
-		explored_node_quadrant = get_relative_quadrant(mid_point, node.position)
-		explored_rect = shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
+		explored_node_quadrant = Quad.get_relative_quadrant(mid_point, node.position)
+		explored_rect = Quad.shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
 		explored_node_parent_stack.append(explored_node)
 		explored_node = explored_node.branches[explored_node_quadrant]
 	
@@ -131,7 +113,7 @@ func cover(point: Vector2) -> QuadTree:
 	var node := root
 	
 	while not rect.has_point(point):
-		var quadrant := get_relative_quadrant(point, rect.position)
+		var quadrant := Quad.get_relative_quadrant(point, rect.position)
 		var parent := QuadTreeNode.new()
 		parent.create_empty_branches()
 		parent.branches[quadrant] = node
@@ -145,14 +127,6 @@ func cover(point: Vector2) -> QuadTree:
 	
 	root = node
 	return self
-
-class Quad:
-	var node: QuadTreeNode
-	var rect: Rect2
-	
-	func _init(node: QuadTreeNode, rect: Rect2) -> void:
-		self.node = node
-		self.rect = rect
 
 func visit_after(callback: Callable) -> QuadTree:
 	var quads: Array[Quad] = []
@@ -170,7 +144,7 @@ func visit_after(callback: Callable) -> QuadTree:
 		for branch_quadrant in quad.node.branches.size() as Quadrant:
 			var branch := quad.node.branches[branch_quadrant]
 			if branch.is_void(): continue
-			quads.append(Quad.new(branch, shrink_rect_to_quadrant(rect, branch_quadrant)))
+			quads.append(Quad.new(branch, Quad.shrink_rect_to_quadrant(rect, branch_quadrant)))
 	
 	next.reverse()
 	for quad in next: callback.call(quad.node, quad.rect)
@@ -191,7 +165,7 @@ func visit(callback: Callable) -> QuadTree:
 		for branch_quadrant in range(quad.node.branches.size() - 1, -1, -1) as Array[Quadrant]:
 			var branch := quad.node.branches[branch_quadrant]
 			if branch.is_void(): continue
-			quads.append(Quad.new(branch, shrink_rect_to_quadrant(quad.rect, branch_quadrant)))
+			quads.append(Quad.new(branch, Quad.shrink_rect_to_quadrant(quad.rect, branch_quadrant)))
 	
 	return self
 
