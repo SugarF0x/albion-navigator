@@ -52,12 +52,13 @@ func add_all(nodes: Array[ForceGraphNode]) -> QuadTree:
 	if not nodes.size(): return self
 	if nodes.size() == 1: return add(nodes[0])
 	
-	var first_node: ForceGraphNode = nodes.pop_back()
-	var bounding_box := Rect2(first_node.position, Vector2.ZERO)
-	
-	for node in nodes:
-		bounding_box.position = bounding_box.position.min(node.position)
-		bounding_box.end = bounding_box.end.max(node.position)
+	var bounding_box := Rect2()
+	for node_index in nodes.size():
+		var node := nodes[node_index]
+		if node_index == 0:
+			bounding_box.position = node.position
+			continue
+		bounding_box = bounding_box.merge(Rect2(node.position, Vector2.ZERO))
 	
 	cover(bounding_box.position).cover(bounding_box.end)
 	for node in nodes: add(node, false)
