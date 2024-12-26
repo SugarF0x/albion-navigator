@@ -40,37 +40,5 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "controls"
+text = "CONTROLS"
 horizontal_alignment = 1
-
-[node name="ToJsonButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "To JSON"
-
-[node name="AddRandomNodeButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Add random node"
-
-[node name="AddDozenRandomNodesButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Add 12 random nodes"
-
-[node name="RemoveLastNodeButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Remove last node"
-
-[node name="RemoveAllNodesButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Remove all nodes"
-
-[node name="VisitAfterButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Log visit after"
-
-[node name="VisitButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Log visit"
-
-[node name="GetDataButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Log data"
