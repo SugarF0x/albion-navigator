@@ -172,6 +172,51 @@ func get_size() -> int:
 	visit(func(node: QuadTreeNode, _rect: Rect2) -> void: if node.is_leaf(): size[0] += node.leaves.size())
 	return size[0]
 
+func find(search_point: Vector2, radius: float = INF) -> Array[ForceGraphNode]:
+	var quads: Array[Quad] = []
+	
+	if not root.is_void(): quads.append(Quad.new(root, rect))
+	
+	var search_rect := Rect2(rect)
+	var closest_quadrant_rect := Rect2(search_rect)
+	var discovered_leaves: Array[ForceGraphNode] = []
+	
+	var radius_squared := radius * radius
+	if radius < INF:
+		search_rect.position = search_point - Vector2(radius, radius)
+		search_rect.end = search_point + Vector2(radius, radius)
+	
+	while true:
+		var quad: Quad = quads.pop_back()
+		if not quad: break
+		
+		if quad.node.is_void(): continue
+		closest_quadrant_rect.position.x = quad.rect.position.x; if closest_quadrant_rect.position.x > search_rect.end.x: continue
+		closest_quadrant_rect.position.y = quad.rect.position.y; if closest_quadrant_rect.position.y > search_rect.end.y: continue
+		closest_quadrant_rect.end.x = quad.rect.end.x; if closest_quadrant_rect.end.x < search_rect.position.x: continue
+		closest_quadrant_rect.end.y = quad.rect.end.y; if closest_quadrant_rect.end.y < search_rect.position.y: continue
+		
+		if quad.node.is_branch():
+			var mid_point := closest_quadrant_rect.get_center()
+			var closest_quadrant := Quad.get_relative_quadrant(mid_point, search_point)
+			for quadrant in Quadrant.values() as Array[Quadrant]:
+				if quadrant == closest_quadrant: continue
+				quads.append(Quad.new(quad.node.branches[quadrant], Quad.shrink_rect_to_quadrant(closest_quadrant_rect, quadrant)))
+			quads.append(Quad.new(quad.node.branches[closest_quadrant], Quad.shrink_rect_to_quadrant(closest_quadrant_rect, closest_quadrant)))
+			continue
+		
+		var distance_squared := search_point.distance_squared_to(quad.node.leaves[0].position)
+		if distance_squared > radius_squared: continue
+		radius_squared = distance_squared
+		
+		var distance := sqrt(distance_squared)
+		search_rect.position = search_point - Vector2(distance, distance)
+		search_rect.end = search_point + Vector2(distance, distance)
+		discovered_leaves.clear()
+		discovered_leaves.append_array(quad.node.leaves)
+	
+	return discovered_leaves
+
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
 
