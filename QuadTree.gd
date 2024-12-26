@@ -164,8 +164,13 @@ func visit(callback: Callable) -> QuadTree:
 
 func get_data() -> Array[ForceGraphNode]:
 	var data: Array[ForceGraphNode] = []
-	visit(func (node: QuadTreeNode, _rect: Rect2) -> void: if node.is_leaf(): data.append_array(node.leaves))
+	visit(func(node: QuadTreeNode, _rect: Rect2) -> void: if node.is_leaf(): data.append_array(node.leaves))
 	return data
+
+func get_size() -> int:
+	var size: Array[int] = [0]
+	visit(func(node: QuadTreeNode, _rect: Rect2) -> void: if node.is_leaf(): size[0] += node.leaves.size())
+	return size[0]
 
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
