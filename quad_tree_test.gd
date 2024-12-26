@@ -7,6 +7,8 @@ var BUTTON_TEXT_TO_CALLBACK_MAP: Dictionary = {
 	"Add a dozen random nodes": add_dozen_random_nodes,
 	"Remove last node": remove_last_node,
 	"Remove all nodes": remove_all_nodes,
+	"Find closest to center": find_closest_to_center,
+	"Find closest to center within 1 unit": find_closest_to_center_within_one_unit,
 	"Log visit after": run_visit_after,
 	"Log visit": run_visit,
 	"Log data": log_data,
@@ -25,6 +27,7 @@ func _ready() -> void:
 	for key: String in BUTTON_TEXT_TO_CALLBACK_MAP:
 		var button := Button.new()
 		button.text = key
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		button.pressed.connect(BUTTON_TEXT_TO_CALLBACK_MAP[key])
 		v_box_container.add_child(button)
 
@@ -120,5 +123,16 @@ func log_data() -> void:
 
 func log_tree_size() -> void:
 	print("Size: ", tree.get_size())
+
+func print_found_nodes_with_distance_to_cenver(nodes: Array[ForceGraphNode]) -> void:
+	var node: ForceGraphNode = nodes.pop_back()
+	if not node:
+		print(null)
+		return
+	
+	print("Position: ", node.position, " Distance: ", node.position.distance_to(Vector2.ZERO))
+
+func find_closest_to_center() -> void: print_found_nodes_with_distance_to_cenver(tree.find(Vector2.ZERO))
+func find_closest_to_center_within_one_unit() -> void: print_found_nodes_with_distance_to_cenver(tree.find(Vector2.ZERO, 1.0))
 
 #endregion
