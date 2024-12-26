@@ -7,6 +7,7 @@ extends Node2D
 @onready var remove_all_nodes_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/RemoveAllNodesButton
 @onready var visit_after_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/VisitAfterButton
 @onready var visit_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/VisitButton
+@onready var get_data_button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/GetDataButton
 
 var tree := QuadTree.new()
 var start_offset := Vector2.ZERO
@@ -23,6 +24,7 @@ func _ready() -> void:
 	visit_after_button.pressed.connect(run_visit_after)
 	visit_button.pressed.connect(run_visit)
 	to_json_button.pressed.connect(log_tree_as_json)
+	get_data_button.pressed.connect(log_data)
 
 func _draw() -> void:
 	draw_circle(start_offset * VECTOR_MULTIPLIER, 5.0, Color.GREEN)
@@ -102,3 +104,6 @@ func run_visit() -> void:
 
 func log_tree_as_json() -> void:
 	print(JSON.stringify(tree._to_dict(), "  "))
+
+func log_data() -> void:
+	print(JSON.stringify(tree.get_data().map(func(node: ForceGraphNode) -> Dictionary: return node._to_dict()), "  "))

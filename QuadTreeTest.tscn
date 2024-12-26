@@ -70,3 +70,7 @@ text = "Log visit after"
 [node name="VisitButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Log visit"
+
+[node name="GetDataButton" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Log data"

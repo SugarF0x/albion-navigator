@@ -162,6 +162,11 @@ func visit(callback: Callable) -> QuadTree:
 	
 	return self
 
+func get_data() -> Array[ForceGraphNode]:
+	var data: Array[ForceGraphNode] = []
+	visit(func (node: QuadTreeNode, _rect: Rect2) -> void: if node.is_leaf(): data.append_array(node.leaves))
+	return data
+
 func _to_string() -> String:
 	return "QuadTree({rect}, {root})".format({ "rect": rect, "root": root })
 
