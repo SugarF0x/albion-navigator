@@ -10,6 +10,8 @@ enum Type {
 
 var leaves: Array[ForceGraphNode] = []
 var branches: Array[QuadTreeNode] = []
+var charge := 0
+var center_of_mass := Vector2.ZERO
 
 func attach_leaf(leaf: ForceGraphNode) -> void:
 	if is_branch():
@@ -79,14 +81,17 @@ func is_branch() -> bool: return get_type() == Type.BRANCH
 func is_leaf() -> bool: return get_type() == Type.LEAF
 
 func _to_string() -> String: 
-	return "QuadTreeNode(type: {type}, leaves: {leaves}, branches: {branches})".format({
+	return "QuadTreeNode(type: {type}, leaves: {leaves}, branches: {branches}, charge: {charge})".format({
 			"type": Type.find_key(get_type()),
 			"leaves": leaves.size(),
 			"branches": branches.size(),
+			"charge": charge,
 		})
 
 func _to_dict() -> Dictionary:
 	return {
+		"type": Type.find_key(get_type()),
 		"leaves": leaves.map(func(node: ForceGraphNode) -> Dictionary: return node._to_dict()),
-		"branches": branches.map(func(branch: QuadTreeNode) -> Dictionary: return branch._to_dict())
+		"branches": branches.map(func(branch: QuadTreeNode) -> Dictionary: return branch._to_dict()),
+		"charge": charge
 	}

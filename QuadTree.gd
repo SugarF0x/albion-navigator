@@ -143,6 +143,7 @@ func visit_after(callback: Callable) -> QuadTree:
 	for quad in next: callback.call(quad.node, quad.rect)
 	return self
 
+## Triverses top-down, stops when callback returns true
 func visit(callback: Callable) -> QuadTree:
 	var quads: Array[Quad] = []
 	

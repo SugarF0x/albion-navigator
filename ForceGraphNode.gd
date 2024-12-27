@@ -1,14 +1,13 @@
 # TODO: make this RigitBody2D instead? question mark?
 class_name ForceGraphNode extends Node2D
 
-@export var fixed := false
-@export var mass := 1.0
-
+var fixed := false
 var velocity := Vector2.ZERO
+var strength := -30.0
 
 func apply_force(force: Vector2) -> void: 
 	if fixed: return
-	velocity += force / mass
+	velocity += force
 
 func update_position(delta: float) -> void: 
 	if fixed: return
@@ -21,6 +20,5 @@ func _to_dict() -> Dictionary:
 	return {
 		"position": position,
 		"fixed": fixed,
-		"mass": mass,
 		"velocity": velocity
 	}
