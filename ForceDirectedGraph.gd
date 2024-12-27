@@ -16,7 +16,7 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 @export var distance_min_squared := 1.0
 @export var distance_max_squared := INF
 
-var alpha_decay := 1.0 - pow(alpha_min, 10)
+var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
 var nodes: Array[ForceGraphNode] = []
 var random := RandomNumberGenerator.new()
 
@@ -29,16 +29,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if alpha < alpha_min: return
-	step(delta)
+	step()
 
-func step(delta: float) -> void:
-	alpha += (alpha_target - alpha) * alpha_decay * delta
+func step() -> void:
+	alpha += (alpha_target - alpha) * alpha_decay
 	
-	apply_center_force(delta)
-	apply_many_body_force(delta)
-	apply_gravity_force(delta)
+	apply_center_force()
+	apply_many_body_force()
+	apply_gravity_force()
 	
-	for node in nodes: node.update_position(delta)
+	for node in nodes: node.update_position()
 
 func initialize_nodes() -> void:
 	for i in nodes.size():
@@ -53,15 +53,15 @@ func initialize_nodes() -> void:
 
 #region Gravity force
 
-func apply_gravity_force(delta: float) -> void:
+func apply_gravity_force() -> void:
 	var strength := 1.0
 	for node in nodes:
-		node.velocity -= node.position * strength * alpha * delta
+		node.velocity -= node.position * strength * alpha
 
 #endregion
 #region Central force
 
-func apply_center_force(delta: float) -> void:
+func apply_center_force() -> void:
 	var strength := 1.0
 	var center := Vector2.ZERO
 	var shift := Vector2.ZERO
@@ -71,15 +71,15 @@ func apply_center_force(delta: float) -> void:
 	
 	shift = shift / nodes.size() - center * strength
 	for node in nodes: 
-		node.position -= shift * delta
+		node.position -= shift
 
 #endregion
 #region Many body force
 
-func apply_many_body_force(delta: float) -> void:
+func apply_many_body_force() -> void:
 	var tree := QuadTree.new().add_all(nodes).visit_after(accumulate)
 	for node in nodes: 
-		tree.visit(apply.bind(node, delta))
+		tree.visit(apply.bind(node))
 
 func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	var strength := 0.0
@@ -104,7 +104,7 @@ func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	
 	node.charge = strength
 
-func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode, delta: float) -> bool:
+func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode) -> bool:
 	if tree_node.charge == 0.0: return true
 	
 	var attraction_direction := tree_node.center_of_mass - graph_node.position
@@ -116,7 +116,7 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 			if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2)
 			if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2)
 			if distance_to_center_of_mass_squared < distance_min_squared: distance_to_center_of_mass_squared = sqrt(distance_min_squared * distance_to_center_of_mass_squared)
-			graph_node.velocity += attraction_direction * tree_node.charge * alpha / distance_to_center_of_mass_squared * delta
+			graph_node.velocity += attraction_direction * tree_node.charge * alpha / distance_to_center_of_mass_squared
 		return true
 	
 	if tree_node.is_branch() or distance_to_center_of_mass_squared >= distance_max_squared: return false
@@ -128,14 +128,15 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 	
 	for leaf in tree_node.leaves:
 		if leaf == graph_node: continue
-		graph_node.velocity += attraction_direction * quad_width * delta
+		quad_width = graph_node.strength * alpha / distance_to_center_of_mass_squared
+		graph_node.velocity += attraction_direction * quad_width
 	
 	return false
 
 #endregion
 
 func _mock_nodes() -> void:
-	for n in 2: 
+	for n in 30: 
 		var node: ForceGraphNode = DUMMY_NODE.instantiate()
 		add_child(node)
 
