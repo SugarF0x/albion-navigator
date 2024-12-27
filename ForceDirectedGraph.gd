@@ -16,9 +16,14 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 @export var distance_min_squared := 1.0
 @export var distance_max_squared := INF
 
+@export_group("Debug")
+@export var draw_quad_tree := false
+@export var draw_center_of_mass := false
+
 var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
 var nodes: Array[ForceGraphNode] = []
 var random := RandomNumberGenerator.new()
+var tree := QuadTree.new()
 
 func _ready() -> void:
 	random.seed = "peepee-poopoo".hash()
@@ -79,9 +84,11 @@ func apply_center_force() -> void:
 #region Many body force
 
 func apply_many_body_force() -> void:
-	var tree := QuadTree.new().add_all(nodes).visit_after(accumulate)
+	tree = QuadTree.new().add_all(nodes).visit_after(accumulate)
 	for node in nodes: 
 		tree.visit(apply.bind(node))
+	
+	queue_redraw()
 
 func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	var strength := 0.0
@@ -96,7 +103,7 @@ func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 			
 			strength += branch.charge
 			weight += charge
-			center_of_mass += center_of_mass * charge
+			center_of_mass += branch.center_of_mass * charge
 			
 		node.center_of_mass = center_of_mass / weight
 	else:
@@ -139,7 +146,7 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 #endregion
 
 func _mock_nodes() -> void:
-	for n in 10: 
+	for n in 30: 
 		var node: ForceGraphNode = DUMMY_NODE.instantiate()
 		add_child(node)
 	
@@ -165,3 +172,9 @@ func _mock_nodes() -> void:
 
 func jiggle() -> float:
 	return (random.randf() - 0.5) * 1e-6
+
+func _draw() -> void:
+	if draw_quad_tree or draw_center_of_mass: tree.visit_after(func(node: QuadTreeNode, rect: Rect2) -> void:
+		if draw_quad_tree: draw_rect(rect, Color.RED, false)
+		if draw_center_of_mass: draw_circle(node.center_of_mass, 30.0, Color.GREEN)
+	)
