@@ -10,7 +10,6 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 @export var alpha := 1.0
 @export var alpha_min := 0.0001
 @export var alpha_target := 0.0
-@export var velocity_decay := 0.6
 
 @export_group("Many body aproximation")
 @export var theta_squared := 0.81
@@ -20,9 +19,8 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 var alpha_decay := 1.0 - pow(alpha_min, 10)
 var nodes: Array[ForceGraphNode] = []
 var random := RandomNumberGenerator.new()
-var strengths: Array[float] = []
 
-func _ready() -> void:	
+func _ready() -> void:
 	random.seed = "peepee-poopoo".hash()
 	_mock_nodes()
 	
@@ -32,6 +30,36 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if alpha < alpha_min: return
 	step(delta)
+
+func step(delta: float) -> void:
+	alpha += (alpha_target - alpha) * alpha_decay * delta
+	
+	apply_center_force(delta)
+	apply_many_body_force(delta)
+	apply_gravity_force(delta)
+	
+	for node in nodes: node.update_position(delta)
+
+func initialize_nodes() -> void:
+	for i in nodes.size():
+		var node := nodes[i]
+		if node.fixed: continue
+		if node.position != Vector2.ZERO: continue
+		
+		var radius: float = initial_radius * sqrt(0.5 + i)
+		var angle: float = i * initial_angle
+		node.position = Vector2(radius * cos(angle), radius * sin(angle))
+		node.velocity = Vector2(100,100)
+
+#region Gravity force
+
+func apply_gravity_force(delta: float) -> void:
+	var strength := 1.0
+	for node in nodes:
+		node.velocity -= node.position * strength * alpha * delta
+
+#endregion
+#region Central force
 
 func apply_center_force(delta: float) -> void:
 	var strength := 1.0
@@ -45,28 +73,13 @@ func apply_center_force(delta: float) -> void:
 	for node in nodes: 
 		node.position -= shift * delta
 
+#endregion
+#region Many body force
+
 func apply_many_body_force(delta: float) -> void:
 	var tree := QuadTree.new().add_all(nodes).visit_after(accumulate)
 	for node in nodes: 
 		tree.visit(apply.bind(node, delta))
-
-func step(delta: float) -> void:
-	alpha += (alpha_target - alpha) * alpha_decay * delta
-	
-	apply_many_body_force(delta)
-	apply_center_force(delta)
-	
-	for node in nodes: node.update_position(delta)
-
-func initialize_nodes() -> void:
-	for i in nodes.size():
-		var node := nodes[i]
-		if node.fixed: continue
-		if node.position != Vector2.ZERO: continue
-		
-		var radius: float = initial_radius * sqrt(0.5 + i)
-		var angle: float = i * initial_angle
-		node.position = Vector2(radius * cos(angle), radius * sin(angle))
 
 func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	var strength := 0.0
@@ -119,8 +132,10 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 	
 	return false
 
+#endregion
+
 func _mock_nodes() -> void:
-	for n in 10: 
+	for n in 2: 
 		var node: ForceGraphNode = DUMMY_NODE.instantiate()
 		add_child(node)
 
