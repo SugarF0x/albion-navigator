@@ -137,7 +137,7 @@ func visit_after(callback: Callable) -> QuadTree:
 		for branch_quadrant in quad.node.branches.size() as Quadrant:
 			var branch := quad.node.branches[branch_quadrant]
 			if branch.is_void(): continue
-			quads.append(Quad.new(branch, Quad.shrink_rect_to_quadrant(rect, branch_quadrant)))
+			quads.append(Quad.new(branch, Quad.shrink_rect_to_quadrant(quad.rect, branch_quadrant)))
 	
 	next.reverse()
 	for quad in next: callback.call(quad.node, quad.rect)
