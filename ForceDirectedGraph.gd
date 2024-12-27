@@ -38,7 +38,8 @@ func step() -> void:
 	apply_many_body_force()
 	apply_gravity_force()
 	
-	for node in nodes: node.update_position()
+	for node in nodes: 
+		node.update_position()
 
 func initialize_nodes() -> void:
 	for i in nodes.size():
@@ -54,7 +55,7 @@ func initialize_nodes() -> void:
 #region Gravity force
 
 func apply_gravity_force() -> void:
-	var strength := 1.0
+	var strength := 0.1
 	for node in nodes:
 		node.velocity -= node.position * strength * alpha
 
@@ -70,7 +71,8 @@ func apply_center_force() -> void:
 		shift += node.position
 	
 	shift = shift / nodes.size() - center * strength
-	for node in nodes: 
+	for node in nodes:
+		if node.fixed: continue 
 		node.position -= shift
 
 #endregion
@@ -104,6 +106,7 @@ func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	
 	node.charge = strength
 
+## TODO: the forces are being applied in a somewhat faulty order - some nodes that are close up are not getting spread out
 func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode) -> bool:
 	if tree_node.charge == 0.0: return true
 	
@@ -113,17 +116,17 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 	
 	if quad_width * quad_width / theta_squared < distance_to_center_of_mass_squared:
 		if distance_to_center_of_mass_squared < distance_max_squared:
-			if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2)
-			if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2)
+			if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2.0)
+			if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2.0)
 			if distance_to_center_of_mass_squared < distance_min_squared: distance_to_center_of_mass_squared = sqrt(distance_min_squared * distance_to_center_of_mass_squared)
 			graph_node.velocity += attraction_direction * tree_node.charge * alpha / distance_to_center_of_mass_squared
 		return true
 	
 	if tree_node.is_branch() or distance_to_center_of_mass_squared >= distance_max_squared: return false
 	
-	if tree_node.leaves[0] != graph_node or tree_node.leaves.size() > 1:
-		if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2)
-		if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2)
+	if tree_node.leaves[0] != graph_node or tree_node.leaves.size() > 1.0:
+		if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2.0)
+		if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2.0)
 		if distance_to_center_of_mass_squared < distance_min_squared: distance_to_center_of_mass_squared = sqrt(distance_min_squared * distance_to_center_of_mass_squared)
 	
 	for leaf in tree_node.leaves:
@@ -136,8 +139,28 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 #endregion
 
 func _mock_nodes() -> void:
-	for n in 30: 
+	for n in 10: 
 		var node: ForceGraphNode = DUMMY_NODE.instantiate()
+		add_child(node)
+	
+	var fixed_nodes: Array[ForceGraphNode] = [
+		DUMMY_NODE.instantiate(),
+		DUMMY_NODE.instantiate(),
+		DUMMY_NODE.instantiate(),
+		DUMMY_NODE.instantiate(),
+		DUMMY_NODE.instantiate(),
+	]
+	
+	fixed_nodes[0].position += Vector2(1, 1) * 50
+	fixed_nodes[1].position += Vector2(-1, -1) * 50
+	fixed_nodes[2].position += Vector2(1, -1) * 50
+	fixed_nodes[3].position += Vector2(-1, 1) * 50
+	fixed_nodes[4].rotate(deg_to_rad(45))
+	
+	for node in fixed_nodes:
+		node.fixed = true
+		node.rotate(deg_to_rad(180))
+		nodes.append(node)
 		add_child(node)
 
 func jiggle() -> float:
