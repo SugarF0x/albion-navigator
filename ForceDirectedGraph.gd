@@ -10,6 +10,7 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 @export var alpha := 1.0
 @export var alpha_min := 0.0001
 @export var alpha_target := 0.0
+@export var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
 
 @export_group("Many body aproximation")
 @export var theta_squared := 0.81
@@ -19,17 +20,18 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 @export_group("Debug")
 @export var draw_quad_tree := false
 @export var draw_center_of_mass := false
+@export var mock_nodes_count := 0
+@export var mock_fixed_nodes_count := 0
 
-var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
-var nodes: Array[ForceGraphNode] = []
 var random := RandomNumberGenerator.new()
-var tree := QuadTree.new()
+var nodes: Array[ForceGraphNode] = []
 
 func _ready() -> void:
 	random.seed = "peepee-poopoo".hash()
-	_mock_nodes()
+	mock()
 	
-	for child in get_children(): if child is ForceGraphNode: nodes.append(child)
+	for child in get_children(): if child is ForceGraphNode: 
+		nodes.append(child)
 	initialize_nodes()
 
 func _process(delta: float) -> void:
@@ -42,6 +44,7 @@ func step() -> void:
 	apply_center_force()
 	apply_many_body_force()
 	apply_gravity_force()
+	apply_link_force()
 	
 	for node in nodes: 
 		node.update_position()
@@ -51,12 +54,16 @@ func initialize_nodes() -> void:
 		var node := nodes[i]
 		if node.fixed: continue
 		if node.position != Vector2.ZERO: continue
-		
-		var radius: float = initial_radius * sqrt(0.5 + i)
-		var angle: float = i * initial_angle
-		node.position = Vector2(radius * cos(angle), radius * sin(angle))
-		node.velocity = Vector2(100,100)
+		place_node_spirally(node, i)
 
+#region Link force
+
+func apply_link_force() -> void:
+	
+	
+	pass
+
+#endregion
 #region Gravity force
 
 func apply_gravity_force() -> void:
@@ -82,6 +89,8 @@ func apply_center_force() -> void:
 
 #endregion
 #region Many body force
+
+var tree := QuadTree.new()
 
 func apply_many_body_force() -> void:
 	tree = QuadTree.new().add_all(nodes).visit_after(accumulate)
@@ -113,7 +122,6 @@ func accumulate(node: QuadTreeNode, _rect: Rect2) -> void:
 	
 	node.charge = strength
 
-## TODO: the forces are being applied in a somewhat faulty order - some nodes that are close up are not getting spread out
 func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode) -> bool:
 	if tree_node.charge == 0.0: return true
 	
@@ -144,37 +152,40 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 	return false
 
 #endregion
+#region Utils
 
-func _mock_nodes() -> void:
-	for n in 30: 
-		var node: ForceGraphNode = DUMMY_NODE.instantiate()
+func jiggle() -> float: return (random.randf() - 0.5) * 1e-6
+
+func place_node_spirally(node: Node2D, index: int, placement_radius := initial_radius, placement_angle := initial_angle) -> void:
+	var radius: float = placement_radius * sqrt(0.5 + index)
+	var angle: float = index * placement_angle
+	node.position = Vector2(radius * cos(angle), radius * sin(angle))
+
+#endregion
+#region Debug
+
+func mock() -> void:
+	mock_nodes()
+	mock_fixed_nodes()
+
+func mock_nodes() -> void:
+	for n in mock_nodes_count: 
+		var node := DUMMY_NODE.instantiate() as ForceGraphNode
 		add_child(node)
-	
-	var fixed_nodes: Array[ForceGraphNode] = [
-		DUMMY_NODE.instantiate(),
-		DUMMY_NODE.instantiate(),
-		DUMMY_NODE.instantiate(),
-		DUMMY_NODE.instantiate(),
-		DUMMY_NODE.instantiate(),
-	]
-	
-	fixed_nodes[0].position += Vector2(1, 1) * 50
-	fixed_nodes[1].position += Vector2(-1, -1) * 50
-	fixed_nodes[2].position += Vector2(1, -1) * 50
-	fixed_nodes[3].position += Vector2(-1, 1) * 50
-	fixed_nodes[4].rotate(deg_to_rad(45))
-	
-	for node in fixed_nodes:
+
+func mock_fixed_nodes() -> void:
+	for i in mock_fixed_nodes_count:
+		var node := DUMMY_NODE.instantiate() as ForceGraphNode
 		node.fixed = true
+		node.strength = -500.0
 		node.rotate(deg_to_rad(180))
-		nodes.append(node)
+		place_node_spirally(node, i, initial_radius / 2.0, initial_angle / 2.0)
 		add_child(node)
-
-func jiggle() -> float:
-	return (random.randf() - 0.5) * 1e-6
 
 func _draw() -> void:
 	if draw_quad_tree or draw_center_of_mass: tree.visit_after(func(node: QuadTreeNode, rect: Rect2) -> void:
 		if draw_quad_tree: draw_rect(rect, Color.RED, false)
 		if draw_center_of_mass: draw_circle(node.center_of_mass, 30.0, Color.GREEN)
 	)
+
+#endregion

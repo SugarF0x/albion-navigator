@@ -7,6 +7,8 @@
 [node name="ForceDirectedGraph" type="Node2D" parent="."]
 position = Vector2(576, 324)
 script = ExtResource("1_s3w3e")
+mock_nodes_count = 20
+mock_fixed_nodes_count = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
