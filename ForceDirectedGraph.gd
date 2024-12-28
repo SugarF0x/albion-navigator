@@ -52,6 +52,7 @@ func step() -> void:
 func initialize_nodes() -> void:
 	for i in nodes.size():
 		var node := nodes[i]
+		node.index = i
 		if node.fixed: continue
 		if node.position != Vector2.ZERO: continue
 		place_node_spirally(node, i)
