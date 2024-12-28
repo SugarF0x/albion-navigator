@@ -9,6 +9,7 @@ position = Vector2(576, 324)
 script = ExtResource("1_s3w3e")
 mock_nodes_count = 20
 mock_fixed_nodes_count = 10
+mock_link_count = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

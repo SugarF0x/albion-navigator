@@ -23,6 +23,7 @@ const DUMMY_LINK = preload("res://DummyLink.tscn")
 @export var draw_center_of_mass := false
 @export var mock_nodes_count := 0
 @export var mock_fixed_nodes_count := 0
+@export var mock_link_count := 0
 
 var random := RandomNumberGenerator.new()
 var nodes: Array[ForceGraphNode] = []
@@ -48,6 +49,9 @@ func step() -> void:
 	
 	for node in nodes: 
 		node.update_position()
+	
+	for link in links:
+		link.draw_link(nodes)
 
 func center_window() -> void:
 	var rect := get_viewport().get_visible_rect()
@@ -212,6 +216,7 @@ func place_node_spirally(node: Node2D, index: int, placement_radius := initial_r
 func mock() -> void:
 	mock_nodes()
 	mock_fixed_nodes()
+	mock_links()
 
 func mock_nodes() -> void:
 	for n in mock_nodes_count: 
@@ -219,13 +224,20 @@ func mock_nodes() -> void:
 		add_child(node)
 
 func mock_fixed_nodes() -> void:
-	for i in mock_fixed_nodes_count:
+	for index in mock_fixed_nodes_count:
 		var node := DUMMY_NODE.instantiate() as ForceGraphNode
 		node.fixed = true
 		node.strength = -500.0
 		node.rotate(deg_to_rad(180))
-		place_node_spirally(node, i, initial_radius / 2.0, initial_angle / 2.0)
+		place_node_spirally(node, index, initial_radius / 2.0, initial_angle / 2.0)
 		add_child(node)
+
+func mock_links() -> void:
+	for index in mock_link_count:
+		var link := DUMMY_LINK.instantiate() as ForceGraphLink
+		link.source = index
+		link.target = index + 4
+		add_child(link)
 
 func _draw() -> void:
 	if draw_quad_tree or draw_center_of_mass: tree.visit_after(func(node: QuadTreeNode, rect: Rect2) -> void:
