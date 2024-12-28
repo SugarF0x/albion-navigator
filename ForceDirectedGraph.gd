@@ -1,6 +1,7 @@
 class_name ForceDirectedGraph extends Node2D
 
 const DUMMY_NODE = preload("res://DummyNode.tscn")
+const DUMMY_LINK = preload("res://DummyLink.tscn")
 
 @export_group("Initial Node Position")
 @export var initial_radius: float = 100.0
@@ -25,16 +26,15 @@ const DUMMY_NODE = preload("res://DummyNode.tscn")
 
 var random := RandomNumberGenerator.new()
 var nodes: Array[ForceGraphNode] = []
+var links: Array[ForceGraphLink] = []
 
 func _ready() -> void:
 	random.seed = "peepee-poopoo".hash()
 	mock()
-	
-	for child in get_children(): if child is ForceGraphNode: 
-		nodes.append(child)
-	initialize_nodes()
+	register_children()
 
 func _process(delta: float) -> void:
+	center_window()
 	if alpha < alpha_min: return
 	step()
 
@@ -49,15 +49,59 @@ func step() -> void:
 	for node in nodes: 
 		node.update_position()
 
-func initialize_nodes() -> void:
-	for i in nodes.size():
-		var node := nodes[i]
-		node.index = i
-		if node.fixed: continue
-		if node.position != Vector2.ZERO: continue
-		place_node_spirally(node, i)
+func center_window() -> void:
+	var rect := get_viewport().get_visible_rect()
+	position = rect.size / 2
 
+#region Node registration and initalisation
+
+func register_children() -> void:
+	nodes.clear()
+	links.clear()
+	
+	for child in get_children():
+		if child is ForceGraphNode: nodes.append(child)
+		elif child is ForceGraphLink: links.append(child)
+	
+	initialize_entities()
+
+func initialize_entities() -> void:
+	connections_count.clear()
+	node_links_map.clear()
+	
+	for index in nodes.size():
+		var node := nodes[index]
+		connections_count.append(0)
+		node_links_map.append([] as Array[int])
+		initialize_node_index(node, index)
+		initialize_node_position(node, index)
+	
+	for index in links.size():
+		var link := links[index]
+		initialize_link_connections_count(link)
+		initialize_link_map(link)
+
+func initialize_node_index(node: ForceGraphNode, index: int) -> void:
+	node.index = index
+
+func initialize_node_position(node: ForceGraphNode, index: int) -> void:
+	if node.fixed: return
+	if node.position != Vector2.ZERO: return
+	place_node_spirally(node, index)
+
+func initialize_link_connections_count(link: ForceGraphLink) -> void:
+	connections_count[link.source] += 1
+	connections_count[link.target] += 1
+
+func initialize_link_map(link: ForceGraphLink) -> void:
+	node_links_map[link.source].append(link.target)
+	node_links_map[link.target].append(link.source)
+
+#endregion
 #region Link force
+
+var connections_count: Array[int] = []
+var node_links_map: Array[Array] = []
 
 func apply_link_force() -> void:
 	
