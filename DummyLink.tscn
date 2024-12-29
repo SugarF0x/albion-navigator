@@ -6,3 +6,4 @@
 script = ExtResource("1_hkmtu")
 
 [node name="Line2D" type="Line2D" parent="."]
+width = 1.0

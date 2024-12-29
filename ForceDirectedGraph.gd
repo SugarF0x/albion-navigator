@@ -1,10 +1,10 @@
 class_name ForceDirectedGraph extends Node2D
 
-const DUMMY_NODE = preload("res://DummyNode.tscn")
-const DUMMY_LINK = preload("res://DummyLink.tscn")
+@onready var links_container: Node2D = %LinksContainer
+@onready var nodes_container: Node2D = %NodesContainer
 
 @export_group("Initial Node Position")
-@export var initial_radius: float = 100.0
+@export var initial_radius: float = 30.0
 @export var initial_angle: float = PI * (3 - sqrt(5))
 
 @export_group("Graph Heat")
@@ -18,7 +18,13 @@ const DUMMY_LINK = preload("res://DummyLink.tscn")
 @export var distance_min_squared := 1.0
 @export var distance_max_squared := INF
 
+@export_group("Gravitational pull")
+@export var gravity_strength := 0.1
+@export var central_strength := 1.0
+
 @export_group("Debug")
+@export var node_scene: PackedScene = preload("res://DummyNode.tscn")
+@export var link_scene: PackedScene = preload("res://DummyLink.tscn")
 @export var draw_quad_tree := false
 @export var draw_center_of_mass := false
 @export var mock_nodes_count := 0
@@ -43,9 +49,9 @@ func step() -> void:
 	alpha += (alpha_target - alpha) * alpha_decay
 	
 	apply_center_force()
+	apply_link_force()
 	apply_many_body_force()
 	apply_gravity_force()
-	apply_link_force()
 	
 	for node in nodes: 
 		node.update_position()
@@ -63,9 +69,11 @@ func register_children() -> void:
 	nodes.clear()
 	links.clear()
 	
-	for child in get_children():
+	for child in nodes_container.get_children():
 		if child is ForceGraphNode: nodes.append(child)
-		elif child is ForceGraphLink: links.append(child)
+	
+	for child in links_container.get_children():
+		if child is ForceGraphLink: links.append(child)
 	
 	initialize_entities()
 
@@ -130,22 +138,20 @@ func apply_link_force() -> void:
 #region Gravity force
 
 func apply_gravity_force() -> void:
-	var strength := 0.1
 	for node in nodes:
-		node.velocity -= node.position * strength * alpha
+		node.velocity -= node.position * gravity_strength * alpha
 
 #endregion
 #region Central force
 
 func apply_center_force() -> void:
-	var strength := 1.0
 	var center := Vector2.ZERO
 	var shift := Vector2.ZERO
 	
 	for node in nodes:
 		shift += node.position
 	
-	shift = shift / nodes.size() - center * strength
+	shift = shift / nodes.size() - center * central_strength
 	for node in nodes:
 		if node.fixed: continue 
 		node.position -= shift
@@ -234,29 +240,28 @@ func mock() -> void:
 
 func mock_nodes() -> void:
 	for n in mock_nodes_count: 
-		var node := DUMMY_NODE.instantiate() as ForceGraphNode
-		add_child(node)
+		var node := node_scene.instantiate() as ForceGraphNode
+		nodes_container.add_child(node)
 
 func mock_fixed_nodes() -> void:
 	for index in mock_fixed_nodes_count:
-		var node := DUMMY_NODE.instantiate() as ForceGraphNode
+		var node := node_scene.instantiate() as ForceGraphNode
 		node.fixed = true
-		node.strength = -500.0
-		node.rotate(deg_to_rad(180))
+		node.strength = -60.0
 		place_node_spirally(node, index, initial_radius / 2.0, initial_angle / 2.0)
-		add_child(node)
+		nodes_container.add_child(node)
 
 func mock_links() -> void:
 	for index in mock_link_count:
-		var link := DUMMY_LINK.instantiate() as ForceGraphLink
+		var link := link_scene.instantiate() as ForceGraphLink
 		link.source = index
 		link.target = index + 4
-		add_child(link)
+		links_container.add_child(link)
 
 func _draw() -> void:
 	if draw_quad_tree or draw_center_of_mass: tree.visit_after(func(node: QuadTreeNode, rect: Rect2) -> void:
 		if draw_quad_tree: draw_rect(rect, Color.RED, false)
-		if draw_center_of_mass: draw_circle(node.center_of_mass, 30.0, Color.GREEN)
+		if draw_center_of_mass: draw_circle(node.center_of_mass, 5.0, Color.GREEN)
 	)
 
 #endregion

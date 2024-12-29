@@ -1,15 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://dds21sejjugrf"]
 
-[ext_resource type="Script" path="res://ForceDirectedGraph.gd" id="1_s3w3e"]
+[ext_resource type="PackedScene" uid="uid://dr1owil5gnkef" path="res://ForceDirectedGraph.tscn" id="1_y8uy1"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ForceDirectedGraph" type="Node2D" parent="."]
-position = Vector2(576, 324)
-script = ExtResource("1_s3w3e")
-mock_nodes_count = 20
+[node name="ForceDirectedGraph" parent="." instance=ExtResource("1_y8uy1")]
+mock_nodes_count = 100
 mock_fixed_nodes_count = 10
-mock_link_count = 4
+mock_link_count = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
