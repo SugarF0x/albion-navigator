@@ -69,43 +69,46 @@ func register_children() -> void:
 	
 	initialize_entities()
 
+## TODO: should these init finctions be moved to Node and Link classes instead? question mark?
+
 func initialize_entities() -> void:
-	connections_count.clear()
-	node_links_map.clear()
-	
 	for index in nodes.size():
 		var node := nodes[index]
-		connections_count.append(0)
-		node_links_map.append([] as Array[int])
 		initialize_node_index(node, index)
 		initialize_node_position(node, index)
+		reset_node_connections(node)
 	
 	for index in links.size():
 		var link := links[index]
 		initialize_link_connections_count(link)
-		initialize_link_map(link)
+		initialize_link_bias(link)
+		initialize_link_strength(link)
 
 func initialize_node_index(node: ForceGraphNode, index: int) -> void:
-	node.index = index
+	if node.index < 0: node.index = index
 
 func initialize_node_position(node: ForceGraphNode, index: int) -> void:
 	if node.fixed: return
 	if node.position != Vector2.ZERO: return
 	place_node_spirally(node, index)
 
-func initialize_link_connections_count(link: ForceGraphLink) -> void:
-	connections_count[link.source] += 1
-	connections_count[link.target] += 1
+func reset_node_connections(node: ForceGraphNode) -> void:
+	node.connections.clear()
 
-func initialize_link_map(link: ForceGraphLink) -> void:
-	node_links_map[link.source].append(link.target)
-	node_links_map[link.target].append(link.source)
+func initialize_link_connections_count(link: ForceGraphLink) -> void:
+	nodes[link.source].connections.append(link.target)
+	nodes[link.target].connections.append(link.source)
+
+func initialize_link_bias(link: ForceGraphLink) -> void:
+	var source_connections_count := nodes[link.source].connections.size()
+	var target_connections_count := nodes[link.target].connections.size()
+	link.bias = source_connections_count / (source_connections_count + target_connections_count)
+
+func initialize_link_strength(link: ForceGraphLink) -> void:
+	link.strength = 1.0 / min(nodes[link.source].connections.size(), nodes[link.target].connections.size())
 
 #endregion
 #region Link force
-
-var connections_count: Array[int] = []
-var node_links_map: Array[Array] = []
 
 func apply_link_force() -> void:
 	

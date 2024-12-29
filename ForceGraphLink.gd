@@ -5,6 +5,7 @@ class_name ForceGraphLink extends Node2D
 var source := -1
 var target := -1
 var strength := 1.0
+var bias := 1.0
 
 func _init(source := self.source, target := self.target, strength := self.strength) -> void:
 	self.source = source

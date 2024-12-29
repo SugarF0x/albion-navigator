@@ -6,6 +6,7 @@ var fixed := false
 var velocity := Vector2.ZERO
 var strength := -300.0
 var velocity_decay := 0.6
+var connections: Array[int] = []
 
 func update_position() -> void: 
 	if fixed: 
