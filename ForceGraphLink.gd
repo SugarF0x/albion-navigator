@@ -21,15 +21,15 @@ func initialize_connections_count(nodes: Array[ForceGraphNode]) -> void:
 func initialize_bias(nodes: Array[ForceGraphNode]) -> void:
 	var source_connections_count := nodes[source].connections.size()
 	var target_connections_count := nodes[target].connections.size()
-	bias = source_connections_count / (source_connections_count + target_connections_count)
+	bias = float(source_connections_count) / (source_connections_count + target_connections_count)
 
 func initialize_strength(nodes: Array[ForceGraphNode]) -> void:
 	strength = 1.0 / min(nodes[source].connections.size(), nodes[target].connections.size())
 
-func _init(source := self.source, target := self.target, strength := self.strength) -> void:
-	self.source = source
-	self.target = target
-	self.strength = strength
+func _init(initial_source := source, initial_target := target, initial_strength := strength) -> void:
+	source = initial_source
+	target = initial_target
+	strength = initial_strength
 
 func draw_link(nodes: Array[ForceGraphNode]) -> void:
 	line.clear_points()

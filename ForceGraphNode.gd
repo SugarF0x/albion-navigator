@@ -21,15 +21,15 @@ func update_position() -> void:
 	velocity *= velocity_decay
 	position += velocity
 
-func initialize(index: int) -> void:
-	initialize_index(index)
-	initialize_position(index)
+func initialize(graph_index: int) -> void:
+	initialize_index(graph_index)
+	initialize_position()
 	initialize_connections()
 
-func initialize_index(index: int) -> void:
-	if self.index < 0: self.index = index
+func initialize_index(graph_index: int) -> void:
+	if index < 0: index = graph_index
 
-func initialize_position(index: int) -> void:
+func initialize_position() -> void:
 	if fixed: return
 	if position != Vector2.ZERO: return
 	place_node_spirally()
@@ -37,13 +37,13 @@ func initialize_position(index: int) -> void:
 func initialize_connections() -> void:
 	connections.clear()
 
-func place_node_spirally(index := self.index, placement_radius := initial_radius, placement_angle := initial_angle) -> void:
-	var radius: float = placement_radius * sqrt(0.5 + index)
-	var angle: float = index * placement_angle
+func place_node_spirally(order_index := index, placement_radius := initial_radius, placement_angle := initial_angle) -> void:
+	var radius: float = placement_radius * sqrt(0.5 + order_index)
+	var angle: float = order_index * placement_angle
 	position = Vector2(radius * cos(angle), radius * sin(angle))
 
-func _init(position: Vector2 = Vector2.ZERO) -> void:
-	self.position = position
+func _init(initial_position := Vector2.ZERO) -> void:
+	position = initial_position
 
 func _to_dict() -> Dictionary:
 	return {

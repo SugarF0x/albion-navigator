@@ -10,7 +10,7 @@ enum Type {
 
 var leaves: Array[ForceGraphNode] = []
 var branches: Array[QuadTreeNode] = []
-var charge := 0
+var charge := 0.0
 var center_of_mass := Vector2.ZERO
 
 func attach_leaf(leaf: ForceGraphNode) -> void:
@@ -20,16 +20,12 @@ func attach_leaf(leaf: ForceGraphNode) -> void:
 	
 	leaves.append(leaf)
 
-func branch_out(quadrant: Quadrant = -1) -> void:
+func branch_out(quadrant := Quadrant.TOP_LEFT) -> void:
 	if is_branch():
 		push_error('Cant branch out: already a branch')
 		return
 	
 	if is_leaf():
-		if quadrant < 0:
-			push_error('Cant branch out: existing leaf requires quadrant to be assigned')
-			return
-		
 		create_empty_branches()
 		for leaf in leaves: 
 			branches[quadrant].attach_leaf(leaf)

@@ -5,8 +5,8 @@ var root := QuadTreeNode.new()
 
 const Quadrant := Quad.Quadrant
 
-func add(node: ForceGraphNode, cover := true) -> QuadTree:
-	if cover: cover(node.position)
+func add(node: ForceGraphNode, should_cover := true) -> QuadTree:
+	if should_cover: cover(node.position)
 	
 	if root.is_void():
 		root.attach_leaf(node)
@@ -14,14 +14,12 @@ func add(node: ForceGraphNode, cover := true) -> QuadTree:
 	
 	var explored_node := root
 	var explored_rect := Rect2(rect)
-	var explored_node_parent: QuadTreeNode
 	var explored_node_quadrant: Quadrant
 	
 	while explored_node.is_branch():
 		var mid_point := explored_rect.get_center()
 		explored_node_quadrant = Quad.get_relative_quadrant(mid_point, node.position)
 		explored_rect = Quad.shrink_rect_to_quadrant(explored_rect, explored_node_quadrant)
-		explored_node_parent = explored_node
 		explored_node = explored_node.branches[explored_node_quadrant]
 	
 	if explored_node.is_void():

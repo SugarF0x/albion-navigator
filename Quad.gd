@@ -10,9 +10,9 @@ enum Quadrant {
 var node: QuadTreeNode
 var rect: Rect2
 
-func _init(node: QuadTreeNode, rect: Rect2) -> void:
-	self.node = node
-	self.rect = rect
+func _init(initial_node: QuadTreeNode, initial_rect: Rect2) -> void:
+	node = initial_node
+	rect = initial_rect
 
 ## Returns target quadrant relative to source
 static func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
@@ -23,8 +23,8 @@ static func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
 	return Quadrant.BOTTOM_RIGHT
 
 ## Half the quadrant size and set position to respective quadrant -> returns new rect
-static func shrink_rect_to_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
-	var new_rect := Rect2(rect)
+static func shrink_rect_to_quadrant(rect_to_shrink: Rect2, quadrant: Quadrant) -> Rect2:
+	var new_rect := Rect2(rect_to_shrink)
 	new_rect.size /= 2
 	match quadrant:
 		Quadrant.TOP_LEFT: pass
@@ -34,8 +34,8 @@ static func shrink_rect_to_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
 	return new_rect
 
 ## Expand the rect in the direction opposite of the given quadrant (quadrant argument is quadrant origin) -> returns new rect
-static func expand_rect_from_quadrant(rect: Rect2, quadrant: Quadrant) -> Rect2:
-	var new_rect := Rect2(rect)
+static func expand_rect_from_quadrant(rect_to_expand: Rect2, quadrant: Quadrant) -> Rect2:
+	var new_rect := Rect2(rect_to_expand)
 	var offset := new_rect.size.x
 	new_rect.size *= 2
 	match quadrant:
