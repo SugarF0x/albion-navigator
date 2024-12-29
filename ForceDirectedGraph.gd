@@ -3,10 +3,6 @@ class_name ForceDirectedGraph extends Node2D
 @onready var links_container: Node2D = %LinksContainer
 @onready var nodes_container: Node2D = %NodesContainer
 
-@export_group("Initial Node Position")
-@export var initial_radius: float = 30.0
-@export var initial_angle: float = PI * (3 - sqrt(5))
-
 @export_group("Graph Heat")
 @export var alpha := 1.0
 @export var alpha_min := 0.0001
@@ -77,43 +73,12 @@ func register_children() -> void:
 	
 	initialize_entities()
 
-## TODO: should these init finctions be moved to Node and Link classes instead? question mark?
-
 func initialize_entities() -> void:
 	for index in nodes.size():
-		var node := nodes[index]
-		initialize_node_index(node, index)
-		initialize_node_position(node, index)
-		reset_node_connections(node)
+		nodes[index].initialize(index)
 	
 	for index in links.size():
-		var link := links[index]
-		initialize_link_connections_count(link)
-		initialize_link_bias(link)
-		initialize_link_strength(link)
-
-func initialize_node_index(node: ForceGraphNode, index: int) -> void:
-	if node.index < 0: node.index = index
-
-func initialize_node_position(node: ForceGraphNode, index: int) -> void:
-	if node.fixed: return
-	if node.position != Vector2.ZERO: return
-	place_node_spirally(node, index)
-
-func reset_node_connections(node: ForceGraphNode) -> void:
-	node.connections.clear()
-
-func initialize_link_connections_count(link: ForceGraphLink) -> void:
-	nodes[link.source].connections.append(link.target)
-	nodes[link.target].connections.append(link.source)
-
-func initialize_link_bias(link: ForceGraphLink) -> void:
-	var source_connections_count := nodes[link.source].connections.size()
-	var target_connections_count := nodes[link.target].connections.size()
-	link.bias = source_connections_count / (source_connections_count + target_connections_count)
-
-func initialize_link_strength(link: ForceGraphLink) -> void:
-	link.strength = 1.0 / min(nodes[link.source].connections.size(), nodes[link.target].connections.size())
+		links[index].initialize(nodes)
 
 #endregion
 #region Link force
@@ -225,11 +190,6 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 
 func jiggle() -> float: return (random.randf() - 0.5) * 1e-6
 
-func place_node_spirally(node: Node2D, index: int, placement_radius := initial_radius, placement_angle := initial_angle) -> void:
-	var radius: float = placement_radius * sqrt(0.5 + index)
-	var angle: float = index * placement_angle
-	node.position = Vector2(radius * cos(angle), radius * sin(angle))
-
 #endregion
 #region Debug
 
@@ -248,7 +208,7 @@ func mock_fixed_nodes() -> void:
 		var node := node_scene.instantiate() as ForceGraphNode
 		node.fixed = true
 		node.strength = -60.0
-		place_node_spirally(node, index, initial_radius / 2.0, initial_angle / 2.0)
+		node.place_node_spirally(index, node.initial_radius / 2.0, node.initial_angle / 2.0)
 		nodes_container.add_child(node)
 
 func mock_links() -> void:
