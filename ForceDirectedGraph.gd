@@ -8,6 +8,7 @@ class_name ForceDirectedGraph extends Node2D
 @export var alpha_min := 0.0001
 @export var alpha_target := 0.0
 @export var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
+@export var alpha_reheat := 0.5
 
 @export_group("Many body aproximation")
 @export var theta_squared := 0.81
@@ -27,21 +28,21 @@ class_name ForceDirectedGraph extends Node2D
 @export var mock_fixed_nodes_count := 0
 @export var mock_link_count := 0
 
-var random := RandomNumberGenerator.new()
+var _random := RandomNumberGenerator.new()
 var nodes: Array[ForceGraphNode] = []
 var links: Array[ForceGraphLink] = []
 
 func _ready() -> void:
-	random.seed = "peepee-poopoo".hash()
-	mock()
-	register_children()
+	_random.seed = "peepee-poopoo".hash()
+	_connect_child_listeners()
+	_mock()
 
-func _process(delta: float) -> void:
-	center_window()
-	if alpha < alpha_min: return
-	step()
+func _process(_delta: float) -> void:
+	_center_window()
+	if alpha >= alpha_min: _step()
 
-func step() -> void:
+func _step() -> void:
+	_register_children()
 	alpha += (alpha_target - alpha) * alpha_decay
 	
 	apply_center_force()
@@ -55,13 +56,35 @@ func step() -> void:
 	for link in links:
 		link.draw_link(nodes)
 
-func center_window() -> void:
+func _center_window() -> void:
 	var rect := get_viewport().get_visible_rect()
 	position = rect.size / 2
 
+#region Controls
+
+func add_node(node: ForceGraphNode) -> void: nodes_container.add_child(node)
+func add_link(link: ForceGraphLink) -> void: links_container.add_child(link)
+
+func reheat(value := alpha_reheat) -> void: alpha = maxf(alpha, value)
+
+#endregion
 #region Node registration and initalisation
 
-func register_children() -> void:
+var _should_register_children := true
+func _on_children_changed(_child: Node) -> void: 
+	_should_register_children = true
+	reheat()
+
+func _connect_child_listeners() -> void:
+	nodes_container.child_entered_tree.connect(_on_children_changed)
+	nodes_container.child_exiting_tree.connect(_on_children_changed)
+	links_container.child_entered_tree.connect(_on_children_changed)
+	links_container.child_exiting_tree.connect(_on_children_changed)
+
+func _register_children() -> void:
+	if not _should_register_children: return
+	_should_register_children = false
+	
 	nodes.clear()
 	links.clear()
 	
@@ -188,30 +211,30 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 #endregion
 #region Utils
 
-func jiggle() -> float: return (random.randf() - 0.5) * 1e-6
+func jiggle() -> float: return (_random.randf() - 0.5) * 1e-6
 
 #endregion
 #region Debug
 
-func mock() -> void:
-	mock_nodes()
-	mock_fixed_nodes()
-	mock_links()
+func _mock() -> void:
+	_mock_nodes()
+	_mock_fixed_nodes()
+	_mock_links()
 
-func mock_nodes() -> void:
+func _mock_nodes() -> void:
 	for n in mock_nodes_count: 
 		var node := node_scene.instantiate() as ForceGraphNode
 		nodes_container.add_child(node)
 
-func mock_fixed_nodes() -> void:
+func _mock_fixed_nodes() -> void:
 	for index in mock_fixed_nodes_count:
 		var node := node_scene.instantiate() as ForceGraphNode
 		node.fixed = true
-		node.strength = -60.0
+		node.strength = -35.0
 		node.place_node_spirally(index, node.initial_radius / 2.0, node.initial_angle / 2.0)
 		nodes_container.add_child(node)
 
-func mock_links() -> void:
+func _mock_links() -> void:
 	for index in mock_link_count:
 		var link := link_scene.instantiate() as ForceGraphLink
 		link.source = index
