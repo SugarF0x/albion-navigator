@@ -72,9 +72,9 @@ func get_type() -> Type:
 	if branches.size(): return Type.BRANCH
 	return Type.VOID
 
-func is_void() -> bool: return get_type() == Type.VOID
-func is_branch() -> bool: return get_type() == Type.BRANCH
-func is_leaf() -> bool: return get_type() == Type.LEAF
+func is_void() -> bool: return leaves.size() == 0 and branches.size() == 0
+func is_branch() -> bool: return leaves.size() == 0 and branches.size() > 0
+func is_leaf() -> bool: return leaves.size() > 0
 
 func _to_string() -> String: 
 	return "QuadTreeNode(type: {type}, leaves: {leaves}, branches: {branches}, charge: {charge})".format({
