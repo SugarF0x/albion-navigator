@@ -111,9 +111,20 @@ func initialize_link_strength(link: ForceGraphLink) -> void:
 #region Link force
 
 func apply_link_force() -> void:
-	
-	
-	pass
+	for link in links:
+		var source_node := nodes[link.source]
+		var target_node := nodes[link.target]
+		
+		var spring_velocity := target_node.position + target_node.velocity - source_node.position - source_node.velocity
+		if spring_velocity.x == 0.0: spring_velocity.x = jiggle()
+		if spring_velocity.y == 0.0: spring_velocity.y = jiggle()
+		
+		var length := target_node.position.distance_to(source_node.position)
+		var adjusted_length_multiplier := (length - link.desired_distance) / length * alpha * link.strength
+		spring_velocity *= adjusted_length_multiplier
+		
+		target_node.velocity -= spring_velocity * link.bias
+		source_node.velocity += spring_velocity * (1.0 - link.bias)
 
 #endregion
 #region Gravity force
