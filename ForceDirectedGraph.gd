@@ -9,6 +9,7 @@ class_name ForceDirectedGraph extends Node2D
 @export var alpha_target := 0.0
 @export var alpha_decay := 1.0 - pow(alpha_min, 1.0 / 300.0)
 @export var alpha_reheat := 0.5
+@export var reheat_on_nodes_added := true
 
 @export_group("Many body aproximation")
 @export var theta_squared := 0.81
@@ -73,7 +74,7 @@ func reheat(value := alpha_reheat) -> void: alpha = maxf(alpha, value)
 var _should_register_children := true
 func _on_children_changed(_child: Node) -> void: 
 	_should_register_children = true
-	reheat()
+	if reheat_on_nodes_added: reheat()
 
 func _connect_child_listeners() -> void:
 	nodes_container.child_entered_tree.connect(_on_children_changed)
@@ -151,8 +152,8 @@ var tree := QuadTree.new()
 
 func apply_many_body_force() -> void:
 	tree = QuadTree.new().add_all(nodes).visit_after(accumulate)
-	for node in nodes: 
-		tree.visit(apply.bind(node))
+	#for node in nodes: 
+		#tree.visit(apply.bind(node))
 	
 	queue_redraw()
 
@@ -196,7 +197,7 @@ func apply(tree_node: QuadTreeNode, quad_rect: Rect2, graph_node: ForceGraphNode
 	
 	if tree_node.is_branch() or distance_to_center_of_mass_squared >= distance_max_squared: return false
 	
-	if tree_node.leaves[0] != graph_node or tree_node.leaves.size() > 1.0:
+	if tree_node.leaves[0] != graph_node or tree_node.leaves.size() > 1:
 		if attraction_direction.x == 0.0: attraction_direction.x = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.x, 2.0)
 		if attraction_direction.y == 0.0: attraction_direction.y = jiggle(); distance_to_center_of_mass_squared += pow(attraction_direction.y, 2.0)
 		if distance_to_center_of_mass_squared < distance_min_squared: distance_to_center_of_mass_squared = sqrt(distance_min_squared * distance_to_center_of_mass_squared)
@@ -242,9 +243,10 @@ func _mock_links() -> void:
 		links_container.add_child(link)
 
 func _draw() -> void:
-	if draw_quad_tree or draw_center_of_mass: tree.visit_after(func(node: QuadTreeNode, rect: Rect2) -> void:
+	if draw_quad_tree or draw_center_of_mass: tree.visit(func(node: QuadTreeNode, rect: Rect2) -> bool:
 		if draw_quad_tree: draw_rect(rect, Color.RED, false)
 		if draw_center_of_mass: draw_circle(node.center_of_mass, 5.0, Color.GREEN)
+		return false
 	)
 
 #endregion

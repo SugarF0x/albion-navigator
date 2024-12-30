@@ -7,6 +7,9 @@
 script = ExtResource("1_erjhh")
 
 [node name="ForceDirectedGraph" parent="." instance=ExtResource("1_hln68")]
+alpha = 0.0
+alpha_reheat = 1.0
+reheat_on_nodes_added = false
 mock_nodes_count = 400
 mock_fixed_nodes_count = 400
 mock_link_count = 25
@@ -48,6 +51,10 @@ layout_mode = 2
 layout_mode = 2
 text = "FPS: 0"
 
+[node name="AlphaLabel" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Alpha: 0"
+
 [node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -55,4 +62,4 @@ text = "Controls"
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Add Node"
+text = "Reheat"
