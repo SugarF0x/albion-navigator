@@ -16,11 +16,7 @@ func _init(initial_node: QuadTreeNode, initial_rect: Rect2) -> void:
 
 ## Returns target quadrant relative to source
 static func get_relative_quadrant(source: Vector2, target: Vector2) -> Quadrant:
-	if target.y < source.y:
-		if target.x < source.x: return Quadrant.TOP_LEFT
-		return Quadrant.TOP_RIGHT
-	if target.x < source.x: return Quadrant.BOTTOM_LEFT
-	return Quadrant.BOTTOM_RIGHT
+	return int(target.y >= source.y) << 1 | int(target.x >= source.x) as Quadrant
 
 ## Half the quadrant size and set position to respective quadrant -> returns new rect
 static func shrink_rect_to_quadrant(rect_to_shrink: Rect2, quadrant: Quadrant) -> Rect2:
