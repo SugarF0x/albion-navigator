@@ -63,8 +63,11 @@ public class QuadTreeNode
             default:
             {
                 var branch = populatedBranches.First();
-                // TODO: finish this, seems like i forgor
-                break;
+                if (!branch.IsLeaf) return;
+
+                Branches = [];
+                foreach (var leaf in branch.Leaves) AttachLeaf(leaf);
+                return;
             }
         }
     }
