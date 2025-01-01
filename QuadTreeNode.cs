@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlbionNavigator;
 using Godot;
 
 namespace AlbionNavigator;
@@ -46,7 +45,7 @@ public class QuadTreeNode
 
     public void CreateEmptyBranches()
     {
-        Branches = Enumerable.Range(0, Quad.QuadCount).Select(i => new QuadTreeNode()).ToArray();
+        Branches = Enumerable.Range(0, Quad.QuadCount).Select(_ => new QuadTreeNode()).ToArray();
     }
 
     public void TrimBranches()
@@ -64,6 +63,7 @@ public class QuadTreeNode
             default:
             {
                 var branch = populatedBranches.First();
+                // TODO: finish this, seems like i forgor
                 break;
             }
         }

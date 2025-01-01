@@ -2,6 +2,7 @@
 
 namespace AlbionNavigator;
 
+[GlobalClass]
 public partial class ForceGraphLink : Node2D
 {
     public Line2D Line;

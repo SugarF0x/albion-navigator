@@ -7,7 +7,7 @@ public struct Quad(QuadTreeNode node, Rect2 rect)
 {
 	public QuadTreeNode Node = node;
 	public Rect2 Rect = rect;
-	
+
 	public enum Quadrant {
 		TopLeft,
 		TopRight,

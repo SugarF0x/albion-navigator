@@ -3,6 +3,7 @@ using Godot;
 
 namespace AlbionNavigator;
 
+[GlobalClass]
 public partial class ForceGraphNode : Node2D
 {
     [ExportGroup("Forces")]
