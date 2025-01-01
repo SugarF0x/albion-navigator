@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://va4radvw8bgc"]
 
-[ext_resource type="Script" path="res://ForceGraphLink.gd" id="1_hkmtu"]
+[ext_resource type="Script" path="res://ForceDirectedGraph.cs" id="1_hkmtu"]
 
 [node name="DummyLink" type="Node2D"]
 script = ExtResource("1_hkmtu")
