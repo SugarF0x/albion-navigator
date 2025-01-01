@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://r16wesang506"]
 
-[ext_resource type="Script" path="res://ForceGraphNode.gd" id="1_ko5xn"]
+[ext_resource type="Script" path="res://ForceGraphNode.cs" id="1_ko5xn"]
 [ext_resource type="Texture2D" uid="uid://t0cxp1rimss3" path="res://icon.svg" id="2_4b6rp"]
 
 [node name="DummyNode" type="Node2D"]

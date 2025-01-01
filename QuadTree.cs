@@ -35,9 +35,9 @@ public class QuadTree
         return this;
     }
 
-    public QuadTree Add(Vector2 node, bool shouldCover = true)
+    public QuadTree Add(ForceGraphNode node, bool shouldCover = true)
     {
-        if (shouldCover) Cover(node);
+        if (shouldCover) Cover(node.Position);
 
         if (Root.IsVoid)
         {
@@ -51,7 +51,7 @@ public class QuadTree
         while (exploredNode.IsBranch)
         {
             var midPoint = exploredRect.GetCenter();
-            var exploredNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, node);
+            var exploredNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, node.Position);
             exploredRect = Quad.ShrinkRectToQuadrant(exploredRect, exploredNodeQuadrant);
             exploredNode = exploredNode.Branches[(int)exploredNodeQuadrant];
         }
@@ -65,8 +65,8 @@ public class QuadTree
         while (true)
         {
             var midPoint = exploredRect.GetCenter();
-            var oldNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, exploredNode.Leaves.First());
-            var newNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, node);
+            var oldNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, exploredNode.Leaves.First().Position);
+            var newNodeQuadrant = Quad.GetRelativeQuadrant(midPoint, node.Position);
             
             exploredNode.BranchOut(oldNodeQuadrant);
             
@@ -83,7 +83,7 @@ public class QuadTree
         return this;
     }
 
-    public QuadTree AddAll(Vector2[] nodes)
+    public QuadTree AddAll(ForceGraphNode[] nodes)
     {
         switch (nodes.Length)
         {
@@ -91,10 +91,10 @@ public class QuadTree
             case 1: return Add(nodes.First());
         }
 
-        var boundingBox = new Rect2(nodes.First(), Vector2.Zero);
+        var boundingBox = new Rect2(nodes.First().Position, Vector2.Zero);
         for (var i = 1; i < nodes.Length; i++)
         {
-            boundingBox = boundingBox.Merge(new Rect2(nodes[i], Vector2.Zero));
+            boundingBox = boundingBox.Merge(new Rect2(nodes[i].Position, Vector2.Zero));
         }
 
         Cover(boundingBox.Position).Cover(boundingBox.End);
