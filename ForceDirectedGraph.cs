@@ -22,6 +22,7 @@ public partial class ForceDirectedGraph : Node2D
     [ExportGroup("Gravitational pull")]
     [Export] public float GravityStrength = 0.1f;
     [Export] public float CentralStrength = 1f;
+    [Export] public float GravityDesiredDistance = 200f;
 
     [ExportGroup("Debug")] 
     [Export] public PackedScene NodeScene;
@@ -53,6 +54,9 @@ public partial class ForceDirectedGraph : Node2D
         CenterWindow();
         if (Alpha >= AlphaMin) Step();
     }
+
+    public void AddNode(ForceGraphNode node) => _nodesContainer.AddChild(node);
+    public void AddLink(ForceGraphLink link) => _linksContainer.AddChild(link);
     
     private bool _shouldRegisterChildren = true;
 
@@ -153,7 +157,7 @@ public partial class ForceDirectedGraph : Node2D
     
     private void ApplyGravityForce()
     {
-        foreach (var node in Nodes) node.Velocity -= node.Position * GravityStrength * Alpha;
+        foreach (var node in Nodes) node.Velocity -= node.Position * GravityStrength * Alpha * (node.Position.DistanceTo(Vector2.Zero) > GravityDesiredDistance ? 1f : -1f);
     }
     
     private void ApplyManyBodyForce()
@@ -203,25 +207,24 @@ public partial class ForceDirectedGraph : Node2D
 
         if (quadWidth * quadWidth / ThetaSquared < distanceToCenterOfMassSquared)
         {
-            if (distanceToCenterOfMassSquared < DistanceMaxSquared)
-            {
-                if (attractionDirection.X == 0f)
-                {
-                    attractionDirection.X = Jiggle;
-                    distanceToCenterOfMassSquared += float.Pow(attractionDirection.X, 2f);
-                }
-
-                if (attractionDirection.Y == 0f)
-                {
-                    attractionDirection.Y = Jiggle;
-                    distanceToCenterOfMassSquared += float.Pow(attractionDirection.Y, 2f);
-                }
-
-                if (distanceToCenterOfMassSquared < DistanceMinSquared) distanceToCenterOfMassSquared = float.Sqrt(DistanceMinSquared * distanceToCenterOfMassSquared);
-
-                node.Velocity += attractionDirection * quad.Node.Charge * Alpha / distanceToCenterOfMassSquared;
-            }
+            if (!(distanceToCenterOfMassSquared < DistanceMaxSquared)) return true;
             
+            if (attractionDirection.X == 0f)
+            {
+                attractionDirection.X = Jiggle;
+                distanceToCenterOfMassSquared += float.Pow(attractionDirection.X, 2f);
+            }
+
+            if (attractionDirection.Y == 0f)
+            {
+                attractionDirection.Y = Jiggle;
+                distanceToCenterOfMassSquared += float.Pow(attractionDirection.Y, 2f);
+            }
+
+            if (distanceToCenterOfMassSquared < DistanceMinSquared) distanceToCenterOfMassSquared = float.Sqrt(DistanceMinSquared * distanceToCenterOfMassSquared);
+
+            node.Velocity += attractionDirection * quad.Node.Charge * Alpha / distanceToCenterOfMassSquared;
+
             return true;
         }
 
@@ -279,7 +282,6 @@ public partial class ForceDirectedGraph : Node2D
             var node = NodeScene.Instantiate() as ForceGraphNode;
             if (node == null) continue;
             node.Frozen = true;
-            node.Strength = -35f;
             node.PlaceNodeSpirally(i, node.InitialRadius / 2f, node.InitialAngle / 2f);
             _nodesContainer.AddChild(node);
         }

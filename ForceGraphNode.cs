@@ -8,7 +8,7 @@ public partial class ForceGraphNode : Node2D
 {
     [ExportGroup("Forces")]
     [Export] public bool Frozen { get; set; }
-    [Export] public float Strength { get; set; } = -30f;
+    [Export] public float Strength { get; set; } = -40f;
     [Export] public float VelocityDecay { get; set; } = 0.6f;
 
     [ExportGroup("Initial Node Position")]
