@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Godot;
-using Godot.NativeInterop;
 
 namespace AlbionNavigator;
 
@@ -46,9 +45,10 @@ public partial class ForceDirectedGraph : Node2D
         _linksContainer = GetNode<Node2D>("%LinksContainer");
         _nodesContainer = GetNode<Node2D>("%NodesContainer");
         ConnectChildListeners();
+        Mock();
     }
 
-    public void _Process(float delta)
+    public override void _Process(double _)
     {
         CenterWindow();
         if (Alpha >= AlphaMin) Step();
@@ -295,7 +295,7 @@ public partial class ForceDirectedGraph : Node2D
     public override void _Draw()
     {
         if (!DrawQuadTree && !DrawCenterOfMass) return;
-        _tree.Visit(quad =>
+        _tree?.Visit(quad =>
         {
             if (DrawQuadTree) DrawRect(quad.Rect, Colors.Red, false);
             if (DrawCenterOfMass) DrawCircle(quad.Node.CenterOfMass, 5f, Colors.Green);
