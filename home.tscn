@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dds21sejjugrf"]
+[gd_scene load_steps=5 format=3 uid="uid://dds21sejjugrf"]
 
 [ext_resource type="Script" path="res://Home.gd" id="1_erjhh"]
 [ext_resource type="PackedScene" uid="uid://dr1owil5gnkef" path="res://ForceDirectedGraph.tscn" id="1_hln68"]
+[ext_resource type="PackedScene" uid="uid://r16wesang506" path="res://DummyNode.tscn" id="3_bahwl"]
+[ext_resource type="PackedScene" uid="uid://va4radvw8bgc" path="res://DummyLink.tscn" id="4_ja4n2"]
 
 [node name="Home" type="Node2D"]
 script = ExtResource("1_erjhh")
 
 [node name="ForceDirectedGraph" parent="." instance=ExtResource("1_hln68")]
-alpha = 0.0
-alpha_reheat = 1.0
-reheat_on_nodes_added = false
-mock_nodes_count = 400
-mock_fixed_nodes_count = 400
-mock_link_count = 25
+ReheatOnNodesAdded = false
+NodeScene = ExtResource("3_bahwl")
+LinkScene = ExtResource("4_ja4n2")
+MockNodesCount = 400
+MockFixedNodesCount = 400
+MockLinksCount = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -25,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

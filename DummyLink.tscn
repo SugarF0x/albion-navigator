@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://va4radvw8bgc"]
 
-[ext_resource type="Script" path="res://ForceDirectedGraph.cs" id="1_hkmtu"]
+[ext_resource type="Script" path="res://ForceGraphLink.cs" id="1_ge4uv"]
 
 [node name="DummyLink" type="Node2D"]
-script = ExtResource("1_hkmtu")
+script = ExtResource("1_ge4uv")
 
 [node name="Line2D" type="Line2D" parent="."]
 width = 1.0

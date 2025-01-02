@@ -14,13 +14,14 @@ public partial class ForceGraphLink : Node2D
     public float Bias = 1;
     public float Strength = 1;
 
+    public ForceGraphLink() { }
     public ForceGraphLink(int? source = null, int? target = null)
     {
         if (!source.HasValue || !target.HasValue) return;
         Source = source.Value;
         Target = target.Value;
     }
-    
+
     public override void _Ready()
     {
         Line = GetNode<Line2D>("Line2D");
