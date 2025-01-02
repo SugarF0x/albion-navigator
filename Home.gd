@@ -6,8 +6,8 @@ extends Node2D
 @onready var button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/Button
 
 func _ready() -> void:
-	button.pressed.connect(force_directed_graph.reheat)
+	button.pressed.connect(force_directed_graph.Reheat)
 
 func _process(delta: float) -> void:
 	fps_label.text = "FPS: {fps}".format({ "fps": roundf((1 / delta) * 100.0) / 100.0 })
-	alpha_label.text = "Alpha: {alpha}".format({ "alpha": force_directed_graph.alpha })
+	alpha_label.text = "Alpha: {alpha}".format({ "alpha": force_directed_graph.Alpha })

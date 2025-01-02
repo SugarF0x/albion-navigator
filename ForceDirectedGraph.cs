@@ -15,7 +15,7 @@ public partial class ForceDirectedGraph : Node2D
     [Export] public bool ReheatOnNodesAdded = true;
 
     [ExportGroup("Many body simulation")]
-    [Export] public float ThetaSquared = 0.81f;
+    [Export] public float ThetaSquared = 0.91f;
     [Export] public float DistanceMinSquared = 1f;
     [Export] public float DistanceMaxSquared = float.PositiveInfinity;
 
@@ -87,9 +87,14 @@ public partial class ForceDirectedGraph : Node2D
         foreach (var link in Links) link.Initialize(Nodes);
     }
 
-    public void Reheat(float? value = null)
+    public void Reheat()
     {
-        Alpha = value.HasValue ? float.Max(Alpha, value.Value) : AlphaReheat;
+        Alpha = AlphaReheat;
+    }
+    
+    public void Reheat(float value)
+    {
+        Alpha = float.Max(Alpha, value);
     }
 
     private void CenterWindow()
