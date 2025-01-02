@@ -62,6 +62,12 @@ public class QuadTree
             return this;
         }
 
+        if (node.Position.IsEqualApprox(exploredNode.Leaves.First().Position))
+        {
+            exploredNode.AttachLeaf(node);
+            return this;
+        }
+
         while (true)
         {
             var midPoint = exploredRect.GetCenter();
@@ -92,14 +98,11 @@ public class QuadTree
         }
 
         var boundingBox = new Rect2(nodes.First().Position, Vector2.Zero);
-        for (var i = 1; i < nodes.Length; i++)
-        {
-            boundingBox = boundingBox.Merge(new Rect2(nodes[i].Position, Vector2.Zero));
-        }
+        boundingBox = nodes.Skip(1).Aggregate(boundingBox, (current, node) => current.Merge(new Rect2(node.Position, Vector2.Zero)));
 
         Cover(boundingBox.Position).Cover(boundingBox.End);
         foreach (var node in nodes) Add(node, false);
-
+        
         return this;
     }
     
@@ -121,7 +124,7 @@ public class QuadTree
             if (quad.Node.IsVoid) continue;
             next.Add(quad);
 
-            for (var branchQuadrantIndex = 0; branchQuadrantIndex < Quad.QuadCount; branchQuadrantIndex++)
+            for (var branchQuadrantIndex = 0; branchQuadrantIndex < quad.Node.Branches.Length; branchQuadrantIndex++)
             {
                 var branch = quad.Node.Branches[branchQuadrantIndex];
                 if (branch.IsVoid) continue;
@@ -143,7 +146,7 @@ public class QuadTree
     {
         List<Quad> quads = [];
         
-        if (Root.IsVoid) quads.Add(new Quad(Root, Rect));
+        if (!Root.IsVoid) quads.Add(new Quad(Root, Rect));
 
         while (true)
         {
@@ -154,7 +157,7 @@ public class QuadTree
             if (quad.Node.IsVoid) continue;
             if (callback(quad)) continue;
 
-            for (var branchQuadrantIndex = Quad.QuadCount - 1; branchQuadrantIndex >= 0; branchQuadrantIndex--)
+            for (var branchQuadrantIndex = quad.Node.Branches.Length - 1; branchQuadrantIndex >= 0; branchQuadrantIndex--)
             {
                 var branch = quad.Node.Branches[branchQuadrantIndex];
                 if (branch.IsVoid) continue;
