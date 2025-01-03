@@ -39,11 +39,11 @@ public struct Zone(int id, Zone.ZoneType type, string displayName, int[] connect
 
             var positionLength = reader.ReadInt32();
             Vector2? position = null;
-            if (positionLength == 2) // Expecting 2D position
+            if (positionLength == 2)
             {
                 var posX = reader.ReadDouble();
                 var posY = reader.ReadDouble();
-                position = new Vector2((float)posX, (float)posY); // Convert to Vector2
+                position = new Vector2((float)posX, (float)posY);
             }
             else if (positionLength != 0)
             {
@@ -59,7 +59,6 @@ public struct Zone(int id, Zone.ZoneType type, string displayName, int[] connect
                 connections[i] = reader.ReadInt32();
             }
 
-            // Add deserialized Zone to the list
             zones.Add(new Zone(id, type, displayName, connections, position));
         }
 
