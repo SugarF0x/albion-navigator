@@ -13,7 +13,7 @@ script = ExtResource("1_erjhh")
 [node name="BackgroundShaderLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="SchematicShaderRect" type="ColorRect" parent="BackgroundShaderLayer"]
+[node name="ColorRect" type="ColorRect" parent="BackgroundShaderLayer"]
 material = ExtResource("2_uvwmt")
 anchors_preset = 15
 anchor_right = 1.0
