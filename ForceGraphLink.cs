@@ -27,6 +27,12 @@ public partial class ForceGraphLink : Node2D
         Line = GetNode<Line2D>("Line2D");
     }
 
+    public void Connect(int from, int to)
+    {
+        Source = from;
+        Target = to;
+    }
+
     public void DrawLink(ForceGraphNode[] nodes)
     {
         Line.ClearPoints();

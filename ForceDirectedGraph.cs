@@ -1,11 +1,17 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Godot;
+using AlbionNavigator.Data;
 
 namespace AlbionNavigator;
 
 [GlobalClass]
 public partial class ForceDirectedGraph : Node2D
 {
+    [ExportGroup("Packed Scenes")] 
+    [Export] public PackedScene NodeScene;
+    [Export] public PackedScene LinkScene;
+    
     [ExportGroup("Graph Heat")] 
     [Export] public float Alpha = 1f;
     [Export] public float AlphaMin = 0.0001f;
@@ -25,13 +31,8 @@ public partial class ForceDirectedGraph : Node2D
     [Export] public float GravityDesiredDistance = 200f;
 
     [ExportGroup("Debug")] 
-    [Export] public PackedScene NodeScene;
-    [Export] public PackedScene LinkScene;
     [Export] public bool DrawQuadTree;
     [Export] public bool DrawCenterOfMass;
-    [Export] public int MockNodesCount;
-    [Export] public int MockFixedNodesCount;
-    [Export] public int MockLinksCount;
 
     private RandomNumberGenerator _random = new ();
     private Node2D _linksContainer;
@@ -42,11 +43,15 @@ public partial class ForceDirectedGraph : Node2D
 
     public override void _Ready()
     {
+        if (NodeScene?.Instantiate() is not ForceGraphNode) throw new InvalidCastException("NodeScene is not a ForceGraphNode");
+        if (LinkScene?.Instantiate() is not ForceGraphLink) throw new InvalidCastException("LinkScene is not a ForceGraphLink");
+        
         _random.Seed = "peepee-poopoo".Hash();
         _linksContainer = GetNode<Node2D>("%LinksContainer");
         _nodesContainer = GetNode<Node2D>("%NodesContainer");
+
+        PopulateZones();
         ConnectChildListeners();
-        Mock();
     }
 
     public override void _Process(double _)
@@ -54,9 +59,34 @@ public partial class ForceDirectedGraph : Node2D
         CenterWindow();
         if (Alpha >= AlphaMin) Step();
     }
+    
 
     public void AddNode(ForceGraphNode node) => _nodesContainer.AddChild(node);
     public void AddLink(ForceGraphLink link) => _linksContainer.AddChild(link);
+
+    private void PopulateZones()
+    {
+        var zones = Zone.LoadZoneBinaries();
+
+        // TODO: replace with some proper zone and link nodes later on
+        for (var i = 0; i < zones.Length; i++)
+        {
+            var zone = zones[i];
+            if (NodeScene.Instantiate() is not ForceGraphNode node) continue;
+            
+            node.Position = zone.Position;
+            node.Index = zone.Id;
+            if (node.Position != Vector2.Zero) node.Frozen = true;
+            AddNode(node);
+
+            foreach (var connection in zone.Connections.Where(index => index > i))
+            {
+                if (LinkScene.Instantiate() is not ForceGraphLink link) continue;
+                link.Connect(i, connection);
+                AddLink(link);
+            }
+        }
+    }
     
     private bool _shouldRegisterChildren = true;
 
@@ -257,47 +287,6 @@ public partial class ForceDirectedGraph : Node2D
     }
 
     private float Jiggle => (_random.Randf() - 0.5f) * 1e-6f;
-
-    private void Mock()
-    {
-        MockNodes();
-        MockFixedNodes();
-        MockLinks();
-    }
-
-    private void MockNodes()
-    {
-        for (var i = 0; i < MockNodesCount; i++)
-        {
-            var node = NodeScene.Instantiate() as ForceGraphNode;
-            if (node == null) continue;
-            _nodesContainer.AddChild(node);
-        }
-    }
-
-    private void MockFixedNodes()
-    {
-        for (var i = 0; i < MockFixedNodesCount; i++)
-        {
-            var node = NodeScene.Instantiate() as ForceGraphNode;
-            if (node == null) continue;
-            node.Frozen = true;
-            node.PlaceNodeSpirally(i, node.InitialRadius / 2f, node.InitialAngle / 2f);
-            _nodesContainer.AddChild(node);
-        }
-    }
-
-    private void MockLinks()
-    {
-        for (var i = 0; i < MockLinksCount; i++)
-        {
-            var link = LinkScene.Instantiate() as ForceGraphLink;
-            if (link == null) continue;
-            link.Source = i;
-            link.Target = i + 4;
-            _linksContainer.AddChild(link);
-        }
-    }
 
     public override void _Draw()
     {
