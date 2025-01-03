@@ -4,7 +4,7 @@ extends Node2D
 @onready var alpha_label: Label = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/AlphaLabel
 @onready var force_directed_graph: ForceDirectedGraph = $ForceDirectedGraph
 @onready var button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/Button
-@onready var map_background: Sprite2D = $"Map-background"
+@onready var map_background: Sprite2D = $"MapBackground"
 
 func _ready() -> void:
 	button.pressed.connect(force_directed_graph.Reheat)

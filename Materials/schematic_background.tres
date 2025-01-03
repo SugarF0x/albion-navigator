@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ubqwj3yjdpe5"]
+
+[ext_resource type="Shader" path="res://Materials/schematic_background.gdshader" id="1_v3dx4"]
+
+[resource]
+shader = ExtResource("1_v3dx4")
+shader_parameter/base_color = Color(0.196, 0.231, 0.267, 1)
+shader_parameter/border_color = Color(1, 1, 1, 0.2)
+shader_parameter/transition_color = Color(1, 1, 1, 0.1)
+shader_parameter/tile_size = Vector2(50, 50)
