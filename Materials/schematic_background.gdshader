@@ -17,8 +17,7 @@ uniform float threshold_divider = 1.9;
 void fragment() {
 	vec2 uv = FRAGCOORD.xy / SCREEN_PIXEL_SIZE;
 	
-	float darkness_factor = clamp(UV.y - 0.60, 0.0, 0.40);
-	COLOR = vec4(base_color.rgb * (1.0 - darkness_factor), base_color.a);
+	COLOR = base_color;
 	
 	bool is_on_cell_border = (
 		mod(FRAGCOORD.x, cell_size) < cell_thickness / threshold_divider
@@ -41,54 +40,6 @@ void fragment() {
 		COLOR = cell_color;
 	}
 	
-
-    //vec4 base_color = color_c;
-
-    // Horizontal gradient logic
-    //if (row < 9.0) {
-        //base_color = color_n;
-    //} else if (row < 10.0) {
-        //base_color = color_b;
-    //} else if (row < 19.0) {
-        //base_color = color_n;
-    //} else if (row < 20.0) {
-        //base_color = color_t;
-    //} else if (row < 29.0) {
-        //base_color = color_n;
-    //} else if (row < 30.0) {
-        //base_color = color_t;
-    //} else if (row < 39.0) {
-        //base_color = color_n;
-    //} else if (row < 40.0) {
-        //base_color = color_t;
-    //} else if (row < 49.0) {
-        //base_color = color_n;
-    //} else if (row < 50.0) {
-        //base_color = color_t;
-    //}
-
-    // Vertical gradient logic
-    //if (col < 9.0) {
-        //base_color = mix(base_color, color_n, 0.5);
-    //} else if (col < 10.0) {
-        //base_color = mix(base_color, color_b, 0.5);
-    //} else if (col < 19.0) {
-        //base_color = mix(base_color, color_n, 0.5);
-    //} else if (col < 20.0) {
-        //base_color = mix(base_color, color_t, 0.5);
-    //} else if (col < 29.0) {
-        //base_color = mix(base_color, color_n, 0.5);
-    //} else if (col < 30.0) {
-        //base_color = mix(base_color, color_t, 0.5);
-    //} else if (col < 39.0) {
-        //base_color = mix(base_color, color_n, 0.5);
-    //} else if (col < 40.0) {
-        //base_color = mix(base_color, color_t, 0.5);
-    //} else if (col < 49.0) {
-        //base_color = mix(base_color, color_n, 0.5);
-    //} else if (col < 50.0) {
-        //base_color = mix(base_color, color_t, 0.5);
-    //}
-
-    //COLOR = base_color;
+	float darkness_factor = clamp(UV.y - 0.60, 0.0, 0.40);
+	COLOR = vec4(COLOR.rgb * (1.0 - darkness_factor), COLOR.a);
 }
