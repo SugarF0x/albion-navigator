@@ -56,7 +56,6 @@ public partial class ForceDirectedGraph : Node2D
 
     public override void _Process(double _)
     {
-        CenterWindow();
         if (Alpha >= AlphaMin) Step();
     }
     
@@ -129,11 +128,6 @@ public partial class ForceDirectedGraph : Node2D
     public void Reheat(float value)
     {
         Alpha = float.Max(Alpha, value);
-    }
-
-    private void CenterWindow()
-    {
-        Position = GetViewport().GetVisibleRect().Size / 2;
     }
 
     private void Step()
