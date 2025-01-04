@@ -5,6 +5,7 @@ extends Node2D
 @onready var force_directed_graph: ForceDirectedGraph = $ForceDirectedGraph
 @onready var button: Button = $CanvasLayer/Control/PanelContainer/MarginContainer/VBoxContainer/Button
 @onready var map_background: Sprite2D = $"MapBackground"
+@onready var camera_2d: Camera2D = $Camera2D
 
 func _ready() -> void:
 	button.pressed.connect(force_directed_graph.Reheat)

@@ -12,7 +12,6 @@
 script = ExtResource("1_erjhh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
 script = ExtResource("2_pp2f8")
 
 [node name="BackgroundShaderLayer" type="CanvasLayer" parent="."]
