@@ -9,9 +9,9 @@ extends Node2D
 
 func _ready() -> void:
 	button.pressed.connect(force_directed_graph.Reheat)
+	center_children()
 
 func _process(delta: float) -> void:
-	center_children()
 	fps_label.text = "FPS: {fps}".format({ "fps": roundf((1 / delta) * 100.0) / 100.0 })
 	alpha_label.text = "Alpha: {alpha}".format({ "alpha": force_directed_graph.Alpha })
 
