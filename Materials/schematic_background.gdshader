@@ -1,10 +1,9 @@
 shader_type canvas_item;
 
 // Colors
-uniform vec4 base_color : source_color = vec4(0.2, 0.23, 0.27, 1.0); // Base color ($c)
-uniform vec4 grid_color : source_color = vec4(1.0, 1.0, 1.0, 0.2);   // Transparent white ($b)
-uniform vec4 cell_color : source_color = vec4(1.0, 1.0, 1.0, 0.1);   // Transparent white ($t)
-uniform vec4 transparent_color : source_color = vec4(0.0, 0.0, 0.0, 0.0);   // Fully transparent ($n)
+uniform vec4 base_color : source_color = vec4(0.198, 0.234, 0.275, 1.0); // Base color ($c)
+uniform vec4 grid_color : source_color = vec4(0.396, 0.468, 0.55, 1.0);   // Transparent white ($b)
+uniform vec4 cell_color : source_color = vec4(0.297, 0.351,0.4125, 1.0);   // Transparent white ($t)
 
 // Grid settings
 uniform float cell_size = 25.0; // Size of the grid
