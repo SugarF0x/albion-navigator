@@ -5,6 +5,11 @@
 [resource]
 shader = ExtResource("1_v3dx4")
 shader_parameter/base_color = Color(0.196, 0.231, 0.267, 1)
-shader_parameter/border_color = Color(1, 1, 1, 0.2)
-shader_parameter/transition_color = Color(1, 1, 1, 0.1)
-shader_parameter/tile_size = Vector2(50, 50)
+shader_parameter/grid_color = Color(1, 1, 1, 0.2)
+shader_parameter/cell_color = Color(1, 1, 1, 0.1)
+shader_parameter/transparent_color = Color(0, 0, 0, 0)
+shader_parameter/cell_size = 25.0
+shader_parameter/grid_multiplier = 5.0
+shader_parameter/cell_thickness = 1.0
+shader_parameter/grid_thickness = 2.0
+shader_parameter/threshold_divider = 1.9
