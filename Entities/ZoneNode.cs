@@ -36,5 +36,6 @@ public partial class ZoneNode : ForceGraphNode
 	{
 		DrawCircle(Vector2.Zero, 5.0f, Colors.White);
 		DrawCircle(Vector2.Zero, 4.0f, TypeToColorMap[Type]);
+		Modulate = Modulate with { A = Connections.Count > 0 ? 1f : 0.25f };
 	}
 }
