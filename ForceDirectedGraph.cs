@@ -2,6 +2,7 @@
 using System.Linq;
 using Godot;
 using AlbionNavigator.Data;
+using AlbionNavigator.Entities;
 
 namespace AlbionNavigator;
 
@@ -67,7 +68,6 @@ public partial class ForceDirectedGraph : Node2D
     {
         var zones = Zone.LoadZoneBinaries();
 
-        // TODO: replace with some proper zone and link nodes later on
         for (var i = 0; i < zones.Length; i++)
         {
             var zone = zones[i];
@@ -76,6 +76,12 @@ public partial class ForceDirectedGraph : Node2D
             node.Position = zone.Position;
             node.Index = zone.Id;
             if (node.Position != Vector2.Zero) node.Frozen = true;
+
+            if (node is ZoneNode zoneNode)
+            {
+                zoneNode.Type = zone.Type;
+            }
+            
             AddNode(node);
 
             foreach (var connection in zone.Connections.Where(index => index > i))
