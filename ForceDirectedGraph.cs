@@ -75,6 +75,7 @@ public partial class ForceDirectedGraph : Node2D
             
             node.Position = zone.Position;
             node.Index = zone.Id;
+            node.Connections = zone.Connections.ToList();
             if (node.Position != Vector2.Zero) node.Frozen = true;
 
             if (node is ZoneNode zoneNode)
