@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using Godot;
+using FileAccess = Godot.FileAccess;
 
 namespace AlbionNavigator.Data;
 
@@ -28,8 +29,18 @@ public struct Zone(int id, Zone.ZoneType type, string displayName, int[] connect
     {
         var zones = new List<Zone>();
 
-        using var stream = File.OpenRead("./Data/zones.bin");
-        using var reader = new BinaryReader(stream);
+        var file = FileAccess.Open("res://Data/zones.bin", FileAccess.ModeFlags.Read);
+        if (file == null)
+        {
+            GD.Print("Failed to open the file.");
+            return [];
+        }
+
+        var data = file.GetBuffer((int)file.GetLength());
+        file.Close();
+
+        using var memoryStream = new MemoryStream(data);
+        using var reader = new BinaryReader(memoryStream);
         while (reader.BaseStream.Position < reader.BaseStream.Length)
         {
             var id = reader.ReadInt32();
