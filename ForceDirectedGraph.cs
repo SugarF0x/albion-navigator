@@ -81,6 +81,7 @@ public partial class ForceDirectedGraph : Node2D
             if (node is ZoneNode zoneNode)
             {
                 zoneNode.Type = zone.Type;
+                zoneNode.DisplayName = zone.DisplayName;
             }
             
             AddNode(node);

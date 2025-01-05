@@ -19,6 +19,8 @@ public partial class ZoneNode : ForceGraphNode
 		}
 	}
 
+	[Export] public string DisplayName { get; set; } = "";
+
 	private Zone.ZoneType _type = Zone.ZoneType.StartingCity; 
 
 	public readonly Dictionary<Zone.ZoneType, Color> TypeToColorMap = new()
