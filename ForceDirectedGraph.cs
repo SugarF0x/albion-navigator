@@ -62,7 +62,12 @@ public partial class ForceDirectedGraph : Node2D
     
 
     public void AddNode(ForceGraphNode node) => _nodesContainer.AddChild(node);
-    public void AddLink(ForceGraphLink link) => _linksContainer.AddChild(link);
+    public void AddLink(ForceGraphLink link)
+    {
+        if (link.Source >= Nodes.Length || link.Target >= Nodes.Length) throw new IndexOutOfRangeException("Cannot add link: no node to connect to");
+        if (Nodes[link.Source].Connections.Contains(link.Source)) throw new ArgumentException("Cannot add link: source already connected");
+        _linksContainer.AddChild(link);
+    }
 
     private void PopulateZones()
     {
