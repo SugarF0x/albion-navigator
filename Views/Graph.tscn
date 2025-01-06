@@ -33,6 +33,6 @@ position = Vector2(561, 343)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("4_ky6eh")
 
-[node name="ForceDirectedGraph" parent="." instance=ExtResource("5_6q50f")]
+[node name="ForceDirectedGraph" parent="." groups=["ForceGraph"] instance=ExtResource("5_6q50f")]
 NodeScene = ExtResource("6_w81mh")
 LinkScene = ExtResource("7_fk26d")

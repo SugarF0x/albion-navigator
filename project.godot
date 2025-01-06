@@ -23,6 +23,10 @@ gdscript/warnings/untyped_declaration=2
 
 project/assembly_name="Albion Navigator"
 
+[global_group]
+
+ForceGraph=""
+
 [rendering]
 
 anti_aliasing/quality/msaa_2d=3
