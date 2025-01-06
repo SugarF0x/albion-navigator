@@ -17,7 +17,8 @@ script = ExtResource("2_6qgp7")
 [node name="BackgroundShaderLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="BackgroundShaderLayer"]
+[node name="BackgroundShaderRect" type="ColorRect" parent="BackgroundShaderLayer"]
+unique_name_in_owner = true
 material = ExtResource("3_s17xd")
 anchors_preset = 15
 anchor_right = 1.0
