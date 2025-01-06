@@ -78,7 +78,7 @@ const validNodes = nodes.filter(e => {
 const formattedZones = validNodes.map(e => ({
   id: Number(e._attr.id),
   displayName: e._attr.displayname,
-  position: [e.x, e.y],
+  position: [e.x, -e.y],
   type: (() => {
     for (const [type, index] of Object.entries(zoneTypeMap))
       if (e._attr.type.includes(type)) return index
