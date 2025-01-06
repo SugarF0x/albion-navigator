@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using System;
+using Godot;
 
 namespace AlbionNavigator;
 
@@ -44,13 +45,22 @@ public partial class ForceGraphLink : Node2D
 
     public void Initialize(ForceGraphNode[] nodes)
     {
-        InitConnectionsCount(nodes);
-        InitBias(nodes);
-        InitStrength(nodes);
+        try
+        {
+            InitConnectionsCount(nodes);
+            InitBias(nodes);
+            InitStrength(nodes);
+        }
+        catch
+        {
+            QueueFree();
+        }
     }
 
     private void InitConnectionsCount(ForceGraphNode[] nodes)
     {
+        if (Source >= nodes.Length || Target >= nodes.Length) throw new IndexOutOfRangeException("Cannot add link: no node to connect to");
+        if (nodes[Source].Connections.Contains(Target)) throw new ArgumentException("Cannot add link: source already connected");
         nodes[Source].Connections.Add(Target);
         nodes[Target].Connections.Add(Source);
     }
