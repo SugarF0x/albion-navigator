@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bt7ak6con6l34"]
+[gd_scene load_steps=2 format=3 uid="uid://bt7ak6con6l34"]
+
+[ext_resource type="Script" path="res://Views/Controls/main.gd" id="1_c5vuf"]
 
 [node name="Main" type="TabBar"]
 anchors_preset = 15
@@ -6,6 +8,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c5vuf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -20,6 +23,16 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="ReheatButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Reheat"
+
+[node name="AddRandomLinkButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Add random link"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
