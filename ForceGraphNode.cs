@@ -47,6 +47,7 @@ public partial class ForceGraphNode : Node2D
         InitIndex(graphIndex);
         InitPosition();
         InitConnections();
+        QueueRedraw();
     }
 
     private void InitIndex(int graphIndex)
