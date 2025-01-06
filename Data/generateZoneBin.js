@@ -84,7 +84,7 @@ const formattedZones = validNodes.map(e => ({
       if (e._attr.type.includes(type)) return index
     return -1
   })(),
-  connections: e.exits.map(({ _attr: { targetid } }) => Number(targetid.split('@')[1]))
+  connections: Array.from(new Set(e.exits.map(({ _attr: { targetid } }) => Number(targetid.split('@')[1]))))
 }))
 
 const uniqueIds = new Set<number>()
