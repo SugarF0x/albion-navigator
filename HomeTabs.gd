@@ -4,26 +4,23 @@ extends TabContainer
 
 func _ready() -> void:
 	current_tab = -1
-	tab_changed.connect(resize)
+	tab_changed.connect(resize.call_deferred)
 
+var tween: Tween
 func resize(_tab: int) -> void:
 	var current_tab_content := get_current_tab_control()
 	var tab_content_size := 0.0
 	if current_tab_content:
-		for child in current_tab_content.get_children(): tab_content_size += child.size.y
+		for child in current_tab_content.get_children():
+			tab_content_size += child.size.y
 	
-	size.y = get_viewport_rect().size.y
-	var tween := create_tween()
-	await tween.tween_property(self, "position", Vector2(0, size.y - tab_content_size - tab_size), 0.5) \
-		.set_trans(Tween.TRANS_CUBIC) \
-		.set_ease(Tween.EASE_IN_OUT) \
-		.finished
-	size.y = tab_content_size + tab_size
+	if tween != null: tween.stop()
+	tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_method(tween_position.bind(get_viewport_rect().size.y - position.y, tab_content_size), 0.0, 1.0, 0.5)
 
-func open() -> void:
-	var tween := create_tween()
-	tween.tween_property(self, "position", Vector2.ZERO, 0.5)
-
-func close() -> void:
-	var tween := create_tween()
-	tween.tween_property(self, "position", Vector2.ZERO, 0.5)
+func tween_position(percent: float, starting_size: float, new_tab_content_size: float) -> void:
+	position.y = get_viewport_rect().size.y - lerpf(starting_size, new_tab_content_size + tab_size, percent)
+	size.y = maxf(lerpf(starting_size, new_tab_content_size + tab_size, percent), new_tab_content_size + tab_size)

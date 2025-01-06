@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dds21sejjugrf"]
+[gd_scene load_steps=7 format=3 uid="uid://dds21sejjugrf"]
 
 [ext_resource type="PackedScene" uid="uid://5xo5eyb2yrqb" path="res://Views/Graph.tscn" id="1_xcdcb"]
 [ext_resource type="Script" path="res://HomeTabs.gd" id="2_0yvgt"]
+[ext_resource type="PackedScene" uid="uid://bt7ak6con6l34" path="res://Views/Controls/Main.tscn" id="3_0k1f7"]
+[ext_resource type="PackedScene" uid="uid://3xgca2tlsvhb" path="res://Views/Controls/Carography.tscn" id="4_un8ig"]
+[ext_resource type="PackedScene" uid="uid://e3kqvbw7jo7" path="res://Views/Controls/Navigation.tscn" id="5_pe60m"]
+[ext_resource type="PackedScene" uid="uid://kjjcfdort7nc" path="res://Views/Controls/Settings.tscn" id="6_5yqxp"]
 
 [node name="Home" type="Node"]
 
@@ -17,68 +21,25 @@ anchor_bottom = 1.0
 offset_top = -31.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
 deselect_enabled = true
 script = ExtResource("2_0yvgt")
 
-[node name="TabBar" type="TabBar" parent="CanvasLayer/TabContainer"]
+[node name="Main" parent="CanvasLayer/TabContainer" instance=ExtResource("3_0k1f7")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/TabBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label2" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label3" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label4" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label5" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label6" type="Label" parent="CanvasLayer/TabContainer/TabBar/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="TabBar2" type="TabBar" parent="CanvasLayer/TabContainer"]
+[node name="Cartography" parent="CanvasLayer/TabContainer" instance=ExtResource("4_un8ig")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/TabBar2"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/TabBar2/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label2" type="Label" parent="CanvasLayer/TabContainer/TabBar2/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="Label3" type="Label" parent="CanvasLayer/TabContainer/TabBar2/VBoxContainer"]
-layout_mode = 2
-text = "some text"
-
-[node name="TabBar3" type="TabBar" parent="CanvasLayer/TabContainer"]
+[node name="Navigation" parent="CanvasLayer/TabContainer" instance=ExtResource("5_pe60m")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="Settings" parent="CanvasLayer/TabContainer" instance=ExtResource("6_5yqxp")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
