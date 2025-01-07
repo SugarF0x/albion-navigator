@@ -52,7 +52,7 @@ public partial class ForceGraphNode : Node2D
 
     private void InitIndex(int graphIndex)
     {
-        if (Index < 0) Index = graphIndex;
+        Index = graphIndex;
     }
 
     private void InitPosition()
