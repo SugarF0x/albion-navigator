@@ -5,9 +5,12 @@ extends TabContainer
 func _ready() -> void:
 	current_tab = -1
 	tab_changed.connect(resize.call_deferred)
+	get_viewport().size_changed.connect(resize.bind(-1).call_deferred)
 
 var tween: Tween
 func resize(_tab: int) -> void:
+	await get_tree().process_frame
+	
 	var current_tab_content := get_current_tab_control()
 	var tab_content_size := 0.0
 	if current_tab_content:
