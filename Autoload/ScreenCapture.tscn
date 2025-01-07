@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwpb21vsch0s0"]
+
+[ext_resource type="Script" path="res://Autoload/ScreenCapture.cs" id="1_fu3vm"]
+
+[node name="ScreenCapture" type="Node"]
+script = ExtResource("1_fu3vm")

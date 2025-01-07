@@ -12,6 +12,5 @@ func _ready() -> void:
 
 func add_random_link() -> void:
 	var link := DUMMY_LINK.instantiate() as ForceGraphLink
-	link.Source = randi_range(410, 790)
-	link.Target = randi_range(410, 790)
+	link.Connect(randi_range(410, 790), randi_range(410, 790))
 	graph.AddLink(link)
