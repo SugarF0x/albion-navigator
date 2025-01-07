@@ -42,6 +42,8 @@ public partial class ForceDirectedGraph : Node2D
     public ForceGraphNode[] Nodes = [];
     public ForceGraphLink[] Links = [];
 
+    // TODO: disable underscore for private fields rule in Rider, kinda hate it tbh
+    
     public override void _Ready()
     {
         if (NodeScene?.Instantiate() is not ForceGraphNode) throw new InvalidCastException("NodeScene is not a ForceGraphNode");
