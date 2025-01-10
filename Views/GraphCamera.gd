@@ -19,8 +19,12 @@ func _input(event: InputEvent) -> void:
 	if not is_mouse_in_scope: return
 	
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT: is_dragging = event.is_pressed()
-		elif event.button_index == MOUSE_BUTTON_WHEEL_UP: adjust_zoom(true)
+		if event.button_index == MOUSE_BUTTON_LEFT: 
+			is_dragging = event.is_pressed()
+			return
+		
+		if not event.is_pressed(): return
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP: adjust_zoom(true)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN: adjust_zoom()
 	
 	elif event is InputEventMouseMotion and is_dragging:
