@@ -8,7 +8,7 @@ namespace AlbionNavigator.Autoload;
 [GlobalClass]
 public partial class ScreenCapture : Node
 {
-#if WINDOWS
+#if GODOT_WINDOWS
     [DllImport("user32.dll")]
     private static extern int GetAsyncKeyState(int vKey);
     [DllImport("user32.dll")]
