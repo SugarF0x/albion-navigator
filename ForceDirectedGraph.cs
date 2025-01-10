@@ -34,6 +34,9 @@ public partial class ForceDirectedGraph : Node2D
     [ExportGroup("Debug")] 
     [Export] public bool DrawQuadTree;
     [Export] public bool DrawCenterOfMass;
+    
+    [Signal]
+    public delegate void ChildrenRegisteredEventHandler(Godot.Collections.Array nodes, Godot.Collections.Array links);
 
     private RandomNumberGenerator _random = new ();
     private Node2D _linksContainer;
@@ -50,6 +53,7 @@ public partial class ForceDirectedGraph : Node2D
         if (LinkScene?.Instantiate() is not ForceGraphLink) throw new InvalidCastException("LinkScene is not a ForceGraphLink");
         
         _random.Seed = "peepee-poopoo".Hash();
+        // TODO: these probably better be exported scenes me thinks
         _linksContainer = GetNode<Node2D>("%LinksContainer");
         _nodesContainer = GetNode<Node2D>("%NodesContainer");
 
@@ -122,6 +126,7 @@ public partial class ForceDirectedGraph : Node2D
         Links = _linksContainer.GetChildren().Select(child => child as ForceGraphLink).ToArray();
 
         InitializeChildren();
+        EmitSignal(SignalName.ChildrenRegistered, new Godot.Collections.Array(Nodes), new Godot.Collections.Array(Links));
     }
 
     private void InitializeChildren()
