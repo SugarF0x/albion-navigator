@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3xgca2tlsvhb"]
 
 [ext_resource type="Script" path="res://Views/Controls/Carography.gd" id="1_lskbw"]
-[ext_resource type="Texture2D" uid="uid://b0flxpqwgssuo" path="res://Assets/sample-image.png" id="1_m0wo8"]
+[ext_resource type="PackedScene" uid="uid://c8tj2x2m3utep" path="res://Components/ImageInspector.tscn" id="2_7lc4p"]
 
 [node name="Cartography" type="TabBar"]
 anchors_preset = 15
@@ -26,11 +26,9 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="ImageInspector" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_7lc4p")]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_m0wo8")
-expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)

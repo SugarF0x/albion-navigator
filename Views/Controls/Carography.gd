@@ -1,6 +1,6 @@
 extends TabBar
 
-# TODO: perhaps use godot line edit auto-complete plugin
+# TODO: perhaps use godot line edit auto-complete plugin (or not, it kinda looks like ass, better justunderlay text under it)
 const DUMMY_LINK := preload("res://DummyLink.tscn")
 
 @onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ForceDirectedGraph
