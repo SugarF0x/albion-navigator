@@ -44,7 +44,7 @@ placeholder_text = "Source Zone Name"
 [node name="TargetZoneEdit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_su6c0")]
 layout_mode = 2
 size_flags_horizontal = 1
-placeholder_text = "Source Zone Name"
+placeholder_text = "Target Zone Name"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
