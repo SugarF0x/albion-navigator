@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	text_changed.connect(on_text_change)
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if not has_focus(): return
 	if option_hint_index < 0: return
 	if Input.is_action_just_pressed("ui_down"): option_hint_index = clampi(option_hint_index + 1, 0, valid_options.size() - 1); accept_event()
