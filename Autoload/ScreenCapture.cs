@@ -26,18 +26,19 @@ public partial class ScreenCapture : Node
     public override void _Process(double delta)
     {
         CheckForBindPress();
-        if (!DidJustPressBind) return;
-        
-        TakeScreenshot();
+        if (DidJustPressBind) TakeScreenshot();
     }
 
     private void CheckForBindPress()
     {
-        if (!DidReleaseBind) DidReleaseBind = GetAsyncKeyState(VK_CONTROL) == 0 || GetAsyncKeyState(VK_S) == 0;
+        var isControlPressed = GetAsyncKeyState(VK_CONTROL) > 0;
+        var isSPressed = GetAsyncKeyState(VK_S) > 0;
+        
+        if (!DidReleaseBind) DidReleaseBind = !isControlPressed || !isSPressed;
         if (DidJustPressBind) DidJustPressBind = false;
         if (!DidReleaseBind) return;
 
-        DidJustPressBind = GetAsyncKeyState(VK_CONTROL) > 0 && GetAsyncKeyState(VK_S) > 0;
+        DidJustPressBind = isControlPressed && isSPressed;
         if (DidJustPressBind) DidReleaseBind = false;
     }
 
