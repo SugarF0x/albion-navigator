@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Views/Controls/CartographyCaptures.gd" id="1_ict3i"]
 [ext_resource type="PackedScene" uid="uid://c8tj2x2m3utep" path="res://Components/ImageInspector.tscn" id="2_uxijs"]
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[node name="CartographyCaptures" type="VBoxContainer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 675.0
