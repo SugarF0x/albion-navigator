@@ -8,6 +8,9 @@ namespace AlbionNavigator.Autoload;
 [GlobalClass]
 public partial class ScreenCapture : Node
 {
+    [Signal]
+    public delegate void ScreenCapturedEventHandler(Texture2D texture);
+    
 #if GODOT_WINDOWS
     [DllImport("user32.dll")]
     private static extern int GetAsyncKeyState(int vKey);
@@ -19,14 +22,6 @@ public partial class ScreenCapture : Node
     
     private bool DidJustPressBind;
     private bool DidReleaseBind = true;
-    
-    [Signal]
-    public delegate void ScreenCapturedEventHandler();
-
-    public override void _Ready()
-    {
-        
-    }
     
     public override void _Process(double delta)
     {
@@ -51,17 +46,31 @@ public partial class ScreenCapture : Node
         var screenWidth = GetSystemMetrics(0);
         var screenHeight = GetSystemMetrics(1);
 
-        using (var bitmap = new System.Drawing.Bitmap(screenWidth, screenHeight))
+        using var bitmap = new System.Drawing.Bitmap(screenWidth, screenHeight);
+        using (var graphics = Graphics.FromImage(bitmap))
         {
-            using (var graphics = Graphics.FromImage(bitmap))
-            {
-                graphics.CopyFromScreen(0, 0, 0, 0, new Size(screenWidth, screenHeight));
-            }
-
-            bitmap.Save("D:\\Godot\\_TEMP\\image.png", ImageFormat.Png);
+            graphics.CopyFromScreen(0, 0, 0, 0, new Size(screenWidth, screenHeight));
         }
-        
-        EmitSignal(SignalName.ScreenCaptured);
+
+        var width = bitmap.Width;
+        var height = bitmap.Height;
+        var image = Godot.Image.CreateEmpty(width, height, false, Godot.Image.Format.Rgba8);
+            
+        var rect = new Rectangle(0, 0, width, height);
+        var bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+        var pixelData = new byte[bitmapData.Stride * height];
+        Marshal.Copy(bitmapData.Scan0, pixelData, 0, pixelData.Length);
+        bitmap.UnlockBits(bitmapData);
+
+        for (var i = 0; i < pixelData.Length; i += 4)
+        {
+            (pixelData[i], pixelData[i + 2]) = (pixelData[i + 2], pixelData[i]);
+        }
+
+        image.SetData(width, height, false, Godot.Image.Format.Rgba8, pixelData);
+            
+        EmitSignal(SignalName.ScreenCaptured, ImageTexture.CreateFromImage(image));
     }
 #endif
 }
