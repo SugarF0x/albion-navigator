@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Entities/ZoneMap.cs" id="1_fvi3w"]
 [ext_resource type="PackedScene" uid="uid://cm2ouia1v1w2j" path="res://Entities/ZoneNode.tscn" id="2_x8x6l"]
-[ext_resource type="PackedScene" uid="uid://va4radvw8bgc" path="res://Entities/DummyLink.tscn" id="3_i3onj"]
+[ext_resource type="PackedScene" uid="uid://2o6n013qcuni" path="res://Entities/ZoneLink.tscn" id="3_cm7s1"]
 
 [node name="ZoneMap" type="Node2D" node_paths=PackedStringArray("NodesContainer", "LinksContainer")]
 script = ExtResource("1_fvi3w")
 NodeScene = ExtResource("2_x8x6l")
-LinkScene = ExtResource("3_i3onj")
+LinkScene = ExtResource("3_cm7s1")
 NodesContainer = NodePath("NodesContainer")
 LinksContainer = NodePath("LinksContainer")
 

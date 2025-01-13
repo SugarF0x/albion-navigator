@@ -1,6 +1,6 @@
 extends TabBar
 
-const DUMMY_LINK := preload("res://Entities/DummyLink.tscn")
+const LinkScene := preload("res://Entities/ZoneLink.tscn")
 
 @onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ForceDirectedGraph
 @onready var register_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/RegisterButton
@@ -37,6 +37,6 @@ func register_new_link() -> void:
 	
 	if source < 0 or target < 0: return
 	
-	var link := DUMMY_LINK.instantiate() as ForceGraphLink
+	var link := LinkScene.instantiate() as ZoneLink
 	link.Connect(source, target)
 	graph.AddLink(link)

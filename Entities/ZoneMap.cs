@@ -6,6 +6,7 @@ using Godot;
 
 namespace AlbionNavigator.Entities;
 
+[GlobalClass]
 public partial class ZoneMap : ForceDirectedGraph
 {
     [ExportGroup("Entities")] 
