@@ -1,5 +1,5 @@
 @tool
-extends PanelContainer
+class_name ImageInspector extends PanelContainer
 
 @onready var texture_rect: TextureRect = $TextureRect
 
