@@ -37,7 +37,7 @@ public partial class ForceGraphLink : Node2D
         Line.AddPoint(nodes[Target].Position);
     }
 
-    public void Initialize(ForceGraphNode[] nodes)
+    public virtual void Initialize(ForceGraphNode[] nodes)
     {
         try
         {

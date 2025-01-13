@@ -16,10 +16,18 @@ public partial class ZoneMap : ForceDirectedGraph
     public override void _Ready()
     {
         if (NodeScene?.Instantiate() is not ZoneNode) throw new InvalidCastException("NodeScene is not a ZoneNode");
-        if (LinkScene?.Instantiate() is not ForceGraphLink) throw new InvalidCastException("LinkScene is not a ForceGraphLink");
+        if (LinkScene?.Instantiate() is not ZoneLink) throw new InvalidCastException("LinkScene is not a ZoneLink");
         
         PopulateZones();
         base._Ready();
+    }
+
+    public void AddPortal(int source, int target, string expiration)
+    {
+        if (LinkScene.Instantiate() is not ZoneLink link) return;
+        link.Connect(source, target);
+        link.ExpiresAt = expiration;
+        AddLink(link);
     }
 
     private void PopulateZones()

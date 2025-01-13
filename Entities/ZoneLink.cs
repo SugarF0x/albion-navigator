@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using AlbionNavigator.Data;
 using AlbionNavigator.Graph;
 using Godot;
@@ -8,6 +9,20 @@ namespace AlbionNavigator.Entities;
 [GlobalClass]
 public partial class ZoneLink : ForceGraphLink
 {
+    public string ExpiresAt { get; set; }
+
+    public override void Initialize(ForceGraphNode[] nodes)
+    {
+        base.Initialize(nodes);
+        if (ExpiresAt == null) return;
+        
+        var targetDateTime = DateTime.Parse(ExpiresAt);
+        var currentDateTime = DateTimeOffset.Now;
+
+        var difference = targetDateTime - currentDateTime;
+        GetTree().CreateTimer(difference.TotalSeconds).Timeout += QueueFree;
+    }
+    
     protected override void InitStrength(ForceGraphNode[] nodes)
     {
         var sourceNode = nodes[Source];
