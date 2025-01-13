@@ -2,14 +2,20 @@ extends TabBar
 
 const LinkScene := preload("res://Entities/ZoneLink.tscn")
 
-@onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ForceDirectedGraph
+@onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ZoneMap
 @onready var register_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/RegisterButton
 @onready var source_zone_edit: AutoCompleteLineEdit = $MarginContainer/HBoxContainer/VBoxContainer/SourceZoneEdit
 @onready var target_zone_edit: AutoCompleteLineEdit = $MarginContainer/HBoxContainer/VBoxContainer/TargetZoneEdit
+@onready var cartography_captures: CartographyCaptures = $MarginContainer/HBoxContainer/CartographyCaptures
+@onready var captured_at_label: Label = $MarginContainer/HBoxContainer/VBoxContainer/CapturedAtLabel
+@onready var hours_edit: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HoursEdit
+@onready var minutes_edit: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MinutesEdit
+@onready var seconds_edit: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/SecondsEdit
 
 func _ready() -> void:
 	graph.ChildrenRegistered.connect(register_zone_names)
 	register_button.pressed.connect(register_new_link)
+	cartography_captures.preview_image_changed.connect(on_preview_image_changed)
 
 func register_zone_names(nodes: Array, _links: Array) -> void:
 	var zone_names: Array[String]
@@ -37,6 +43,26 @@ func register_new_link() -> void:
 	
 	if source < 0 or target < 0: return
 	
-	var link := LinkScene.instantiate() as ZoneLink
-	link.Connect(source, target)
-	graph.AddLink(link)
+	graph.AddPortal(source, target, get_input_expiration())
+
+func get_input_expiration() -> String:
+	var time := Time.get_unix_time_from_datetime_string(current_capture_timestamp)
+	
+	var additional_time := 0
+	additional_time += int(hours_edit.text) * 3600
+	additional_time += int(minutes_edit.text) * 60
+	additional_time += int(seconds_edit.text)
+	
+	time += additional_time
+	return Time.get_datetime_string_from_unix_time(time)
+
+@onready var base_captured_at_text := captured_at_label.text
+var current_capture_timestamp := "" :
+	set(value):
+		current_capture_timestamp = value
+		captured_at_label.text = base_captured_at_text + value
+	get():
+		return current_capture_timestamp if current_capture_timestamp != "" else Time.get_datetime_string_from_system()
+
+func on_preview_image_changed(_index: int, _image: Texture2D, timestamp: String) -> void:
+	current_capture_timestamp = timestamp
