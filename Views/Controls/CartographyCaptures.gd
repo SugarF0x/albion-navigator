@@ -20,6 +20,11 @@ func add_image(image: Texture2D) -> void:
 	_captures.append(image)
 	_sync_inspector()
 
+func pop_current_image() -> void:
+	if _inspector_index < 0 or _inspector_index > _captures.size() - 1: return
+	_captures.remove_at(_inspector_index)
+	_sync_inspector()
+
 func _sync_inspector() -> void:
 	var total_captures := _captures.size()
 	_inspector_index = mini(_inspector_index, total_captures - 1)

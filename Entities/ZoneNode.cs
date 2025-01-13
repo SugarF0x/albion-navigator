@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using AlbionNavigator.Data;
+using AlbionNavigator.Graph;
 using Godot;
 
 namespace AlbionNavigator.Entities;

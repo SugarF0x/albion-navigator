@@ -1,7 +1,7 @@
 ﻿using System;
 using Godot;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 [GlobalClass]
 public partial class ForceGraphLink : Node2D

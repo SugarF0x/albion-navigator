@@ -1,6 +1,6 @@
 extends TabBar
 
-const DUMMY_LINK = preload("res://DummyLink.tscn")
+const DUMMY_LINK = preload("res://Entities/DummyLink.tscn")
 
 @onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ForceDirectedGraph
 @onready var add_random_link_button: Button = $MarginContainer/VBoxContainer/AddRandomLinkButton

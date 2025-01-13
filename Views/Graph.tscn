@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://5xo5eyb2yrqb"]
+[gd_scene load_steps=6 format=3 uid="uid://5xo5eyb2yrqb"]
 
 [ext_resource type="Script" path="res://Views/Graph.gd" id="1_fh4y3"]
 [ext_resource type="Script" path="res://Views/GraphCamera.gd" id="2_6qgp7"]
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="3_s17xd"]
 [ext_resource type="Texture2D" uid="uid://bibl4as6bnc21" path="res://Assets/map-background.png" id="4_ky6eh"]
-[ext_resource type="PackedScene" uid="uid://dr1owil5gnkef" path="res://ForceDirectedGraph.tscn" id="5_6q50f"]
-[ext_resource type="PackedScene" uid="uid://cm2ouia1v1w2j" path="res://Entities/ZoneNode.tscn" id="6_w81mh"]
-[ext_resource type="PackedScene" uid="uid://va4radvw8bgc" path="res://DummyLink.tscn" id="7_fk26d"]
+[ext_resource type="PackedScene" uid="uid://dkyb57t4hwvqp" path="res://Entities/ZoneMap.tscn" id="5_sbrde"]
 
 [node name="Graph" type="Node2D"]
 script = ExtResource("1_fh4y3")
@@ -33,6 +31,4 @@ position = Vector2(561, 343)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("4_ky6eh")
 
-[node name="ForceDirectedGraph" parent="." groups=["ForceGraph"] instance=ExtResource("5_6q50f")]
-NodeScene = ExtResource("6_w81mh")
-LinkScene = ExtResource("7_fk26d")
+[node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]

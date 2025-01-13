@@ -1,7 +1,7 @@
 ﻿using System;
 using Godot;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 public struct Quad(QuadTreeNode node, Rect2 rect)
 {

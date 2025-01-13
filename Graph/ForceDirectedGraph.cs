@@ -4,14 +4,14 @@ using Godot;
 using AlbionNavigator.Data;
 using AlbionNavigator.Entities;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 [GlobalClass]
 public partial class ForceDirectedGraph : Node2D
 {
-    [ExportGroup("Packed Scenes")] 
-    [Export] public PackedScene NodeScene;
-    [Export] public PackedScene LinkScene;
+    [ExportGroup("Containers")] 
+    [Export] public Node2D NodesContainer;
+    [Export] public Node2D LinksContainer;
     
     [ExportGroup("Graph Heat")] 
     [Export] public float Alpha = 1f;
@@ -39,8 +39,6 @@ public partial class ForceDirectedGraph : Node2D
     public delegate void ChildrenRegisteredEventHandler(Godot.Collections.Array nodes, Godot.Collections.Array links);
 
     private RandomNumberGenerator _random = new ();
-    private Node2D _linksContainer;
-    private Node2D _nodesContainer;
 
     public ForceGraphNode[] Nodes = [];
     public ForceGraphLink[] Links = [];
@@ -49,15 +47,8 @@ public partial class ForceDirectedGraph : Node2D
     
     public override void _Ready()
     {
-        if (NodeScene?.Instantiate() is not ForceGraphNode) throw new InvalidCastException("NodeScene is not a ForceGraphNode");
-        if (LinkScene?.Instantiate() is not ForceGraphLink) throw new InvalidCastException("LinkScene is not a ForceGraphLink");
-        
         _random.Seed = "peepee-poopoo".Hash();
-        // TODO: these probably better be exported scenes me thinks
-        _linksContainer = GetNode<Node2D>("%LinksContainer");
-        _nodesContainer = GetNode<Node2D>("%NodesContainer");
-
-        PopulateZones();
+        
         ConnectChildListeners();
     }
 
@@ -67,39 +58,8 @@ public partial class ForceDirectedGraph : Node2D
     }
     
 
-    public void AddNode(ForceGraphNode node) => _nodesContainer.AddChild(node);
-    public void AddLink(ForceGraphLink link) => _linksContainer.AddChild(link);
-
-    private void PopulateZones()
-    {
-        var zones = Zone.LoadZoneBinaries();
-
-        for (var i = 0; i < zones.Length; i++)
-        {
-            var zone = zones[i];
-            if (NodeScene.Instantiate() is not ForceGraphNode node) continue;
-            
-            node.Position = zone.Position;
-            node.Index = zone.Id;
-            node.Connections = zone.Connections.ToList();
-            if (node.Position != Vector2.Zero) node.Frozen = true;
-
-            if (node is ZoneNode zoneNode)
-            {
-                zoneNode.Type = zone.Type;
-                zoneNode.DisplayName = zone.DisplayName;
-            }
-            
-            AddNode(node);
-
-            foreach (var connection in zone.Connections.Where(index => index > i))
-            {
-                if (LinkScene.Instantiate() is not ForceGraphLink link) continue;
-                link.Connect(i, connection);
-                AddLink(link);
-            }
-        }
-    }
+    public void AddNode(ForceGraphNode node) => NodesContainer.AddChild(node);
+    public void AddLink(ForceGraphLink link) => LinksContainer.AddChild(link);
     
     private bool _shouldRegisterChildren = true;
 
@@ -111,10 +71,10 @@ public partial class ForceDirectedGraph : Node2D
 
     private void ConnectChildListeners()
     {
-        _nodesContainer.ChildEnteredTree += OnChildrenChanged;
-        _nodesContainer.ChildExitingTree += OnChildrenChanged;
-        _linksContainer.ChildEnteredTree += OnChildrenChanged;
-        _linksContainer.ChildExitingTree += OnChildrenChanged;
+        NodesContainer.ChildEnteredTree += OnChildrenChanged;
+        NodesContainer.ChildExitingTree += OnChildrenChanged;
+        LinksContainer.ChildEnteredTree += OnChildrenChanged;
+        LinksContainer.ChildExitingTree += OnChildrenChanged;
     }
 
     private void RegisterChildren()
@@ -122,8 +82,8 @@ public partial class ForceDirectedGraph : Node2D
         if (!_shouldRegisterChildren) return;
         _shouldRegisterChildren = false;
 
-        Nodes = _nodesContainer.GetChildren().Select(child => child as ForceGraphNode).ToArray();
-        Links = _linksContainer.GetChildren().Select(child => child as ForceGraphLink).ToArray();
+        Nodes = NodesContainer.GetChildren().Select(child => child as ForceGraphNode).ToArray();
+        Links = LinksContainer.GetChildren().Select(child => child as ForceGraphLink).ToArray();
 
         InitializeChildren();
         EmitSignal(SignalName.ChildrenRegistered, new Godot.Collections.Array(Nodes), new Godot.Collections.Array(Links));
