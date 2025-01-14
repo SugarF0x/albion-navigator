@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 ScreenCapture="*res://Autoload/ScreenCapture.tscn"
+PersistedStore="*res://Autoload/PersistedStore.tscn"
 
 [debug]
 
