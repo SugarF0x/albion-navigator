@@ -42,7 +42,11 @@ public partial class ZoneLink : ForceGraphLink
         var currentDateTime = DateTimeOffset.Now;
 
         var difference = targetDateTime - currentDateTime;
-        if (difference.TotalSeconds <= 0) QueueFree();
+        if (difference.TotalSeconds <= 0)
+        {
+            QueueFree();
+            return;
+        }
         
         GetTree().CreateTimer(difference.TotalSeconds).Timeout += QueueFree;
     }
