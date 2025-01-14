@@ -14,13 +14,7 @@ public partial class ZoneLink : ForceGraphLink
     public override void Initialize(ForceGraphNode[] nodes)
     {
         base.Initialize(nodes);
-        if (ExpiresAt == null) return;
-        
-        var targetDateTime = DateTime.Parse(ExpiresAt);
-        var currentDateTime = DateTimeOffset.Now;
-
-        var difference = targetDateTime - currentDateTime;
-        GetTree().CreateTimer(difference.TotalSeconds).Timeout += QueueFree;
+        InitExpiry();
     }
     
     protected override void InitStrength(ForceGraphNode[] nodes)
@@ -38,6 +32,17 @@ public partial class ZoneLink : ForceGraphLink
         }
         
         base.InitStrength(nodes);
+    }
+
+    private void InitExpiry()
+    {
+        if (ExpiresAt == null) return;
+        
+        var targetDateTime = DateTime.Parse(ExpiresAt);
+        var currentDateTime = DateTimeOffset.Now;
+
+        var difference = targetDateTime - currentDateTime;
+        GetTree().CreateTimer(difference.TotalSeconds).Timeout += QueueFree;
     }
 
     public override void DrawLink(ForceGraphNode[] nodes)
