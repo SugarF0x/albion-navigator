@@ -5,7 +5,8 @@ const SAMPLE_IMAGE = preload("res://Assets/sample-image.png")
 @onready var previous_button: Button = $HBoxContainer/PreviousButton
 @onready var index_label: Label = $HBoxContainer/IndexLabel
 @onready var next_button: Button = $HBoxContainer/NextButton
-@onready var image_inspector: ImageInspector = $ImageInspector
+@onready var image_inspector_1: ImageInspector = $HBoxContainer2/ImageInspector1
+@onready var image_inspector_2: ImageInspector = $HBoxContainer2/ImageInspector2
 
 var _captures: Array[Texture2D] = []
 var _capture_stamps: Array[String] = []
@@ -44,6 +45,8 @@ func _sync_inspector() -> void:
 	
 	index_label.text = "-" if _inspector_index < 0 else str(_inspector_index + 1)
 	
-	image_inspector.texture = SAMPLE_IMAGE if total_captures <= 0 else _captures[_inspector_index]
+	var texture := SAMPLE_IMAGE if total_captures <= 0 else _captures[_inspector_index]
+	image_inspector_1.texture = texture
+	image_inspector_2.texture = texture
 	
-	preview_image_changed.emit(_inspector_index, image_inspector.texture, get_current_expiration())
+	preview_image_changed.emit(_inspector_index, texture, get_current_expiration())

@@ -33,5 +33,13 @@ theme_override_font_sizes/font_size = 50
 disabled = true
 text = ">>"
 
-[node name="ImageInspector" parent="." instance=ExtResource("2_uxijs")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="ImageInspector1" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ImageInspector2" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+layout_mode = 2
+size_flags_horizontal = 3

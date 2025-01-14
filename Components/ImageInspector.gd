@@ -12,7 +12,7 @@ var is_dragging: bool = false
 var is_mouse_in_scope: bool = false
 
 const min_scale := 1.0
-const max_scale := 4.0
+const max_scale := 8.0
 
 func _ready() -> void:
 	_sync_texture()
