@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkyb57t4hwvqp" path="res://Entities/ZoneMap.tscn" id="5_sbrde"]
 
 [node name="Graph" type="Node2D"]
+position = Vector2(600, 600)
 script = ExtResource("1_fh4y3")
 
 [node name="GraphCamera" type="Camera2D" parent="."]
@@ -27,7 +28,6 @@ color = Color(0, 1, 1, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="MapBackground" type="Sprite2D" parent="."]
-position = Vector2(561, 343)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("4_ky6eh")
 
