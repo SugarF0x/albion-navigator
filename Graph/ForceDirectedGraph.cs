@@ -37,6 +37,8 @@ public partial class ForceDirectedGraph : Node2D
     
     [Signal]
     public delegate void ChildrenRegisteredEventHandler(Godot.Collections.Array nodes, Godot.Collections.Array links);
+    [Signal]
+    public delegate void ChildrenRegisteredNativeEventHandler(ForceGraphNode[] nodes, ForceGraphLink[] links);
 
     private RandomNumberGenerator _random = new ();
 
@@ -87,6 +89,7 @@ public partial class ForceDirectedGraph : Node2D
 
         InitializeChildren();
         EmitSignal(SignalName.ChildrenRegistered, new Godot.Collections.Array(Nodes), new Godot.Collections.Array(Links));
+        EmitSignal(SignalName.ChildrenRegisteredNative, Nodes, Links);
     }
 
     private void InitializeChildren()
