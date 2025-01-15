@@ -17,6 +17,14 @@ func _ready() -> void:
 	register_button.pressed.connect(register_new_link)
 	cartography_captures.preview_image_changed.connect(on_preview_image_changed)
 
+func _input(_event: InputEvent) -> void:
+	if not Input.is_action_just_pressed("ui_text_completion_accept"): return
+	
+	var controls: Array[Control] = [source_zone_edit, target_zone_edit, hours_edit, minutes_edit, seconds_edit]
+	if controls.all(func(node: Control) -> bool: return not node.has_focus()): return
+	
+	register_new_link()
+
 func register_zone_names(nodes: Array, _links: Array) -> void:
 	var zone_names: Array[String]
 	for node: ForceGraphNode in nodes:
@@ -46,9 +54,13 @@ func register_new_link() -> void:
 	graph.AddPortal(source, target, get_input_expiration())
 	
 	target_zone_edit.text = ""
+	target_zone_edit.text_changed.emit("")
 	hours_edit.text = ""
 	minutes_edit.text = ""
 	seconds_edit.text = ""
+	
+	source_zone_edit.grab_focus()
+	cartography_captures.pop_current_image()
 
 func get_input_expiration() -> String:
 	var time := Time.get_unix_time_from_datetime_string(current_capture_timestamp)
