@@ -44,6 +44,11 @@ func register_new_link() -> void:
 	if source < 0 or target < 0: return
 	
 	graph.AddPortal(source, target, get_input_expiration())
+	
+	target_zone_edit.text = ""
+	hours_edit.text = ""
+	minutes_edit.text = ""
+	seconds_edit.text = ""
 
 func get_input_expiration() -> String:
 	var time := Time.get_unix_time_from_datetime_string(current_capture_timestamp)
