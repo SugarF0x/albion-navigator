@@ -24,8 +24,6 @@ public partial class ZoneLink : ForceGraphLink
         InitExpiry();
     }
     
-    // TODO: make links connecting roads to mainland semitransparent 
-    
     protected override void InitStrength(ForceGraphNode[] nodes)
     {
         var sourceNode = nodes[Source];
@@ -70,8 +68,12 @@ public partial class ZoneLink : ForceGraphLink
         var targetNode = nodes[Target];
 
         if (sourceNode is not ZoneNode sourceZoneNode || targetNode is not ZoneNode targetZoneNode) return;
-        if (sourceZoneNode.Type == Zone.ZoneType.City && targetZoneNode.Type == Zone.ZoneType.City) Line.DefaultColor = Colors.Orange;
+        Zone.ZoneType[] zoneTypes = [sourceZoneNode.Type, targetZoneNode.Type];
+        
+        if (zoneTypes.All(type => type == Zone.ZoneType.City)) Line.DefaultColor = Colors.Orange;
         else Line.DefaultColor = Colors.White;
+        
+        if (zoneTypes.Any(type => type == Zone.ZoneType.Road) && zoneTypes.Any(type => type != Zone.ZoneType.Road)) Line.DefaultColor = Line.DefaultColor with { A = .25f };
     }
 
     public static float GetExpirationInSeconds(string timestamp)
