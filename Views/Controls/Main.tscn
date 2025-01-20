@@ -29,10 +29,10 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Reheat"
 
-[node name="AddRandomLinkButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="AddSampleDataButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Add random link"
+text = "Add Sample Data"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Entities;
 using AlbionNavigator.Graph;
@@ -6,11 +7,11 @@ using Godot;
 
 namespace AlbionNavigator.Autoload;
 
-[GlobalClass]
 public partial class PersistedStore : Node
 {
     private const int VERSION = 0;
     private const string SAVE_PATH = "user://store.save";
+    private const string SAMPLE_SAVE_PATH = "user://sample_store.save";
     
     private ZoneMap Graph;
     
@@ -48,6 +49,37 @@ public partial class PersistedStore : Node
                 var target = int.Parse(chunks[1]);
                 var expiresAt = chunks[2];
                 Graph.AddPortal(source, target, expiresAt);
+            }
+            catch
+            {
+                // ignored
+            }
+        }
+    }
+
+    public void LoadSampleData()
+    {
+        if (!FileAccess.FileExists(SAMPLE_SAVE_PATH)) return;
+        using var file = FileAccess.Open(SAMPLE_SAVE_PATH, FileAccess.ModeFlags.Read);
+
+        var content = file.GetAsText().Split("|");
+        var version = int.Parse(content[0]);
+        var data = content[1].Split(";");
+
+        if (version != VERSION) return;
+
+        foreach (var item in data)
+        {
+            if (item == "") continue;
+            
+            try
+            {
+                var chunks = item.Split(',');
+                var source = int.Parse(chunks[0]);
+                var target = int.Parse(chunks[1]);
+                var expiresAt = DateTime.UtcNow;
+                expiresAt = expiresAt.AddMinutes(10);
+                Graph.AddPortal(source, target, expiresAt.ToString("s"));
             }
             catch
             {
