@@ -12,11 +12,15 @@ public partial class ZoneMap : ForceDirectedGraph
     [ExportGroup("Entities")] 
     [Export] public PackedScene NodeScene;
     [Export] public PackedScene LinkScene;
+
+    private AudioPlayer AudioServer;
     
     public override void _Ready()
     {
         if (NodeScene?.Instantiate() is not ZoneNode) throw new InvalidCastException("NodeScene is not a ZoneNode");
         if (LinkScene?.Instantiate() is not ZoneLink) throw new InvalidCastException("LinkScene is not a ZoneLink");
+        
+        AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
         
         PopulateZones();
         base._Ready();
@@ -25,9 +29,12 @@ public partial class ZoneMap : ForceDirectedGraph
     public void AddPortal(int source, int target, string expiration)
     {
         if (LinkScene.Instantiate() is not ZoneLink link) return;
+        if (ZoneLink.IsStampExpired(expiration)) return;
+        
         link.Connect(source, target);
         link.ExpiresAt = expiration;
         AddLink(link);
+        AudioServer.Play(AudioPlayer.SoundId.PortalOpen);
     }
 
     private void PopulateZones()

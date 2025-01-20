@@ -8,13 +8,16 @@ public partial class AudioPlayer : Node
 	[ExportGroup("Sounds")] 
 	[Export] public AudioStream ShutterSound;
 	[Export] public AudioStream TrashSound;
+	[Export] public AudioStream PortalOpenSound;
+	[Export] public AudioStream PortalCloseSound;
 	
 	public enum SoundId
 	{
 		CameraShutter,
 		PaperTrash,
+		PortalOpen,
+		PortalClose,
 	}
-
 
 	public void Play(string name)
 	{
@@ -27,6 +30,8 @@ public partial class AudioPlayer : Node
 		[
 			ShutterSound,
 			TrashSound,
+			PortalOpenSound,
+			PortalCloseSound,
 		];
 
 		if ((int)id >= idToStreamMap.Length) throw new ArgumentOutOfRangeException(nameof(id), id, null);
@@ -38,8 +43,6 @@ public partial class AudioPlayer : Node
 
 	public override void _Ready()
 	{
-		
-		
 		var screenCapture = GetNode<ScreenCapture>("/root/ScreenCapture");
 		screenCapture.ScreenCaptured += _ => Play(SoundId.CameraShutter);
 	}

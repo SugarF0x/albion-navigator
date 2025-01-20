@@ -10,6 +10,13 @@ namespace AlbionNavigator.Entities;
 public partial class ZoneLink : ForceGraphLink
 {
     public string ExpiresAt { get; set; }
+    
+    private AudioPlayer AudioServer;
+
+    public override void _Ready()
+    {
+        AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
+    }
 
     public override void Initialize(ForceGraphNode[] nodes)
     {
@@ -40,18 +47,19 @@ public partial class ZoneLink : ForceGraphLink
     {
         if (ExpiresAt == null) return;
         
-        var targetDateTime = DateTime.Parse(ExpiresAt);
-        var currentDateTime = DateTime.UtcNow;
-
-        var difference = targetDateTime - currentDateTime;
-        
-        if (difference.TotalSeconds <= 0)
+        if (IsStampExpired(ExpiresAt))
         {
             QueueFree();
             return;
         }
         
-        GetTree().CreateTimer(difference.TotalSeconds).Timeout += QueueFree;
+        GetTree().CreateTimer(GetExpirationInSeconds(ExpiresAt)).Timeout += ClosePortal;
+    }
+
+    private void ClosePortal()
+    {
+        AudioServer.Play(AudioPlayer.SoundId.PortalClose);
+        QueueFree();
     }
 
     public override void DrawLink(ForceGraphNode[] nodes)
@@ -64,5 +72,18 @@ public partial class ZoneLink : ForceGraphLink
         if (sourceNode is not ZoneNode sourceZoneNode || targetNode is not ZoneNode targetZoneNode) return;
         if (sourceZoneNode.Type == Zone.ZoneType.City && targetZoneNode.Type == Zone.ZoneType.City) Line.DefaultColor = Colors.Orange;
         else Line.DefaultColor = Colors.White;
+    }
+
+    public static float GetExpirationInSeconds(string timestamp)
+    {
+        var targetDateTime = DateTime.Parse(timestamp);
+        var currentDateTime = DateTime.UtcNow;
+        var difference = targetDateTime - currentDateTime;
+        return (float)difference.TotalSeconds;
+    }
+
+    public static bool IsStampExpired(string timestamp)
+    {
+        return GetExpirationInSeconds(timestamp) <= 0;
     }
 }
