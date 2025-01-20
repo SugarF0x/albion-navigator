@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://buwiyjskunlvh"]
+[gd_scene load_steps=4 format=3 uid="uid://buwiyjskunlvh"]
 
 [ext_resource type="Script" path="res://Autoload/AudioPlayer.cs" id="1_s5j5g"]
-[ext_resource type="AudioStream" uid="uid://c7iwxr15l8h0c" path="res://Assets/Sounds/clear-camera-shutter-sound.ogg" id="2_qsp4p"]
+[ext_resource type="AudioStream" uid="uid://c7iwxr15l8h0c" path="res://Assets/Sounds/camera-shutter.ogg" id="2_qsp4p"]
+[ext_resource type="AudioStream" uid="uid://dw20253r6tebw" path="res://Assets/Sounds/trash.ogg" id="3_ivngh"]
 
 [node name="AudioPlayer" type="Node" node_paths=PackedStringArray("StreamPlayer")]
 script = ExtResource("1_s5j5g")
 StreamPlayer = NodePath("AudioStreamPlayer")
 ShutterSound = ExtResource("2_qsp4p")
+TrashSound = ExtResource("3_ivngh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qsp4p")

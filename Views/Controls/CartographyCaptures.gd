@@ -18,7 +18,7 @@ signal preview_image_changed(index: int, image: Texture2D, timestamp: String)
 func _ready() -> void:
 	previous_button.pressed.connect(func() -> void: _inspector_index = maxi(_inspector_index - 1, 0); _sync_inspector())
 	next_button.pressed.connect(func() -> void: _inspector_index = mini(_inspector_index + 1, _captures.size()); _sync_inspector())
-	clear_button.pressed.connect(pop_current_image)
+	clear_button.pressed.connect(func() -> void: pop_current_image(); AudioPlayer.Play("PaperTrash"))
 	ScreenCapture.ScreenCaptured.connect(add_image)
 	_sync_inspector()
 
@@ -29,6 +29,7 @@ func add_image(image: Texture2D) -> void:
 
 func pop_current_image() -> void:
 	if _inspector_index < 0 or _inspector_index > _captures.size() - 1: return
+	
 	_captures.remove_at(_inspector_index)
 	_capture_stamps.remove_at(_inspector_index)
 	_sync_inspector()
