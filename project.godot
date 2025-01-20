@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.png"
 
 ScreenCapture="*res://Autoload/ScreenCapture.tscn"
 PersistedStore="*res://Autoload/PersistedStore.tscn"
+AudioPlayer="*res://Autoload/AudioPlayer.tscn"
 
 [debug]
 
