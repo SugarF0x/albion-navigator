@@ -79,7 +79,7 @@ var current_capture_timestamp := "" :
 		current_capture_timestamp = value
 		captured_at_label.text = base_captured_at_text + value
 	get():
-		return current_capture_timestamp if current_capture_timestamp != "" else Time.get_datetime_string_from_system()
+		return current_capture_timestamp if current_capture_timestamp != "" else Time.get_datetime_string_from_system(true)
 
 func on_preview_image_changed(_index: int, _image: Texture2D, timestamp: String) -> void:
 	current_capture_timestamp = timestamp

@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func add_image(image: Texture2D) -> void:
 	_captures.append(image)
-	_capture_stamps.append(Time.get_datetime_string_from_system())
+	_capture_stamps.append(Time.get_datetime_string_from_system(true))
 	_sync_inspector()
 
 func pop_current_image() -> void:

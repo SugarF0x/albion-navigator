@@ -17,6 +17,8 @@ public partial class ZoneLink : ForceGraphLink
         InitExpiry();
     }
     
+    // TODO: make links connecting roads to mainland semitransparent 
+    
     protected override void InitStrength(ForceGraphNode[] nodes)
     {
         var sourceNode = nodes[Source];
@@ -39,9 +41,10 @@ public partial class ZoneLink : ForceGraphLink
         if (ExpiresAt == null) return;
         
         var targetDateTime = DateTime.Parse(ExpiresAt);
-        var currentDateTime = DateTimeOffset.Now;
+        var currentDateTime = DateTime.UtcNow;
 
         var difference = targetDateTime - currentDateTime;
+        
         if (difference.TotalSeconds <= 0)
         {
             QueueFree();
