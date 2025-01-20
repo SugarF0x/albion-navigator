@@ -3,7 +3,7 @@
 # Albion Navigator
 
 **Albion Navigator** (**AN**) is a _Roads of Avalon_ cartography management tool.
-It helps in taking nots on portals as well as in managing them.
+It helps in taking notes on portals as well as in managing them.
 
 ## Main
 
