@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using AlbionNavigator.Autoload;
 
 public partial class AudioPlayer : Node
@@ -26,17 +27,15 @@ public partial class AudioPlayer : Node
 	
 	public void Play(SoundId id)
 	{
-		AudioStream[] idToStreamMap =
-		[
-			ShutterSound,
-			TrashSound,
-			PortalOpenSound,
-			PortalCloseSound,
-		];
-
-		if ((int)id >= idToStreamMap.Length) throw new ArgumentOutOfRangeException(nameof(id), id, null);
+		Dictionary<SoundId, AudioStream> idToStreamMap = new()
+		{
+			{ SoundId.CameraShutter, ShutterSound },
+			{ SoundId.PaperTrash, TrashSound },
+			{ SoundId.PortalOpen, PortalOpenSound },
+			{ SoundId.PortalClose, PortalCloseSound },
+		};
 		
-		StreamPlayer.Stream = idToStreamMap[(int)id];
+		StreamPlayer.Stream = idToStreamMap[id];
 		StreamPlayer.PitchScale = 1.0f + (new Random().NextSingle() * 0.2f - 0.1f);
 		StreamPlayer.Play();
 	}
