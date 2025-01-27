@@ -1,13 +1,12 @@
 ﻿using System;
 using Godot;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 [GlobalClass]
 public partial class ForceGraphLink : Node2D
 {
-    public Line2D Line;
-
+    [Export] public Line2D Line;
     [Export] public float DesiredDistance = 30f;
 
     public int Source = -1;
@@ -23,18 +22,13 @@ public partial class ForceGraphLink : Node2D
         Target = target.Value;
     }
 
-    public override void _Ready()
-    {
-        Line = GetNode<Line2D>("Line2D");
-    }
-
     public void Connect(int from, int to)
     {
         Source = from;
         Target = to;
     }
 
-    public void DrawLink(ForceGraphNode[] nodes)
+    public virtual void DrawLink(ForceGraphNode[] nodes)
     {
         Line.ClearPoints();
         if (Source < 0 || Source > nodes.Length) return;
@@ -43,7 +37,7 @@ public partial class ForceGraphLink : Node2D
         Line.AddPoint(nodes[Target].Position);
     }
 
-    public void Initialize(ForceGraphNode[] nodes)
+    public virtual void Initialize(ForceGraphNode[] nodes)
     {
         try
         {
@@ -72,7 +66,7 @@ public partial class ForceGraphLink : Node2D
         Bias = sourceConnectionsCount / (sourceConnectionsCount + targetConnectionsCount);
     }
 
-    private void InitStrength(ForceGraphNode[] nodes)
+    protected virtual void InitStrength(ForceGraphNode[] nodes)
     {
         var sourceConnectionsCount = (float)nodes[Source].Connections.Count;
         var targetConnectionsCount = (float)nodes[Target].Connections.Count;

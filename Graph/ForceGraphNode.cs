@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Godot;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 [GlobalClass]
 public partial class ForceGraphNode : Node2D
@@ -15,6 +15,7 @@ public partial class ForceGraphNode : Node2D
     [Export] public float InitialRadius { get; set; } = 30f;
     [Export] public float InitialAngle { get; set; } = float.Pi * (3f - float.Sqrt(5f));
     
+    // TODO: now that i think about it, i am not convinced Index and Connections should even be here to begin with but rather be part of force directed graph instead
     public int Index { get; set; } = -1;
     public Vector2 Velocity { get; set; } = Vector2.Zero;
     public List<int> Connections { get; set; } = [];

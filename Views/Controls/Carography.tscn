@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://3xgca2tlsvhb"]
+[gd_scene load_steps=4 format=3 uid="uid://3xgca2tlsvhb"]
 
 [ext_resource type="Script" path="res://Views/Controls/Carography.gd" id="1_lskbw"]
-[ext_resource type="Texture2D" uid="uid://b0flxpqwgssuo" path="res://Assets/sample-image.png" id="1_m0wo8"]
+[ext_resource type="PackedScene" uid="uid://ditsetvxv6vyf" path="res://Views/Controls/CartographyCaptures.tscn" id="2_8dmsg"]
+[ext_resource type="PackedScene" uid="uid://bfmunp6jd17dq" path="res://Components/AutoCompleteLineEdit.tscn" id="3_su6c0"]
 
 [node name="Cartography" type="TabBar"]
 anchors_preset = 15
@@ -26,24 +27,28 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="CartographyCaptures" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_8dmsg")]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_m0wo8")
-expand_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SourceZoneEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="SourceZoneEdit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_su6c0")]
 layout_mode = 2
+size_flags_horizontal = 1
 placeholder_text = "Source Zone Name"
 
-[node name="TargetZoneEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="TargetZoneEdit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_su6c0")]
 layout_mode = 2
+size_flags_horizontal = 1
 placeholder_text = "Target Zone Name"
+
+[node name="CapturedAtLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Captured at: "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

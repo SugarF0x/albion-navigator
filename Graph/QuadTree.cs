@@ -2,7 +2,7 @@
 using System.Linq;
 using Godot;
 
-namespace AlbionNavigator;
+namespace AlbionNavigator.Graph;
 
 public class QuadTree
 {

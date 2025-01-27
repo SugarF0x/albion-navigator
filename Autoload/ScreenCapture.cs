@@ -8,7 +8,10 @@ namespace AlbionNavigator.Autoload;
 [GlobalClass]
 public partial class ScreenCapture : Node
 {
-#if WINDOWS
+    [Signal]
+    public delegate void ScreenCapturedEventHandler(Texture2D texture);
+    
+#if GODOT_WINDOWS
     [DllImport("user32.dll")]
     private static extern int GetAsyncKeyState(int vKey);
     [DllImport("user32.dll")]
@@ -20,29 +23,22 @@ public partial class ScreenCapture : Node
     private bool DidJustPressBind;
     private bool DidReleaseBind = true;
     
-    [Signal]
-    public delegate void ScreenCapturedEventHandler();
-
-    public override void _Ready()
-    {
-        
-    }
-    
     public override void _Process(double delta)
     {
         CheckForBindPress();
-        if (!DidJustPressBind) return;
-        
-        TakeScreenshot();
+        if (DidJustPressBind) TakeScreenshot();
     }
 
     private void CheckForBindPress()
     {
-        if (!DidReleaseBind) DidReleaseBind = GetAsyncKeyState(VK_CONTROL) == 0 || GetAsyncKeyState(VK_S) == 0;
+        var isControlPressed = GetAsyncKeyState(VK_CONTROL) > 0;
+        var isSPressed = GetAsyncKeyState(VK_S) > 0;
+        
+        if (!DidReleaseBind) DidReleaseBind = !isControlPressed || !isSPressed;
         if (DidJustPressBind) DidJustPressBind = false;
         if (!DidReleaseBind) return;
 
-        DidJustPressBind = GetAsyncKeyState(VK_CONTROL) > 0 && GetAsyncKeyState(VK_S) > 0;
+        DidJustPressBind = isControlPressed && isSPressed;
         if (DidJustPressBind) DidReleaseBind = false;
     }
 
@@ -51,17 +47,31 @@ public partial class ScreenCapture : Node
         var screenWidth = GetSystemMetrics(0);
         var screenHeight = GetSystemMetrics(1);
 
-        using (var bitmap = new System.Drawing.Bitmap(screenWidth, screenHeight))
+        using var bitmap = new System.Drawing.Bitmap(screenWidth, screenHeight);
+        using (var graphics = Graphics.FromImage(bitmap))
         {
-            using (var graphics = Graphics.FromImage(bitmap))
-            {
-                graphics.CopyFromScreen(0, 0, 0, 0, new Size(screenWidth, screenHeight));
-            }
-
-            bitmap.Save("D:\\Godot\\_TEMP\\image.png", ImageFormat.Png);
+            graphics.CopyFromScreen(0, 0, 0, 0, new Size(screenWidth, screenHeight));
         }
-        
-        EmitSignal(SignalName.ScreenCaptured);
+
+        var width = bitmap.Width;
+        var height = bitmap.Height;
+        var image = Godot.Image.CreateEmpty(width, height, false, Godot.Image.Format.Rgba8);
+            
+        var rect = new Rectangle(0, 0, width, height);
+        var bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
+
+        var pixelData = new byte[bitmapData.Stride * height];
+        Marshal.Copy(bitmapData.Scan0, pixelData, 0, pixelData.Length);
+        bitmap.UnlockBits(bitmapData);
+
+        for (var i = 0; i < pixelData.Length; i += 4)
+        {
+            (pixelData[i], pixelData[i + 2]) = (pixelData[i + 2], pixelData[i]);
+        }
+
+        image.SetData(width, height, false, Godot.Image.Format.Rgba8, pixelData);
+            
+        EmitSignal(SignalName.ScreenCaptured, ImageTexture.CreateFromImage(image));
     }
 #endif
 }

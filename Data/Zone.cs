@@ -29,7 +29,7 @@ public struct Zone(int id, Zone.ZoneType type, string displayName, int[] connect
     {
         var zones = new List<Zone>();
 
-        var file = FileAccess.Open("res://Data/zones.bin", FileAccess.ModeFlags.Read);
+        using var file = FileAccess.Open("res://Data/zones.bin", FileAccess.ModeFlags.Read);
         if (file == null)
         {
             GD.Print("Failed to open the file.");

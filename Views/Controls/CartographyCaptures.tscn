@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://ditsetvxv6vyf"]
+
+[ext_resource type="Script" path="res://Views/Controls/CartographyCaptures.gd" id="1_ict3i"]
+[ext_resource type="Texture2D" uid="uid://v7lqr4enpyyq" path="res://Assets/trash.png" id="2_s2aa0"]
+[ext_resource type="PackedScene" uid="uid://c8tj2x2m3utep" path="res://Components/ImageInspector.tscn" id="2_uxijs"]
+
+[node name="CartographyCaptures" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 675.0
+grow_horizontal = 2
+script = ExtResource("1_ict3i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="PreviousButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "<<"
+
+[node name="IndexLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="NextButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = ">>"
+
+[node name="ClearButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+icon = ExtResource("2_s2aa0")
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ImageInspector1" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ImageInspector2" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+layout_mode = 2
+size_flags_horizontal = 3

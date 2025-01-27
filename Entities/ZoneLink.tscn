@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://2o6n013qcuni"]
+
+[ext_resource type="Script" path="res://Entities/ZoneLink.cs" id="1_0ecxd"]
+
+[node name="ZoneLink" type="Node2D" node_paths=PackedStringArray("Line")]
+script = ExtResource("1_0ecxd")
+Line = NodePath("Line2D")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0

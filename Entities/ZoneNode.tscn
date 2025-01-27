@@ -2,5 +2,26 @@
 
 [ext_resource type="Script" path="res://Entities/ZoneNode.cs" id="1_mwetv"]
 
-[node name="ZoneNode" type="Node2D"]
+[node name="ZoneNode" type="Node2D" node_paths=PackedStringArray("NameLabel")]
 script = ExtResource("1_mwetv")
+DisplayName = "Display Name"
+NameLabel = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.5
+offset_top = -36.85
+offset_right = 56.5
+offset_bottom = 56.15
+grow_horizontal = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(56.5, 46.5)
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 32
+text = "Display
+Name"
+horizontal_alignment = 1
