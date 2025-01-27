@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Godot;
 using AlbionNavigator.Data;
@@ -41,6 +42,8 @@ public partial class ForceDirectedGraph : Node2D
 
     public ForceGraphNode[] Nodes = [];
     public ForceGraphLink[] Links = [];
+    
+    private ForceGraphNode[] FloatingNodes = [];
 
     // TODO: disable underscore for private fields rule in Rider, kinda hate it tbh
     
@@ -118,8 +121,20 @@ public partial class ForceDirectedGraph : Node2D
         if (!_shouldRegisterChildren) return;
         _shouldRegisterChildren = false;
 
-        Nodes = _nodesContainer.GetChildren().Select(child => child as ForceGraphNode).ToArray();
-        Links = _linksContainer.GetChildren().Select(child => child as ForceGraphLink).ToArray();
+        var links = new List<ForceGraphLink>();
+        foreach (var child in _linksContainer.GetChildren()) if (child is ForceGraphLink link) links.Add(link);
+        Links = links.ToArray();
+
+        var allNodes = new List<ForceGraphNode>();
+        var floatingNodes = new List<ForceGraphNode>();
+        foreach (var child in _nodesContainer.GetChildren())
+        {
+            if (child is not ForceGraphNode node) continue;
+            allNodes.Add(node);
+            if (!node.Frozen) floatingNodes.Add(node);
+        }
+        Nodes = allNodes.ToArray();
+        FloatingNodes = floatingNodes.ToArray();
 
         InitializeChildren();
     }
@@ -191,13 +206,13 @@ public partial class ForceDirectedGraph : Node2D
     
     private void ApplyGravityForce()
     {
-        foreach (var node in Nodes) node.Velocity -= node.Position * GravityStrength * Alpha * (node.Position.DistanceTo(Vector2.Zero) > GravityDesiredDistance ? 1f : -1f);
+        foreach (var node in FloatingNodes) node.Velocity -= node.Position * GravityStrength * Alpha * (node.Position.DistanceTo(Vector2.Zero) > GravityDesiredDistance ? 1f : -1f);
     }
     
     private void ApplyManyBodyForce()
     {
         _tree = new QuadTree().AddAll(Nodes).VisitAfter(Accumulate);
-        foreach (var node in Nodes) _tree.Visit(quad => Apply(quad, node));
+        foreach (var node in FloatingNodes) _tree.Visit(quad => Apply(quad, node));
         QueueRedraw();
     }
 
