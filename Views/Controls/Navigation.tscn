@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://e3kqvbw7jo7"]
+[gd_scene load_steps=3 format=3 uid="uid://e3kqvbw7jo7"]
+
+[ext_resource type="Script" path="res://Views/Controls/Navigation.gd" id="1_ui6su"]
+[ext_resource type="PackedScene" uid="uid://bfmunp6jd17dq" path="res://Components/AutoCompleteLineEdit.tscn" id="2_noulh"]
 
 [node name="Navigation" type="TabBar"]
 anchors_preset = 15
@@ -6,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ui6su")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -18,9 +22,91 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="ShortestRouteContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "// TODO: add route finding and formatted route export"
+size_flags_horizontal = 3
+
+[node name="ShortestRouteTitle" type="Label" parent="MarginContainer/HBoxContainer/ShortestRouteContainer"]
+layout_mode = 2
+text = "Find shortest route"
+
+[node name="ShortestRouteFromInput" parent="MarginContainer/HBoxContainer/ShortestRouteContainer" instance=ExtResource("2_noulh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "From"
+
+[node name="ShortestRouteToInput" parent="MarginContainer/HBoxContainer/ShortestRouteContainer" instance=ExtResource("2_noulh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "To"
+
+[node name="ShortestRouteFindButton" type="Button" parent="MarginContainer/HBoxContainer/ShortestRouteContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Find"
+
+[node name="ShortestRoutePathLabel" type="Label" parent="MarginContainer/HBoxContainer/ShortestRouteContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Path:"
+
+[node name="ShortestRouteCopyButton" type="Button" parent="MarginContainer/HBoxContainer/ShortestRouteContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Copy"
+
+[node name="AllPathsOutContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AllPathsOutTitle" type="Label" parent="MarginContainer/HBoxContainer/AllPathsOutContainer"]
+layout_mode = 2
+text = "Find all paths out"
+
+[node name="AllPathsOutinput" parent="MarginContainer/HBoxContainer/AllPathsOutContainer" instance=ExtResource("2_noulh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+placeholder_text = "From"
+
+[node name="AllPathsOutFindButton" type="Button" parent="MarginContainer/HBoxContainer/AllPathsOutContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Find"
+
+[node name="AllPathsOutListControls" type="HBoxContainer" parent="MarginContainer/HBoxContainer/AllPathsOutContainer"]
+layout_mode = 2
+
+[node name="AllPathsOutPreviousButton" type="Button" parent="MarginContainer/HBoxContainer/AllPathsOutContainer/AllPathsOutListControls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Previous"
+
+[node name="AllPathsOutListIndexLabel" type="Label" parent="MarginContainer/HBoxContainer/AllPathsOutContainer/AllPathsOutListControls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="AllPathsOutNextButton" type="Button" parent="MarginContainer/HBoxContainer/AllPathsOutContainer/AllPathsOutListControls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="AllPathsOutPathLabel" type="Label" parent="MarginContainer/HBoxContainer/AllPathsOutContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Path:"
+
+[node name="AllPathsOutCopyButton" type="Button" parent="MarginContainer/HBoxContainer/AllPathsOutContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Copy"
