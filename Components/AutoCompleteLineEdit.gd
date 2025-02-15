@@ -26,8 +26,8 @@ func on_text_change(new_text: String) -> void:
 	if new_text == "": valid_options.clear()
 	else: valid_options = options.filter(func (word: String) -> bool: return word.to_lower().begins_with(new_text.to_lower()))
 	
-	var new_valid_options_Size := valid_options.size()
-	if previous_valid_options_size == new_valid_options_Size: return
+	var new_valid_options_size := valid_options.size()
+	if previous_valid_options_size == new_valid_options_size: return
 	option_hint_index = -1 if valid_options.size() == 0 else 0
 
 func get_value() -> String:
