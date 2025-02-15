@@ -80,7 +80,8 @@ public partial class ZoneLink : ForceGraphLink
         Default,
         CityPortal,
         RoadToContinent,
-        Path
+        Path,
+        WayOut,
     }
 
     public void Highlight(HighlightType type = HighlightType.Default)
@@ -91,6 +92,7 @@ public partial class ZoneLink : ForceGraphLink
             case HighlightType.CityPortal: Line.DefaultColor = Colors.Orange; return;
             case HighlightType.RoadToContinent: Line.DefaultColor = Colors.Cyan with { A = .5f }; return;
             case HighlightType.Path: Line.DefaultColor = Colors.Purple; return;
+            case HighlightType.WayOut: Line.DefaultColor = Colors.Red; return;
         }
     }
 
