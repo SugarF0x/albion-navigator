@@ -18,6 +18,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not is_mouse_in_scope: return
 	
+	if Input.is_action_just_pressed("zoom_in"): return adjust_zoom(true)
+	if Input.is_action_just_pressed("zoom_out"): return adjust_zoom()
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT: 
 			is_dragging = event.is_pressed()
@@ -26,9 +29,12 @@ func _input(event: InputEvent) -> void:
 		if not event.is_pressed(): return
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP: adjust_zoom(true)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN: adjust_zoom()
+		
+		return
 	
-	elif event is InputEventMouseMotion and is_dragging:
+	if event is InputEventMouseMotion and is_dragging:
 		position -= event.relative * (Vector2.ONE / zoom)
+		return
 
 func adjust_zoom(out := false) -> void:
 	var delta := 0.1 if out else -0.1
