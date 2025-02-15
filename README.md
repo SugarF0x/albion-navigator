@@ -1,4 +1,4 @@
-﻿![alt text](/preview.jpg)
+![alt text](/preview.jpg)
 
 # Albion Navigator
 
@@ -45,3 +45,5 @@ after having taken a snap will register it as a portal of 8 hours 50 minutes res
 _TBA_
 
 ## Settings
+
+_TBA_
