@@ -42,7 +42,23 @@ after having taken a snap will register it as a portal of 8 hours 50 minutes res
 
 ## Navigation
 
-_TBA_
+Navigation tab is where you go to find shortest paths from point A to point B, which includes both
+continents and roads. Given enough roads data, it can highlight a shortcut through the portals.
+
+### Pathfinder
+
+This section allows you to find the shortest path from point A to point B. Enter starting zone
+and target zone to calculate shortest path with proper formatting to paste to a Discord channel.
+This path will also contain timestamp to when the portal shall close.
+
+### Way out finder
+
+This section allows you to find all possible paths leading out of a road to either of the continents.
+You can cycle through the possible paths via the control buttons.
+
+Select the road you want to find exists from and hit `Find`. You can then copy either individual paths
+or all possible ways out. This comes very handy when you are looking for a good way out of a Hideout
+to transport goods out to the Royal continent.
 
 ## Settings
 
