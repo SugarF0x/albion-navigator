@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Data;
 using AlbionNavigator.Graph;
@@ -62,6 +63,59 @@ public partial class ZoneMap : ForceDirectedGraph
                 link.Connect(i, connection);
                 AddLink(link);
             }
+        }
+    }
+
+    /// <returns>index array of path links</returns>
+    public int[] FindShortestPath(int source, int target)
+    {
+        var queue = new List<List<int>> { new () };
+        queue.First().Add(source);
+        
+        var visited = new HashSet<int> { source };
+
+        while (queue.Count > 0)
+        {
+            var path = queue.First();
+            queue.RemoveAt(0);
+            
+            var node = path.Last();
+            var neighbors = Nodes[node].Connections;
+
+            foreach (var neighbor in neighbors)
+            {
+                if (neighbor == target)
+                {
+                    var fullPath = new List<int>(path) { neighbor };
+
+                    var links = new List<int>();
+                    for (var i = 0; i < fullPath.Count - 1; i++)
+                    {
+                        var from = fullPath[i];
+                        var to  = fullPath[i + 1];
+                        links.Add(Nodes[from].ConnectionLinkIndexes[Nodes[from].Connections.IndexOf(to)]);
+                    }
+                    
+                    return links.ToArray();
+                }
+
+                if (!visited.Add(neighbor)) continue;
+                
+                var copy = new List<int>(path) { neighbor };
+                queue.Add(copy);
+            }
+        }
+
+        return [];
+    }
+
+    public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type)
+    {
+        foreach (var index in indexes)
+        {
+            var link = Links[index];
+            if (link is not ZoneLink zoneLink) continue;
+            zoneLink.Highlight(type);
         }
     }
 }

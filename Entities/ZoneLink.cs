@@ -12,15 +12,16 @@ public partial class ZoneLink : ForceGraphLink
     public string ExpiresAt { get; set; }
     
     private AudioPlayer AudioServer;
+    private HighlightType DefaultHighlightType = HighlightType.Default;
 
     public override void _Ready()
     {
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
     }
 
-    public override void Initialize(ForceGraphNode[] nodes)
+    public override void Initialize(int graphIndex, ForceGraphNode[] nodes)
     {
-        base.Initialize(nodes);
+        base.Initialize(graphIndex, nodes);
         InitExpiry();
         InitHighlight(nodes);
     }
@@ -57,16 +58,16 @@ public partial class ZoneLink : ForceGraphLink
 
     private void InitHighlight(ForceGraphNode[] nodes)
     {
-        Highlight();
-        
         var sourceNode = nodes[Source];
         var targetNode = nodes[Target];
 
         if (sourceNode is not ZoneNode sourceZoneNode || targetNode is not ZoneNode targetZoneNode) return;
         Zone.ZoneType[] zoneTypes = [sourceZoneNode.Type, targetZoneNode.Type];
         
-        if (zoneTypes.All(type => type == Zone.ZoneType.City)) Highlight(HighlightType.CityPortal);
-        if (zoneTypes.Any(type => type == Zone.ZoneType.Road) && zoneTypes.Any(type => type != Zone.ZoneType.Road)) Highlight(HighlightType.RoadToContinent);
+        if (zoneTypes.All(type => type == Zone.ZoneType.City)) DefaultHighlightType = HighlightType.CityPortal;
+        if (zoneTypes.Any(type => type == Zone.ZoneType.Road) && zoneTypes.Any(type => type != Zone.ZoneType.Road)) DefaultHighlightType = HighlightType.RoadToContinent;
+        
+        Highlight();
     }
 
     private void ClosePortal()
@@ -84,16 +85,29 @@ public partial class ZoneLink : ForceGraphLink
         WayOut,
     }
 
-    public void Highlight(HighlightType type = HighlightType.Default)
+    public void Highlight(HighlightType type)
     {
+        Line.Width = 1f;
         switch (type)
         {
             case HighlightType.Default: Line.DefaultColor = Colors.White; return;
             case HighlightType.CityPortal: Line.DefaultColor = Colors.Orange; return;
             case HighlightType.RoadToContinent: Line.DefaultColor = Colors.Cyan with { A = .5f }; return;
-            case HighlightType.Path: Line.DefaultColor = Colors.Purple; return;
-            case HighlightType.WayOut: Line.DefaultColor = Colors.Red; return;
+            case HighlightType.Path: 
+                Line.DefaultColor = Colors.Purple;
+                Line.Width = 5f;
+                return;
+            case HighlightType.WayOut: 
+                Line.DefaultColor = Colors.Red;
+                Line.Width = 5f;
+                return;
+            default: GD.Print("Unknown highlight type"); return;
         }
+    }
+
+    public void Highlight()
+    {
+        Highlight(DefaultHighlightType);
     }
 
     public static float GetExpirationInSeconds(string timestamp)
