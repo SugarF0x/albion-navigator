@@ -19,6 +19,7 @@ public partial class ForceGraphNode : Node2D
     public int Index { get; set; } = -1;
     public Vector2 Velocity { get; set; } = Vector2.Zero;
     public List<int> Connections { get; set; } = [];
+    public List<int> ConnectionLinkIndexes { get; set; } = [];
     
     public void UpdatePosition()
     {

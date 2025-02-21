@@ -110,7 +110,7 @@ public partial class ForceDirectedGraph : Node2D
     private void InitializeChildren()
     {
         for (var i = 0; i < Nodes.Length; i++) Nodes[i].Initialize(i);
-        foreach (var link in Links) link.Initialize(Nodes);
+        for (var i = 0; i < Links.Length; i++) Links[i].Initialize(i, Nodes);
     }
 
     public void Reheat()

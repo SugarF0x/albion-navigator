@@ -37,11 +37,11 @@ public partial class ForceGraphLink : Node2D
         Line.AddPoint(nodes[Target].Position);
     }
 
-    public virtual void Initialize(ForceGraphNode[] nodes)
+    public virtual void Initialize(int graphIndex, ForceGraphNode[] nodes)
     {
         try
         {
-            InitConnectionsCount(nodes);
+            InitConnectionsCount(graphIndex, nodes);
             InitBias(nodes);
             InitStrength(nodes);
         }
@@ -51,12 +51,14 @@ public partial class ForceGraphLink : Node2D
         }
     }
 
-    private void InitConnectionsCount(ForceGraphNode[] nodes)
+    private void InitConnectionsCount(int graphIndex, ForceGraphNode[] nodes)
     {
         if (Source >= nodes.Length || Target >= nodes.Length) throw new IndexOutOfRangeException("Cannot add link: no node to connect to");
         if (nodes[Source].Connections.Contains(Target)) throw new ArgumentException("Cannot add link: source already connected");
         nodes[Source].Connections.Add(Target);
+        nodes[Source].ConnectionLinkIndexes.Add(graphIndex);
         nodes[Target].Connections.Add(Source);
+        nodes[Target].ConnectionLinkIndexes.Add(graphIndex);
     }
 
     private void InitBias(ForceGraphNode[] nodes)
