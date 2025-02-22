@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://Entities/ZoneMap.tscn" id="5_sbrde"]
 
 [sub_resource type="Curve" id="Curve_pxj3m"]
-_data = [Vector2(0, 1), 0.0, -0.0376862, 0, 0, Vector2(0.826816, 0.73753), -0.724269, -0.724269, 0, 0, Vector2(1, 0), -8.49506, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -0.0376862, 0, 0, Vector2(0.849162, 0.632948), -0.982948, -0.982948, 0, 0, Vector2(1, 0), -9.23824, 0.0, 0, 0]
 point_count = 3
 
 [node name="Graph" type="Node2D"]
@@ -37,6 +37,7 @@ texture = ExtResource("4_ky6eh")
 
 [node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]
 AlphaDecayCurve = SubResource("Curve_pxj3m")
+AlphaStep = 0.008
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
