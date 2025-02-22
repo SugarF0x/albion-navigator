@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xo5eyb2yrqb"]
+[gd_scene load_steps=7 format=3 uid="uid://5xo5eyb2yrqb"]
 
 [ext_resource type="Script" path="res://Views/Graph.gd" id="1_fh4y3"]
 [ext_resource type="Script" path="res://Views/GraphCamera.gd" id="2_6qgp7"]
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="3_s17xd"]
 [ext_resource type="Texture2D" uid="uid://bibl4as6bnc21" path="res://Assets/map-background.png" id="4_ky6eh"]
 [ext_resource type="PackedScene" path="res://Entities/ZoneMap.tscn" id="5_sbrde"]
+
+[sub_resource type="Curve" id="Curve_pxj3m"]
+_data = [Vector2(0, 1), 0.0, -0.0376862, 0, 0, Vector2(0.826816, 0.73753), -0.724269, -0.724269, 0, 0, Vector2(1, 0), -8.49506, 0.0, 0, 0]
+point_count = 3
 
 [node name="Graph" type="Node2D"]
 position = Vector2(600, 600)
@@ -32,3 +36,41 @@ scale = Vector2(1.55, 1.55)
 texture = ExtResource("4_ky6eh")
 
 [node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]
+AlphaDecayCurve = SubResource("Curve_pxj3m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SimulationStateLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "Simulation running..."
