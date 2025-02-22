@@ -101,7 +101,7 @@ public partial class ZoneLink : ForceGraphLink
 
     public void Highlight(HighlightType type)
     {
-        SetWidth(0f);
+        SetWidth(1f);
         switch (type)
         {
             case HighlightType.Default: Line.DefaultColor = Colors.White; return;
@@ -109,11 +109,11 @@ public partial class ZoneLink : ForceGraphLink
             case HighlightType.RoadToContinent: Line.DefaultColor = Colors.Cyan with { A = .5f }; return;
             case HighlightType.Path: 
                 Line.DefaultColor = Colors.Purple;
-                SetWidth(5f);
+                SetWidth(5f, true);
                 return;
             case HighlightType.WayOut: 
                 Line.DefaultColor = Colors.Red;
-                SetWidth(5f);
+                SetWidth(5f, true);
                 return;
             default: GD.Print("Unknown highlight type"); return;
         }
@@ -124,10 +124,11 @@ public partial class ZoneLink : ForceGraphLink
         Highlight(DefaultHighlightType);
     }
 
-    public void SetWidth(float width)
+    public void SetWidth(float width, bool withOutline = false)
     {
         Line.Width = width;
         Outline.Width = width + OutlineWidth;
+        Outline.Visible = withOutline;
     }
 
     public static float GetExpirationInSeconds(string timestamp)
