@@ -109,7 +109,7 @@ public partial class ZoneMap : ForceDirectedGraph
         return [];
     }
 
-    public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type)
+    public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type = ZoneLink.HighlightType.Default)
     {
         foreach (var index in indexes)
         {
