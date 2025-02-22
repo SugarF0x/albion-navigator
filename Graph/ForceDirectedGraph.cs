@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Godot;
-using AlbionNavigator.Data;
-using AlbionNavigator.Entities;
 
 namespace AlbionNavigator.Graph;
 
@@ -16,9 +13,8 @@ public partial class ForceDirectedGraph : Node2D
     
     [ExportGroup("Graph Heat")] 
     [Export] public float Alpha = 1f;
-    [Export] public float AlphaMin = 0.0001f;
-    [Export] public float AlphaTarget;
-    [Export] public float AlphaDecay = 0.0302f;
+    [Export] public Curve AlphaDecayCurve;
+    [Export] public float AlphaStep = 0.01f;
     [Export] public float AlphaReheat = 0.5f;
     [Export] public bool ReheatOnNodesAdded = true;
 
@@ -41,6 +37,12 @@ public partial class ForceDirectedGraph : Node2D
     [Signal]
     public delegate void ChildrenRegisteredNativeEventHandler(ForceGraphNode[] nodes, ForceGraphLink[] links);
 
+    [Signal]
+    public delegate void SimulationStartedEventHandler();
+    [Signal]
+    public delegate void SimulationStoppedEventHandler();
+
+    private float AlphaDistance;
     private RandomNumberGenerator _random = new ();
 
     public ForceGraphNode[] Nodes = [];
@@ -59,7 +61,16 @@ public partial class ForceDirectedGraph : Node2D
 
     public override void _Process(double _)
     {
-        if (Alpha >= AlphaMin) Step();
+        if (AlphaDistance < 1f)
+        {
+            Step();
+        }
+        else
+        {
+            if (!IsSimulationRunning) return;
+            IsSimulationRunning = false;
+            EmitSignal(SignalName.SimulationStopped);
+        }
     }
     
 
@@ -115,7 +126,7 @@ public partial class ForceDirectedGraph : Node2D
 
     public void Reheat()
     {
-        Alpha = AlphaReheat;
+        AlphaDistance = AlphaReheat;
     }
     
     public void Reheat(float value)
@@ -123,10 +134,19 @@ public partial class ForceDirectedGraph : Node2D
         Alpha = float.Max(Alpha, value);
     }
 
+    private bool IsSimulationRunning;
+    
     private void Step()
     {
+        if (!IsSimulationRunning)
+        {
+            IsSimulationRunning = true;
+            EmitSignal(SignalName.SimulationStarted);
+        }
+        
         RegisterChildren();
-        Alpha += (AlphaTarget - Alpha) * AlphaDecay;
+        AlphaDistance += AlphaStep;
+        Alpha = AlphaDecayCurve.SampleBaked(AlphaDistance);
 
         ApplyForces();
         

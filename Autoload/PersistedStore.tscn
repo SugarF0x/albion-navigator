@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxlngc27mtfsx"]
+[gd_scene load_steps=2 format=3 uid="uid://bh057prskc2p8"]
 
 [ext_resource type="Script" path="res://Autoload/PersistedStore.cs" id="1_2ut7n"]
 
