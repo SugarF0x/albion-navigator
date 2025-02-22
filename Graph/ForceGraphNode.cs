@@ -67,5 +67,6 @@ public partial class ForceGraphNode : Node2D
     private void InitConnections()
     {
         Connections.Clear();
+        ConnectionLinkIndexes.Clear();
     }
 }
