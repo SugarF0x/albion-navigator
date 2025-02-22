@@ -26,6 +26,16 @@ enum HighlightType {
 	WayOut,
 }
 
+enum ZoneType {
+	StartingCity, 
+	City, 
+	SafeArea, 
+	Yellow, 
+	Red, 
+	Black, 
+	Road,
+}
+
 func _ready() -> void:
 	graph.ChildrenRegistered.connect(register_zone_names)
 	shortest_route_find_button.pressed.connect(find_shortest_path)
@@ -39,7 +49,7 @@ func register_zone_names(nodes: Array, _links: Array) -> void:
 		if node is not ZoneNode: continue
 		if node.DisplayName == "": continue
 		zone_names.append(node.DisplayName)
-		if node.Type == 6: road_zone_names.append(node.DisplayName)
+		if node.Type == ZoneType.Road: road_zone_names.append(node.DisplayName)
 	
 	shortest_route_from_input.options = zone_names
 	shortest_route_to_input.options = zone_names
@@ -67,7 +77,7 @@ var currently_selected_links: PackedInt32Array = [] :
 			node_indexes.append(graph.Links[link_index].Target if node_indexes[node_indexes.size() - 1] != graph.Links[link_index].Target else graph.Links[link_index].Source)
 			
 		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
-		var names := nodes.map(func (node: ZoneNode) -> String: return node.DisplayName)
+		var names := nodes.map(func (node: ZoneNode) -> String: return "[{type}] {name}".format({ "type": node.Type, "name": node.DisplayName }))
 		shortest_route_path_label.text = "\n".join(names)
 		
 		call_resize()
