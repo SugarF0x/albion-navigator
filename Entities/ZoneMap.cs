@@ -108,14 +108,24 @@ public partial class ZoneMap : ForceDirectedGraph
 
         return [];
     }
-
-    public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type = ZoneLink.HighlightType.Default)
+    
+    public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type)
     {
         foreach (var index in indexes)
         {
             var link = Links[index];
             if (link is not ZoneLink zoneLink) continue;
             zoneLink.Highlight(type);
+        }
+    }
+    
+    public void HighlightLinks(int[] indexes)
+    {
+        foreach (var index in indexes)
+        {
+            var link = Links[index];
+            if (link is not ZoneLink zoneLink) continue;
+            zoneLink.Highlight();
         }
     }
 }
