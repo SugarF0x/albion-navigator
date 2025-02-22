@@ -9,6 +9,9 @@ namespace AlbionNavigator.Entities;
 [GlobalClass]
 public partial class ZoneLink : ForceGraphLink
 {
+    [Export] public Line2D Outline;
+    [Export] public float OutlineWidth = 1f;
+    
     public string ExpiresAt { get; set; }
     
     private AudioPlayer AudioServer;
@@ -17,6 +20,17 @@ public partial class ZoneLink : ForceGraphLink
     public override void _Ready()
     {
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
+    }
+
+    public override bool DrawLink(ForceGraphNode[] nodes)
+    {
+        Outline.ClearPoints();
+        if (!base.DrawLink(nodes)) return false;
+        
+        Outline.AddPoint(nodes[Target].Position);
+        Outline.AddPoint(nodes[Source].Position);
+        
+        return true;
     }
 
     public override void Initialize(int graphIndex, ForceGraphNode[] nodes)
@@ -87,7 +101,7 @@ public partial class ZoneLink : ForceGraphLink
 
     public void Highlight(HighlightType type)
     {
-        Line.Width = 1f;
+        SetWidth(0f);
         switch (type)
         {
             case HighlightType.Default: Line.DefaultColor = Colors.White; return;
@@ -95,11 +109,11 @@ public partial class ZoneLink : ForceGraphLink
             case HighlightType.RoadToContinent: Line.DefaultColor = Colors.Cyan with { A = .5f }; return;
             case HighlightType.Path: 
                 Line.DefaultColor = Colors.Purple;
-                Line.Width = 5f;
+                SetWidth(5f);
                 return;
             case HighlightType.WayOut: 
                 Line.DefaultColor = Colors.Red;
-                Line.Width = 5f;
+                SetWidth(5f);
                 return;
             default: GD.Print("Unknown highlight type"); return;
         }
@@ -108,6 +122,12 @@ public partial class ZoneLink : ForceGraphLink
     public void Highlight()
     {
         Highlight(DefaultHighlightType);
+    }
+
+    public void SetWidth(float width)
+    {
+        Line.Width = width;
+        Outline.Width = width + OutlineWidth;
     }
 
     public static float GetExpirationInSeconds(string timestamp)

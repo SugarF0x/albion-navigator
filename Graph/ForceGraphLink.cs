@@ -28,13 +28,16 @@ public partial class ForceGraphLink : Node2D
         Target = to;
     }
 
-    public virtual void DrawLink(ForceGraphNode[] nodes)
+    public virtual bool DrawLink(ForceGraphNode[] nodes)
     {
         Line.ClearPoints();
-        if (Source < 0 || Source > nodes.Length) return;
-        if (Target < 0 || Target > nodes.Length) return;
+        if (Source < 0 || Source > nodes.Length) return false;
+        if (Target < 0 || Target > nodes.Length) return false;
+        
         Line.AddPoint(nodes[Source].Position);
         Line.AddPoint(nodes[Target].Position);
+
+        return true;
     }
 
     public virtual void Initialize(int graphIndex, ForceGraphNode[] nodes)

@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" path="res://Entities/ZoneLink.cs" id="1_0ecxd"]
 
-[node name="ZoneLink" type="Node2D" node_paths=PackedStringArray("Line")]
+[node name="ZoneLink" type="Node2D" node_paths=PackedStringArray("Outline", "Line")]
 script = ExtResource("1_0ecxd")
-Line = NodePath("Line2D")
+Outline = NodePath("Outline")
+Line = NodePath("Inline")
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Outline" type="Line2D" parent="."]
+width = 1.0
+
+[node name="Inline" type="Line2D" parent="."]
 width = 1.0
