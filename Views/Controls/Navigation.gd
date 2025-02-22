@@ -57,9 +57,14 @@ var currently_selected_links: PackedInt32Array = [] :
 			call_resize()
 			return
 		
-		var node_indexes: Array[int] = [graph.Links[value[0]].Source]
+		var first_link: ZoneLink = graph.Links[value[0]]
+		var first_link_names: Array[int] = [first_link.Source, first_link.Target]
+		var second_link: ZoneLink = graph.Links[value[1]]
+		var second_link_names: Array[int] = [second_link.Source, second_link.Target]
+		
+		var node_indexes: Array[int] = first_link_names.filter(func (name: int) -> bool: return not second_link_names.has(name))
 		for link_index in value:
-			node_indexes.append(graph.Links[link_index].Target)
+			node_indexes.append(graph.Links[link_index].Target if node_indexes[node_indexes.size() - 1] != graph.Links[link_index].Target else graph.Links[link_index].Source)
 			
 		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
 		var names := nodes.map(func (node: ZoneNode) -> String: return node.DisplayName)
