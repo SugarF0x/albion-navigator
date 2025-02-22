@@ -51,6 +51,8 @@ var currently_selected_links: PackedInt32Array = [] :
 		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
 		var names := nodes.map(func (node: ZoneNode) -> String: return node.DisplayName)
 		shortest_route_path_label.text = "\n".join(names)
+		# hacky solution to update tab size but it works
+		(get_parent_control() as TabContainer).tab_changed.emit(-1)
 
 func find_shortest_path() -> void:
 	graph.HighlightLinks(currently_selected_links, HighlightType.Default)
