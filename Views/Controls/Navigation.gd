@@ -80,6 +80,21 @@ var currently_selected_links: PackedInt32Array = [] :
 		var names := nodes.map(func (node: ZoneNode) -> String: return "[{type}] {name}".format({ "type": node.Type, "name": node.DisplayName }))
 		shortest_route_path_label.text = "\n".join(names)
 		
+		var min_expiration: String
+		for i in value:
+			var link: ZoneLink = graph.Links[i]
+			var expiration: String = link.ExpiresAt
+			if expiration.is_empty(): continue
+			if min_expiration.is_empty(): min_expiration = expiration; continue
+			
+			var expiration_date := Time.get_unix_time_from_datetime_string(expiration)
+			var min_expiration_date := Time.get_unix_time_from_datetime_string(min_expiration)
+			
+			min_expiration = min_expiration if min_expiration_date < expiration_date else expiration
+		
+		if not min_expiration.is_empty():
+			shortest_route_path_label.text = "Expires at: {expiration}\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": min_expiration })
+		
 		call_resize()
 
 func find_shortest_path() -> void:
