@@ -3,7 +3,7 @@ extends Camera2D
 @onready var background_shader_rect: ColorRect = %BackgroundShaderRect
 
 @export var min_zoom := 0.5
-@export var max_zoom := 4.0 
+@export var max_zoom := 8.0 
 
 var is_dragging: bool = false
 var is_mouse_in_scope: bool = false
