@@ -36,6 +36,16 @@ enum ZoneType {
 	Road,
 }
 
+var zone_type_to_emoji_map: Dictionary = {
+	ZoneType.StartingCity: ':house_with_garden:',
+	ZoneType.City: ':european_castle:',
+	ZoneType.SafeArea: ':blue_circle:',
+	ZoneType.Yellow: ':yellow_circle:',
+	ZoneType.Red: ':red_circle:',
+	ZoneType.Black: ':skull:',
+	ZoneType.Road: ':wing:'
+  }
+
 func _ready() -> void:
 	graph.ChildrenRegistered.connect(register_zone_names)
 	shortest_route_find_button.pressed.connect(find_shortest_path)
@@ -72,12 +82,12 @@ var currently_selected_links: PackedInt32Array = [] :
 		var second_link: ZoneLink = graph.Links[value[1]]
 		var second_link_names: Array[int] = [second_link.Source, second_link.Target]
 		
-		var node_indexes: Array[int] = first_link_names.filter(func (name: int) -> bool: return not second_link_names.has(name))
+		var node_indexes: Array[int] = first_link_names.filter(func (node_name: int) -> bool: return not second_link_names.has(node_name))
 		for link_index in value:
 			node_indexes.append(graph.Links[link_index].Target if node_indexes[node_indexes.size() - 1] != graph.Links[link_index].Target else graph.Links[link_index].Source)
 			
 		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
-		var names := nodes.map(func (node: ZoneNode) -> String: return "[{type}] {name}".format({ "type": node.Type, "name": node.DisplayName }))
+		var names := nodes.map(func (node: ZoneNode) -> String: return "{type} {name}".format({ "type": zone_type_to_emoji_map[node.Type], "name": node.DisplayName }))
 		shortest_route_path_label.text = "\n".join(names)
 		
 		var min_expiration: String
@@ -93,7 +103,7 @@ var currently_selected_links: PackedInt32Array = [] :
 			min_expiration = min_expiration if min_expiration_date < expiration_date else expiration
 		
 		if not min_expiration.is_empty():
-			shortest_route_path_label.text = "Expires at: {expiration}\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": min_expiration })
+			shortest_route_path_label.text = "Expires: <t:{expiration}:R>\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": Time.get_unix_time_from_datetime_string(min_expiration) })
 		
 		call_resize()
 
