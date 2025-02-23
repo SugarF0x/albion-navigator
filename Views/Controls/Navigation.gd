@@ -50,6 +50,7 @@ func _ready() -> void:
 	graph.ChildrenRegistered.connect(register_zone_names)
 	shortest_route_find_button.pressed.connect(find_shortest_path)
 	shortest_route_clear_button.pressed.connect(clear_shortest_path)
+	shortest_route_copy_button.pressed.connect(copy_shortest_path)
 
 func register_zone_names(nodes: Array, _links: Array) -> void:
 	zone_names.clear()
@@ -124,3 +125,6 @@ func find_shortest_path() -> void:
 func clear_shortest_path() -> void:
 	graph.HighlightLinks(currently_selected_links)
 	currently_selected_links = []
+
+func copy_shortest_path() -> void:
+	DisplayServer.clipboard_set(shortest_route_path_label.text)
