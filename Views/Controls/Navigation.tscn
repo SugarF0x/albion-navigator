@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://e3kqvbw7jo7"]
 
-[ext_resource type="Script" path="res://Views/Controls/Navigation.gd" id="1_ui6su"]
+[ext_resource type="Script" uid="uid://cth7halknc7pd" path="res://Views/Controls/Navigation.gd" id="1_ui6su"]
 [ext_resource type="PackedScene" uid="uid://bfmunp6jd17dq" path="res://Components/AutoCompleteLineEdit.tscn" id="2_noulh"]
 
 [node name="Navigation" type="TabBar"]

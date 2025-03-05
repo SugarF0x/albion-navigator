@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byotbvfnlbqha"]
 
-[ext_resource type="Script" path="res://Entities/ZoneLink.cs" id="1_0ecxd"]
+[ext_resource type="Script" uid="uid://bxm38ku7ah7i1" path="res://Entities/ZoneLink.cs" id="1_0ecxd"]
 
 [node name="ZoneLink" type="Node2D" node_paths=PackedStringArray("Outline", "Line")]
 script = ExtResource("1_0ecxd")

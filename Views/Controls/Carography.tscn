@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://3xgca2tlsvhb"]
 
-[ext_resource type="Script" path="res://Views/Controls/Carography.gd" id="1_lskbw"]
-[ext_resource type="PackedScene" path="res://Views/Controls/CartographyCaptures.tscn" id="2_8dmsg"]
+[ext_resource type="Script" uid="uid://jg5tbdaj4xef" path="res://Views/Controls/Carography.gd" id="1_lskbw"]
+[ext_resource type="PackedScene" uid="uid://ditsetvxv6vyf" path="res://Views/Controls/CartographyCaptures.tscn" id="2_8dmsg"]
 [ext_resource type="PackedScene" uid="uid://bfmunp6jd17dq" path="res://Components/AutoCompleteLineEdit.tscn" id="3_su6c0"]
 
 [node name="Cartography" type="TabBar"]

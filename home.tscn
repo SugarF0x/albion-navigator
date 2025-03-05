@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dds21sejjugrf"]
 
 [ext_resource type="PackedScene" uid="uid://5xo5eyb2yrqb" path="res://Views/Graph.tscn" id="1_xcdcb"]
-[ext_resource type="Script" path="res://HomeTabs.gd" id="2_0yvgt"]
+[ext_resource type="Script" uid="uid://bmqsmv1nloa6c" path="res://HomeTabs.gd" id="2_0yvgt"]
 [ext_resource type="PackedScene" uid="uid://bt7ak6con6l34" path="res://Views/Controls/Main.tscn" id="3_0k1f7"]
 [ext_resource type="PackedScene" uid="uid://3xgca2tlsvhb" path="res://Views/Controls/Carography.tscn" id="4_un8ig"]
 [ext_resource type="PackedScene" uid="uid://e3kqvbw7jo7" path="res://Views/Controls/Navigation.tscn" id="5_pe60m"]

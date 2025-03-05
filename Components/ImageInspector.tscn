@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8tj2x2m3utep"]
 
-[ext_resource type="Script" path="res://Components/ImageInspector.gd" id="1_vyild"]
+[ext_resource type="Script" uid="uid://blv6uhpssri6l" path="res://Components/ImageInspector.gd" id="1_vyild"]
 [ext_resource type="Texture2D" uid="uid://b0flxpqwgssuo" path="res://Assets/sample-image.png" id="2_umixd"]
 
 [node name="ImageInspector" type="PanelContainer"]

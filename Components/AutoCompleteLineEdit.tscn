@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfmunp6jd17dq"]
 
-[ext_resource type="Script" path="res://Components/AutoCompleteLineEdit.gd" id="1_vltcn"]
+[ext_resource type="Script" uid="uid://0ptxt1fue2go" path="res://Components/AutoCompleteLineEdit.gd" id="1_vltcn"]
 
 [node name="AutoCompleteLineEdit" type="LineEdit"]
 anchors_preset = 10
