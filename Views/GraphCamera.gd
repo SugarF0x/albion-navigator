@@ -3,7 +3,8 @@ extends Camera2D
 @onready var background_shader_rect: ColorRect = %BackgroundShaderRect
 
 @export var min_zoom := 0.5
-@export var max_zoom := 8.0 
+@export var max_zoom := 8.0
+@export var zone_map: ZoneMap 
 
 var is_dragging: bool = false
 var is_mouse_in_scope: bool = false
@@ -42,6 +43,19 @@ func adjust_zoom(out := false) -> void:
 	new_zoom.x = clamp(new_zoom.x, min_zoom, max_zoom)
 	new_zoom.y = clamp(new_zoom.y, min_zoom, max_zoom)
 	zoom = new_zoom
+	
+	adjust_zone_label_visibility()
+
+var are_names_hidden := true
+func adjust_zone_label_visibility() -> void:
+	var should_hide := zoom.x < 4.0
+	if should_hide == are_names_hidden: return
+	are_names_hidden = should_hide
+	
+	for node: ForceGraphNode in zone_map.Nodes:
+		if node is ZoneNode:
+			if should_hide: node.HideName()
+			else: node.ShowName()
 
 func set_is_mouse_in_scope(value: bool) -> void: 
 	is_mouse_in_scope = value

@@ -13,8 +13,9 @@ point_count = 3
 [node name="Graph" type="Node2D"]
 script = ExtResource("1_fh4y3")
 
-[node name="GraphCamera" type="Camera2D" parent="."]
+[node name="GraphCamera" type="Camera2D" parent="." node_paths=PackedStringArray("zone_map")]
 script = ExtResource("2_6qgp7")
+zone_map = NodePath("../ZoneMap")
 
 [node name="BackgroundShaderLayer" type="CanvasLayer" parent="."]
 layer = -1

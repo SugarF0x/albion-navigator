@@ -59,6 +59,7 @@ public partial class ZoneNode : ForceGraphNode
 	public override void _Ready()
 	{
 		DisplayName = _displayName;
+		HideName();
 	}
 	
 	public override void _Draw()
