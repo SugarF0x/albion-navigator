@@ -18,7 +18,7 @@ func _ready() -> void:
 	cartography_captures.preview_image_changed.connect(on_preview_image_changed)
 
 func _input(_event: InputEvent) -> void:
-	if not Input.is_action_just_pressed("ui_text_completion_accept"): return
+	if not Input.is_action_just_pressed("ui_text_submit"): return
 	
 	var controls: Array[Control] = [source_zone_edit, target_zone_edit, hours_edit, minutes_edit, seconds_edit]
 	if controls.all(func(node: Control) -> bool: return not node.has_focus()): return
