@@ -7,15 +7,17 @@
 [node name="CartographyCaptures" type="VBoxContainer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 675.0
+offset_bottom = 417.0
 grow_horizontal = 2
 script = ExtResource("1_ict3i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="ControlsContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 alignment = 1
 
-[node name="PreviousButton" type="Button" parent="HBoxContainer"]
+[node name="PreviousButton" type="Button" parent="ControlsContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -23,13 +25,15 @@ theme_override_font_sizes/font_size = 50
 disabled = true
 text = "<<"
 
-[node name="IndexLabel" type="Label" parent="HBoxContainer"]
+[node name="IndexLabel" type="Label" parent="ControlsContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="NextButton" type="Button" parent="HBoxContainer"]
+[node name="NextButton" type="Button" parent="ControlsContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -37,19 +41,42 @@ theme_override_font_sizes/font_size = 50
 disabled = true
 text = ">>"
 
-[node name="ClearButton" type="Button" parent="HBoxContainer"]
+[node name="ClearButton" type="Button" parent="ControlsContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 icon = ExtResource("2_s2aa0")
 expand_icon = true
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="CapturesContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="ImageInspector1" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+[node name="ImageInspector1" parent="CapturesContainer" instance=ExtResource("2_uxijs")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ImageInspector2" parent="HBoxContainer2" instance=ExtResource("2_uxijs")]
+[node name="ImageInspector2" parent="CapturesContainer" instance=ExtResource("2_uxijs")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="UnavailableOverlay" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UnavailableOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Screen captures are only supported on Windows. You can still add manually though"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
