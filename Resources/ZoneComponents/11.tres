@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://btgo1ski5vkd1"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponents/ZoneComponent.cs" id="1_7ra1d"]
+
+[resource]
+script = ExtResource("1_7ra1d")
+Id = 11
+Type = 0
+DisplayName = "Dungeon"
+Tier = 4
+Properties = [5]

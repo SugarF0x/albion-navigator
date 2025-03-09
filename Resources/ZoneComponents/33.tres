@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://dw5nm7i84duy6"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponents/ZoneComponent.cs" id="1_1ewi5"]
+
+[resource]
+script = ExtResource("1_1ewi5")
+Id = 33
+Type = 2
+DisplayName = "FiberHide"
+Tier = 6
+Properties = [1, 13, 14]

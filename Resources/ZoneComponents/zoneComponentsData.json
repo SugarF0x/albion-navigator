@@ -1,0 +1,556 @@
+[
+  {
+    "Id": 0,
+    "Type": 0,
+    "Tier": 4,
+    "Properties": [
+      2
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 1,
+    "Type": 1,
+    "Tier": 4,
+    "Properties": [
+      0,
+      7
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 2,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      0,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 3,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      0,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  },
+  {
+    "Id": 4,
+    "Type": 0,
+    "Tier": 4,
+    "Properties": [
+      3
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 5,
+    "Type": 1,
+    "Tier": 4,
+    "Properties": [
+      1,
+      8
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 6,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      0,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 7,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      0,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 8,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      0,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 9,
+    "Type": 0,
+    "Tier": 4,
+    "Properties": [
+      4
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 10,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      1,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 11,
+    "Type": 0,
+    "Tier": 4,
+    "Properties": [
+      5
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 12,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      1,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 13,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      1,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 14,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      1,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  },
+  {
+    "Id": 15,
+    "Type": 1,
+    "Tier": 6,
+    "Properties": [
+      0,
+      7
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 16,
+    "Type": 1,
+    "Tier": 6,
+    "Properties": [
+      1,
+      8
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 17,
+    "Type": 0,
+    "Tier": 6,
+    "Properties": [
+      2
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 18,
+    "Type": 0,
+    "Tier": 6,
+    "Properties": [
+      3
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 19,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      0,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 20,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      0,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 21,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      1,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  },
+  {
+    "Id": 22,
+    "Type": 0,
+    "Tier": 6,
+    "Properties": [
+      5
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 23,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      1,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 24,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      1,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 25,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      0,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 26,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      0,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  },
+  {
+    "Id": 27,
+    "Type": 1,
+    "Tier": 6,
+    "Properties": [
+      1,
+      9
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 28,
+    "Type": 0,
+    "Tier": 6,
+    "Properties": [
+      4
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 29,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      0,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 30,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      1,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 31,
+    "Type": 2,
+    "Tier": 7,
+    "Properties": [
+      1,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 32,
+    "Type": 1,
+    "Tier": 6,
+    "Properties": [
+      0,
+      9
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 33,
+    "Type": 2,
+    "Tier": 6,
+    "Properties": [
+      1,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 34,
+    "Type": 1,
+    "Tier": 8,
+    "Properties": [
+      0,
+      7
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 35,
+    "Type": 1,
+    "Tier": 8,
+    "Properties": [
+      1,
+      8
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 36,
+    "Type": 1,
+    "Tier": 8,
+    "Properties": [
+      1,
+      9
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 37,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      0,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 38,
+    "Type": 0,
+    "Tier": 8,
+    "Properties": [
+      6
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 39,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      1,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 40,
+    "Type": 2,
+    "Tier": 0,
+    "Properties": [],
+    "DisplayName": "Mistscity"
+  },
+  {
+    "Id": 41,
+    "Type": 0,
+    "Tier": 8,
+    "Properties": [
+      5
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 42,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      0,
+      14,
+      10
+    ],
+    "DisplayName": "HideOre"
+  },
+  {
+    "Id": 43,
+    "Type": 0,
+    "Tier": 8,
+    "Properties": [
+      4
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 44,
+    "Type": 0,
+    "Tier": 8,
+    "Properties": [
+      3
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 45,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      1,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 46,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      0,
+      10,
+      11
+    ],
+    "DisplayName": "OreRock"
+  },
+  {
+    "Id": 47,
+    "Type": 1,
+    "Tier": 8,
+    "Properties": [
+      0,
+      9
+    ],
+    "DisplayName": "Chest"
+  },
+  {
+    "Id": 48,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      0,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  },
+  {
+    "Id": 49,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      1,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 50,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      0,
+      11,
+      12
+    ],
+    "DisplayName": "RockWood"
+  },
+  {
+    "Id": 51,
+    "Type": 0,
+    "Tier": 8,
+    "Properties": [
+      2
+    ],
+    "DisplayName": "Dungeon"
+  },
+  {
+    "Id": 52,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      1,
+      13,
+      14
+    ],
+    "DisplayName": "FiberHide"
+  },
+  {
+    "Id": 53,
+    "Type": 2,
+    "Tier": 8,
+    "Properties": [
+      1,
+      12,
+      13
+    ],
+    "DisplayName": "WoodFiber"
+  }
+]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://bg8umj7mw6iyw"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponents/ZoneComponent.cs" id="1_1vppv"]
+
+[resource]
+script = ExtResource("1_1vppv")
+Id = 53
+Type = 2
+DisplayName = "WoodFiber"
+Tier = 8
+Properties = [1, 12, 13]
