@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bclbh14qi2sxe"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_svf7o"]
+
+[resource]
+script = ExtResource("1_svf7o")
+Id = 0
+Type = 0
+DisplayName = ""
+StartX = 0.0
+StartY = 0.0
+Connections = Array[int]([])
