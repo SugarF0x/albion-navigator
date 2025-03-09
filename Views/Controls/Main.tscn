@@ -34,14 +34,12 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Add Sample Data"
 
+[node name="FlushDataButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "FlushData
+"
+
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "// TODO: add event logs here & always on top toggle"
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "// TODO: add event logs here & always on top toggle"
-
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "// TODO: add event logs here & always on top toggle"
+text = "// TODO: add event logs"
