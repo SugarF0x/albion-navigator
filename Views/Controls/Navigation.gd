@@ -39,11 +39,11 @@ enum ZoneType {
 var zone_type_to_emoji_map: Dictionary = {
 	ZoneType.StartingCity: ':house_with_garden:',
 	ZoneType.City: ':european_castle:',
-	ZoneType.SafeArea: ':blue_circle:',
-	ZoneType.Yellow: ':yellow_circle:',
-	ZoneType.Red: ':red_circle:',
-	ZoneType.Black: ':skull:',
-	ZoneType.Road: ':wing:'
+	ZoneType.SafeArea: ':blue_zone:',
+	ZoneType.Yellow: ':yellow_zone:',
+	ZoneType.Red: ':red_zone:',
+	ZoneType.Black: ':black_zone:',
+	ZoneType.Road: ':portal:'
   }
 
 func _ready() -> void:
@@ -95,6 +95,7 @@ var currently_selected_links: PackedInt32Array = [] :
 		for i in value:
 			var link: ZoneLink = graph.Links[i]
 			var expiration: String = link.ExpiresAt
+			# TODO: expiration might be miscalculated (timezone offset error), gotta check on that
 			if expiration.is_empty(): continue
 			if min_expiration.is_empty(): min_expiration = expiration; continue
 			
