@@ -158,7 +158,5 @@ const componentsData = dedupedData.map((e, i) => {
   }
 })
 
-// const path = '/Users/antuzov/RiderProjects/albion-navigator/Resources/ZoneComponents/zoneComponentsData.json'
-// writeFileSync(path, JSON.stringify(componentsData, null, 2), 'utf-8')
-
-console.log('poopy test')
+const path = '/Users/antuzov/RiderProjects/albion-navigator/Resources/Zones/zoneData.json'
+writeFileSync(path, JSON.stringify(formattedZones, null, 2), 'utf-8')

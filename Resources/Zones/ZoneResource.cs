@@ -32,13 +32,12 @@ public partial class ZoneResource : Resource
         L2Rest,
         L3DeepRest,
     }
-    
+
     [Export] public int Id { get; set; }
     [Export] public ZoneType Type { get; set; }
     [Export] public ZoneLayer Layer { get; set; }
     [Export] public string DisplayName { get; set; }
-    [Export] public float StartX { get; set; }
-    [Export] public float StartY { get; set; }
+    [Export] public Vector2 Position { get; set; }
     [Export] public Godot.Collections.Array<int> Connections { get; set; } = [];
     [Export] public Godot.Collections.Array<Resource> Components { get; set; } = [];
 }
