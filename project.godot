@@ -49,11 +49,15 @@ project/assembly_name="Albion Navigator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [global_group]
 
 ForceGraph=""
+
+[godot_resource_groups]
+
+auto_rebuild=true
 
 [input]
 
