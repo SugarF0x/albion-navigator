@@ -120,6 +120,8 @@ const sizeToPropertyEnumHashMap = [
 
 const components = roadinatorData.flatMap(e => e.data.components)
 const dedupedData = Array.from(new Set(components.map(JSON.stringify))).map(JSON.parse)
+const sourceComponentDataStringToIdMap = dedupedData.map(item => JSON.stringify(item))
+const getSourceComponentId = component => sourceComponentDataStringToIdMap.indexOf(JSON.stringify(component))
 const componentsData = dedupedData.map((e, i) => {
   const properties = e.size ? [sizeToPropertyEnumHashMap.indexOf(e.size)] : []
   switch (e.bgcolor) {
@@ -157,6 +159,33 @@ const componentsData = dedupedData.map((e, i) => {
     DisplayName: capitalizeFirst(e.type),
   }
 })
+
+const layerToTypeMap = [
+  "NonApplicable",
+  "L1Royal",
+  "L1RoyalRed",
+  "L1Outer",
+  "L1Middle",
+  "L1Inner",
+  "L2Outer",
+  "L3Hub",
+  "L2Middle",
+  "L2Inner",
+  "L3Deep",
+  "L2Rest",
+  "L3DeepRest",
+]
+
+for (const zone of formattedZones) {
+  zone.components = []
+  zone.layer = 0
+
+  const itemData = roadinatorData.find(item => item.name === zone.displayName)
+  if (!itemData) continue
+
+  zone.layer = layerToTypeMap.indexOf(itemData.data.type.replaceAll(" ", ""))
+  zone.components = itemData.data.components.map(getSourceComponentId)
+}
 
 const path = '/Users/antuzov/RiderProjects/albion-navigator/Resources/Zones/zoneData.json'
 writeFileSync(path, JSON.stringify(formattedZones, null, 2), 'utf-8')
