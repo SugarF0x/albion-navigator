@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://128i6f1xdk4k"]
+
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="1_2e3er"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_mnt8i"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_jjb6t"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_oa2wl"]
+
+[resource]
+script = ExtResource("4_oa2wl")
+Id = 654
+Type = 6
+Layer = 11
+DisplayName = "Quaent-Qintis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_2e3er"), ExtResource("2_mnt8i"), ExtResource("3_jjb6t"), ExtResource("3_jjb6t"), ExtResource("3_jjb6t"), ExtResource("3_jjb6t"), ExtResource("3_jjb6t")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://tn51w8xlt6fi"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_85l2i"]
+
+[resource]
+script = ExtResource("1_85l2i")
+Id = 180
+Type = 2
+Layer = 0
+DisplayName = "Longmarch Meadow"
+Position = Vector2(26.21, 385.63)
+Connections = [183, 166, 175]
+Components = []

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://rri5a025b2vc"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_tk8y7"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_vkdyf"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_l7e7n"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="4_ub7o2"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_600an"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="6_iokny"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_qsjuv"]
+
+[resource]
+script = ExtResource("7_qsjuv")
+Id = 560
+Type = 6
+Layer = 4
+DisplayName = "Oebitos-Oyozam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_tk8y7"), ExtResource("2_vkdyf"), ExtResource("3_l7e7n"), ExtResource("1_tk8y7"), ExtResource("4_ub7o2"), ExtResource("5_600an"), ExtResource("1_tk8y7"), ExtResource("6_iokny")]

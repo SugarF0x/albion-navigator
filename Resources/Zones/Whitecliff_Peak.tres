@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dj2w402v8kicw"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4q0oo"]
+
+[resource]
+script = ExtResource("1_4q0oo")
+Id = 388
+Type = 5
+Layer = 0
+DisplayName = "Whitecliff Peak"
+Position = Vector2(74.53, 26.73)
+Connections = [198, 404, 285]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://de8iulmmljk4e"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ufhuh"]
+
+[resource]
+script = ExtResource("1_ufhuh")
+Id = 149
+Type = 5
+Layer = 0
+DisplayName = "Deepwood Copse"
+Position = Vector2(56.71, -216.37)
+Connections = [398, 163, 382]
+Components = []

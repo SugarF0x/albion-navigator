@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://dbpdsylq6dh1p"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_l1y84"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="2_apnrw"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_jo1e2"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="4_7go3y"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_6wc60"]
+
+[resource]
+script = ExtResource("5_6wc60")
+Id = 631
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Qi-Tersas"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_l1y84"), ExtResource("2_apnrw"), ExtResource("3_jo1e2"), ExtResource("4_7go3y")]

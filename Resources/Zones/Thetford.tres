@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cl4qoqhonhrq4"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_8te46"]
+
+[resource]
+script = ExtResource("1_8te46")
+Id = 0
+Type = 1
+Layer = 0
+DisplayName = "Thetford"
+Position = Vector2(-19.82, 187.29)
+Connections = [6, 5, 7, 9, 27]
+Components = []

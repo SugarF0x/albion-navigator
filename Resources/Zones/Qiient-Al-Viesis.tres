@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://csy7b5kqy7ecq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_bfjdx"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="2_dxorg"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_dvne7"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_va0vw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_ol3dy"]
+
+[resource]
+script = ExtResource("5_ol3dy")
+Id = 614
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Al-Viesis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_bfjdx"), ExtResource("2_dxorg"), ExtResource("3_dvne7"), ExtResource("4_va0vw")]

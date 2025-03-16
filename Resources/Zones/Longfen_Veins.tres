@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dy3h4yqv6yc24"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_dp1ek"]
+
+[resource]
+script = ExtResource("1_dp1ek")
+Id = 75
+Type = 5
+Layer = 0
+DisplayName = "Longfen Veins"
+Position = Vector2(-123.6, -62.08)
+Connections = [82, 413]
+Components = []

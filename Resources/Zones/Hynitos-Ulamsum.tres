@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://wtcjsyyl1fcg"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_64yfd"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_q6hqx"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_n014r"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_umhmj"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="5_jlmvr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_vfjvn"]
+
+[resource]
+script = ExtResource("6_vfjvn")
+Id = 554
+Type = 6
+Layer = 2
+DisplayName = "Hynitos-Ulamsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_64yfd"), ExtResource("2_q6hqx"), ExtResource("3_n014r"), ExtResource("4_umhmj"), ExtResource("4_umhmj"), ExtResource("3_n014r"), ExtResource("3_n014r"), ExtResource("3_n014r"), ExtResource("3_n014r"), ExtResource("5_jlmvr"), ExtResource("2_q6hqx")]

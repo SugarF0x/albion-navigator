@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://rmftddrtxanq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_gdvv2"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_r6t1w"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_dkg7y"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_ub6x8"]
+
+[resource]
+script = ExtResource("4_ub6x8")
+Id = 675
+Type = 6
+Layer = 11
+DisplayName = "Secent-Al-Odetis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_gdvv2"), ExtResource("2_r6t1w"), ExtResource("1_gdvv2"), ExtResource("1_gdvv2"), ExtResource("1_gdvv2"), ExtResource("1_gdvv2"), ExtResource("3_dkg7y")]

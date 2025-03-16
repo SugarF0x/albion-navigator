@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=10 format=3 uid="uid://c08amll7u84eu"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_nn7n7"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_hdwum"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_ikwek"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_qpj8l"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="5_vm1ms"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="6_loa0l"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="7_gevr3"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="8_l7tb1"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="9_i0bf4"]
+
+[resource]
+script = ExtResource("9_i0bf4")
+Id = 414
+Type = 6
+Layer = 3
+DisplayName = "Cases-Ugumlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_nn7n7"), ExtResource("2_hdwum"), ExtResource("3_ikwek"), ExtResource("4_qpj8l"), ExtResource("5_vm1ms"), ExtResource("6_loa0l"), ExtResource("7_gevr3"), ExtResource("8_l7tb1")]

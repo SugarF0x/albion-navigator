@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://covhuiyw2b7dn"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_kjhf8"]
+
+[resource]
+script = ExtResource("1_kjhf8")
+Id = 401
+Type = 5
+Layer = 0
+DisplayName = "Frostseep Crevasse"
+Position = Vector2(-129.59, -274.03)
+Connections = [374, 41]
+Components = []

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://g80t8mdmjay0"]
+
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="1_l3g5i"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="2_14j03"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_8rjka"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_loaeo"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_wq5hf"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="6_rc8tn"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_ylxin"]
+
+[resource]
+script = ExtResource("7_ylxin")
+Id = 739
+Type = 6
+Layer = 8
+DisplayName = "Soues-Uzurtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_l3g5i"), ExtResource("2_14j03"), ExtResource("3_8rjka"), ExtResource("4_loaeo"), ExtResource("5_wq5hf"), ExtResource("6_rc8tn"), ExtResource("2_14j03")]

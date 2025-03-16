@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b3srfpmhfkjms"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5ngkr"]
+
+[resource]
+script = ExtResource("1_5ngkr")
+Id = 27
+Type = 1
+Layer = 0
+DisplayName = "Thetford Portal"
+Position = Vector2(-125.29, -337.02)
+Connections = [35, 39, 37, 32, 40, 0]
+Components = []

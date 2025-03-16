@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://pugpxjm2onrd"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_406ym"]
+
+[resource]
+script = ExtResource("1_406ym")
+Id = 41
+Type = 5
+Layer = 0
+DisplayName = "Willowshade Mire"
+Position = Vector2(-123.53, -252.08)
+Connections = [67, 42, 401]
+Components = []

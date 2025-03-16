@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://nhvawfk5i8b1"]
+
+[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="1_a767k"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_nq457"]
+[ext_resource type="Resource" uid="uid://bq7rs4g2nrngs" path="res://Resources/ZoneComponents/39.tres" id="3_4aeff"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="4_vok08"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_27mlm"]
+
+[resource]
+script = ExtResource("5_27mlm")
+Id = 549
+Type = 6
+Layer = 7
+DisplayName = "Hynes-Ieatun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_a767k"), ExtResource("2_nq457"), ExtResource("2_nq457"), ExtResource("3_4aeff"), ExtResource("4_vok08")]

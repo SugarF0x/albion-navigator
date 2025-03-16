@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dgw2cddewb61x"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_p5hbk"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_cqa3s"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_x3kdy"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_xff0v"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="5_n3bvd"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_m05jd"]
+
+[resource]
+script = ExtResource("6_m05jd")
+Id = 518
+Type = 6
+Layer = 2
+DisplayName = "Hebos-Ulamsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_p5hbk"), ExtResource("2_cqa3s"), ExtResource("3_x3kdy"), ExtResource("4_xff0v"), ExtResource("4_xff0v"), ExtResource("3_x3kdy"), ExtResource("3_x3kdy"), ExtResource("3_x3kdy"), ExtResource("3_x3kdy"), ExtResource("5_n3bvd"), ExtResource("2_cqa3s")]

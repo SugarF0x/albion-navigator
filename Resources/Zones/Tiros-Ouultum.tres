@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://ch7txkhp5rkyq"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_kkmme"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_k4lm0"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_j0sun"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_5vu0x"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="5_uyibr"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="6_kk827"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_e4l4g"]
+
+[resource]
+script = ExtResource("7_e4l4g")
+Id = 770
+Type = 6
+Layer = 3
+DisplayName = "Tiros-Ouultum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_kkmme"), ExtResource("2_k4lm0"), ExtResource("3_j0sun"), ExtResource("4_5vu0x"), ExtResource("5_uyibr"), ExtResource("6_kk827"), ExtResource("6_kk827"), ExtResource("6_kk827"), ExtResource("6_kk827")]

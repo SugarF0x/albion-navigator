@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ceoi3ja5k3faq"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_2ytho"]
+
+[resource]
+script = ExtResource("1_2ytho")
+Id = 2
+Type = 4
+Layer = 0
+DisplayName = "Camlann"
+Position = Vector2(11.38, 243.03)
+Connections = [11, 347, 25, 26]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://5jv4hxjo8je1"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_35m4y"]
+
+[resource]
+script = ExtResource("1_35m4y")
+Id = 5
+Type = 2
+Layer = 0
+DisplayName = "Chillhag"
+Position = Vector2(-40.17, 173.23)
+Connections = [1, 8, 342, 0]
+Components = []

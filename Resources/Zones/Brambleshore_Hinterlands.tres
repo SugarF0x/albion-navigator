@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://caiak4bhseegg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4odu2"]
+
+[resource]
+script = ExtResource("1_4odu2")
+Id = 111
+Type = 5
+Layer = 0
+DisplayName = "Brambleshore Hinterlands"
+Position = Vector2(20.93, -370.95)
+Connections = [76, 47, 375]
+Components = []

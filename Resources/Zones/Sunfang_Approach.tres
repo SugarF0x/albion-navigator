@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bklieeer1cgm3"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_2of0m"]
+
+[resource]
+script = ExtResource("1_2of0m")
+Id = 217
+Type = 5
+Layer = 0
+DisplayName = "Sunfang Approach"
+Position = Vector2(-37.05, -75.24)
+Connections = [197, 232, 244]
+Components = []

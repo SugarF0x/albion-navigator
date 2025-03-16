@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://d4ky7h7dtfvxq"]
+
+[ext_resource type="Resource" uid="uid://b3lqylkiunb8e" path="res://Resources/ZoneComponents/37.tres" id="1_l6kev"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_wdu0s"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="3_lfdbm"]
+[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="4_frpop"]
+[ext_resource type="Resource" uid="uid://bg8umj7mw6iyw" path="res://Resources/ZoneComponents/53.tres" id="5_5q86g"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="6_u8j88"]
+[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="7_xfra4"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_jxm4r"]
+
+[resource]
+script = ExtResource("8_jxm4r")
+Id = 671
+Type = 6
+Layer = 7
+DisplayName = "Sebos-Oyohun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_l6kev"), ExtResource("2_wdu0s"), ExtResource("3_lfdbm"), ExtResource("4_frpop"), ExtResource("5_5q86g"), ExtResource("6_u8j88"), ExtResource("2_wdu0s"), ExtResource("7_xfra4")]

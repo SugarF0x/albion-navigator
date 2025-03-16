@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c0ox4rj66o34o"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_jh7du"]
+
+[resource]
+script = ExtResource("1_jh7du")
+Id = 67
+Type = 5
+Layer = 0
+DisplayName = "Willowshade Hills"
+Position = Vector2(-109.11, -276.41)
+Connections = [56, 41]
+Components = []

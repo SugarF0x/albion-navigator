@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://smqngcfajl2b"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_yfwcw"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="2_5v751"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_gnvaw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_c17f0"]
+
+[resource]
+script = ExtResource("4_c17f0")
+Id = 515
+Type = 6
+Layer = 6
+DisplayName = "Hebes-Ouaylos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_yfwcw"), ExtResource("1_yfwcw"), ExtResource("2_5v751"), ExtResource("1_yfwcw"), ExtResource("3_gnvaw"), ExtResource("1_yfwcw"), ExtResource("1_yfwcw"), ExtResource("1_yfwcw"), ExtResource("1_yfwcw"), ExtResource("1_yfwcw")]

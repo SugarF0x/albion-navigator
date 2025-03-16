@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://ccuqstnlq0nbo"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_0tbba"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_wunw0"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_53psd"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_yduae"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="5_7skcm"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_qpe0h"]
+
+[resource]
+script = ExtResource("6_qpe0h")
+Id = 484
+Type = 6
+Layer = 8
+DisplayName = "Firos-Osinsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_0tbba"), ExtResource("2_wunw0"), ExtResource("3_53psd"), ExtResource("4_yduae"), ExtResource("5_7skcm"), ExtResource("1_0tbba")]

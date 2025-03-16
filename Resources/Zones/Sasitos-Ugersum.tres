@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://v0hwf0w2ful2"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_wnsc8"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_75mn7"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="3_pqr5l"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="4_iep0s"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_vhawq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_2snfl"]
+
+[resource]
+script = ExtResource("6_2snfl")
+Id = 665
+Type = 6
+Layer = 3
+DisplayName = "Sasitos-Ugersum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_wnsc8"), ExtResource("2_75mn7"), ExtResource("3_pqr5l"), ExtResource("1_wnsc8"), ExtResource("1_wnsc8"), ExtResource("1_wnsc8"), ExtResource("1_wnsc8"), ExtResource("4_iep0s"), ExtResource("5_vhawq")]

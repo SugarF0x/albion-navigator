@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://b0q5ignlluo7u"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_k1xk8"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="2_jxoe5"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="3_fhr0v"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_jxfpl"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="5_uuklb"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="6_uraea"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_cxprr"]
+
+[resource]
+script = ExtResource("7_cxprr")
+Id = 743
+Type = 6
+Layer = 6
+DisplayName = "Souos-Umogaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_k1xk8"), ExtResource("2_jxoe5"), ExtResource("3_fhr0v"), ExtResource("3_fhr0v"), ExtResource("4_jxfpl"), ExtResource("5_uuklb"), ExtResource("6_uraea")]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://4lerjutqlq1v"]
+
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="1_a3aid"]
+[ext_resource type="Resource" uid="uid://c1snwiqu7084i" path="res://Resources/ZoneComponents/35.tres" id="2_lwclk"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="3_x8lso"]
+[ext_resource type="Resource" uid="uid://b3lqylkiunb8e" path="res://Resources/ZoneComponents/37.tres" id="4_x600t"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_w0q28"]
+
+[resource]
+script = ExtResource("5_w0q28")
+Id = 506
+Type = 6
+Layer = 7
+DisplayName = "Fynitos-Ezatam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_a3aid"), ExtResource("1_a3aid"), ExtResource("1_a3aid"), ExtResource("2_lwclk"), ExtResource("3_x8lso"), ExtResource("4_x600t"), ExtResource("1_a3aid")]

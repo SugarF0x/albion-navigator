@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://rx0qwarwm1mx"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_l1ufk"]
+
+[resource]
+script = ExtResource("1_l1ufk")
+Id = 373
+Type = 5
+Layer = 0
+DisplayName = "Flammog Fork"
+Position = Vector2(78.42, -120.84)
+Connections = [165, 324, 384]
+Components = []

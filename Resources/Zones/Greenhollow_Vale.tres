@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cfi8jsn3ik3g4"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_75nse"]
+
+[resource]
+script = ExtResource("1_75nse")
+Id = 130
+Type = 5
+Layer = 0
+DisplayName = "Greenhollow Vale"
+Position = Vector2(-162.14, -102.18)
+Connections = [290, 328, 158]
+Components = []

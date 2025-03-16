@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://iyk03a3sv14p"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_80daf"]
+
+[resource]
+script = ExtResource("1_80daf")
+Id = 177
+Type = 3
+Layer = 0
+DisplayName = "Lazygrass Plain"
+Position = Vector2(36.32, 356.61)
+Connections = [176, 166, 178]
+Components = []

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dimecbf1s5rti"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_tr7fc"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="2_vasuj"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_vop8a"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_7auqf"]
+
+[resource]
+script = ExtResource("4_7auqf")
+Id = 619
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Et-Tertum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_tr7fc"), ExtResource("2_vasuj"), ExtResource("1_tr7fc"), ExtResource("1_tr7fc"), ExtResource("1_tr7fc"), ExtResource("1_tr7fc"), ExtResource("3_vop8a")]

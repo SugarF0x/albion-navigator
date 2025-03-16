@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://duxs6y2uxg7pt"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_k7b6w"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="2_7wpik"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_yh85y"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_63v2r"]
+
+[resource]
+script = ExtResource("4_63v2r")
+Id = 691
+Type = 6
+Layer = 11
+DisplayName = "Secent-Viesum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_k7b6w"), ExtResource("2_7wpik"), ExtResource("1_k7b6w"), ExtResource("1_k7b6w"), ExtResource("1_k7b6w"), ExtResource("1_k7b6w"), ExtResource("3_yh85y")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bhuwkxnqlu0m8"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_yjm3g"]
+
+[resource]
+script = ExtResource("1_yjm3g")
+Id = 339
+Type = 2
+Layer = 0
+DisplayName = "Pen Gent"
+Position = Vector2(59.06, 184.09)
+Connections = [333, 331, 334]
+Components = []

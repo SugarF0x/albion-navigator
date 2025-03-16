@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c0q2d21dtbf4a"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_8gfqh"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="2_yaumb"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="3_be6pw"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_07018"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="5_uf5yb"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_je832"]
+
+[resource]
+script = ExtResource("6_je832")
+Id = 759
+Type = 6
+Layer = 1
+DisplayName = "Tebitos-Igaelum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_8gfqh"), ExtResource("2_yaumb"), ExtResource("3_be6pw"), ExtResource("1_8gfqh"), ExtResource("1_8gfqh"), ExtResource("1_8gfqh"), ExtResource("1_8gfqh"), ExtResource("1_8gfqh"), ExtResource("1_8gfqh"), ExtResource("4_07018"), ExtResource("5_uf5yb")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dfwehlic2fsut"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_pbf38"]
+
+[resource]
+script = ExtResource("1_pbf38")
+Id = 24
+Type = 4
+Layer = 0
+DisplayName = "Darkground Swamp"
+Position = Vector2(5.47, 222.22)
+Connections = [25, 344, 26]
+Components = []

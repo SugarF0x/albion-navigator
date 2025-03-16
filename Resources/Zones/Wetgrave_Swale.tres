@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://vo6qygtovmop"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3416l"]
+
+[resource]
+script = ExtResource("1_3416l")
+Id = 62
+Type = 5
+Layer = 0
+DisplayName = "Wetgrave Swale"
+Position = Vector2(178.83, -159.45)
+Connections = [28, 241, 160]
+Components = []

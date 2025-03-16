@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bnsjc2al7wiu4"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_0suco"]
+
+[resource]
+script = ExtResource("1_0suco")
+Id = 45
+Type = 5
+Layer = 0
+DisplayName = "Longfen Marsh"
+Position = Vector2(-134.42, -50.42)
+Connections = [207, 322]
+Components = []

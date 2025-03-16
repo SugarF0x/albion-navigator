@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://c2dwp047le51s"]
+
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="1_vwxm2"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_1afe2"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_3k1fj"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="4_8108p"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="5_ssgp2"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_ol7wk"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="7_o3hby"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_logwy"]
+
+[resource]
+script = ExtResource("8_logwy")
+Id = 729
+Type = 6
+Layer = 4
+DisplayName = "Silos-Oyarlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vwxm2"), ExtResource("2_1afe2"), ExtResource("3_3k1fj"), ExtResource("4_8108p"), ExtResource("5_ssgp2"), ExtResource("6_ol7wk"), ExtResource("7_o3hby")]

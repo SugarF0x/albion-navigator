@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dniuwlloxajc"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_unhpq"]
+
+[resource]
+script = ExtResource("1_unhpq")
+Id = 39
+Type = 5
+Layer = 0
+DisplayName = "Widemoor Estuary"
+Position = Vector2(-135.99, -322.36)
+Connections = [27, 56, 57]
+Components = []

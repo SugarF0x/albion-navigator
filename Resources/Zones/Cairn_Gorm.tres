@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dgp01qneysmq8"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_alxjx"]
+
+[resource]
+script = ExtResource("1_alxjx")
+Id = 337
+Type = 3
+Layer = 0
+DisplayName = "Cairn Gorm"
+Position = Vector2(30.6, 198.95)
+Connections = [333, 346, 352, 344]
+Components = []

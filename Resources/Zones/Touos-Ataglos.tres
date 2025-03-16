@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://ftnnsdthscet"]
+
+[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="1_nrqvg"]
+[ext_resource type="Resource" uid="uid://c1snwiqu7084i" path="res://Resources/ZoneComponents/35.tres" id="2_novbm"]
+[ext_resource type="Resource" uid="uid://04kfeff4borq" path="res://Resources/ZoneComponents/43.tres" id="3_of2qg"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_d7rsv"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_wdt6y"]
+
+[resource]
+script = ExtResource("5_wdt6y")
+Id = 776
+Type = 6
+Layer = 7
+DisplayName = "Touos-Ataglos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_nrqvg"), ExtResource("2_novbm"), ExtResource("3_of2qg"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv"), ExtResource("4_d7rsv")]

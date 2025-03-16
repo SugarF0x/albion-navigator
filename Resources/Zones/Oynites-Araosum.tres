@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bgd1qb1031wgy"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_gnbsj"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_aycu2"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="3_tp2vo"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_wlld7"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="5_kbpim"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="6_cavwd"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_scnoe"]
+
+[resource]
+script = ExtResource("7_scnoe")
+Id = 579
+Type = 6
+Layer = 2
+DisplayName = "Oynites-Araosum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_gnbsj"), ExtResource("2_aycu2"), ExtResource("3_tp2vo"), ExtResource("2_aycu2"), ExtResource("4_wlld7"), ExtResource("5_kbpim"), ExtResource("2_aycu2"), ExtResource("6_cavwd")]

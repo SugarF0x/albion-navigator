@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c10dmfqx8wbug"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_dbe0c"]
+
+[resource]
+script = ExtResource("1_dbe0c")
+Id = 88
+Type = 2
+Layer = 0
+DisplayName = "Russerdell"
+Position = Vector2(129.47, 232.57)
+Connections = [89, 109, 90]
+Components = []

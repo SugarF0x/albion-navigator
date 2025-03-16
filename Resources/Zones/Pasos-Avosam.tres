@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://kmtxcan145vx"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_bgkp4"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="2_ul7ax"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_be0y5"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="4_uko7j"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_xnl5d"]
+
+[resource]
+script = ExtResource("5_xnl5d")
+Id = 584
+Type = 6
+Layer = 1
+DisplayName = "Pasos-Avosam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_bgkp4"), ExtResource("1_bgkp4"), ExtResource("2_ul7ax"), ExtResource("1_bgkp4"), ExtResource("3_be0y5"), ExtResource("4_uko7j")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://qeywcir18pfd"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_q6uep"]
+
+[resource]
+script = ExtResource("1_q6uep")
+Id = 372
+Type = 5
+Layer = 0
+DisplayName = "Iceburn Firth"
+Position = Vector2(35, -178.69)
+Connections = [164, 400, 324]
+Components = []

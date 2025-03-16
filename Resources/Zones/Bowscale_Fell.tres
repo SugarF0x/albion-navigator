@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://35xcajmleton"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ag5j1"]
+
+[resource]
+script = ExtResource("1_ag5j1")
+Id = 258
+Type = 4
+Layer = 0
+DisplayName = "Bowscale Fell"
+Position = Vector2(-30.96, 248.54)
+Connections = [22, 11]
+Components = []

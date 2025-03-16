@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d1wskp2bdvdw"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_2ivcx"]
+
+[resource]
+script = ExtResource("1_2ivcx")
+Id = 256
+Type = 2
+Layer = 0
+DisplayName = "Haytor"
+Position = Vector2(-68.29, 259.19)
+Connections = [259, 250, 16]
+Components = []

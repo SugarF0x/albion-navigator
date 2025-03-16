@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://co6ym3i00u16j"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_766u2"]
+
+[resource]
+script = ExtResource("1_766u2")
+Id = 122
+Type = 5
+Layer = 0
+DisplayName = "Hightree Lake"
+Position = Vector2(87.33, -56.78)
+Connections = [110, 138, 300]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b48lvjf7xbvys"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_18e51"]
+
+[resource]
+script = ExtResource("1_18e51")
+Id = 273
+Type = 4
+Layer = 0
+DisplayName = "Runnel Sink"
+Position = Vector2(-12.16, 274.81)
+Connections = [11, 271, 252]
+Components = []

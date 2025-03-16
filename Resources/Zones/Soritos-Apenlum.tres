@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b38mjneek5ksx"]
+
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="1_jr4cc"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_y7sge"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_kecjk"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="4_ducha"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="5_i5q2e"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_5kp4j"]
+
+[resource]
+script = ExtResource("6_5kp4j")
+Id = 736
+Type = 6
+Layer = 6
+DisplayName = "Soritos-Apenlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_jr4cc"), ExtResource("2_y7sge"), ExtResource("3_kecjk"), ExtResource("4_ducha"), ExtResource("2_y7sge"), ExtResource("2_y7sge"), ExtResource("2_y7sge"), ExtResource("2_y7sge"), ExtResource("5_i5q2e")]

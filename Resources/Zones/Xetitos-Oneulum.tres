@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c310ct66lciuq"]
+
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="1_uk7a4"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_1r4ja"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_46ya5"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_bypcj"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_iq3tr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_tows0"]
+
+[resource]
+script = ExtResource("6_tows0")
+Id = 796
+Type = 6
+Layer = 4
+DisplayName = "Xetitos-Oneulum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_uk7a4"), ExtResource("2_1r4ja"), ExtResource("3_46ya5"), ExtResource("4_bypcj"), ExtResource("1_uk7a4"), ExtResource("5_iq3tr"), ExtResource("4_bypcj")]

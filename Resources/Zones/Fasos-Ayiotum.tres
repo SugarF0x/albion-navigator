@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://boo13a8d36fmu"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_4vtr0"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_4l8dq"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_0s56s"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_5na1r"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="5_8hd87"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="6_abvnr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_bmdog"]
+
+[resource]
+script = ExtResource("7_bmdog")
+Id = 464
+Type = 6
+Layer = 3
+DisplayName = "Fasos-Ayiotum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4vtr0"), ExtResource("2_4l8dq"), ExtResource("3_0s56s"), ExtResource("3_0s56s"), ExtResource("4_5na1r"), ExtResource("5_8hd87"), ExtResource("6_abvnr"), ExtResource("3_0s56s")]

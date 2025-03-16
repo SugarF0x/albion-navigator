@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://b5cujsp15mmc4"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_31jw1"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_85qgf"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="3_cfekh"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="4_lroh1"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_hire2"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="6_myt6c"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_c85gy"]
+
+[resource]
+script = ExtResource("7_c85gy")
+Id = 662
+Type = 6
+Layer = 6
+DisplayName = "Sases-Aoarsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_31jw1"), ExtResource("2_85qgf"), ExtResource("3_cfekh"), ExtResource("4_lroh1"), ExtResource("5_hire2"), ExtResource("6_myt6c")]

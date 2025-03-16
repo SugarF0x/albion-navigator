@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dao4tdcjli5ng"]
+
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="1_yr7hw"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_nvxfm"]
+[ext_resource type="Resource" uid="uid://b3lqylkiunb8e" path="res://Resources/ZoneComponents/37.tres" id="3_5vd8j"]
+[ext_resource type="Resource" uid="uid://cy4ihug4nxjj7" path="res://Resources/ZoneComponents/45.tres" id="4_budtg"]
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="5_dp3fq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_aeywo"]
+
+[resource]
+script = ExtResource("6_aeywo")
+Id = 460
+Type = 6
+Layer = 10
+DisplayName = "Fasites-Azazsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_yr7hw"), ExtResource("2_nvxfm"), ExtResource("3_5vd8j"), ExtResource("2_nvxfm"), ExtResource("2_nvxfm"), ExtResource("2_nvxfm"), ExtResource("2_nvxfm"), ExtResource("2_nvxfm"), ExtResource("4_budtg"), ExtResource("2_nvxfm"), ExtResource("5_dp3fq")]

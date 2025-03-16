@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b1w3rdhpf4d8w"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_qekt7"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="2_i3qtq"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="3_lr1ep"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_1mog7"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_afql3"]
+
+[resource]
+script = ExtResource("5_afql3")
+Id = 798
+Type = 6
+Layer = 6
+DisplayName = "Xiles-Aiavlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("2_i3qtq"), ExtResource("3_lr1ep"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("4_1mog7")]

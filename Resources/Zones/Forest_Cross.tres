@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://coq6gv6lhvqci"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_6ijpr"]
+
+[resource]
+script = ExtResource("1_6ijpr")
+Id = 84
+Type = 0
+Layer = 0
+DisplayName = "Forest Cross"
+Position = Vector2(155.02, 333.01)
+Connections = [98, 94, 170]
+Components = []

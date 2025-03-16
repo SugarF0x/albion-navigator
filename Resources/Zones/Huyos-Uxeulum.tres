@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://u4kun7njwtfo"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_oeywy"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="2_j824m"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_yoc4j"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="4_pxjln"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_mvpfo"]
+
+[resource]
+script = ExtResource("5_mvpfo")
+Id = 547
+Type = 6
+Layer = 1
+DisplayName = "Huyos-Uxeulum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("2_j824m"), ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("1_oeywy"), ExtResource("3_yoc4j"), ExtResource("4_pxjln")]

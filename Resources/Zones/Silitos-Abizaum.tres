@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://ddkkeva07nqta"]
+
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="1_dyt46"]
+[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="2_me1wn"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="3_wmgg0"]
+[ext_resource type="Resource" uid="uid://cy4ihug4nxjj7" path="res://Resources/ZoneComponents/45.tres" id="4_8d7ek"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="5_fkjid"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_6j6s6"]
+
+[resource]
+script = ExtResource("6_6j6s6")
+Id = 727
+Type = 6
+Layer = 7
+DisplayName = "Silitos-Abizaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_dyt46"), ExtResource("1_dyt46"), ExtResource("2_me1wn"), ExtResource("3_wmgg0"), ExtResource("4_8d7ek"), ExtResource("5_fkjid"), ExtResource("3_wmgg0")]

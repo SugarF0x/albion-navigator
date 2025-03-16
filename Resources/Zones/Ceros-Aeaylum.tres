@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://5xv52lwnq3bk"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_h0bg6"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_2324w"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_2d2fg"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_rpfst"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="5_ap4c5"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="6_8q6pf"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_pwesc"]
+
+[resource]
+script = ExtResource("7_pwesc")
+Id = 426
+Type = 6
+Layer = 1
+DisplayName = "Ceros-Aeaylum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_h0bg6"), ExtResource("2_2324w"), ExtResource("3_2d2fg"), ExtResource("4_rpfst"), ExtResource("5_ap4c5"), ExtResource("1_h0bg6"), ExtResource("6_8q6pf"), ExtResource("1_h0bg6")]

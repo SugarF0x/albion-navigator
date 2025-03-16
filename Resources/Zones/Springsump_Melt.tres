@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b3to67h3n5kuf"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_y7cx2"]
+
+[resource]
+script = ExtResource("1_y7cx2")
+Id = 74
+Type = 5
+Layer = 0
+DisplayName = "Springsump Melt"
+Position = Vector2(-32.1, 3.11)
+Connections = [390, 44, 206, 208]
+Components = []

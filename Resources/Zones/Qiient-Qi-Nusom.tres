@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://kwa0qenax2yu"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_rg140"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_5d2ii"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_m0ylq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_rwvoy"]
+
+[resource]
+script = ExtResource("4_rwvoy")
+Id = 629
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Qi-Nusom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_rg140"), ExtResource("2_5d2ii"), ExtResource("2_5d2ii"), ExtResource("3_m0ylq")]

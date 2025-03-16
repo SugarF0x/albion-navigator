@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dfoo57v85peo2"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_7w0px"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="2_37rgb"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="3_8trg0"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="4_msndm"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="5_pj64w"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_14g4a"]
+
+[resource]
+script = ExtResource("6_14g4a")
+Id = 573
+Type = 6
+Layer = 6
+DisplayName = "Ooros-Ecunsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7w0px"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("3_8trg0"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("5_pj64w"), ExtResource("2_37rgb")]

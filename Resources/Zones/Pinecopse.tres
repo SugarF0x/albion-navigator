@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dfuah1uud8rsp"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_cdpnq"]
+
+[resource]
+script = ExtResource("1_cdpnq")
+Id = 103
+Type = 2
+Layer = 0
+DisplayName = "Pinecopse"
+Position = Vector2(104.02, 377.52)
+Connections = [184, 106, 181, 174]
+Components = []

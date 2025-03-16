@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cwylsuqdafmdq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_oa68e"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_wnqne"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="3_3utuu"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_c8g3o"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_qiym5"]
+
+[resource]
+script = ExtResource("5_qiym5")
+Id = 429
+Type = 6
+Layer = 3
+DisplayName = "Cetitos-Aximam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_oa68e"), ExtResource("2_wnqne"), ExtResource("3_3utuu"), ExtResource("4_c8g3o"), ExtResource("4_c8g3o"), ExtResource("3_3utuu"), ExtResource("2_wnqne"), ExtResource("1_oa68e")]

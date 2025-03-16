@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://eoim7qrttg2b"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qk2i5"]
+
+[resource]
+script = ExtResource("1_qk2i5")
+Id = 9
+Type = 2
+Layer = 0
+DisplayName = "Dusklight Fen"
+Position = Vector2(-35.56, 191.27)
+Connections = [23, 0, 8]
+Components = []

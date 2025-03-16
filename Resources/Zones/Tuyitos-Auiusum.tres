@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://ds8p08jt3qvew"]
+
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="1_ak1xh"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_0u54j"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="3_gq635"]
+[ext_resource type="Resource" uid="uid://d2dmtugqh6juw" path="res://Resources/ZoneComponents/13.tres" id="4_b7mtl"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="5_waqqh"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_m3nsj"]
+
+[resource]
+script = ExtResource("6_m3nsj")
+Id = 781
+Type = 6
+Layer = 1
+DisplayName = "Tuyitos-Auiusum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ak1xh"), ExtResource("2_0u54j"), ExtResource("3_gq635"), ExtResource("3_gq635"), ExtResource("4_b7mtl"), ExtResource("5_waqqh")]

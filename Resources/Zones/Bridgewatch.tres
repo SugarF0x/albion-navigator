@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d4enixnbhlo5i"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_gv0iq"]
+
+[resource]
+script = ExtResource("1_gv0iq")
+Id = 166
+Type = 1
+Layer = 0
+DisplayName = "Bridgewatch"
+Position = Vector2(15.8, 370.8)
+Connections = [177, 182, 179, 180, 191]
+Components = []

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://iesr53o6d3xc"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_7i4sh"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_o3a11"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="3_4jiav"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="4_2bi30"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_ebyg6"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="6_d1mto"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_ibvxv"]
+
+[resource]
+script = ExtResource("7_ibvxv")
+Id = 517
+Type = 6
+Layer = 9
+DisplayName = "Hebitos-Atontum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7i4sh"), ExtResource("2_o3a11"), ExtResource("3_4jiav"), ExtResource("1_7i4sh"), ExtResource("1_7i4sh"), ExtResource("4_2bi30"), ExtResource("5_ebyg6"), ExtResource("6_d1mto")]

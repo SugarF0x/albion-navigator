@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cmcbf35b0y2a7"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3qvu2"]
+
+[resource]
+script = ExtResource("1_3qvu2")
+Id = 81
+Type = 5
+Layer = 0
+DisplayName = "Sunkenbough Spring"
+Position = Vector2(21.73, -36.54)
+Connections = [232, 72, 403]
+Components = []

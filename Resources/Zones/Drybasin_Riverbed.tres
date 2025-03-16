@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://e2pkk0h3ubjk"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_657vt"]
+
+[resource]
+script = ExtResource("1_657vt")
+Id = 195
+Type = 5
+Layer = 0
+DisplayName = "Drybasin Riverbed"
+Position = Vector2(164.12, -147.57)
+Connections = [228, 65]
+Components = []

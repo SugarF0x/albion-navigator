@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dm8xemypdmgco"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_r1w4s"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_ypbud"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_wdtmh"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_sfrv3"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_rv4gc"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_3ibw0"]
+
+[resource]
+script = ExtResource("6_3ibw0")
+Id = 608
+Type = 6
+Layer = 5
+DisplayName = "Pynitos-Aietam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_r1w4s"), ExtResource("2_ypbud"), ExtResource("1_r1w4s"), ExtResource("1_r1w4s"), ExtResource("3_wdtmh"), ExtResource("4_sfrv3"), ExtResource("5_rv4gc")]

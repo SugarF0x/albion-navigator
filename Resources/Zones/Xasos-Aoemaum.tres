@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://dq25dcycgtcne"]
+
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="1_17hx4"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="2_vobp4"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_q85yd"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="4_2nd4e"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="5_1hh6c"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="6_e3yb5"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="7_oepwn"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_xfu1d"]
+
+[resource]
+script = ExtResource("8_xfu1d")
+Id = 789
+Type = 6
+Layer = 3
+DisplayName = "Xasos-Aoemaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_17hx4"), ExtResource("2_vobp4"), ExtResource("3_q85yd"), ExtResource("4_2nd4e"), ExtResource("5_1hh6c"), ExtResource("6_e3yb5"), ExtResource("6_e3yb5"), ExtResource("6_e3yb5"), ExtResource("6_e3yb5"), ExtResource("7_oepwn")]

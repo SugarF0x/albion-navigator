@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ccqoyqfau6n3j"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_infh5"]
+
+[resource]
+script = ExtResource("1_infh5")
+Id = 144
+Type = 5
+Layer = 0
+DisplayName = "Timbertop Wood"
+Position = Vector2(-31.61, -393.36)
+Connections = [192, 131]
+Components = []

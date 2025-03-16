@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bqovcj6ki3dyy"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ol7vj"]
+
+[resource]
+script = ExtResource("1_ol7vj")
+Id = 161
+Type = 5
+Layer = 0
+DisplayName = "Greenshore Bay"
+Position = Vector2(180.52, -79.55)
+Connections = [113, 276]
+Components = []

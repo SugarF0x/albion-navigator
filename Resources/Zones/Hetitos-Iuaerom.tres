@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://csqvcj5xtmveq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_6q7wd"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_os7vr"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_cstr2"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="4_ivpxe"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_ym6oa"]
+
+[resource]
+script = ExtResource("5_ym6oa")
+Id = 523
+Type = 6
+Layer = 2
+DisplayName = "Hetitos-Iuaerom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_6q7wd"), ExtResource("1_6q7wd"), ExtResource("2_os7vr"), ExtResource("3_cstr2"), ExtResource("4_ivpxe"), ExtResource("1_6q7wd"), ExtResource("1_6q7wd"), ExtResource("1_6q7wd"), ExtResource("1_6q7wd")]

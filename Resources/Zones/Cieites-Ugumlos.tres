@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=10 format=3 uid="uid://dhu5m5uyoqpff"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_7pd6o"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_dy6vv"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_6f6xb"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_80xiv"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="5_3t4vx"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="6_6mum3"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="7_1bndy"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="8_1upb3"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="9_7uo8w"]
+
+[resource]
+script = ExtResource("9_7uo8w")
+Id = 431
+Type = 6
+Layer = 3
+DisplayName = "Cieites-Ugumlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7pd6o"), ExtResource("2_dy6vv"), ExtResource("3_6f6xb"), ExtResource("4_80xiv"), ExtResource("5_3t4vx"), ExtResource("6_6mum3"), ExtResource("7_1bndy"), ExtResource("8_1upb3")]

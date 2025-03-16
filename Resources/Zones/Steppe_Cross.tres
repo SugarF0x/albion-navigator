@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c7t8a60w60avg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_v7upw"]
+
+[resource]
+script = ExtResource("1_v7upw")
+Id = 167
+Type = 0
+Layer = 0
+DisplayName = "Steppe Cross"
+Position = Vector2(0.11, 403.6)
+Connections = [265, 183, 182]
+Components = []

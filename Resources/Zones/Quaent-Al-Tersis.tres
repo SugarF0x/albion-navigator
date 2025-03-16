@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://dqdl2yxj748xv"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_1himd"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_oktp4"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_6y6g7"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_7s1i8"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_bxdp5"]
+
+[resource]
+script = ExtResource("5_bxdp5")
+Id = 649
+Type = 6
+Layer = 11
+DisplayName = "Quaent-Al-Tersis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_1himd"), ExtResource("2_oktp4"), ExtResource("3_6y6g7"), ExtResource("4_7s1i8")]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://cmiev3lxi7ctp"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_mxc2e"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_y2f0o"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="3_ya0fp"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_ehrxu"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="5_k0wer"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_2imb2"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="7_8k4kt"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_icyqa"]
+
+[resource]
+script = ExtResource("8_icyqa")
+Id = 520
+Type = 6
+Layer = 3
+DisplayName = "Heritos-Eyoztum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_mxc2e"), ExtResource("1_mxc2e"), ExtResource("2_y2f0o"), ExtResource("3_ya0fp"), ExtResource("4_ehrxu"), ExtResource("5_k0wer"), ExtResource("6_2imb2"), ExtResource("7_8k4kt")]

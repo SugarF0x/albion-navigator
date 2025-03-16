@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cq0hgy5leka7c"]
+
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="1_kmp6j"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="2_6wtl4"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_eb01q"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_rxfxm"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="5_5gp0b"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_da0ao"]
+
+[resource]
+script = ExtResource("6_da0ao")
+Id = 607
+Type = 6
+Layer = 1
+DisplayName = "Pynites-Ouozlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_kmp6j"), ExtResource("2_6wtl4"), ExtResource("3_eb01q"), ExtResource("4_rxfxm"), ExtResource("5_5gp0b")]

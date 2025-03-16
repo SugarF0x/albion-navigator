@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dvshhx3j2ypy1"]
+
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="1_6py1m"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_xjjbi"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_emytf"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_1hgx1"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="5_raytb"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_yd2d1"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_7xf57"]
+
+[resource]
+script = ExtResource("7_7xf57")
+Id = 565
+Type = 6
+Layer = 3
+DisplayName = "Oetos-Oyexlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_6py1m"), ExtResource("2_xjjbi"), ExtResource("3_emytf"), ExtResource("2_xjjbi"), ExtResource("1_6py1m"), ExtResource("4_1hgx1"), ExtResource("4_1hgx1"), ExtResource("4_1hgx1"), ExtResource("4_1hgx1"), ExtResource("5_raytb"), ExtResource("6_yd2d1")]

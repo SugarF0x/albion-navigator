@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://bkj8ecpr0bakc"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_gbl2l"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_pw4ug"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="3_gj010"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_uj1pv"]
+
+[resource]
+script = ExtResource("4_uj1pv")
+Id = 806
+Type = 6
+Layer = 1
+DisplayName = "Xouitos-Aeoilos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_gbl2l"), ExtResource("1_gbl2l"), ExtResource("1_gbl2l"), ExtResource("2_pw4ug"), ExtResource("3_gj010"), ExtResource("2_pw4ug"), ExtResource("2_pw4ug")]

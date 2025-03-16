@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ddu1jxc2sna6a"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3q66t"]
+
+[resource]
+script = ExtResource("1_3q66t")
+Id = 118
+Type = 5
+Layer = 0
+DisplayName = "Deadpine Forest"
+Position = Vector2(-19.94, -219.63)
+Connections = [410, 383, 78]
+Components = []

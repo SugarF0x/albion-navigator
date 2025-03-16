@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c7aqa1ml213mv"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_d5ojq"]
+
+[resource]
+script = ExtResource("1_d5ojq")
+Id = 225
+Type = 5
+Layer = 0
+DisplayName = "Farshore Lagoon"
+Position = Vector2(-122.9, -3.68)
+Connections = [296, 240]
+Components = []

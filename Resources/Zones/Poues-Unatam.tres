@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://p1ajx6n1871l"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_dbnf3"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="2_ve8m3"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_psaib"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_l4bua"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="5_4halq"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="6_7kc7g"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_w3snl"]
+
+[resource]
+script = ExtResource("7_w3snl")
+Id = 601
+Type = 6
+Layer = 4
+DisplayName = "Poues-Unatam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_dbnf3"), ExtResource("2_ve8m3"), ExtResource("3_psaib"), ExtResource("1_dbnf3"), ExtResource("4_l4bua"), ExtResource("5_4halq"), ExtResource("6_7kc7g")]

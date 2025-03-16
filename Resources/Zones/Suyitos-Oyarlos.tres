@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://clpqo57gcji4u"]
+
+[ext_resource type="Resource" uid="uid://hm2uti21vjre" path="res://Resources/ZoneComponents/51.tres" id="1_ix856"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_wmvdn"]
+[ext_resource type="Resource" uid="uid://bitb6iij6vmy2" path="res://Resources/ZoneComponents/49.tres" id="3_amtmd"]
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="4_2dthl"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_lee0k"]
+
+[resource]
+script = ExtResource("5_lee0k")
+Id = 748
+Type = 6
+Layer = 7
+DisplayName = "Suyitos-Oyarlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ix856"), ExtResource("2_wmvdn"), ExtResource("2_wmvdn"), ExtResource("3_amtmd"), ExtResource("2_wmvdn"), ExtResource("2_wmvdn"), ExtResource("2_wmvdn"), ExtResource("2_wmvdn"), ExtResource("4_2dthl")]

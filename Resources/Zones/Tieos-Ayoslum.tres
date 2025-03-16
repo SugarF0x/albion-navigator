@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://d58ooffpyyue"]
+
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="1_saaxx"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_vmqtq"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_8twsu"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="4_qdgt2"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="5_lnjpb"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_ot6rt"]
+
+[resource]
+script = ExtResource("6_ot6rt")
+Id = 767
+Type = 6
+Layer = 6
+DisplayName = "Tieos-Ayoslum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_saaxx"), ExtResource("2_vmqtq"), ExtResource("3_8twsu"), ExtResource("2_vmqtq"), ExtResource("4_qdgt2"), ExtResource("5_lnjpb"), ExtResource("2_vmqtq"), ExtResource("2_vmqtq"), ExtResource("2_vmqtq"), ExtResource("2_vmqtq")]

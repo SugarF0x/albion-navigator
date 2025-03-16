@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://n81bgkx8ogsf"]
+
+[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="1_2u8pj"]
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="2_r840a"]
+[ext_resource type="Resource" uid="uid://b14ay1ugdh6ei" path="res://Resources/ZoneComponents/48.tres" id="3_fyn2h"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_7cgm5"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="5_jlyxv"]
+[ext_resource type="Resource" uid="uid://04kfeff4borq" path="res://Resources/ZoneComponents/43.tres" id="6_ugr4e"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_4tpfq"]
+
+[resource]
+script = ExtResource("7_4tpfq")
+Id = 465
+Type = 6
+Layer = 7
+DisplayName = "Febites-Opavun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_2u8pj"), ExtResource("2_r840a"), ExtResource("3_fyn2h"), ExtResource("4_7cgm5"), ExtResource("5_jlyxv"), ExtResource("5_jlyxv"), ExtResource("4_7cgm5"), ExtResource("6_ugr4e")]

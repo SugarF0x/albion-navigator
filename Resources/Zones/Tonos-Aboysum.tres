@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://ccayrk0fys5rj"]
+
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="1_j38p0"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_3xf57"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="3_2ao3w"]
+[ext_resource type="Resource" uid="uid://hm2uti21vjre" path="res://Resources/ZoneComponents/51.tres" id="4_6ilr6"]
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="5_pptyn"]
+[ext_resource type="Resource" uid="uid://lnjpqun02cyo" path="res://Resources/ZoneComponents/52.tres" id="6_banip"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_fqp4v"]
+
+[resource]
+script = ExtResource("7_fqp4v")
+Id = 773
+Type = 6
+Layer = 7
+DisplayName = "Tonos-Aboysum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_j38p0"), ExtResource("2_3xf57"), ExtResource("3_2ao3w"), ExtResource("4_6ilr6"), ExtResource("5_pptyn"), ExtResource("6_banip"), ExtResource("6_banip")]

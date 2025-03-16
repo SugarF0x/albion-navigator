@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b688xr57io75x"]
+
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="1_t87xt"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="2_rdnxt"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_t7tot"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_yyy7r"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_lua2q"]
+
+[resource]
+script = ExtResource("5_lua2q")
+Id = 717
+Type = 6
+Layer = 12
+DisplayName = "Settun-Al-Odetum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_t87xt"), ExtResource("2_rdnxt"), ExtResource("3_t7tot"), ExtResource("4_yyy7r")]

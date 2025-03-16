@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dkftvhs7jbq1e"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_2kxsq"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="2_tcssm"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_mg4ec"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_o3fau"]
+
+[resource]
+script = ExtResource("4_o3fau")
+Id = 647
+Type = 6
+Layer = 11
+DisplayName = "Quaent-Al-Odesum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_2kxsq"), ExtResource("2_tcssm"), ExtResource("1_2kxsq"), ExtResource("1_2kxsq"), ExtResource("1_2kxsq"), ExtResource("1_2kxsq"), ExtResource("3_mg4ec")]

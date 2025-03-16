@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dqv3hqflbouib"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_4khlw"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_bo4ke"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_x8dyj"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="4_7ak8q"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="5_mxufk"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_w5gix"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_kbj5q"]
+
+[resource]
+script = ExtResource("7_kbj5q")
+Id = 669
+Type = 6
+Layer = 5
+DisplayName = "Sasos-Oiozlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4khlw"), ExtResource("2_bo4ke"), ExtResource("3_x8dyj"), ExtResource("4_7ak8q"), ExtResource("5_mxufk"), ExtResource("6_w5gix"), ExtResource("3_x8dyj")]

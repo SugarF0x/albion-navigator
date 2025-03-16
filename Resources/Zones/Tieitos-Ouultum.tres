@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bhk7mfq0w3w28"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_ouvmf"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_e6xki"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_egxqu"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_7jp0n"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="5_1hohk"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="6_ry4f2"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_u2atk"]
+
+[resource]
+script = ExtResource("7_u2atk")
+Id = 766
+Type = 6
+Layer = 3
+DisplayName = "Tieitos-Ouultum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ouvmf"), ExtResource("2_e6xki"), ExtResource("3_egxqu"), ExtResource("4_7jp0n"), ExtResource("5_1hohk"), ExtResource("6_ry4f2"), ExtResource("6_ry4f2"), ExtResource("6_ry4f2"), ExtResource("6_ry4f2")]

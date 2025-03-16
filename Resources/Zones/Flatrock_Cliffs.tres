@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bs5jm3h4h2veo"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_xho4d"]
+
+[resource]
+script = ExtResource("1_xho4d")
+Id = 276
+Type = 5
+Layer = 0
+DisplayName = "Flatrock Cliffs"
+Position = Vector2(176.64, -98.85)
+Connections = [299, 161, 65]
+Components = []

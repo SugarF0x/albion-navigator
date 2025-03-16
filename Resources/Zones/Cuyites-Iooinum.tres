@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cudyak8e4jnjj"]
+
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="1_v17qg"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_qv38m"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="3_gy1a0"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="4_rlojd"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="5_c7aw4"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_a8k37"]
+
+[resource]
+script = ExtResource("6_a8k37")
+Id = 455
+Type = 6
+Layer = 1
+DisplayName = "Cuyites-Iooinum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_v17qg"), ExtResource("2_qv38m"), ExtResource("3_gy1a0"), ExtResource("4_rlojd"), ExtResource("4_rlojd"), ExtResource("5_c7aw4")]

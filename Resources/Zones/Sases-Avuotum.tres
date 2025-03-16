@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://2uj28re15l4n"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_q5qsq"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="2_pkv0n"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_m6dhb"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="4_6odqk"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_wueoa"]
+
+[resource]
+script = ExtResource("5_wueoa")
+Id = 663
+Type = 6
+Layer = 3
+DisplayName = "Sases-Avuotum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_q5qsq"), ExtResource("2_pkv0n"), ExtResource("1_q5qsq"), ExtResource("1_q5qsq"), ExtResource("1_q5qsq"), ExtResource("1_q5qsq"), ExtResource("1_q5qsq"), ExtResource("3_m6dhb"), ExtResource("4_6odqk")]

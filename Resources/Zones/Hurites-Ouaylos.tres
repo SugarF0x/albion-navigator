@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dkv0i8cnt015m"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_w1svd"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="2_isg8t"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_8vk6s"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_rb7ko"]
+
+[resource]
+script = ExtResource("4_rb7ko")
+Id = 539
+Type = 6
+Layer = 6
+DisplayName = "Hurites-Ouaylos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("2_isg8t"), ExtResource("1_w1svd"), ExtResource("3_8vk6s"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd")]

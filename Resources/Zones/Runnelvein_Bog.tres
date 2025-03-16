@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dw5vmrrte2jwv"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_cx4cv"]
+
+[resource]
+script = ExtResource("1_cx4cv")
+Id = 49
+Type = 5
+Layer = 0
+DisplayName = "Runnelvein Bog"
+Position = Vector2(86.41, -176.07)
+Connections = [367, 396, 34]
+Components = []

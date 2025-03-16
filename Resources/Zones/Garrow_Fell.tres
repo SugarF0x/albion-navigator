@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bw6wollklekl4"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_t3ypj"]
+
+[resource]
+script = ExtResource("1_t3ypj")
+Id = 271
+Type = 4
+Layer = 0
+DisplayName = "Garrow Fell"
+Position = Vector2(-12.73, 302.5)
+Connections = [270, 273, 272]
+Components = []

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cgxtqghn4evcm"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_fa1pu"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_p8di6"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="3_njiq1"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_w7dkt"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_gsnc8"]
+
+[resource]
+script = ExtResource("5_gsnc8")
+Id = 652
+Type = 6
+Layer = 11
+DisplayName = "Quaent-In-Nusis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_fa1pu"), ExtResource("2_p8di6"), ExtResource("3_njiq1"), ExtResource("4_w7dkt")]

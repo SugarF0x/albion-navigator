@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d2jdf2afh7b8m"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_wsv5e"]
+
+[resource]
+script = ExtResource("1_wsv5e")
+Id = 115
+Type = 5
+Layer = 0
+DisplayName = "Timberscar Dell"
+Position = Vector2(-75.31, -302.29)
+Connections = [53, 51, 54]
+Components = []

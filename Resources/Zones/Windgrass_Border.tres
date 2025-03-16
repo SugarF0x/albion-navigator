@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cym4usmma1kn0"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_47qnw"]
+
+[resource]
+script = ExtResource("1_47qnw")
+Id = 289
+Type = 5
+Layer = 0
+DisplayName = "Windgrass Border"
+Position = Vector2(-205.63, -150.47)
+Connections = [275, 304, 389, 201]
+Components = []

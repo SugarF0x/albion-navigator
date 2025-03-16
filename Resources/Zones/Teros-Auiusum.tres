@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b4j1asf2fduuw"]
+
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="1_7moam"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_ayu8e"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="3_sv468"]
+[ext_resource type="Resource" uid="uid://d2dmtugqh6juw" path="res://Resources/ZoneComponents/13.tres" id="4_u8l7o"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="5_jh413"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_jk25o"]
+
+[resource]
+script = ExtResource("6_jk25o")
+Id = 761
+Type = 6
+Layer = 1
+DisplayName = "Teros-Auiusum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7moam"), ExtResource("2_ayu8e"), ExtResource("3_sv468"), ExtResource("3_sv468"), ExtResource("4_u8l7o"), ExtResource("5_jh413")]

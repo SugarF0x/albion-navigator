@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://lk7acdyi4dho"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_whfnj"]
+
+[resource]
+script = ExtResource("1_whfnj")
+Id = 358
+Type = 1
+Layer = 0
+DisplayName = "Fort Sterling Portal"
+Position = Vector2(109.22, -271.68)
+Connections = [360, 363, 362, 359, 365, 331]
+Components = []

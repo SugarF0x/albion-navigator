@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ccyny5xyrox1n"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_wofak"]
+
+[resource]
+script = ExtResource("1_wofak")
+Id = 105
+Type = 3
+Layer = 0
+DisplayName = "Aspenwood"
+Position = Vector2(124.1, 277.12)
+Connections = [90, 97, 85]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bolh73tuf3rlf"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_73kk4"]
+
+[resource]
+script = ExtResource("1_73kk4")
+Id = 147
+Type = 5
+Layer = 0
+DisplayName = "Giantweald Edge"
+Position = Vector2(157.54, -115.68)
+Connections = [114, 299, 228]
+Components = []

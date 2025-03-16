@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c814ud5n8khsv"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_7j6y4"]
+
+[resource]
+script = ExtResource("1_7j6y4")
+Id = 216
+Type = 5
+Layer = 0
+DisplayName = "Thirstwater Waste"
+Position = Vector2(64.13, -15.63)
+Connections = [387, 141, 233]
+Components = []

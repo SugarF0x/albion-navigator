@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://d31mkaihhfl1j"]
+
+[ext_resource type="Resource" uid="uid://hm2uti21vjre" path="res://Resources/ZoneComponents/51.tres" id="1_adp50"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_m1aj6"]
+[ext_resource type="Resource" uid="uid://bitb6iij6vmy2" path="res://Resources/ZoneComponents/49.tres" id="3_ep1em"]
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="4_fwybk"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_wu7si"]
+
+[resource]
+script = ExtResource("5_wu7si")
+Id = 755
+Type = 6
+Layer = 7
+DisplayName = "Synos-Oyarlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_adp50"), ExtResource("2_m1aj6"), ExtResource("2_m1aj6"), ExtResource("3_ep1em"), ExtResource("2_m1aj6"), ExtResource("2_m1aj6"), ExtResource("2_m1aj6"), ExtResource("2_m1aj6"), ExtResource("4_fwybk")]

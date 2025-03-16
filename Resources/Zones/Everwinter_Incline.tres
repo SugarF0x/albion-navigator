@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cp5lgkb7gx4wp"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ats3g"]
+
+[resource]
+script = ExtResource("1_ats3g")
+Id = 407
+Type = 5
+Layer = 0
+DisplayName = "Everwinter Incline"
+Position = Vector2(0.5, -318.55)
+Connections = [394, 242, 376, 194]
+Components = []

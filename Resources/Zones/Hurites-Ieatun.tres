@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://c2utsxwecn3vq"]
+
+[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="1_2y1gn"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_0p0wp"]
+[ext_resource type="Resource" uid="uid://bq7rs4g2nrngs" path="res://Resources/ZoneComponents/39.tres" id="3_bhurh"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="4_bx24a"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_s8e3v"]
+
+[resource]
+script = ExtResource("5_s8e3v")
+Id = 538
+Type = 6
+Layer = 7
+DisplayName = "Hurites-Ieatun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_2y1gn"), ExtResource("2_0p0wp"), ExtResource("2_0p0wp"), ExtResource("3_bhurh"), ExtResource("4_bx24a")]

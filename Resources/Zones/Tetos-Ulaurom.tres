@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bi2a8d2c7rlqa"]
+
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="1_3wikl"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_ievqe"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_kw2cy"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="4_m48wd"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_gra1o"]
+
+[resource]
+script = ExtResource("5_gra1o")
+Id = 764
+Type = 6
+Layer = 2
+DisplayName = "Tetos-Ulaurom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_3wikl"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("3_kw2cy"), ExtResource("3_kw2cy"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("2_ievqe"), ExtResource("4_m48wd")]

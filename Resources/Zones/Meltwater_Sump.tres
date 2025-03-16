@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dfj30n60jmhl3"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5mgor"]
+
+[resource]
+script = ExtResource("1_5mgor")
+Id = 61
+Type = 5
+Layer = 0
+DisplayName = "Meltwater Sump"
+Position = Vector2(48.65, -314.66)
+Connections = [48, 377, 391]
+Components = []

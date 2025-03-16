@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b2grojwaaoolj"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_nuoti"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="2_7720u"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_j151s"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_rr1eq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_2ybli"]
+
+[resource]
+script = ExtResource("5_2ybli")
+Id = 525
+Type = 6
+Layer = 3
+DisplayName = "Hieos-Avaolum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_nuoti"), ExtResource("1_nuoti"), ExtResource("2_7720u"), ExtResource("3_j151s"), ExtResource("1_nuoti"), ExtResource("1_nuoti"), ExtResource("1_nuoti"), ExtResource("1_nuoti"), ExtResource("4_rr1eq")]

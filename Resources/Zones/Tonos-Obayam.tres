@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://crc3522rks3l7"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_3j6bn"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_g5avo"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_ibu8p"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_rj808"]
+
+[resource]
+script = ExtResource("4_rj808")
+Id = 774
+Type = 6
+Layer = 3
+DisplayName = "Tonos-Obayam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_3j6bn"), ExtResource("2_g5avo"), ExtResource("3_ibu8p"), ExtResource("2_g5avo"), ExtResource("2_g5avo"), ExtResource("3_ibu8p"), ExtResource("3_ibu8p")]

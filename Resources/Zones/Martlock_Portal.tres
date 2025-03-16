@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bfdj16f0u4cc2"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_lkyrv"]
+
+[resource]
+script = ExtResource("1_lkyrv")
+Id = 275
+Type = 1
+Layer = 0
+DisplayName = "Martlock Portal"
+Position = Vector2(-220.31, -132.55)
+Connections = [292, 293, 289, 46, 291, 250]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://brl263hu1b5yb"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3k0pu"]
+
+[resource]
+script = ExtResource("1_3k0pu")
+Id = 10
+Type = 3
+Layer = 0
+DisplayName = "Nightcreak Marsh"
+Position = Vector2(-14.47, 217.69)
+Connections = [21, 6, 26]
+Components = []

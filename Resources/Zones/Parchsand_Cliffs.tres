@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dqoy6sln7mucj"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rhdfj"]
+
+[resource]
+script = ExtResource("1_rhdfj")
+Id = 218
+Type = 5
+Layer = 0
+DisplayName = "Parchsand Cliffs"
+Position = Vector2(-112.71, -126.15)
+Connections = [328, 303, 246]
+Components = []

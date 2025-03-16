@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b2r8kooptlx6w"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_l2n16"]
+
+[resource]
+script = ExtResource("1_l2n16")
+Id = 403
+Type = 5
+Layer = 0
+DisplayName = "Firesink Trench"
+Position = Vector2(32.99, -24.46)
+Connections = [219, 81, 387]
+Components = []

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dbtc8o4oc4bs3"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_ix30e"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_hs6xp"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_1tp3u"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_6wwdo"]
+
+[resource]
+script = ExtResource("4_6wwdo")
+Id = 683
+Type = 6
+Layer = 11
+DisplayName = "Secent-In-Tersum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ix30e"), ExtResource("2_hs6xp"), ExtResource("2_hs6xp"), ExtResource("3_1tp3u")]

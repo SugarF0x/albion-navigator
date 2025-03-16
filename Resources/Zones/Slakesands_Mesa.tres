@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cq6nebwfig01w"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qinb2"]
+
+[resource]
+script = ExtResource("1_qinb2")
+Id = 229
+Type = 5
+Layer = 0
+DisplayName = "Slakesands Mesa"
+Position = Vector2(170.23, -48.99)
+Connections = [196, 113, 136]
+Components = []

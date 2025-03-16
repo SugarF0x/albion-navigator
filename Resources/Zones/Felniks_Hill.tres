@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bnscp4oh0u5lh"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_gjdfy"]
+
+[resource]
+script = ExtResource("1_gjdfy")
+Id = 269
+Type = 3
+Layer = 0
+DisplayName = "Felniks Hill"
+Position = Vector2(-31.59, 343.17)
+Connections = [188, 268, 267, 262]
+Components = []

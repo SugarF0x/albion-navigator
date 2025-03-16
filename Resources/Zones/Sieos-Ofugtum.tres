@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c8l4gt16l5iej"]
+
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="1_osyo6"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_lr1lx"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_o5ynx"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_d5v12"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="5_swkmf"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_4m37n"]
+
+[resource]
+script = ExtResource("6_4m37n")
+Id = 726
+Type = 6
+Layer = 4
+DisplayName = "Sieos-Ofugtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_osyo6"), ExtResource("2_lr1lx"), ExtResource("3_o5ynx"), ExtResource("2_lr1lx"), ExtResource("4_d5v12"), ExtResource("4_d5v12"), ExtResource("5_swkmf")]

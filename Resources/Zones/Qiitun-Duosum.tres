@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dkdfcucfo76eq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_c5spo"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_q4awi"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_73lnv"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_sqsr2"]
+
+[resource]
+script = ExtResource("4_sqsr2")
+Id = 641
+Type = 6
+Layer = 12
+DisplayName = "Qiitun-Duosum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_c5spo"), ExtResource("2_q4awi"), ExtResource("2_q4awi"), ExtResource("3_73lnv")]

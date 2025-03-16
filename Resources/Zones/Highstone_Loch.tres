@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b7fm0ex5t2bwb"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ckpks"]
+
+[resource]
+script = ExtResource("1_ckpks")
+Id = 328
+Type = 5
+Layer = 0
+DisplayName = "Highstone Loch"
+Position = Vector2(-140.93, -114.48)
+Connections = [286, 130, 287, 218]
+Components = []

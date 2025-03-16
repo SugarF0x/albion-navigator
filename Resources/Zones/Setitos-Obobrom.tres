@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cfl5rnf6tgkp0"]
+
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="1_28k83"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_57fyg"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_06jno"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_b1nqe"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_0kfrx"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_xnd17"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_4sap2"]
+
+[resource]
+script = ExtResource("7_4sap2")
+Id = 713
+Type = 6
+Layer = 5
+DisplayName = "Setitos-Obobrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_28k83"), ExtResource("2_57fyg"), ExtResource("3_06jno"), ExtResource("4_b1nqe"), ExtResource("5_0kfrx"), ExtResource("6_xnd17"), ExtResource("2_57fyg")]

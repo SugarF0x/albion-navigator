@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://3fpo2jl41e23"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_esu6p"]
+
+[resource]
+script = ExtResource("1_esu6p")
+Id = 365
+Type = 5
+Layer = 0
+DisplayName = "Whitebank Cross"
+Position = Vector2(67.46, -251.59)
+Connections = [112, 133, 380, 358]
+Components = []

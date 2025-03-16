@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://4buvl3bunkfw"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_akmb0"]
+
+[resource]
+script = ExtResource("1_akmb0")
+Id = 318
+Type = 5
+Layer = 0
+DisplayName = "Highstone Plateau"
+Position = Vector2(-159.81, -161.5)
+Connections = [282, 220, 317]
+Components = []

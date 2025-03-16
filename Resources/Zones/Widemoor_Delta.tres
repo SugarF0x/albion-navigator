@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ll08rdtv8gat"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_apncr"]
+
+[resource]
+script = ExtResource("1_apncr")
+Id = 40
+Type = 5
+Layer = 0
+DisplayName = "Widemoor Delta"
+Position = Vector2(-154.71, -330.08)
+Connections = [27, 57]
+Components = []

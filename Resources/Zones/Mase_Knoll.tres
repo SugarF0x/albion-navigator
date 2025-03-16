@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://rgxknvbshafr"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5tgpp"]
+
+[resource]
+script = ExtResource("1_5tgpp")
+Id = 260
+Type = 2
+Layer = 0
+DisplayName = "Mase Knoll"
+Position = Vector2(-78.38, 300.51)
+Connections = [264, 248, 259, 250]
+Components = []

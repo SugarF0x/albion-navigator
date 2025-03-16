@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bjgpmpsi0t37j"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4o1k3"]
+
+[resource]
+script = ExtResource("1_4o1k3")
+Id = 335
+Type = 2
+Layer = 0
+DisplayName = "Crose Gorge"
+Position = Vector2(91.6, 191.47)
+Connections = [332, 87, 334, 331]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://v5rak44vokde"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_olei7"]
+
+[resource]
+script = ExtResource("1_olei7")
+Id = 230
+Type = 5
+Layer = 0
+DisplayName = "Sunfang Cliffs"
+Position = Vector2(-52.68, -132.87)
+Connections = [231, 327]
+Components = []

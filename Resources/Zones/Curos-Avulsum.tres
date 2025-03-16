@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cdkb7p4o5w7o0"]
+
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="1_yfbey"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_5egm3"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="3_j42pb"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_mpd1e"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="5_1avy1"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_n0wth"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_s12ic"]
+
+[resource]
+script = ExtResource("7_s12ic")
+Id = 454
+Type = 6
+Layer = 3
+DisplayName = "Curos-Avulsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_yfbey"), ExtResource("2_5egm3"), ExtResource("3_j42pb"), ExtResource("4_mpd1e"), ExtResource("5_1avy1"), ExtResource("6_n0wth")]

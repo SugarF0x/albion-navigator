@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://fs6gc4qtbmto"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qctsw"]
+
+[resource]
+script = ExtResource("1_qctsw")
+Id = 213
+Type = 5
+Layer = 0
+DisplayName = "Northstrand Beach"
+Position = Vector2(-7.78, -398.1)
+Connections = [192, 131]
+Components = []

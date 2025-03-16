@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://b1xcd6fu6pnhe"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_fue2w"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="2_oyav2"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_ipfes"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_5hhrd"]
+
+[resource]
+script = ExtResource("4_5hhrd")
+Id = 417
+Type = 6
+Layer = 2
+DisplayName = "Casitos-Avaelum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_fue2w"), ExtResource("1_fue2w"), ExtResource("2_oyav2"), ExtResource("1_fue2w"), ExtResource("1_fue2w"), ExtResource("1_fue2w"), ExtResource("1_fue2w"), ExtResource("1_fue2w"), ExtResource("3_ipfes"), ExtResource("1_fue2w")]

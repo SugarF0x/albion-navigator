@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://e5owg4rbqjhv"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_hgu2n"]
+
+[resource]
+script = ExtResource("1_hgu2n")
+Id = 363
+Type = 5
+Layer = 0
+DisplayName = "Whitebank Shore"
+Position = Vector2(101.75, -256.89)
+Connections = [378, 358, 112]
+Components = []

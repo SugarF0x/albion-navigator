@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dbnkqqkiplvdt"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_fd8e0"]
+
+[resource]
+script = ExtResource("1_fd8e0")
+Id = 387
+Type = 5
+Layer = 0
+DisplayName = "Firesink Caldera"
+Position = Vector2(40.64, -34.68)
+Connections = [216, 139, 403, 72]
+Components = []

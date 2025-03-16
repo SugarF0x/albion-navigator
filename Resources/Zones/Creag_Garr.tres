@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d3nugomcui7lg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_cib2p"]
+
+[resource]
+script = ExtResource("1_cib2p")
+Id = 343
+Type = 4
+Layer = 0
+DisplayName = "Creag Garr"
+Position = Vector2(56.6, 248.05)
+Connections = [355, 353]
+Components = []

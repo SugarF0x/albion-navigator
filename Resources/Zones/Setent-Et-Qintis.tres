@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cxphcsc4u777g"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_lj4gu"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="2_ocjbu"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_aprrr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_xf1bn"]
+
+[resource]
+script = ExtResource("4_xf1bn")
+Id = 708
+Type = 6
+Layer = 11
+DisplayName = "Setent-Et-Qintis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_lj4gu"), ExtResource("2_ocjbu"), ExtResource("1_lj4gu"), ExtResource("1_lj4gu"), ExtResource("1_lj4gu"), ExtResource("1_lj4gu"), ExtResource("3_aprrr")]

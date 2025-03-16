@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bml12q2w1knlk"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_c3tp0"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_ppo04"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_jh3hs"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="4_kagk1"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="5_567ek"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_g1hyy"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_5q2de"]
+
+[resource]
+script = ExtResource("7_5q2de")
+Id = 433
+Type = 6
+Layer = 3
+DisplayName = "Cieitos-Ayosrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_c3tp0"), ExtResource("2_ppo04"), ExtResource("3_jh3hs"), ExtResource("1_c3tp0"), ExtResource("1_c3tp0"), ExtResource("1_c3tp0"), ExtResource("1_c3tp0"), ExtResource("4_kagk1"), ExtResource("1_c3tp0"), ExtResource("5_567ek"), ExtResource("6_g1hyy")]

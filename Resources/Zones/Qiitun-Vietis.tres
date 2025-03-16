@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://bq1bmcr6gklp7"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_idwpw"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_v2dl7"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_7j8yg"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_378ju"]
+
+[resource]
+script = ExtResource("4_378ju")
+Id = 645
+Type = 6
+Layer = 12
+DisplayName = "Qiitun-Vietis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_idwpw"), ExtResource("1_idwpw"), ExtResource("1_idwpw"), ExtResource("1_idwpw"), ExtResource("1_idwpw"), ExtResource("2_v2dl7"), ExtResource("3_7j8yg")]

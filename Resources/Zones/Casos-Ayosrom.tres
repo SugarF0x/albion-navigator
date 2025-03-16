@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://b3psfccts7thv"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_pnfa4"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_b4ilr"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_fb1lh"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="4_gxlcf"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="5_w845a"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_1fe7o"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_y0dvx"]
+
+[resource]
+script = ExtResource("7_y0dvx")
+Id = 420
+Type = 6
+Layer = 3
+DisplayName = "Casos-Ayosrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_pnfa4"), ExtResource("2_b4ilr"), ExtResource("3_fb1lh"), ExtResource("1_pnfa4"), ExtResource("1_pnfa4"), ExtResource("1_pnfa4"), ExtResource("1_pnfa4"), ExtResource("4_gxlcf"), ExtResource("1_pnfa4"), ExtResource("5_w845a"), ExtResource("6_1fe7o")]

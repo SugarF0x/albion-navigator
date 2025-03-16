@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://db7eoe1daevc4"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_xgk12"]
+
+[resource]
+script = ExtResource("1_xgk12")
+Id = 262
+Type = 3
+Layer = 0
+DisplayName = "Croker Hill"
+Position = Vector2(-39.2, 324.87)
+Connections = [269, 270, 264, 274]
+Components = []

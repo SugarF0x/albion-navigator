@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://7djcffoc1tw0"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4ad0m"]
+
+[resource]
+script = ExtResource("1_4ad0m")
+Id = 254
+Type = 3
+Layer = 0
+DisplayName = "Eldon Hill"
+Position = Vector2(-45.16, 263.14)
+Connections = [253, 255, 250]
+Components = []

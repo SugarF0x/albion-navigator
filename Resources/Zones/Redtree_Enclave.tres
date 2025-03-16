@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b8hn6o6ho3ffd"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_8yxkw"]
+
+[resource]
+script = ExtResource("1_8yxkw")
+Id = 330
+Type = 5
+Layer = 0
+DisplayName = "Redtree Enclave"
+Position = Vector2(-161.36, -22.77)
+Connections = [59]
+Components = []

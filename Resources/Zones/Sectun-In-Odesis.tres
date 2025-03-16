@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b1xi4pc215gls"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_vmpl8"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="2_gosya"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_jpxr3"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_n8m0x"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_2bdxa"]
+
+[resource]
+script = ExtResource("5_2bdxa")
+Id = 695
+Type = 6
+Layer = 12
+DisplayName = "Sectun-In-Odesis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vmpl8"), ExtResource("2_gosya"), ExtResource("3_jpxr3"), ExtResource("4_n8m0x")]

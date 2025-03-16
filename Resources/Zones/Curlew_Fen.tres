@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bcgdsa3eorica"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_2jmpb"]
+
+[resource]
+script = ExtResource("1_2jmpb")
+Id = 16
+Type = 2
+Layer = 0
+DisplayName = "Curlew Fen"
+Position = Vector2(-86.27, 250.45)
+Connections = [17, 256, 12, 15]
+Components = []

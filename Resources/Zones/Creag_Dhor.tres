@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bw45ke41cqray"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_0l2bc"]
+
+[resource]
+script = ExtResource("1_0l2bc")
+Id = 353
+Type = 4
+Layer = 0
+DisplayName = "Creag Dhor"
+Position = Vector2(46.98, 232.16)
+Connections = [14, 343]
+Components = []

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b4jpc3vb4dnhx"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_f0q8l"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="2_t4cef"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_my8j4"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_bt71j"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="5_ww2st"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_rdn2n"]
+
+[resource]
+script = ExtResource("6_rdn2n")
+Id = 516
+Type = 6
+Layer = 6
+DisplayName = "Hebites-Exemrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_f0q8l"), ExtResource("2_t4cef"), ExtResource("3_my8j4"), ExtResource("1_f0q8l"), ExtResource("4_bt71j"), ExtResource("5_ww2st"), ExtResource("2_t4cef")]

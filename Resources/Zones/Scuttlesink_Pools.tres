@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dj0ofhogim1x1"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_w20s6"]
+
+[resource]
+script = ExtResource("1_w20s6")
+Id = 29
+Type = 5
+Layer = 0
+DisplayName = "Scuttlesink Pools"
+Position = Vector2(-0.92, -373.14)
+Connections = [76, 47, 131]
+Components = []

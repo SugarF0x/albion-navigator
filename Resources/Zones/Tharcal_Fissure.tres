@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ru8aktmjd51q"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_pus0y"]
+
+[resource]
+script = ExtResource("1_pus0y")
+Id = 338
+Type = 3
+Layer = 0
+DisplayName = "Tharcal Fissure"
+Position = Vector2(76.23, 235.27)
+Connections = [345, 341]
+Components = []

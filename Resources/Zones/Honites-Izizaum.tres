@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dgjko4xb5mwcl"]
+
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="1_lqjwp"]
+[ext_resource type="Resource" uid="uid://b14ay1ugdh6ei" path="res://Resources/ZoneComponents/48.tres" id="2_hrekp"]
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="3_n33qd"]
+[ext_resource type="Resource" uid="uid://04kfeff4borq" path="res://Resources/ZoneComponents/43.tres" id="4_6ihrr"]
+[ext_resource type="Resource" uid="uid://bg8umj7mw6iyw" path="res://Resources/ZoneComponents/53.tres" id="5_tal3h"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="6_7hi8i"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_1dagu"]
+
+[resource]
+script = ExtResource("7_1dagu")
+Id = 532
+Type = 6
+Layer = 10
+DisplayName = "Honites-Izizaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_lqjwp"), ExtResource("2_hrekp"), ExtResource("1_lqjwp"), ExtResource("3_n33qd"), ExtResource("4_6ihrr"), ExtResource("1_lqjwp"), ExtResource("1_lqjwp"), ExtResource("1_lqjwp"), ExtResource("1_lqjwp"), ExtResource("5_tal3h"), ExtResource("6_7hi8i")]

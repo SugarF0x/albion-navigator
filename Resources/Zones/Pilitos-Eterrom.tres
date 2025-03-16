@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://7ao5b3hve4fs"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_bva6d"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_wt536"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_cjmy4"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="4_1send"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="5_22g5n"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_qiw58"]
+
+[resource]
+script = ExtResource("6_qiw58")
+Id = 594
+Type = 6
+Layer = 6
+DisplayName = "Pilitos-Eterrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_bva6d"), ExtResource("2_wt536"), ExtResource("3_cjmy4"), ExtResource("3_cjmy4"), ExtResource("4_1send"), ExtResource("2_wt536"), ExtResource("2_wt536"), ExtResource("2_wt536"), ExtResource("2_wt536"), ExtResource("2_wt536"), ExtResource("5_22g5n")]

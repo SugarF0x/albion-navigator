@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://comxm57j1y2o5"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_wqb1y"]
+
+[resource]
+script = ExtResource("1_wqb1y")
+Id = 341
+Type = 3
+Layer = 0
+DisplayName = "Cairn Darg"
+Position = Vector2(99.44, 242.97)
+Connections = [336, 350, 338, 85]
+Components = []

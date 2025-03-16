@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b1b24u81h7n2y"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_u4ww0"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_x41dn"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_qo1hl"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="4_6ubu2"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="5_ag7sl"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_y35s8"]
+
+[resource]
+script = ExtResource("6_y35s8")
+Id = 592
+Type = 6
+Layer = 6
+DisplayName = "Pieos-Eterrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_u4ww0"), ExtResource("2_x41dn"), ExtResource("3_qo1hl"), ExtResource("3_qo1hl"), ExtResource("4_6ubu2"), ExtResource("2_x41dn"), ExtResource("2_x41dn"), ExtResource("2_x41dn"), ExtResource("2_x41dn"), ExtResource("2_x41dn"), ExtResource("5_ag7sl")]

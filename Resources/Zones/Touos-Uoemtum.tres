@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bosbd1ar7hm7p"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_4hf0d"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="2_duf6o"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_f885v"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="4_7tpu8"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_mexhl"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_63qxl"]
+
+[resource]
+script = ExtResource("6_63qxl")
+Id = 777
+Type = 6
+Layer = 1
+DisplayName = "Touos-Uoemtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4hf0d"), ExtResource("1_4hf0d"), ExtResource("1_4hf0d"), ExtResource("1_4hf0d"), ExtResource("1_4hf0d"), ExtResource("1_4hf0d"), ExtResource("2_duf6o"), ExtResource("3_f885v"), ExtResource("4_7tpu8"), ExtResource("5_mexhl")]

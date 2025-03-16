@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dqm7k3tb72fu"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_vpkwa"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="2_tpblm"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_k6cxn"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_it8v5"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_aobks"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_3wk3p"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_2jvvp"]
+
+[resource]
+script = ExtResource("7_2jvvp")
+Id = 529
+Type = 6
+Layer = 4
+DisplayName = "Hilitos-Osuorom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vpkwa"), ExtResource("2_tpblm"), ExtResource("3_k6cxn"), ExtResource("4_it8v5"), ExtResource("5_aobks"), ExtResource("6_3wk3p")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://boprvdyokrogi"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ctu8f"]
+
+[resource]
+script = ExtResource("1_ctu8f")
+Id = 278
+Type = 5
+Layer = 0
+DisplayName = "Murdergulch Gap"
+Position = Vector2(-52.89, -219.91)
+Connections = [326, 79, 325]
+Components = []

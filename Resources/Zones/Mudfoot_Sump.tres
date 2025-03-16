@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b6njcsa2ighe7"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qltvh"]
+
+[resource]
+script = ExtResource("1_qltvh")
+Id = 46
+Type = 5
+Layer = 0
+DisplayName = "Mudfoot Sump"
+Position = Vector2(-207.39, -90.58)
+Connections = [60, 321, 275]
+Components = []

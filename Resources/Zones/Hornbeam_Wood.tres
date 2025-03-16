@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c851vywqhup5e"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3h6nn"]
+
+[resource]
+script = ExtResource("1_3h6nn")
+Id = 100
+Type = 3
+Layer = 0
+DisplayName = "Hornbeam Wood"
+Position = Vector2(99.14, 297.41)
+Connections = [97, 91, 104]
+Components = []

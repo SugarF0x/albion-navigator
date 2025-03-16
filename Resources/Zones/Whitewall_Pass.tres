@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://co1ekn5k5c3ar"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_iq66m"]
+
+[resource]
+script = ExtResource("1_iq66m")
+Id = 413
+Type = 5
+Layer = 0
+DisplayName = "Whitewall Pass"
+Position = Vector2(-100.8, -51.3)
+Connections = [75, 207, 357, 406]
+Components = []

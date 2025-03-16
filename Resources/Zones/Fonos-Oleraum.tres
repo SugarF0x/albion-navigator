@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://qjy8eybqs5ue"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_dp4f3"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="2_8c7el"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_1lems"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_cm7hl"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="5_a5x4t"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="6_dkr7f"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_mhtim"]
+
+[resource]
+script = ExtResource("7_mhtim")
+Id = 488
+Type = 6
+Layer = 5
+DisplayName = "Fonos-Oleraum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_dp4f3"), ExtResource("2_8c7el"), ExtResource("2_8c7el"), ExtResource("3_1lems"), ExtResource("4_cm7hl"), ExtResource("5_a5x4t"), ExtResource("6_dkr7f")]

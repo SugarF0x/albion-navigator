@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cd1nq6wntjony"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_wdbq0"]
+
+[resource]
+script = ExtResource("1_wdbq0")
+Id = 33
+Type = 5
+Layer = 0
+DisplayName = "Drownfield Mire"
+Position = Vector2(-33.21, -286.97)
+Connections = [242, 52, 51, 411]
+Components = []

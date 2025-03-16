@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://b4x787phwpbn2"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_i7gi2"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="2_oohgx"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_mpidv"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_mja2s"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_x5c27"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="6_lih5v"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_be202"]
+
+[resource]
+script = ExtResource("7_be202")
+Id = 605
+Type = 6
+Layer = 3
+DisplayName = "Puros-Ofavam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_i7gi2"), ExtResource("2_oohgx"), ExtResource("3_mpidv"), ExtResource("4_mja2s"), ExtResource("3_mpidv"), ExtResource("5_x5c27"), ExtResource("6_lih5v"), ExtResource("3_mpidv")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bvqlee0j04pem"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_34vge"]
+
+[resource]
+script = ExtResource("1_34vge")
+Id = 109
+Type = 2
+Layer = 0
+DisplayName = "Cedarcopse"
+Position = Vector2(115.95, 215.29)
+Connections = [87, 336, 88]
+Components = []

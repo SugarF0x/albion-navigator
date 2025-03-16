@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bbk6snl1g3vl5"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_d4vw5"]
+
+[resource]
+script = ExtResource("1_d4vw5")
+Id = 246
+Type = 5
+Layer = 0
+DisplayName = "Parchsand Drought"
+Position = Vector2(-108.69, -109.55)
+Connections = [283, 281, 218]
+Components = []

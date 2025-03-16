@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dy8n7jdhyl7tr"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_mqp3o"]
+
+[resource]
+script = ExtResource("1_mqp3o")
+Id = 72
+Type = 5
+Layer = 0
+DisplayName = "Sunkenbough Woods"
+Position = Vector2(32.71, -55.59)
+Connections = [387, 81, 152]
+Components = []

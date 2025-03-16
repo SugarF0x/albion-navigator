@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://nmoyapagqj6y"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_gp62d"]
+
+[resource]
+script = ExtResource("1_gp62d")
+Id = 345
+Type = 3
+Layer = 0
+DisplayName = "Cairn Camain"
+Position = Vector2(61.8, 226.4)
+Connections = [346, 331, 338]
+Components = []

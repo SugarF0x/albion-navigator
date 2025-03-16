@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://8d0cti4n0r8g"]
+
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="1_soj68"]
+[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="2_vg3y4"]
+[ext_resource type="Resource" uid="uid://dljnuwk4pyptj" path="res://Resources/ZoneComponents/44.tres" id="3_tels3"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_5q7ra"]
+[ext_resource type="Resource" uid="uid://bitb6iij6vmy2" path="res://Resources/ZoneComponents/49.tres" id="5_kx8yd"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="6_g07lk"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_v8yob"]
+
+[resource]
+script = ExtResource("7_v8yob")
+Id = 472
+Type = 6
+Layer = 10
+DisplayName = "Fiees-Ohohtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_soj68"), ExtResource("2_vg3y4"), ExtResource("3_tels3"), ExtResource("4_5q7ra"), ExtResource("4_5q7ra"), ExtResource("4_5q7ra"), ExtResource("4_5q7ra"), ExtResource("4_5q7ra"), ExtResource("5_kx8yd"), ExtResource("6_g07lk"), ExtResource("4_5q7ra")]

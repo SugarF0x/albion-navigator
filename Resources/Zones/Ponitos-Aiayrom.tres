@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://1r371fkyorg2"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_axhuq"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="2_gw7qb"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="3_4u3fr"]
+[ext_resource type="Resource" uid="uid://d2dmtugqh6juw" path="res://Resources/ZoneComponents/13.tres" id="4_o2nti"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="5_uh5jx"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_r2rsf"]
+
+[resource]
+script = ExtResource("6_r2rsf")
+Id = 598
+Type = 6
+Layer = 6
+DisplayName = "Ponitos-Aiayrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_axhuq"), ExtResource("1_axhuq"), ExtResource("1_axhuq"), ExtResource("2_gw7qb"), ExtResource("3_4u3fr"), ExtResource("4_o2nti"), ExtResource("5_uh5jx"), ExtResource("1_axhuq")]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://bdtesqj7v4ddv"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_vn8vn"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_kow8c"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_h27yy"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_amjik"]
+
+[resource]
+script = ExtResource("4_amjik")
+Id = 696
+Type = 6
+Layer = 12
+DisplayName = "Sectun-In-Qinsom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vn8vn"), ExtResource("2_kow8c"), ExtResource("2_kow8c"), ExtResource("3_h27yy")]

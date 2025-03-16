@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cuaahjdl3jg7g"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_pyo01"]
+
+[resource]
+script = ExtResource("1_pyo01")
+Id = 57
+Type = 5
+Layer = 0
+DisplayName = "Widemoor Flats"
+Position = Vector2(-153.87, -291.05)
+Connections = [71, 39, 40]
+Components = []

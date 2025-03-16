@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bmaiy5aoceg0l"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_k0foy"]
+
+[resource]
+script = ExtResource("1_k0foy")
+Id = 188
+Type = 3
+Layer = 0
+DisplayName = "Redstone Plain"
+Position = Vector2(-13.1, 350.25)
+Connections = [187, 269, 266, 179]
+Components = []

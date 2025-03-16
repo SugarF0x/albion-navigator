@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cspgl1egqo2ko"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_jwv4x"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_t41dh"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="3_ntqji"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_eytly"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="5_am3b1"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_8y1aw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_yn2l1"]
+
+[resource]
+script = ExtResource("7_yn2l1")
+Id = 791
+Type = 6
+Layer = 5
+DisplayName = "Xebitos-Oyogam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_jwv4x"), ExtResource("2_t41dh"), ExtResource("3_ntqji"), ExtResource("4_eytly"), ExtResource("5_am3b1"), ExtResource("5_am3b1"), ExtResource("6_8y1aw"), ExtResource("4_eytly")]

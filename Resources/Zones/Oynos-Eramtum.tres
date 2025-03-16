@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://non4aw81o6mj"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_rpr8d"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="2_yy8ni"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_qilcl"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_tpfsl"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_t5ok7"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_m0l48"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="7_6jluq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_7c07d"]
+
+[resource]
+script = ExtResource("8_7c07d")
+Id = 582
+Type = 6
+Layer = 4
+DisplayName = "Oynos-Eramtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_rpr8d"), ExtResource("2_yy8ni"), ExtResource("3_qilcl"), ExtResource("4_tpfsl"), ExtResource("5_t5ok7"), ExtResource("6_m0l48"), ExtResource("5_t5ok7"), ExtResource("7_6jluq")]

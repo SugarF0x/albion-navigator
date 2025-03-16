@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://kvg11d2wywe0"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_8jvuf"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_cfv3o"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="3_5q11e"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_yxnsk"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="5_2wm5h"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_65w1a"]
+
+[resource]
+script = ExtResource("6_65w1a")
+Id = 492
+Type = 6
+Layer = 6
+DisplayName = "Foues-Aeaosum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_8jvuf"), ExtResource("2_cfv3o"), ExtResource("3_5q11e"), ExtResource("4_yxnsk"), ExtResource("5_2wm5h"), ExtResource("1_8jvuf")]

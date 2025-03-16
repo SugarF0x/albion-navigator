@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c48kvbo0o77fa"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rievq"]
+
+[resource]
+script = ExtResource("1_rievq")
+Id = 308
+Type = 5
+Layer = 0
+DisplayName = "Gravemound Slope"
+Position = Vector2(-192.47, -81.46)
+Connections = [158, 295, 294]
+Components = []

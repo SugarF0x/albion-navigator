@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dqmr3jhe7jktk"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_p75tc"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="2_qktxv"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_ay8gn"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_aa1hg"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_3ghwv"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_x2qix"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_vdetb"]
+
+[resource]
+script = ExtResource("7_vdetb")
+Id = 450
+Type = 6
+Layer = 4
+DisplayName = "Couos-Ayayaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_p75tc"), ExtResource("2_qktxv"), ExtResource("3_ay8gn"), ExtResource("4_aa1hg"), ExtResource("5_3ghwv"), ExtResource("1_p75tc"), ExtResource("1_p75tc"), ExtResource("6_x2qix")]

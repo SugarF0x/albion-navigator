@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cp4hem8f0k51y"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_us0ef"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="2_34jb8"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_rexau"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_inejr"]
+
+[resource]
+script = ExtResource("4_inejr")
+Id = 681
+Type = 6
+Layer = 11
+DisplayName = "Secent-Et-Qinsas"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_us0ef"), ExtResource("1_us0ef"), ExtResource("1_us0ef"), ExtResource("1_us0ef"), ExtResource("1_us0ef"), ExtResource("2_34jb8"), ExtResource("3_rexau")]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cq00qe4b3ihiq"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_cets6"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_4wqnx"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="3_hxag0"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="4_5ym4g"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_k5bba"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="6_4fhci"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_r5rjb"]
+
+[resource]
+script = ExtResource("7_r5rjb")
+Id = 750
+Type = 6
+Layer = 6
+DisplayName = "Synites-Aoarsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_cets6"), ExtResource("2_4wqnx"), ExtResource("3_hxag0"), ExtResource("4_5ym4g"), ExtResource("5_k5bba"), ExtResource("6_4fhci")]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cfr0g161dqsan"]
+
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="1_dolvr"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_aymy5"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="3_xhqy7"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="4_bdrt4"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_gsaxh"]
+
+[resource]
+script = ExtResource("5_gsaxh")
+Id = 566
+Type = 6
+Layer = 1
+DisplayName = "Oieitos-Ixakaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_dolvr"), ExtResource("2_aymy5"), ExtResource("2_aymy5"), ExtResource("2_aymy5"), ExtResource("3_xhqy7"), ExtResource("4_bdrt4"), ExtResource("2_aymy5")]

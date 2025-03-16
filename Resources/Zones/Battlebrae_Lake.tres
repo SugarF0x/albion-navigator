@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cahbc4kiyp58m"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_hgd22"]
+
+[resource]
+script = ExtResource("1_hgd22")
+Id = 284
+Type = 5
+Layer = 0
+DisplayName = "Battlebrae Lake"
+Position = Vector2(-64.91, -60.53)
+Connections = [319, 288]
+Components = []

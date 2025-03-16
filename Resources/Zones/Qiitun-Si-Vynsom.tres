@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dcy1tfwd6pl66"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_uy5pd"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="2_hpfuc"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_310xp"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_o1i3a"]
+
+[resource]
+script = ExtResource("4_o1i3a")
+Id = 644
+Type = 6
+Layer = 12
+DisplayName = "Qiitun-Si-Vynsom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_uy5pd"), ExtResource("2_hpfuc"), ExtResource("1_uy5pd"), ExtResource("1_uy5pd"), ExtResource("1_uy5pd"), ExtResource("1_uy5pd"), ExtResource("3_310xp")]

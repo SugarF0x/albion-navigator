@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c88rw2vnstdm0"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_vmqwc"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_q2q47"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_qlhto"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_wuohl"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="5_fdyil"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_m88cc"]
+
+[resource]
+script = ExtResource("6_m88cc")
+Id = 510
+Type = 6
+Layer = 3
+DisplayName = "Hasos-Agoitum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vmqwc"), ExtResource("2_q2q47"), ExtResource("3_qlhto"), ExtResource("4_wuohl"), ExtResource("5_fdyil"), ExtResource("1_vmqwc"), ExtResource("1_vmqwc"), ExtResource("1_vmqwc"), ExtResource("1_vmqwc")]

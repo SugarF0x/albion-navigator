@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://5vu18q85pbfs"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_jaldy"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="2_dgmxj"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_son1i"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_03eni"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_roy3n"]
+
+[resource]
+script = ExtResource("5_roy3n")
+Id = 698
+Type = 6
+Layer = 12
+DisplayName = "Sectun-Oc-Odesis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_jaldy"), ExtResource("2_dgmxj"), ExtResource("3_son1i"), ExtResource("4_03eni")]

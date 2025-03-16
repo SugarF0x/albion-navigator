@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://uoq6gef5eey7"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_7yukt"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="2_0qjua"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_8bmkr"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="4_1kg7d"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_hmegm"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="6_4arrd"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_vddac"]
+
+[resource]
+script = ExtResource("7_vddac")
+Id = 432
+Type = 6
+Layer = 6
+DisplayName = "Cieitos-Avioaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7yukt"), ExtResource("2_0qjua"), ExtResource("3_8bmkr"), ExtResource("4_1kg7d"), ExtResource("5_hmegm"), ExtResource("1_7yukt"), ExtResource("6_4arrd"), ExtResource("2_0qjua")]

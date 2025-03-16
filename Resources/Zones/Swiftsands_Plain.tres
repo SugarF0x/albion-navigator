@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dja0gj5s8yy6h"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3vdlg"]
+
+[resource]
+script = ExtResource("1_3vdlg")
+Id = 193
+Type = 5
+Layer = 0
+DisplayName = "Swiftsands Plain"
+Position = Vector2(205.06, -171.97)
+Connections = [226, 241]
+Components = []

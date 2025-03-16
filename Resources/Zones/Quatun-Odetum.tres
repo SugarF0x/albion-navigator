@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bi30kp1ab5aeq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_eqswb"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="2_yxrjj"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_eku3m"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_xnbxj"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_1vqr3"]
+
+[resource]
+script = ExtResource("5_1vqr3")
+Id = 661
+Type = 6
+Layer = 12
+DisplayName = "Quatun-Odetum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_eqswb"), ExtResource("2_yxrjj"), ExtResource("3_eku3m"), ExtResource("4_xnbxj")]

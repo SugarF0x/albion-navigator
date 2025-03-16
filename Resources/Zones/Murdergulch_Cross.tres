@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d2hbg6ja32hyg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_up3a4"]
+
+[resource]
+script = ExtResource("1_up3a4")
+Id = 277
+Type = 5
+Layer = 0
+DisplayName = "Murdergulch Cross"
+Position = Vector2(-78.63, -243.95)
+Connections = [325, 313, 68, 371]
+Components = []

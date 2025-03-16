@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b7pmws4effahd"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_lr04x"]
+
+[resource]
+script = ExtResource("1_lr04x")
+Id = 53
+Type = 5
+Layer = 0
+DisplayName = "Widemoor End"
+Position = Vector2(-90.75, -325.24)
+Connections = [115, 35, 148]
+Components = []

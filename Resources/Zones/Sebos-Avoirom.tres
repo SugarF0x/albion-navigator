@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cxw1xwg1y80l6"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_7njgx"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_fgsvk"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_e1jh6"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="4_yrn27"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_htqrf"]
+
+[resource]
+script = ExtResource("5_htqrf")
+Id = 670
+Type = 6
+Layer = 1
+DisplayName = "Sebos-Avoirom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7njgx"), ExtResource("2_fgsvk"), ExtResource("1_7njgx"), ExtResource("1_7njgx"), ExtResource("1_7njgx"), ExtResource("1_7njgx"), ExtResource("1_7njgx"), ExtResource("1_7njgx"), ExtResource("3_e1jh6"), ExtResource("1_7njgx"), ExtResource("4_yrn27")]

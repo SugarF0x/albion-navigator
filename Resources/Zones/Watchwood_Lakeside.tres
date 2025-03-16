@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dhu0nrkpoi08l"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_tfs4e"]
+
+[resource]
+script = ExtResource("1_tfs4e")
+Id = 135
+Type = 5
+Layer = 0
+DisplayName = "Watchwood Lakeside"
+Position = Vector2(155.28, -56.57)
+Connections = [117, 399]
+Components = []

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dqbbebav5obwk"]
+
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="1_fqbjr"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_5lu5r"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_poa1b"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="4_d7eou"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="5_d4nns"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="6_awahj"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_hy2a8"]
+
+[resource]
+script = ExtResource("7_hy2a8")
+Id = 792
+Type = 6
+Layer = 3
+DisplayName = "Xebos-Emimsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_fqbjr"), ExtResource("2_5lu5r"), ExtResource("3_poa1b"), ExtResource("3_poa1b"), ExtResource("3_poa1b"), ExtResource("3_poa1b"), ExtResource("4_d7eou"), ExtResource("5_d4nns"), ExtResource("6_awahj")]

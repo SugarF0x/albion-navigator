@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cur1ec6r21tww"]
+
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="1_5d16k"]
+[ext_resource type="Resource" uid="uid://b14ay1ugdh6ei" path="res://Resources/ZoneComponents/48.tres" id="2_jfnwu"]
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="3_uhcyx"]
+[ext_resource type="Resource" uid="uid://04kfeff4borq" path="res://Resources/ZoneComponents/43.tres" id="4_a4a4v"]
+[ext_resource type="Resource" uid="uid://bg8umj7mw6iyw" path="res://Resources/ZoneComponents/53.tres" id="5_a0u5s"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="6_xa3s2"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_rp5po"]
+
+[resource]
+script = ExtResource("7_rp5po")
+Id = 526
+Type = 6
+Layer = 10
+DisplayName = "Hiles-Izizaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_5d16k"), ExtResource("2_jfnwu"), ExtResource("1_5d16k"), ExtResource("3_uhcyx"), ExtResource("4_a4a4v"), ExtResource("1_5d16k"), ExtResource("1_5d16k"), ExtResource("1_5d16k"), ExtResource("1_5d16k"), ExtResource("5_a0u5s"), ExtResource("6_xa3s2")]

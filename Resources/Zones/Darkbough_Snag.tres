@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://reen7vdayj1c"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ora5s"]
+
+[resource]
+script = ExtResource("1_ora5s")
+Id = 164
+Type = 5
+Layer = 0
+DisplayName = "Darkbough Snag"
+Position = Vector2(35.99, -160.44)
+Connections = [372, 311]
+Components = []

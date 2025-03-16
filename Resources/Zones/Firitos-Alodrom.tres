@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cxbrdoer5lmrq"]
+
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="1_4hhc3"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_uf871"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_kjal2"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="4_5hqhh"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="5_igpvo"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_2aohb"]
+
+[resource]
+script = ExtResource("6_2aohb")
+Id = 480
+Type = 6
+Layer = 6
+DisplayName = "Firitos-Alodrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4hhc3"), ExtResource("1_4hhc3"), ExtResource("2_uf871"), ExtResource("3_kjal2"), ExtResource("4_5hqhh"), ExtResource("2_uf871"), ExtResource("5_igpvo")]

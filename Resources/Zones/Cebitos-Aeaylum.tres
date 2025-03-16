@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://by8bfi4tdewrf"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_jl4fr"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_eu1go"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_m1b5t"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_wcv3u"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="5_fvcy7"]
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="6_1cpsn"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_87ykw"]
+
+[resource]
+script = ExtResource("7_87ykw")
+Id = 422
+Type = 6
+Layer = 1
+DisplayName = "Cebitos-Aeaylum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_jl4fr"), ExtResource("2_eu1go"), ExtResource("3_m1b5t"), ExtResource("4_wcv3u"), ExtResource("5_fvcy7"), ExtResource("1_jl4fr"), ExtResource("6_1cpsn"), ExtResource("1_jl4fr")]

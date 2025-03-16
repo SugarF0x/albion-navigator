@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c2m288s1mrhbh"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ghyf7"]
+
+[resource]
+script = ExtResource("1_ghyf7")
+Id = 274
+Type = 2
+Layer = 0
+DisplayName = "Bellever Tor"
+Position = Vector2(-52.69, 335.15)
+Connections = [264, 261, 262, 268]
+Components = []

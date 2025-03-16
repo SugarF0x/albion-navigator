@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cbu5hyfw4g3of"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_37ppj"]
+
+[resource]
+script = ExtResource("1_37ppj")
+Id = 199
+Type = 5
+Layer = 0
+DisplayName = "Sandmount Strand"
+Position = Vector2(-209.58, -211.7)
+Connections = [302, 245, 157]
+Components = []

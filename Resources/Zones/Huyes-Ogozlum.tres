@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://b32jaskraks8o"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_c5wdb"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_y1hud"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_04gff"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_xn8q3"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="5_h47to"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="6_yhrwj"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_181gs"]
+
+[resource]
+script = ExtResource("7_181gs")
+Id = 543
+Type = 6
+Layer = 3
+DisplayName = "Huyes-Ogozlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_c5wdb"), ExtResource("2_y1hud"), ExtResource("3_04gff"), ExtResource("4_xn8q3"), ExtResource("1_c5wdb"), ExtResource("1_c5wdb"), ExtResource("1_c5wdb"), ExtResource("1_c5wdb"), ExtResource("5_h47to"), ExtResource("6_yhrwj")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cuu43edqirwcc"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rend7"]
+
+[resource]
+script = ExtResource("1_rend7")
+Id = 241
+Type = 5
+Layer = 0
+DisplayName = "Swiftsands Chaparral"
+Position = Vector2(192.55, -166.24)
+Connections = [62, 193, 145]
+Components = []

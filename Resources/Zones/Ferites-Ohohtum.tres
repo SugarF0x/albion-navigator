@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dts7maen8xthg"]
+
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="1_uh4qy"]
+[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="2_dt4un"]
+[ext_resource type="Resource" uid="uid://dljnuwk4pyptj" path="res://Resources/ZoneComponents/44.tres" id="3_fo80b"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_antnp"]
+[ext_resource type="Resource" uid="uid://bitb6iij6vmy2" path="res://Resources/ZoneComponents/49.tres" id="5_kbxqh"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="6_n5tra"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_uefwl"]
+
+[resource]
+script = ExtResource("7_uefwl")
+Id = 467
+Type = 6
+Layer = 10
+DisplayName = "Ferites-Ohohtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_uh4qy"), ExtResource("2_dt4un"), ExtResource("3_fo80b"), ExtResource("4_antnp"), ExtResource("4_antnp"), ExtResource("4_antnp"), ExtResource("4_antnp"), ExtResource("4_antnp"), ExtResource("5_kbxqh"), ExtResource("6_n5tra"), ExtResource("4_antnp")]

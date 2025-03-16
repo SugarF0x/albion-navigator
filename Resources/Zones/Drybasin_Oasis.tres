@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dowrynqyq1w47"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_kf5cn"]
+
+[resource]
+script = ExtResource("1_kf5cn")
+Id = 228
+Type = 5
+Layer = 0
+DisplayName = "Drybasin Oasis"
+Position = Vector2(149.98, -133.29)
+Connections = [195, 134, 147]
+Components = []

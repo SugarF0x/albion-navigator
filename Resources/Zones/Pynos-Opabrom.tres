@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cun0xyju1x0ny"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_n23nc"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="2_hkyvs"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_nb5a6"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_olp32"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="5_ugocb"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_a6cp2"]
+
+[resource]
+script = ExtResource("6_a6cp2")
+Id = 609
+Type = 6
+Layer = 8
+DisplayName = "Pynos-Opabrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_n23nc"), ExtResource("1_n23nc"), ExtResource("1_n23nc"), ExtResource("2_hkyvs"), ExtResource("3_nb5a6"), ExtResource("4_olp32"), ExtResource("5_ugocb"), ExtResource("1_n23nc")]

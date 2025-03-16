@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bd7tiisbqrp7"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_vbetl"]
+
+[resource]
+script = ExtResource("1_vbetl")
+Id = 114
+Type = 5
+Layer = 0
+DisplayName = "Giantweald Dale"
+Position = Vector2(139.23, -91.85)
+Connections = [134, 147, 399, 385]
+Components = []

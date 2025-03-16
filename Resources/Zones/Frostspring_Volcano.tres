@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://chofag8e61tom"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_q08f8"]
+
+[resource]
+script = ExtResource("1_q08f8")
+Id = 405
+Type = 5
+Layer = 0
+DisplayName = "Frostspring Volcano"
+Position = Vector2(-6.63, 17.36)
+Connections = [390, 203, 247]
+Components = []

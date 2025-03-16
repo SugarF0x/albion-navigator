@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://betasmr6yxwcc"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_k0g7i"]
+
+[resource]
+script = ExtResource("1_k0g7i")
+Id = 349
+Type = 2
+Layer = 0
+DisplayName = "Pen Fenair"
+Position = Vector2(18.68, 148.55)
+Connections = [18, 356, 351, 20]
+Components = []

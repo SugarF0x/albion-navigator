@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://doamutaxc2xcl"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_sao3o"]
+
+[resource]
+script = ExtResource("1_sao3o")
+Id = 263
+Type = 2
+Layer = 0
+DisplayName = "Vixen Tor"
+Position = Vector2(-10.34, 368.16)
+Connections = [179, 265, 182, 266]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://clepa3fnbnlms"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_lm7be"]
+
+[resource]
+script = ExtResource("1_lm7be")
+Id = 21
+Type = 3
+Layer = 0
+DisplayName = "Slithertail Marsh"
+Position = Vector2(-28.9, 225.19)
+Connections = [22, 10, 23]
+Components = []

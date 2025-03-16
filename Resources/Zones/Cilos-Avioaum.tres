@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bgw0ph1p8niw5"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_g6djs"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="2_mut4v"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_cy4j8"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="4_fiog5"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_1wk5q"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="6_bupoc"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_f1q2b"]
+
+[resource]
+script = ExtResource("7_f1q2b")
+Id = 438
+Type = 6
+Layer = 6
+DisplayName = "Cilos-Avioaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_g6djs"), ExtResource("2_mut4v"), ExtResource("3_cy4j8"), ExtResource("4_fiog5"), ExtResource("5_1wk5q"), ExtResource("1_g6djs"), ExtResource("6_bupoc"), ExtResource("2_mut4v")]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://g20estecsm65"]
+
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="1_ei831"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_00vgu"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="3_ffjq7"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="4_you4a"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_y8ms3"]
+
+[resource]
+script = ExtResource("5_y8ms3")
+Id = 561
+Type = 6
+Layer = 1
+DisplayName = "Oebos-Ixakaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ei831"), ExtResource("2_00vgu"), ExtResource("2_00vgu"), ExtResource("2_00vgu"), ExtResource("3_ffjq7"), ExtResource("4_you4a"), ExtResource("2_00vgu")]

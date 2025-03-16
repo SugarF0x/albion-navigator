@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dsn7ptw164vts"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_sloag"]
+
+[resource]
+script = ExtResource("1_sloag")
+Id = 159
+Type = 5
+Layer = 0
+DisplayName = "Timbertop Escarp"
+Position = Vector2(-29.63, -372.43)
+Connections = [297, 131]
+Components = []

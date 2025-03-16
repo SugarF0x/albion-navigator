@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://1pgdxn84fv8a"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_6a3ae"]
+
+[resource]
+script = ExtResource("1_6a3ae")
+Id = 248
+Type = 0
+Layer = 0
+DisplayName = "Highland Cross"
+Position = Vector2(-96.41, 302.44)
+Connections = [17, 260, 259]
+Components = []

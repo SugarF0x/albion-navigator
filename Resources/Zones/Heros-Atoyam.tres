@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://ctrd4iljcspwh"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_l8t72"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_k04hm"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="3_c7vew"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_y7ll0"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_0vike"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="6_quwo1"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_hqnp2"]
+
+[resource]
+script = ExtResource("7_hqnp2")
+Id = 522
+Type = 6
+Layer = 5
+DisplayName = "Heros-Atoyam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_l8t72"), ExtResource("2_k04hm"), ExtResource("2_k04hm"), ExtResource("2_k04hm"), ExtResource("3_c7vew"), ExtResource("4_y7ll0"), ExtResource("5_0vike"), ExtResource("6_quwo1")]

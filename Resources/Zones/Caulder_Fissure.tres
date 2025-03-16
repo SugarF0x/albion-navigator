@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://v1ahynmjiwps"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_din5j"]
+
+[resource]
+script = ExtResource("1_din5j")
+Id = 351
+Type = 3
+Layer = 0
+DisplayName = "Caulder Fissure"
+Position = Vector2(36.7, 166.95)
+Connections = [352, 349, 333]
+Components = []

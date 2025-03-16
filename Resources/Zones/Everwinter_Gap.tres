@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dqpqnvut75cg5"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_153r5"]
+
+[resource]
+script = ExtResource("1_153r5")
+Id = 395
+Type = 5
+Layer = 0
+DisplayName = "Everwinter Gap"
+Position = Vector2(13.44, -279.59)
+Connections = [77, 227, 3, 379]
+Components = []

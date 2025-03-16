@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://bsxsk1ydgfddj"]
+
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="1_uo6qn"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="2_dp2mu"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_l1f3v"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_kkqm1"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="5_3cywr"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_j52rs"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="7_y5t03"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_lxf7y"]
+
+[resource]
+script = ExtResource("8_lxf7y")
+Id = 473
+Type = 6
+Layer = 3
+DisplayName = "Fieites-Unavtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_uo6qn"), ExtResource("2_dp2mu"), ExtResource("3_l1f3v"), ExtResource("4_kkqm1"), ExtResource("5_3cywr"), ExtResource("6_j52rs"), ExtResource("7_y5t03"), ExtResource("3_l1f3v")]

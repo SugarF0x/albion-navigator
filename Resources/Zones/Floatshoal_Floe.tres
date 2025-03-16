@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bovbpvd4mvuwb"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rxmbc"]
+
+[resource]
+script = ExtResource("1_rxmbc")
+Id = 367
+Type = 5
+Layer = 0
+DisplayName = "Floatshoal Floe"
+Position = Vector2(105.99, -177.87)
+Connections = [49, 381, 310]
+Components = []

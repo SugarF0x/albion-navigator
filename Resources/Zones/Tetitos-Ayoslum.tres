@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dqmwab0362dim"]
+
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="1_euh5s"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_0ex4u"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_u1twy"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="4_60x7x"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="5_u572t"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_d3my5"]
+
+[resource]
+script = ExtResource("6_d3my5")
+Id = 762
+Type = 6
+Layer = 6
+DisplayName = "Tetitos-Ayoslum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_euh5s"), ExtResource("2_0ex4u"), ExtResource("3_u1twy"), ExtResource("2_0ex4u"), ExtResource("4_60x7x"), ExtResource("5_u572t"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u")]

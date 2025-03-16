@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://b5nu1m2x2qn53"]
+
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="1_m76gi"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="2_lv44d"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="3_ccv42"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="4_issag"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_0pg7n"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="6_u6231"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="7_6wm0y"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_pxwnd"]
+
+[resource]
+script = ExtResource("8_pxwnd")
+Id = 498
+Type = 6
+Layer = 6
+DisplayName = "Fuyitos-Acalun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_m76gi"), ExtResource("2_lv44d"), ExtResource("3_ccv42"), ExtResource("4_issag"), ExtResource("5_0pg7n"), ExtResource("6_u6231"), ExtResource("7_6wm0y")]

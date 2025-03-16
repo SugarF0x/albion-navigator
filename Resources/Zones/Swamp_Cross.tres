@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bvw6pq468yqwg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rhidc"]
+
+[resource]
+script = ExtResource("1_rhidc")
+Id = 1
+Type = 0
+Layer = 0
+DisplayName = "Swamp Cross"
+Position = Vector2(-52.44, 160.51)
+Connections = [342, 8, 5]
+Components = []

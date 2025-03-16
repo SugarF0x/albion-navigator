@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://diuy75sokiodp"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qn1iu"]
+
+[resource]
+script = ExtResource("1_qn1iu")
+Id = 18
+Type = 2
+Layer = 0
+DisplayName = "Murky Fen"
+Position = Vector2(-22.17, 144.65)
+Connections = [349, 342, 20]
+Components = []

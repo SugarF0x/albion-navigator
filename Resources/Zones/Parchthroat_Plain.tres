@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://mua3muqyrm1"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_gisl5"]
+
+[resource]
+script = ExtResource("1_gisl5")
+Id = 174
+Type = 3
+Layer = 0
+DisplayName = "Parchthroat Plain"
+Position = Vector2(51.53, 386.29)
+Connections = [103, 185, 186, 175]
+Components = []

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://c2ifvkviwltui"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_j3804"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="2_uo1o4"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_3s3gb"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_db13m"]
+
+[resource]
+script = ExtResource("4_db13m")
+Id = 673
+Type = 6
+Layer = 11
+DisplayName = "Secent-Al-Duosom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_j3804"), ExtResource("1_j3804"), ExtResource("1_j3804"), ExtResource("1_j3804"), ExtResource("1_j3804"), ExtResource("2_uo1o4"), ExtResource("3_3s3gb")]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cfvdkn7d306g7"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_e8ir8"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_oparp"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_cbds8"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_syov3"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="5_85fxw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_e20pf"]
+
+[resource]
+script = ExtResource("6_e20pf")
+Id = 503
+Type = 6
+Layer = 3
+DisplayName = "Fynitos-Agosaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_e8ir8"), ExtResource("2_oparp"), ExtResource("3_cbds8"), ExtResource("2_oparp"), ExtResource("2_oparp"), ExtResource("2_oparp"), ExtResource("2_oparp"), ExtResource("4_syov3"), ExtResource("5_85fxw")]

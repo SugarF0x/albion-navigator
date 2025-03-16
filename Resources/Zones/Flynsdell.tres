@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://4ar14rgmy3f5"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_kaemx"]
+
+[resource]
+script = ExtResource("1_kaemx")
+Id = 102
+Type = 2
+Layer = 0
+DisplayName = "Flynsdell"
+Position = Vector2(142.06, 292.51)
+Connections = [90, 93]
+Components = []

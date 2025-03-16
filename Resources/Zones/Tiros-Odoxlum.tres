@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://e58j3uw5x8xj"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_xb2g7"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_730l7"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_j5u4w"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="4_4voxx"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="5_6luik"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_ehof4"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="7_t2r3q"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_rujx6"]
+
+[resource]
+script = ExtResource("8_rujx6")
+Id = 769
+Type = 6
+Layer = 4
+DisplayName = "Tiros-Odoxlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_xb2g7"), ExtResource("2_730l7"), ExtResource("3_j5u4w"), ExtResource("4_4voxx"), ExtResource("5_6luik"), ExtResource("6_ehof4"), ExtResource("7_t2r3q")]

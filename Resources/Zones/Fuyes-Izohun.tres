@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://yjaeqh4hwkcf"]
+
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="1_p18fv"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_t4yf2"]
+[ext_resource type="Resource" uid="uid://c1snwiqu7084i" path="res://Resources/ZoneComponents/35.tres" id="3_bcvlt"]
+[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="4_aupp0"]
+[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="5_t5iy1"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_ds4kh"]
+
+[resource]
+script = ExtResource("6_ds4kh")
+Id = 497
+Type = 6
+Layer = 10
+DisplayName = "Fuyes-Izohun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_p18fv"), ExtResource("2_t4yf2"), ExtResource("3_bcvlt"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("4_aupp0"), ExtResource("5_t5iy1")]

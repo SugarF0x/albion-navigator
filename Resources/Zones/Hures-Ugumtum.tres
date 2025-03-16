@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b54rkp86toy2i"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_vgx3d"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_3os4a"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_75wdl"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="4_w7v75"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_5yym3"]
+
+[resource]
+script = ExtResource("5_5yym3")
+Id = 537
+Type = 6
+Layer = 2
+DisplayName = "Hures-Ugumtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vgx3d"), ExtResource("2_3os4a"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("3_75wdl"), ExtResource("4_w7v75"), ExtResource("3_75wdl")]

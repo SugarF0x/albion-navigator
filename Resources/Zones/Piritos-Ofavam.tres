@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cpy51n0ly8jh5"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_g7nbm"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="2_enopf"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_4xekx"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_7u1bs"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_r5tdn"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="6_6jrs8"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_b5eso"]
+
+[resource]
+script = ExtResource("7_b5eso")
+Id = 596
+Type = 6
+Layer = 3
+DisplayName = "Piritos-Ofavam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_g7nbm"), ExtResource("2_enopf"), ExtResource("3_4xekx"), ExtResource("4_7u1bs"), ExtResource("3_4xekx"), ExtResource("5_r5tdn"), ExtResource("6_6jrs8"), ExtResource("3_4xekx")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cncfewjv4d11"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_oa5k3"]
+
+[resource]
+script = ExtResource("1_oa5k3")
+Id = 30
+Type = 5
+Layer = 0
+DisplayName = "Meltwater Bog"
+Position = Vector2(45.82, -282.28)
+Connections = [77, 379]
+Components = []

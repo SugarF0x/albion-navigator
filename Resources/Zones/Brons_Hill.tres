@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://fcxuf0vuv3mk"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_sjju6"]
+
+[resource]
+script = ExtResource("1_sjju6")
+Id = 268
+Type = 3
+Layer = 0
+DisplayName = "Brons Hill"
+Position = Vector2(-39.73, 356.57)
+Connections = [274, 261, 269, 266]
+Components = []

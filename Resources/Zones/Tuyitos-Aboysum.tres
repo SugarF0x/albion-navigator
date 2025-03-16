@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dnyr4enustksl"]
+
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="1_dxtfr"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_4ab7y"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="3_rqsvp"]
+[ext_resource type="Resource" uid="uid://hm2uti21vjre" path="res://Resources/ZoneComponents/51.tres" id="4_cgwxq"]
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="5_5h68y"]
+[ext_resource type="Resource" uid="uid://lnjpqun02cyo" path="res://Resources/ZoneComponents/52.tres" id="6_5m3gf"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_6jw77"]
+
+[resource]
+script = ExtResource("7_6jw77")
+Id = 780
+Type = 6
+Layer = 7
+DisplayName = "Tuyitos-Aboysum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_dxtfr"), ExtResource("2_4ab7y"), ExtResource("3_rqsvp"), ExtResource("4_cgwxq"), ExtResource("5_5h68y"), ExtResource("6_5m3gf"), ExtResource("6_5m3gf")]

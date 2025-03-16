@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://dt7x61sd0g2ex"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_rqrly"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="2_fsw4q"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="3_qguos"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_7wlb7"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_76lgp"]
+
+[resource]
+script = ExtResource("5_76lgp")
+Id = 587
+Type = 6
+Layer = 6
+DisplayName = "Peritos-Oconun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_rqrly"), ExtResource("2_fsw4q"), ExtResource("3_qguos"), ExtResource("1_rqrly"), ExtResource("2_fsw4q"), ExtResource("4_7wlb7"), ExtResource("2_fsw4q"), ExtResource("1_rqrly")]

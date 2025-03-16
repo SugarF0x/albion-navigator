@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://cpn2hp6r87088"]
+
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="1_mbcet"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="2_k6rtw"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="3_jgk0f"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="4_qiyu1"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="5_ne8me"]
+[ext_resource type="Resource" uid="uid://baxnbkxcbl7li" path="res://Resources/ZoneComponents/10.tres" id="6_nj5gv"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="7_brsrj"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_wiml7"]
+
+[resource]
+script = ExtResource("8_wiml7")
+Id = 524
+Type = 6
+Layer = 6
+DisplayName = "Hieos-Aiigaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_mbcet"), ExtResource("2_k6rtw"), ExtResource("3_jgk0f"), ExtResource("4_qiyu1"), ExtResource("5_ne8me"), ExtResource("6_nj5gv"), ExtResource("7_brsrj"), ExtResource("3_jgk0f")]

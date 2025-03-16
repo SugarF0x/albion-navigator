@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d14nuglwd5j6n"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_pvn3q"]
+
+[resource]
+script = ExtResource("1_pvn3q")
+Id = 348
+Type = 4
+Layer = 0
+DisplayName = "Creag Morr"
+Position = Vector2(36.88, 271.2)
+Connections = [347, 95, 249]
+Components = []

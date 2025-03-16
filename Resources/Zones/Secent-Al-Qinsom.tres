@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://l7wfkxax7wp2"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_8ndby"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="2_1ldni"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_ecxd6"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_krpg8"]
+
+[resource]
+script = ExtResource("4_krpg8")
+Id = 676
+Type = 6
+Layer = 11
+DisplayName = "Secent-Al-Qinsom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_8ndby"), ExtResource("2_1ldni"), ExtResource("1_8ndby"), ExtResource("1_8ndby"), ExtResource("1_8ndby"), ExtResource("1_8ndby"), ExtResource("3_ecxd6")]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cpffjoxeqwvvj"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_0o34e"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_4jkiu"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="3_nma31"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="4_3iny4"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_0ittm"]
+
+[resource]
+script = ExtResource("5_0ittm")
+Id = 682
+Type = 6
+Layer = 11
+DisplayName = "Secent-Et-Vyntum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_0o34e"), ExtResource("2_4jkiu"), ExtResource("3_nma31"), ExtResource("4_3iny4")]

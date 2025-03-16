@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bwe1utqfubhfu"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_vtyv8"]
+
+[resource]
+script = ExtResource("1_vtyv8")
+Id = 183
+Type = 2
+Layer = 0
+DisplayName = "Prospector's Hope"
+Position = Vector2(15.44, 401.33)
+Connections = [182, 180, 167]
+Components = []

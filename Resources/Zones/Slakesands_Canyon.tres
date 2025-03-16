@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://y8i8oe7dhsve"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qqrew"]
+
+[resource]
+script = ExtResource("1_qqrew")
+Id = 196
+Type = 5
+Layer = 0
+DisplayName = "Slakesands Canyon"
+Position = Vector2(180.71, -47.83)
+Connections = [229]
+Components = []

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://3lj8eju6kgct"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_xd0xg"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="2_ciafc"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_c6pbx"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_f8xuo"]
+
+[resource]
+script = ExtResource("4_f8xuo")
+Id = 690
+Type = 6
+Layer = 11
+DisplayName = "Secent-Si-Qinsas"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_xd0xg"), ExtResource("1_xd0xg"), ExtResource("1_xd0xg"), ExtResource("1_xd0xg"), ExtResource("1_xd0xg"), ExtResource("2_ciafc"), ExtResource("3_c6pbx")]

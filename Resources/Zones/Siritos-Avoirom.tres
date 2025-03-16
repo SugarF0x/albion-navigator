@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://dkrqql12upbed"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_ag7lb"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_71hmt"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_u2602"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="4_1v6ro"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_g7bfd"]
+
+[resource]
+script = ExtResource("5_g7bfd")
+Id = 730
+Type = 6
+Layer = 1
+DisplayName = "Siritos-Avoirom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ag7lb"), ExtResource("2_71hmt"), ExtResource("1_ag7lb"), ExtResource("1_ag7lb"), ExtResource("1_ag7lb"), ExtResource("1_ag7lb"), ExtResource("1_ag7lb"), ExtResource("1_ag7lb"), ExtResource("3_u2602"), ExtResource("1_ag7lb"), ExtResource("4_1v6ro")]

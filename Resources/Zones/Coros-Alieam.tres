@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://crcncymfq8hcr"]
+
+[ext_resource type="Resource" uid="uid://bglmnq0wx4ngf" path="res://Resources/ZoneComponents/02.tres" id="1_ysexr"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="2_jrshu"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_j8exi"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="4_3gwcd"]
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="5_owl15"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_a7w7h"]
+
+[resource]
+script = ExtResource("6_a7w7h")
+Id = 447
+Type = 6
+Layer = 6
+DisplayName = "Coros-Alieam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ysexr"), ExtResource("2_jrshu"), ExtResource("3_j8exi"), ExtResource("4_3gwcd"), ExtResource("4_3gwcd"), ExtResource("5_owl15")]

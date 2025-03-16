@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://btd15bvp62br3"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_h8ryj"]
+
+[resource]
+script = ExtResource("1_h8ryj")
+Id = 360
+Type = 5
+Layer = 0
+DisplayName = "Frostpeak Vista"
+Position = Vector2(160.71, -255.31)
+Connections = [358, 378]
+Components = []

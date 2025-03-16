@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://ckibf4nehr2jh"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_thxti"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_o6fvk"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="3_31bb2"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_ykw0r"]
+
+[resource]
+script = ExtResource("4_ykw0r")
+Id = 452
+Type = 6
+Layer = 1
+DisplayName = "Curites-Exakrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_thxti"), ExtResource("1_thxti"), ExtResource("1_thxti"), ExtResource("1_thxti"), ExtResource("1_thxti"), ExtResource("1_thxti"), ExtResource("2_o6fvk"), ExtResource("1_thxti"), ExtResource("3_31bb2"), ExtResource("1_thxti")]

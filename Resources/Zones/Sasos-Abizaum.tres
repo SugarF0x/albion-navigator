@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cdbpg8nuvg80k"]
+
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="1_3v4xn"]
+[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="2_gdwok"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="3_cnxw3"]
+[ext_resource type="Resource" uid="uid://cy4ihug4nxjj7" path="res://Resources/ZoneComponents/45.tres" id="4_hv47m"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="5_d68xq"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_u3lop"]
+
+[resource]
+script = ExtResource("6_u3lop")
+Id = 667
+Type = 6
+Layer = 7
+DisplayName = "Sasos-Abizaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_3v4xn"), ExtResource("1_3v4xn"), ExtResource("2_gdwok"), ExtResource("3_cnxw3"), ExtResource("4_hv47m"), ExtResource("5_d68xq"), ExtResource("3_cnxw3")]

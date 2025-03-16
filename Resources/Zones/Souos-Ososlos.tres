@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://b7wuff7mx0ivk"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_fjrs2"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="2_v6o5s"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="3_slw8p"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_yqnyw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_h1jnr"]
+
+[resource]
+script = ExtResource("5_h1jnr")
+Id = 742
+Type = 6
+Layer = 3
+DisplayName = "Souos-Ososlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_fjrs2"), ExtResource("2_v6o5s"), ExtResource("1_fjrs2"), ExtResource("3_slw8p"), ExtResource("4_yqnyw"), ExtResource("4_yqnyw"), ExtResource("1_fjrs2"), ExtResource("1_fjrs2")]

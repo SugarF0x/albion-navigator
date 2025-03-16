@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://5kbi04w3kufk"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_6drof"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_5y6ov"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="3_54cy1"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_kcqx6"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="5_rmi2j"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_35q1q"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="7_tari3"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_0jhbq"]
+
+[resource]
+script = ExtResource("8_0jhbq")
+Id = 546
+Type = 6
+Layer = 3
+DisplayName = "Huyos-Eyoztum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_6drof"), ExtResource("1_6drof"), ExtResource("2_5y6ov"), ExtResource("3_54cy1"), ExtResource("4_kcqx6"), ExtResource("5_rmi2j"), ExtResource("6_35q1q"), ExtResource("7_tari3")]

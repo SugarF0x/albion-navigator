@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b1kpdit4k6wsq"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_w1m51"]
+
+[resource]
+script = ExtResource("1_w1m51")
+Id = 32
+Type = 5
+Layer = 0
+DisplayName = "Widemoor Shore"
+Position = Vector2(-108.05, -365.23)
+Connections = [27, 50]
+Components = []

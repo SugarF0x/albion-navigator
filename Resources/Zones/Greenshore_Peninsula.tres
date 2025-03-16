@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ssci4vww314p"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_ngews"]
+
+[resource]
+script = ExtResource("1_ngews")
+Id = 113
+Type = 5
+Layer = 0
+DisplayName = "Greenshore Peninsula"
+Position = Vector2(173.74, -67.67)
+Connections = [161, 229, 299]
+Components = []

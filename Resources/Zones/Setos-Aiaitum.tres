@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bjqyrdmtf4x2s"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_y5f4j"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="2_7l4bf"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_xl08y"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="4_6qehx"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="5_la8n8"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_e1rke"]
+
+[resource]
+script = ExtResource("6_e1rke")
+Id = 714
+Type = 6
+Layer = 3
+DisplayName = "Setos-Aiaitum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_y5f4j"), ExtResource("2_7l4bf"), ExtResource("1_y5f4j"), ExtResource("3_xl08y"), ExtResource("4_6qehx"), ExtResource("5_la8n8")]

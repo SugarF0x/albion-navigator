@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://df0p8ly0hd7vi"]
+
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="1_f3vow"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_tvgus"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="3_6umjp"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_q8bdu"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_y6gs3"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_pcdf6"]
+
+[resource]
+script = ExtResource("6_pcdf6")
+Id = 793
+Type = 6
+Layer = 3
+DisplayName = "Xebos-Exostum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_f3vow"), ExtResource("2_tvgus"), ExtResource("3_6umjp"), ExtResource("4_q8bdu"), ExtResource("5_y6gs3"), ExtResource("2_tvgus"), ExtResource("2_tvgus"), ExtResource("2_tvgus"), ExtResource("2_tvgus")]

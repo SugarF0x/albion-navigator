@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://k50hisda8j22"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_eeinv"]
+
+[resource]
+script = ExtResource("1_eeinv")
+Id = 26
+Type = 4
+Layer = 0
+DisplayName = "Dusktree Swamp"
+Position = Vector2(-6.57, 229.14)
+Connections = [24, 10, 2, 11]
+Components = []

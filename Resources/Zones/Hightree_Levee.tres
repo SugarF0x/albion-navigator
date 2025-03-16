@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d2c4h565t2s58"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_lwavg"]
+
+[resource]
+script = ExtResource("1_lwavg")
+Id = 141
+Type = 5
+Layer = 0
+DisplayName = "Hightree Levee"
+Position = Vector2(80.54, -7.85)
+Connections = [198, 216, 128, 125]
+Components = []

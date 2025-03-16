@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cwe208h70el00"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_t7lw6"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_80vye"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_u3rg3"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_fxdfq"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="5_ypup8"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_sa83o"]
+
+[resource]
+script = ExtResource("6_sa83o")
+Id = 536
+Type = 6
+Layer = 9
+DisplayName = "Horos-Ohenlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_t7lw6"), ExtResource("2_80vye"), ExtResource("3_u3rg3"), ExtResource("2_80vye"), ExtResource("4_fxdfq"), ExtResource("5_ypup8"), ExtResource("2_80vye")]

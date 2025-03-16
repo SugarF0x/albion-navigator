@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dty0e1ww66pkj"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_7kry3"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_2w8cu"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="3_v4nqx"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_1njk8"]
+
+[resource]
+script = ExtResource("4_1njk8")
+Id = 788
+Type = 6
+Layer = 1
+DisplayName = "Xasos-Aeoilos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7kry3"), ExtResource("1_7kry3"), ExtResource("1_7kry3"), ExtResource("2_2w8cu"), ExtResource("3_v4nqx"), ExtResource("2_2w8cu"), ExtResource("2_2w8cu")]

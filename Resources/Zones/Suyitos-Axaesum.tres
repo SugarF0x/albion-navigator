@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cw31yq11tuuev"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_iamrh"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="2_2ivyf"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_6sr1a"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_o63a5"]
+
+[resource]
+script = ExtResource("4_o63a5")
+Id = 746
+Type = 6
+Layer = 1
+DisplayName = "Suyitos-Axaesum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_iamrh"), ExtResource("1_iamrh"), ExtResource("1_iamrh"), ExtResource("2_2ivyf"), ExtResource("1_iamrh"), ExtResource("1_iamrh"), ExtResource("1_iamrh"), ExtResource("1_iamrh"), ExtResource("3_6sr1a")]

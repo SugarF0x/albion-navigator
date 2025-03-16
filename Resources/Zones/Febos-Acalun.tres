@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://cybp5eeaofgyo"]
+
+[ext_resource type="Resource" uid="uid://cfkoi1i33x3xm" path="res://Resources/ZoneComponents/08.tres" id="1_hf4ti"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="2_5h5mw"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="3_jatpj"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="4_srnxa"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_lqygx"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="6_ygwlj"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="7_x7dva"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_83j6l"]
+
+[resource]
+script = ExtResource("8_83j6l")
+Id = 466
+Type = 6
+Layer = 6
+DisplayName = "Febos-Acalun"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_hf4ti"), ExtResource("2_5h5mw"), ExtResource("3_jatpj"), ExtResource("4_srnxa"), ExtResource("5_lqygx"), ExtResource("6_ygwlj"), ExtResource("7_x7dva")]

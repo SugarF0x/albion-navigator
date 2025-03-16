@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://dt2erke6enjxb"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_aa03y"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_d25ie"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="3_oms21"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_hxbek"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="5_5gvej"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_sbp3n"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_2032n"]
+
+[resource]
+script = ExtResource("7_2032n")
+Id = 813
+Type = 6
+Layer = 5
+DisplayName = "Xynos-Oyogam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_aa03y"), ExtResource("2_d25ie"), ExtResource("3_oms21"), ExtResource("4_hxbek"), ExtResource("5_5gvej"), ExtResource("5_5gvej"), ExtResource("6_sbp3n"), ExtResource("4_hxbek")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cr0ygwqj80qne"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_bc7da"]
+
+[resource]
+script = ExtResource("1_bc7da")
+Id = 14
+Type = 4
+Layer = 0
+DisplayName = "Spectral Sump"
+Position = Vector2(31.01, 214.84)
+Connections = [25, 346, 353, 344]
+Components = []

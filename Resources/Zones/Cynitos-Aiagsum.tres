@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://b1ybq0rswiypw"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_0h7d6"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="2_7e2i5"]
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="3_l5cfj"]
+[ext_resource type="Resource" uid="uid://dvsblwui2tjwf" path="res://Resources/ZoneComponents/12.tres" id="4_fjp0a"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_312o2"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="6_tmlg6"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="7_7vnc6"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_pyi0b"]
+
+[resource]
+script = ExtResource("8_pyi0b")
+Id = 456
+Type = 6
+Layer = 6
+DisplayName = "Cynitos-Aiagsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_0h7d6"), ExtResource("2_7e2i5"), ExtResource("3_l5cfj"), ExtResource("4_fjp0a"), ExtResource("5_312o2"), ExtResource("1_0h7d6"), ExtResource("6_tmlg6"), ExtResource("7_7vnc6")]

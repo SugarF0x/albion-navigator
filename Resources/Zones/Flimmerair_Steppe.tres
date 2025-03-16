@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bqwugq3dcd4ej"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_k8amq"]
+
+[resource]
+script = ExtResource("1_k8amq")
+Id = 189
+Type = 4
+Layer = 0
+DisplayName = "Flimmerair Steppe"
+Position = Vector2(33.26, 309.01)
+Connections = [96, 168, 169]
+Components = []

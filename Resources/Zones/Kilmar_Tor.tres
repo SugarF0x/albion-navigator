@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://baknn8d5netgo"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_0b1vm"]
+
+[resource]
+script = ExtResource("1_0b1vm")
+Id = 266
+Type = 2
+Layer = 0
+DisplayName = "Kilmar Tor"
+Position = Vector2(-24.26, 363.25)
+Connections = [188, 268, 263, 261]
+Components = []

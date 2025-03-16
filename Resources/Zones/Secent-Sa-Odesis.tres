@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cepp087173msn"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_80c1y"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="2_mqfna"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_u7h8v"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_koek7"]
+
+[resource]
+script = ExtResource("4_koek7")
+Id = 688
+Type = 6
+Layer = 11
+DisplayName = "Secent-Sa-Odesis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_80c1y"), ExtResource("1_80c1y"), ExtResource("1_80c1y"), ExtResource("1_80c1y"), ExtResource("1_80c1y"), ExtResource("2_mqfna"), ExtResource("3_u7h8v")]

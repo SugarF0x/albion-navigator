@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bnx4f8vixu8p2"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_l7g5m"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="2_hv3jc"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_x30md"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="4_dutg3"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_lfwtj"]
+
+[resource]
+script = ExtResource("5_lfwtj")
+Id = 725
+Type = 6
+Layer = 12
+DisplayName = "Settun-Vynsis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_l7g5m"), ExtResource("2_hv3jc"), ExtResource("3_x30md"), ExtResource("4_dutg3")]

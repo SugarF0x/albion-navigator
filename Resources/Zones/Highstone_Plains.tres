@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://1aww240k8qt"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_xfjel"]
+
+[resource]
+script = ExtResource("1_xfjel")
+Id = 286
+Type = 5
+Layer = 0
+DisplayName = "Highstone Plains"
+Position = Vector2(-135.69, -141.92)
+Connections = [328, 282]
+Components = []

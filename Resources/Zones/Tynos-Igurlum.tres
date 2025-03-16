@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://c6ih6vsryigjg"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_yglg5"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_w3l2e"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_i7oqn"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_nidf5"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="5_ln507"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="6_nxn8p"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="7_6oq44"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_001uu"]
+
+[resource]
+script = ExtResource("8_001uu")
+Id = 784
+Type = 6
+Layer = 3
+DisplayName = "Tynos-Igurlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_yglg5"), ExtResource("2_w3l2e"), ExtResource("3_i7oqn"), ExtResource("4_nidf5"), ExtResource("5_ln507"), ExtResource("6_nxn8p"), ExtResource("7_6oq44")]

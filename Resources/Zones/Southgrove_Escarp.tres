@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://drewnrbahqms0"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_t0rdg"]
+
+[resource]
+script = ExtResource("1_t0rdg")
+Id = 120
+Type = 5
+Layer = 0
+DisplayName = "Southgrove Escarp"
+Position = Vector2(-9.83, 76.01)
+Connections = [235, 143]
+Components = []

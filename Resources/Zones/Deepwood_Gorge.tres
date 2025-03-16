@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dfk4dfyn7lny2"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_2h5rn"]
+
+[resource]
+script = ExtResource("1_2h5rn")
+Id = 133
+Type = 5
+Layer = 0
+DisplayName = "Deepwood Gorge"
+Position = Vector2(64.91, -234.19)
+Connections = [365, 366, 396]
+Components = []

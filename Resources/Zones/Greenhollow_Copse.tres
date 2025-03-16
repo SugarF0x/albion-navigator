@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dqndx7x27kwfh"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_kbw3r"]
+
+[resource]
+script = ExtResource("1_kbw3r")
+Id = 158
+Type = 5
+Layer = 0
+DisplayName = "Greenhollow Copse"
+Position = Vector2(-175.86, -95.67)
+Connections = [130, 322, 308, 321]
+Components = []

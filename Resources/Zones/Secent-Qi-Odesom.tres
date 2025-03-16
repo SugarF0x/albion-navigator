@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://n2bs23wfjir"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_rdhsy"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="2_4yydi"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="3_n0o0i"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_kgxkt"]
+
+[resource]
+script = ExtResource("4_kgxkt")
+Id = 686
+Type = 6
+Layer = 11
+DisplayName = "Secent-Qi-Odesom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_rdhsy"), ExtResource("2_4yydi"), ExtResource("3_n0o0i"), ExtResource("3_n0o0i"), ExtResource("3_n0o0i"), ExtResource("3_n0o0i"), ExtResource("3_n0o0i")]

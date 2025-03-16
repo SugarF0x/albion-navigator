@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bj1pr1ebopfud"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_d531t"]
+
+[resource]
+script = ExtResource("1_d531t")
+Id = 154
+Type = 5
+Layer = 0
+DisplayName = "Driftwood Hollow"
+Position = Vector2(-91.29, -199.76)
+Connections = [127, 279, 69]
+Components = []

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b1vebehhnwi3l"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_qdl1c"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_hjab6"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="3_ugu8h"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="4_q36e0"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="5_khfqe"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_tpt6r"]
+
+[resource]
+script = ExtResource("6_tpt6r")
+Id = 585
+Type = 6
+Layer = 3
+DisplayName = "Pebos-Avosrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_qdl1c"), ExtResource("2_hjab6"), ExtResource("3_ugu8h"), ExtResource("2_hjab6"), ExtResource("1_qdl1c"), ExtResource("4_q36e0"), ExtResource("5_khfqe"), ExtResource("2_hjab6")]

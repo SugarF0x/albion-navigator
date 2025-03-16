@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dop34icm7ec4k"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_x5jlg"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_k7x4v"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_nr60t"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_vixq5"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="5_tbrdy"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_jvdwa"]
+
+[resource]
+script = ExtResource("6_jvdwa")
+Id = 775
+Type = 6
+Layer = 4
+DisplayName = "Toritos-Iriglos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_x5jlg"), ExtResource("2_k7x4v"), ExtResource("2_k7x4v"), ExtResource("2_k7x4v"), ExtResource("2_k7x4v"), ExtResource("3_nr60t"), ExtResource("2_k7x4v"), ExtResource("4_vixq5"), ExtResource("5_tbrdy")]

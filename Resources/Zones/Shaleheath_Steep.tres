@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b2lcj4bapfg4o"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_lr0rm"]
+
+[resource]
+script = ExtResource("1_lr0rm")
+Id = 309
+Type = 5
+Layer = 0
+DisplayName = "Shaleheath Steep"
+Position = Vector2(-6.65, -340.27)
+Connections = [394, 297]
+Components = []

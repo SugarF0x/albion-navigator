@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b6f6asf15l7ci"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_cdsxu"]
+
+[resource]
+script = ExtResource("1_cdsxu")
+Id = 334
+Type = 2
+Layer = 0
+DisplayName = "Bryn Gorge"
+Position = Vector2(74.74, 184.14)
+Connections = [335, 332, 356, 339]
+Components = []

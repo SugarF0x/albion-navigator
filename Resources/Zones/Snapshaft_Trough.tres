@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cy36r3r6884wq"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_pnng4"]
+
+[resource]
+script = ExtResource("1_pnng4")
+Id = 178
+Type = 3
+Layer = 0
+DisplayName = "Snapshaft Trough"
+Position = Vector2(42.93, 373.33)
+Connections = [177, 186, 175]
+Components = []

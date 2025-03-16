@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bpcv0mobfimki"]
+
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="1_oc2ju"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_dbh18"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_mo0pj"]
+[ext_resource type="Resource" uid="uid://b1hmgtacrstjs" path="res://Resources/ZoneComponents/09.tres" id="4_mhk44"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_hbgkj"]
+
+[resource]
+script = ExtResource("5_hbgkj")
+Id = 421
+Type = 6
+Layer = 1
+DisplayName = "Casos-Uruxtum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_oc2ju"), ExtResource("2_dbh18"), ExtResource("2_dbh18"), ExtResource("2_dbh18"), ExtResource("2_dbh18"), ExtResource("3_mo0pj"), ExtResource("2_dbh18"), ExtResource("4_mhk44"), ExtResource("2_dbh18")]

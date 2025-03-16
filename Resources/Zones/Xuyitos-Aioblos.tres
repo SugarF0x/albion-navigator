@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://6wkfl1r430ks"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_p4iqh"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="2_73ve0"]
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="3_lr604"]
+[ext_resource type="Resource" uid="uid://d2dmtugqh6juw" path="res://Resources/ZoneComponents/13.tres" id="4_dpitg"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="5_lhg3c"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_t3mfr"]
+
+[resource]
+script = ExtResource("6_t3mfr")
+Id = 811
+Type = 6
+Layer = 1
+DisplayName = "Xuyitos-Aioblos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_p4iqh"), ExtResource("2_73ve0"), ExtResource("3_lr604"), ExtResource("4_dpitg"), ExtResource("1_p4iqh"), ExtResource("3_lr604"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("5_lhg3c")]

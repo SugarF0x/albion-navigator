@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b3tqsiqvpdnjr"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_os8wa"]
+
+[resource]
+script = ExtResource("1_os8wa")
+Id = 168
+Type = 4
+Layer = 0
+DisplayName = "Astolat"
+Position = Vector2(28.81, 336.82)
+Connections = [169, 189, 173]
+Components = []

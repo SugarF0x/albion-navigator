@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://tg4atnf6e7hy"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_vgv0i"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_kdt5b"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_558wc"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_073wt"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="5_05yji"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="6_4amna"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_bncup"]
+
+[resource]
+script = ExtResource("7_bncup")
+Id = 588
+Type = 6
+Layer = 3
+DisplayName = "Peros-Aiataum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vgv0i"), ExtResource("2_kdt5b"), ExtResource("3_558wc"), ExtResource("1_vgv0i"), ExtResource("4_073wt"), ExtResource("5_05yji"), ExtResource("6_4amna"), ExtResource("1_vgv0i")]

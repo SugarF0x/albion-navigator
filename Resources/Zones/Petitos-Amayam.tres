@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://0q347uwn758a"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_tlr2w"]
+[ext_resource type="Resource" uid="uid://bdfpu17cc6la" path="res://Resources/ZoneComponents/00.tres" id="2_1es8e"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_whpho"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="4_2iy5a"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_rhcin"]
+
+[resource]
+script = ExtResource("5_rhcin")
+Id = 589
+Type = 6
+Layer = 1
+DisplayName = "Petitos-Amayam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_tlr2w"), ExtResource("1_tlr2w"), ExtResource("2_1es8e"), ExtResource("1_tlr2w"), ExtResource("3_whpho"), ExtResource("1_tlr2w"), ExtResource("4_2iy5a")]

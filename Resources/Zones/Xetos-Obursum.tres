@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cjplihpbjhh4y"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_g844f"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_cn7h6"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_86pga"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="4_fekiy"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_2qx05"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_db3ce"]
+
+[resource]
+script = ExtResource("6_db3ce")
+Id = 797
+Type = 6
+Layer = 3
+DisplayName = "Xetos-Obursum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_g844f"), ExtResource("2_cn7h6"), ExtResource("3_86pga"), ExtResource("4_fekiy"), ExtResource("5_2qx05"), ExtResource("2_cn7h6"), ExtResource("2_cn7h6"), ExtResource("2_cn7h6"), ExtResource("2_cn7h6")]

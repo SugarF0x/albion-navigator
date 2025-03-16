@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://khdv1w1vgnna"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_42b55"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_tmxff"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_dkuj6"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_0k4wm"]
+
+[resource]
+script = ExtResource("4_0k4wm")
+Id = 718
+Type = 6
+Layer = 12
+DisplayName = "Settun-Al-Tersom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_42b55"), ExtResource("2_tmxff"), ExtResource("2_tmxff"), ExtResource("3_dkuj6")]

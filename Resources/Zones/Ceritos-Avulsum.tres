@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://cvq848uhlebsr"]
+
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="1_g8ajf"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_u2qkb"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="3_one12"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_jwukw"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="5_a840e"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="6_ju1sf"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_wp62s"]
+
+[resource]
+script = ExtResource("7_wp62s")
+Id = 425
+Type = 6
+Layer = 3
+DisplayName = "Ceritos-Avulsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_g8ajf"), ExtResource("2_u2qkb"), ExtResource("3_one12"), ExtResource("4_jwukw"), ExtResource("5_a840e"), ExtResource("6_ju1sf")]

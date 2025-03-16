@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dcsncv7yy7boq"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_kprse"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_oaatb"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_2vwui"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="4_2lcvb"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="5_mxv4i"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_2vcfl"]
+
+[resource]
+script = ExtResource("6_2vcfl")
+Id = 530
+Type = 6
+Layer = 3
+DisplayName = "Hiros-Exozlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_kprse"), ExtResource("2_oaatb"), ExtResource("3_2vwui"), ExtResource("3_2vwui"), ExtResource("2_oaatb"), ExtResource("2_oaatb"), ExtResource("2_oaatb"), ExtResource("2_oaatb"), ExtResource("4_2lcvb"), ExtResource("5_mxv4i")]

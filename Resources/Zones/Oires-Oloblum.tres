@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=10 format=3 uid="uid://b3sst6rlvqx2f"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_eacon"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="2_60eey"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_h1xgq"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="4_p3wo7"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="5_c1xmi"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="6_o8nb2"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="7_ua3hx"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="8_pf2mp"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="9_r06r0"]
+
+[resource]
+script = ExtResource("9_r06r0")
+Id = 568
+Type = 6
+Layer = 4
+DisplayName = "Oires-Oloblum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_eacon"), ExtResource("2_60eey"), ExtResource("3_h1xgq"), ExtResource("4_p3wo7"), ExtResource("5_c1xmi"), ExtResource("6_o8nb2"), ExtResource("7_ua3hx"), ExtResource("8_pf2mp")]

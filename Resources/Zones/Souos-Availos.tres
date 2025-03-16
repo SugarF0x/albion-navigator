@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://d2uqrcc0a0oq6"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_vhjrt"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="2_blp7j"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_lu1ll"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_1aneq"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="5_xsnqr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_rjfj3"]
+
+[resource]
+script = ExtResource("6_rjfj3")
+Id = 741
+Type = 6
+Layer = 3
+DisplayName = "Souos-Availos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vhjrt"), ExtResource("2_blp7j"), ExtResource("3_lu1ll"), ExtResource("1_vhjrt"), ExtResource("4_1aneq"), ExtResource("5_xsnqr"), ExtResource("1_vhjrt")]

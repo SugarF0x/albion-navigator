@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cd2hp4528gd7v"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_1njw1"]
+
+[resource]
+script = ExtResource("1_1njw1")
+Id = 143
+Type = 5
+Layer = 0
+DisplayName = "Southgrove Copse"
+Position = Vector2(-16.97, 58.83)
+Connections = [156, 120, 224]
+Components = []

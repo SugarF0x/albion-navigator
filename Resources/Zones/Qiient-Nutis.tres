@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cg3wbii5nosso"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_u8p3m"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="2_vc73o"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_v7o5k"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_vqsn7"]
+
+[resource]
+script = ExtResource("4_vqsn7")
+Id = 626
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Nutis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_u8p3m"), ExtResource("2_vc73o"), ExtResource("1_u8p3m"), ExtResource("1_u8p3m"), ExtResource("1_u8p3m"), ExtResource("1_u8p3m"), ExtResource("3_v7o5k")]

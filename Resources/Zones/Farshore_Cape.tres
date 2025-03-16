@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ilfin6mlbrlt"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_meyfe"]
+
+[resource]
+script = ExtResource("1_meyfe")
+Id = 240
+Type = 5
+Layer = 0
+DisplayName = "Farshore Cape"
+Position = Vector2(-137.39, 8.98)
+Connections = [212, 225]
+Components = []

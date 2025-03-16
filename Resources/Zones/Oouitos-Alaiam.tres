@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://c0ibuqvqiyn7s"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_3b5rw"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="2_22w7l"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_y30sc"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_7p1pg"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_u1xh0"]
+
+[resource]
+script = ExtResource("5_u1xh0")
+Id = 574
+Type = 6
+Layer = 3
+DisplayName = "Oouitos-Alaiam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_3b5rw"), ExtResource("1_3b5rw"), ExtResource("1_3b5rw"), ExtResource("1_3b5rw"), ExtResource("2_22w7l"), ExtResource("3_y30sc"), ExtResource("1_3b5rw"), ExtResource("4_7p1pg")]

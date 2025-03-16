@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dtu5c1h3qwqa5"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_krga2"]
+
+[resource]
+script = ExtResource("1_krga2")
+Id = 300
+Type = 5
+Layer = 0
+DisplayName = "Thunderrock Rapids"
+Position = Vector2(62.97, -77.17)
+Connections = [139, 122]
+Components = []

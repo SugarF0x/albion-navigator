@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://cmhm7ta0th6ei"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_i51eu"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="2_ur3dm"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="3_y1mqm"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_k5x2l"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_f66lg"]
+
+[resource]
+script = ExtResource("5_f66lg")
+Id = 419
+Type = 6
+Layer = 3
+DisplayName = "Casos-Aximam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_i51eu"), ExtResource("2_ur3dm"), ExtResource("3_y1mqm"), ExtResource("4_k5x2l"), ExtResource("4_k5x2l"), ExtResource("3_y1mqm"), ExtResource("2_ur3dm"), ExtResource("1_i51eu")]

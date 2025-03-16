@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dn81bffwiode6"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4orgo"]
+
+[resource]
+script = ExtResource("1_4orgo")
+Id = 59
+Type = 5
+Layer = 0
+DisplayName = "Longfen Arms"
+Position = Vector2(-150.54, -32.31)
+Connections = [295, 330, 238]
+Components = []

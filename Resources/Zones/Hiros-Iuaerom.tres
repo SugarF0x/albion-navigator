@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bu63q5teywm7l"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_07e7e"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="2_yfwef"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_hxw42"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="4_wbpbr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_2cxjs"]
+
+[resource]
+script = ExtResource("5_2cxjs")
+Id = 531
+Type = 6
+Layer = 2
+DisplayName = "Hiros-Iuaerom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_07e7e"), ExtResource("1_07e7e"), ExtResource("2_yfwef"), ExtResource("3_hxw42"), ExtResource("4_wbpbr"), ExtResource("1_07e7e"), ExtResource("1_07e7e"), ExtResource("1_07e7e"), ExtResource("1_07e7e")]

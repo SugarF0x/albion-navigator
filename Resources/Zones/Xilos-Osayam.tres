@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://di0q8p7vibhmy"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_oqa32"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="2_3ncb1"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_4krj7"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="4_5xc8f"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="5_vvi7l"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_b2m6d"]
+
+[resource]
+script = ExtResource("6_b2m6d")
+Id = 800
+Type = 6
+Layer = 3
+DisplayName = "Xilos-Osayam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_oqa32"), ExtResource("1_oqa32"), ExtResource("2_3ncb1"), ExtResource("3_4krj7"), ExtResource("4_5xc8f"), ExtResource("3_4krj7"), ExtResource("5_vvi7l")]

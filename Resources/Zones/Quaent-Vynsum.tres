@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://bxn0vu0dqkyh7"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_u2yr4"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_mpixd"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="3_2r53k"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_6svul"]
+
+[resource]
+script = ExtResource("4_6svul")
+Id = 657
+Type = 6
+Layer = 11
+DisplayName = "Quaent-Vynsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_u2yr4"), ExtResource("1_u2yr4"), ExtResource("1_u2yr4"), ExtResource("1_u2yr4"), ExtResource("1_u2yr4"), ExtResource("2_mpixd"), ExtResource("3_2r53k")]

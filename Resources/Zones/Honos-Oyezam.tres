@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c2w5iach1570i"]
+
+[ext_resource type="Resource" uid="uid://dljnuwk4pyptj" path="res://Resources/ZoneComponents/44.tres" id="1_rwbqa"]
+[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="2_r8jvr"]
+[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="3_lqxii"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_vkhw7"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="5_x2mi5"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_4uxfu"]
+
+[resource]
+script = ExtResource("6_4uxfu")
+Id = 534
+Type = 6
+Layer = 7
+DisplayName = "Honos-Oyezam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_rwbqa"), ExtResource("2_r8jvr"), ExtResource("3_lqxii"), ExtResource("4_vkhw7"), ExtResource("4_vkhw7"), ExtResource("4_vkhw7"), ExtResource("4_vkhw7"), ExtResource("4_vkhw7"), ExtResource("5_x2mi5")]

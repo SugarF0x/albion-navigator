@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bfloldfsu5217"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_013tk"]
+
+[resource]
+script = ExtResource("1_013tk")
+Id = 385
+Type = 5
+Layer = 0
+DisplayName = "Munten Tundra"
+Position = Vector2(120.42, -76.16)
+Connections = [114, 138, 369]
+Components = []

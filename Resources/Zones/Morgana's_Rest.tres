@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cgciv2hyqp1av"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_aqs4l"]
+
+[resource]
+script = ExtResource("1_aqs4l")
+Id = 3
+Type = 1
+Layer = 0
+DisplayName = "Morgana's Rest"
+Position = Vector2(-4.73, -261.14)
+Connections = [395, 36, 52, 397]
+Components = []

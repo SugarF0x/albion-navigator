@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://crb676k8fpcco"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_a8q7g"]
+
+[resource]
+script = ExtResource("1_a8q7g")
+Id = 232
+Type = 5
+Layer = 0
+DisplayName = "Dryvein End"
+Position = Vector2(-20.72, -51.27)
+Connections = [234, 217, 81]
+Components = []

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://doj5np2eqdrsf"]
+
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="1_khq45"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_a100t"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_fuxpa"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="4_j053d"]
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="5_eono0"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_4g56k"]
+
+[resource]
+script = ExtResource("6_4g56k")
+Id = 507
+Type = 6
+Layer = 6
+DisplayName = "Fynos-Alodrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_khq45"), ExtResource("1_khq45"), ExtResource("2_a100t"), ExtResource("3_fuxpa"), ExtResource("4_j053d"), ExtResource("2_a100t"), ExtResource("5_eono0")]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://ds6ifapfxxpyq"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_7a1ny"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="2_bx0ls"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_si001"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_e3rr2"]
+
+[resource]
+script = ExtResource("4_e3rr2")
+Id = 627
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Oc-Odetum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_7a1ny"), ExtResource("1_7a1ny"), ExtResource("1_7a1ny"), ExtResource("1_7a1ny"), ExtResource("1_7a1ny"), ExtResource("2_bx0ls"), ExtResource("3_si001")]

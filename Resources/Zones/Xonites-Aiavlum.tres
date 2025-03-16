@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://d2y2amm5rxywf"]
+
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="1_chwi1"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="2_yao30"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="3_l0i0b"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_aboqr"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_5bme3"]
+
+[resource]
+script = ExtResource("5_5bme3")
+Id = 802
+Type = 6
+Layer = 6
+DisplayName = "Xonites-Aiavlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_chwi1"), ExtResource("1_chwi1"), ExtResource("2_yao30"), ExtResource("3_l0i0b"), ExtResource("1_chwi1"), ExtResource("1_chwi1"), ExtResource("1_chwi1"), ExtResource("1_chwi1"), ExtResource("4_aboqr")]

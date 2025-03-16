@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bt1dxwrmkejng"]
+
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="1_6nx2g"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="2_aqcp8"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="3_f7qmh"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_b3vce"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_s367g"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="6_8lmce"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_ymo6t"]
+
+[resource]
+script = ExtResource("7_ymo6t")
+Id = 535
+Type = 6
+Layer = 3
+DisplayName = "Honos-Umayaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_6nx2g"), ExtResource("2_aqcp8"), ExtResource("3_f7qmh"), ExtResource("4_b3vce"), ExtResource("4_b3vce"), ExtResource("5_s367g"), ExtResource("6_8lmce"), ExtResource("4_b3vce")]

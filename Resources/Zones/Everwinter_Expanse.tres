@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://djfvly5fjx6s0"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_abbe0"]
+
+[resource]
+script = ExtResource("1_abbe0")
+Id = 394
+Type = 5
+Layer = 0
+DisplayName = "Everwinter Expanse"
+Position = Vector2(-14.15, -323.76)
+Connections = [364, 407, 309]
+Components = []

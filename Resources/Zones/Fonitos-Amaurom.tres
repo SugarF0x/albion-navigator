@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://b606l67st3bms"]
+
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="1_ufcgm"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_4dwmr"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_uo4fh"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_mulkp"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_dgx8u"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="6_ycfp0"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="7_cq5ll"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_fkiip"]
+
+[resource]
+script = ExtResource("8_fkiip")
+Id = 486
+Type = 6
+Layer = 4
+DisplayName = "Fonitos-Amaurom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ufcgm"), ExtResource("2_4dwmr"), ExtResource("3_uo4fh"), ExtResource("4_mulkp"), ExtResource("5_dgx8u"), ExtResource("6_ycfp0"), ExtResource("7_cq5ll")]

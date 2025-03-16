@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cy4b6pmd54aet"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_ytqc1"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="2_cl8jw"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_1jsxe"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_dutyb"]
+
+[resource]
+script = ExtResource("4_dutyb")
+Id = 697
+Type = 6
+Layer = 12
+DisplayName = "Sectun-In-Vyntis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ytqc1"), ExtResource("1_ytqc1"), ExtResource("1_ytqc1"), ExtResource("1_ytqc1"), ExtResource("1_ytqc1"), ExtResource("2_cl8jw"), ExtResource("3_1jsxe")]

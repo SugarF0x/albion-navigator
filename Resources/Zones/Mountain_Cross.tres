@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dxk7wqcpiv1ge"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_3jkb3"]
+
+[resource]
+script = ExtResource("1_3jkb3")
+Id = 332
+Type = 0
+Layer = 0
+DisplayName = "Mountain Cross"
+Position = Vector2(101.07, 179.07)
+Connections = [335, 87, 334]
+Components = []

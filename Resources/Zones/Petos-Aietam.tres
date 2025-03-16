@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://wsrb5sulm3di"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_62xb2"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_oak5c"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_ckmve"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="4_8el67"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_ne11u"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_8q11r"]
+
+[resource]
+script = ExtResource("6_8q11r")
+Id = 591
+Type = 6
+Layer = 5
+DisplayName = "Petos-Aietam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_62xb2"), ExtResource("2_oak5c"), ExtResource("1_62xb2"), ExtResource("1_62xb2"), ExtResource("3_ckmve"), ExtResource("4_8el67"), ExtResource("5_ne11u")]

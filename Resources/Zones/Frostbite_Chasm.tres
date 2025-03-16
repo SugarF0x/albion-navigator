@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b4yls8fyalyg1"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_6w0va"]
+
+[resource]
+script = ExtResource("1_6w0va")
+Id = 370
+Type = 5
+Layer = 0
+DisplayName = "Frostbite Chasm"
+Position = Vector2(-228.61, -173.5)
+Connections = [205, 157, 389]
+Components = []

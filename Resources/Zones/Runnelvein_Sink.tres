@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://mtdguhfuoq8i"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_rn2xe"]
+
+[resource]
+script = ExtResource("1_rn2xe")
+Id = 64
+Type = 5
+Layer = 0
+DisplayName = "Runnelvein Sink"
+Position = Vector2(67.39, -151.25)
+Connections = [384, 34]
+Components = []

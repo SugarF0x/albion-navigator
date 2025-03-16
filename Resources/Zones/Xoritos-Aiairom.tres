@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bnihj68024una"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_bep7o"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="2_dq0ak"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_3cy3m"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_txpgg"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_s2d66"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_3ci5p"]
+
+[resource]
+script = ExtResource("6_3ci5p")
+Id = 803
+Type = 6
+Layer = 4
+DisplayName = "Xoritos-Aiairom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_bep7o"), ExtResource("1_bep7o"), ExtResource("2_dq0ak"), ExtResource("3_3cy3m"), ExtResource("4_txpgg"), ExtResource("5_s2d66")]

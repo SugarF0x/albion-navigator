@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://s8bvf27hil6q"]
+
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="1_22kgf"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_n7cg4"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="3_f1xhd"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="4_4y7lw"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="5_ttn3i"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_wtrhq"]
+
+[resource]
+script = ExtResource("6_wtrhq")
+Id = 812
+Type = 6
+Layer = 3
+DisplayName = "Xynitos-Obursum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_22kgf"), ExtResource("2_n7cg4"), ExtResource("3_f1xhd"), ExtResource("4_4y7lw"), ExtResource("5_ttn3i"), ExtResource("2_n7cg4"), ExtResource("2_n7cg4"), ExtResource("2_n7cg4"), ExtResource("2_n7cg4")]

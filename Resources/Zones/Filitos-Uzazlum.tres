@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cudebfrsttsj8"]
+
+[ext_resource type="Resource" uid="uid://b3lqylkiunb8e" path="res://Resources/ZoneComponents/37.tres" id="1_lrq1m"]
+[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="2_20ygv"]
+[ext_resource type="Resource" uid="uid://dwyxy68m5xuyt" path="res://Resources/ZoneComponents/46.tres" id="3_17gtb"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_jt6rr"]
+[ext_resource type="Resource" uid="uid://bq7rs4g2nrngs" path="res://Resources/ZoneComponents/39.tres" id="5_epeiy"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_rqlhs"]
+
+[resource]
+script = ExtResource("6_rqlhs")
+Id = 478
+Type = 6
+Layer = 7
+DisplayName = "Filitos-Uzazlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_lrq1m"), ExtResource("2_20ygv"), ExtResource("3_17gtb"), ExtResource("4_jt6rr"), ExtResource("4_jt6rr"), ExtResource("4_jt6rr"), ExtResource("4_jt6rr"), ExtResource("5_epeiy"), ExtResource("4_jt6rr"), ExtResource("4_jt6rr")]

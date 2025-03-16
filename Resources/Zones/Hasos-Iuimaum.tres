@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://c2madf2d6854a"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_4rsn0"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="2_tbakr"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="3_53byg"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_xrkgl"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_ow1yp"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="6_82emy"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_m4bpq"]
+
+[resource]
+script = ExtResource("7_m4bpq")
+Id = 513
+Type = 6
+Layer = 3
+DisplayName = "Hasos-Iuimaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4rsn0"), ExtResource("2_tbakr"), ExtResource("3_53byg"), ExtResource("4_xrkgl"), ExtResource("5_ow1yp"), ExtResource("4_xrkgl"), ExtResource("4_xrkgl"), ExtResource("4_xrkgl"), ExtResource("4_xrkgl"), ExtResource("6_82emy"), ExtResource("5_ow1yp")]

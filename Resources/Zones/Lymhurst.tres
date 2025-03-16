@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bs81gxssaxbnv"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_84sug"]
+
+[resource]
+script = ExtResource("1_84sug")
+Id = 83
+Type = 1
+Layer = 0
+DisplayName = "Lymhurst"
+Position = Vector2(127.54, 313.69)
+Connections = [101, 93, 98, 97, 110]
+Components = []

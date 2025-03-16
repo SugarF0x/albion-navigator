@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://xbhpk8p2xcgx"]
+
+[ext_resource type="Resource" uid="uid://btgo1ski5vkd1" path="res://Resources/ZoneComponents/11.tres" id="1_wd4nb"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_n0lgc"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_y7v1x"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_q1ltn"]
+
+[resource]
+script = ExtResource("4_q1ltn")
+Id = 782
+Type = 6
+Layer = 6
+DisplayName = "Tynos-Atatlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_wd4nb"), ExtResource("2_n0lgc"), ExtResource("3_y7v1x"), ExtResource("2_n0lgc"), ExtResource("2_n0lgc"), ExtResource("3_y7v1x"), ExtResource("3_y7v1x")]

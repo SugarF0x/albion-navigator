@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c482r11jxt5ky"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5plgf"]
+
+[resource]
+script = ExtResource("1_5plgf")
+Id = 50
+Type = 5
+Layer = 0
+DisplayName = "Widemoor Hills"
+Position = Vector2(-91.15, -354.37)
+Connections = [32, 214, 35]
+Components = []

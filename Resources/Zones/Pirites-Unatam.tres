@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://7xwg371beqv8"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_6knum"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="2_mmfgi"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_fsk61"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_jwno4"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="5_o5y3u"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="6_2opds"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_ap23f"]
+
+[resource]
+script = ExtResource("7_ap23f")
+Id = 595
+Type = 6
+Layer = 4
+DisplayName = "Pirites-Unatam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_6knum"), ExtResource("2_mmfgi"), ExtResource("3_fsk61"), ExtResource("1_6knum"), ExtResource("4_jwno4"), ExtResource("5_o5y3u"), ExtResource("6_2opds")]

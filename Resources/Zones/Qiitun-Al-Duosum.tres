@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://diw2wb3wk78p7"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_u4anx"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_owye5"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="3_bmery"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_hcu3r"]
+
+[resource]
+script = ExtResource("4_hcu3r")
+Id = 640
+Type = 6
+Layer = 12
+DisplayName = "Qiitun-Al-Duosum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_u4anx"), ExtResource("2_owye5"), ExtResource("2_owye5"), ExtResource("3_bmery")]

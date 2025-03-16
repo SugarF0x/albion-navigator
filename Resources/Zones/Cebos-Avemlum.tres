@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c4mttuw5h5bds"]
+
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="1_ejmns"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_3gl3l"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="3_baoav"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_2pb7v"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="5_3pglo"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_h1rh5"]
+
+[resource]
+script = ExtResource("6_h1rh5")
+Id = 423
+Type = 6
+Layer = 3
+DisplayName = "Cebos-Avemlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_ejmns"), ExtResource("2_3gl3l"), ExtResource("3_baoav"), ExtResource("4_2pb7v"), ExtResource("4_2pb7v"), ExtResource("5_3pglo")]

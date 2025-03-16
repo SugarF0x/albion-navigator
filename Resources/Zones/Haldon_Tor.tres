@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://7qit4d54na2g"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_r0qal"]
+
+[resource]
+script = ExtResource("1_r0qal")
+Id = 264
+Type = 2
+Layer = 0
+DisplayName = "Haldon Tor"
+Position = Vector2(-62.94, 312.55)
+Connections = [274, 262, 257, 260]
+Components = []

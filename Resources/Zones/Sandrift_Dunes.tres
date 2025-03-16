@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cnrrtunu234dy"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_j4168"]
+
+[resource]
+script = ExtResource("1_j4168")
+Id = 237
+Type = 5
+Layer = 0
+DisplayName = "Sandrift Dunes"
+Position = Vector2(-73.74, 7.01)
+Connections = [208, 209, 206]
+Components = []

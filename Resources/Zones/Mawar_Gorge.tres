@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://j7i32wvy05ky"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_t0eq1"]
+
+[resource]
+script = ExtResource("1_t0eq1")
+Id = 340
+Type = 2
+Layer = 0
+DisplayName = "Mawar Gorge"
+Position = Vector2(87.02, 213.86)
+Connections = [331, 336, 87]
+Components = []

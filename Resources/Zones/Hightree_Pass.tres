@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://babg6r00g2ye2"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_7sjig"]
+
+[resource]
+script = ExtResource("1_7sjig")
+Id = 138
+Type = 5
+Layer = 0
+DisplayName = "Hightree Pass"
+Position = Vector2(109.96, -62.86)
+Connections = [122, 385, 119]
+Components = []

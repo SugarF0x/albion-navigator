@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dpn8w027c6jck"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_qv6vi"]
+
+[resource]
+script = ExtResource("1_qv6vi")
+Id = 96
+Type = 4
+Layer = 0
+DisplayName = "Murkweald"
+Position = Vector2(72.6, 321.91)
+Connections = [189, 91, 190, 99]
+Components = []

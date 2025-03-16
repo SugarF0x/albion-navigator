@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://l5p8npw8hsh5"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_qlssk"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_xeclh"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="3_ib5rt"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_ls86l"]
+[ext_resource type="Resource" uid="uid://bpfpotv0jdo1c" path="res://Resources/ZoneComponents/17.tres" id="5_pra6b"]
+[ext_resource type="Resource" uid="uid://dmj864jit0bgr" path="res://Resources/ZoneComponents/29.tres" id="6_74thv"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_skjvm"]
+
+[resource]
+script = ExtResource("7_skjvm")
+Id = 451
+Type = 6
+Layer = 8
+DisplayName = "Couos-Opodam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_qlssk"), ExtResource("1_qlssk"), ExtResource("2_xeclh"), ExtResource("3_ib5rt"), ExtResource("4_ls86l"), ExtResource("5_pra6b"), ExtResource("6_74thv"), ExtResource("2_xeclh")]

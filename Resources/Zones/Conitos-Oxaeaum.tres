@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c3wt22t7l03u5"]
+
+[ext_resource type="Resource" uid="uid://gy5u3eqysvkw" path="res://Resources/ZoneComponents/07.tres" id="1_4kgu3"]
+[ext_resource type="Resource" uid="uid://dw5nm7i84duy6" path="res://Resources/ZoneComponents/33.tres" id="2_u2hss"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="3_qgsba"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="4_qtjhh"]
+[ext_resource type="Resource" uid="uid://bdvfybmgt3y6s" path="res://Resources/ZoneComponents/04.tres" id="5_nkwuu"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_uedr4"]
+
+[resource]
+script = ExtResource("6_uedr4")
+Id = 442
+Type = 6
+Layer = 6
+DisplayName = "Conitos-Oxaeaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4kgu3"), ExtResource("2_u2hss"), ExtResource("3_qgsba"), ExtResource("4_qtjhh"), ExtResource("5_nkwuu"), ExtResource("4_qtjhh")]

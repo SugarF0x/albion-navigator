@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://bibo55u6so5t"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_6exfl"]
+
+[resource]
+script = ExtResource("1_6exfl")
+Id = 25
+Type = 4
+Layer = 0
+DisplayName = "Anklesnag Mire"
+Position = Vector2(25.84, 231.2)
+Connections = [354, 2, 24, 14]
+Components = []

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://nhp72dr3m4yc"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_0422l"]
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="2_cuy7f"]
+[ext_resource type="Resource" uid="uid://bly0u7mhwcetl" path="res://Resources/ZoneComponents/22.tres" id="3_pfj7n"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="4_qpcfs"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_6xh7b"]
+
+[resource]
+script = ExtResource("5_6xh7b")
+Id = 753
+Type = 6
+Layer = 3
+DisplayName = "Synitos-Ososlos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_0422l"), ExtResource("2_cuy7f"), ExtResource("1_0422l"), ExtResource("3_pfj7n"), ExtResource("4_qpcfs"), ExtResource("4_qpcfs"), ExtResource("1_0422l"), ExtResource("1_0422l")]

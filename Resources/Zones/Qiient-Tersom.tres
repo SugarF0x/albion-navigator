@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dpa8oyapwbm50"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_mndty"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_xqg80"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_admsw"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_o5kne"]
+
+[resource]
+script = ExtResource("4_o5kne")
+Id = 638
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Tersom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_mndty"), ExtResource("2_xqg80"), ExtResource("2_xqg80"), ExtResource("3_admsw")]

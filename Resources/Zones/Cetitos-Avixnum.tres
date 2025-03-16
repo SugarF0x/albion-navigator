@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://2g4yr14h3wxv"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_f2aif"]
+[ext_resource type="Resource" uid="uid://kqv3i7aodkhy" path="res://Resources/ZoneComponents/24.tres" id="2_nhhr3"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="3_2agky"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="4_tbwl8"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_pbvlu"]
+
+[resource]
+script = ExtResource("5_pbvlu")
+Id = 428
+Type = 6
+Layer = 2
+DisplayName = "Cetitos-Avixnum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("2_nhhr3"), ExtResource("1_f2aif"), ExtResource("3_2agky"), ExtResource("4_tbwl8")]

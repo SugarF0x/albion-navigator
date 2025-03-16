@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://mnp4jlcy8mgh"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_anbvc"]
+
+[resource]
+script = ExtResource("1_anbvc")
+Id = 94
+Type = 2
+Layer = 0
+DisplayName = "Redlake"
+Position = Vector2(153.34, 318.19)
+Connections = [98, 93, 84]
+Components = []

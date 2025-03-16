@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c6ngw0nvosg3w"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_iocqj"]
+
+[resource]
+script = ExtResource("1_iocqj")
+Id = 136
+Type = 5
+Layer = 0
+DisplayName = "Watchwood Bluffs"
+Position = Vector2(161.22, -34.08)
+Connections = [121, 117, 66, 229]
+Components = []

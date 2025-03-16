@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b0368w1dbqpnw"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_f222k"]
+
+[resource]
+script = ExtResource("1_f222k")
+Id = 101
+Type = 2
+Layer = 0
+DisplayName = "Ferndell"
+Position = Vector2(118.74, 321.36)
+Connections = [92, 170, 83]
+Components = []

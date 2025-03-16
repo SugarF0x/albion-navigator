@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://bpdsahhonyv88"]
+
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="1_vs6no"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="2_kxekx"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="3_2wrbe"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="4_lfilj"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="5_tue4r"]
+[ext_resource type="Resource" uid="uid://c45q732g6bu7e" path="res://Resources/ZoneComponents/31.tres" id="6_7yrc7"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_a10b5"]
+
+[resource]
+script = ExtResource("7_a10b5")
+Id = 772
+Type = 6
+Layer = 3
+DisplayName = "Tonitos-Uxavrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_vs6no"), ExtResource("2_kxekx"), ExtResource("3_2wrbe"), ExtResource("4_lfilj"), ExtResource("5_tue4r"), ExtResource("5_tue4r"), ExtResource("5_tue4r"), ExtResource("5_tue4r"), ExtResource("6_7yrc7")]

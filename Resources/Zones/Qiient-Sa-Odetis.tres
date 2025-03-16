@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://4dlyw6lerwxp"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_b4lni"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="2_ugy1t"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_0ovrc"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="4_rtmd2"]
+
+[resource]
+script = ExtResource("4_rtmd2")
+Id = 634
+Type = 6
+Layer = 11
+DisplayName = "Qiient-Sa-Odetis"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_b4lni"), ExtResource("1_b4lni"), ExtResource("1_b4lni"), ExtResource("1_b4lni"), ExtResource("1_b4lni"), ExtResource("2_ugy1t"), ExtResource("3_0ovrc")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://er3me5t4vobl"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_jcpba"]
+
+[resource]
+script = ExtResource("1_jcpba")
+Id = 350
+Type = 3
+Layer = 0
+DisplayName = "Cairn Drain"
+Position = Vector2(88.36, 251.79)
+Connections = [108, 341, 107]
+Components = []

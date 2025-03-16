@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://col0ir35ion1j"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_paukt"]
+
+[resource]
+script = ExtResource("1_paukt")
+Id = 191
+Type = 1
+Layer = 0
+DisplayName = "Bridgewatch Portal"
+Position = Vector2(-75.26, 32.88)
+Connections = [212, 209, 211, 210, 208, 166]
+Components = []

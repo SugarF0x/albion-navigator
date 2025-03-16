@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://c8ctj7kt80vbf"]
+
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="1_usq2x"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_ssl1x"]
+[ext_resource type="Resource" uid="uid://dr6x7iyljtvpw" path="res://Resources/ZoneComponents/19.tres" id="3_xx4es"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_8xn66"]
+[ext_resource type="Resource" uid="uid://b0kjpg7mudubo" path="res://Resources/ZoneComponents/21.tres" id="5_gj2mp"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_qtj3g"]
+
+[resource]
+script = ExtResource("6_qtj3g")
+Id = 758
+Type = 6
+Layer = 4
+DisplayName = "Tasos-Iriglos"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_usq2x"), ExtResource("2_ssl1x"), ExtResource("2_ssl1x"), ExtResource("2_ssl1x"), ExtResource("2_ssl1x"), ExtResource("3_xx4es"), ExtResource("2_ssl1x"), ExtResource("4_8xn66"), ExtResource("5_gj2mp")]

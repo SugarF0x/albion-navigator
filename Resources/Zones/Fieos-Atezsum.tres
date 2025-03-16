@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://gltm5ejswo88"]
+
+[ext_resource type="Resource" uid="uid://ben716iq4bbun" path="res://Resources/ZoneComponents/03.tres" id="1_0mdne"]
+[ext_resource type="Resource" uid="uid://bg8yfnikyio2f" path="res://Resources/ZoneComponents/01.tres" id="2_jyg6j"]
+[ext_resource type="Resource" uid="uid://crsexflfmx47n" path="res://Resources/ZoneComponents/14.tres" id="3_fctm4"]
+[ext_resource type="Resource" uid="uid://cmpl0ujekcgkr" path="res://Resources/ZoneComponents/05.tres" id="4_1l7a3"]
+[ext_resource type="Resource" uid="uid://bl5n0dlv8rmok" path="res://Resources/ZoneComponents/06.tres" id="5_kjgql"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_v5k3r"]
+
+[resource]
+script = ExtResource("6_v5k3r")
+Id = 475
+Type = 6
+Layer = 6
+DisplayName = "Fieos-Atezsum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_0mdne"), ExtResource("2_jyg6j"), ExtResource("3_fctm4"), ExtResource("4_1l7a3"), ExtResource("5_kjgql"), ExtResource("2_jyg6j")]

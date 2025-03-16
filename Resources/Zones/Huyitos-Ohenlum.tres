@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cv635tcr4l0d7"]
+
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="1_1ka56"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="2_0n6ym"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="3_52jsr"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="4_e8wlp"]
+[ext_resource type="Resource" uid="uid://dpdqyv2752h5k" path="res://Resources/ZoneComponents/23.tres" id="5_4hkvh"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_j7f8j"]
+
+[resource]
+script = ExtResource("6_j7f8j")
+Id = 545
+Type = 6
+Layer = 9
+DisplayName = "Huyitos-Ohenlum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_1ka56"), ExtResource("2_0n6ym"), ExtResource("3_52jsr"), ExtResource("2_0n6ym"), ExtResource("4_e8wlp"), ExtResource("5_4hkvh"), ExtResource("2_0n6ym")]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://d3sxh38kpoeqj"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_gphh0"]
+
+[resource]
+script = ExtResource("1_gphh0")
+Id = 82
+Type = 5
+Layer = 0
+DisplayName = "Deathreach Priory"
+Position = Vector2(-136.05, -78.21)
+Connections = [287, 322, 75]
+Components = []

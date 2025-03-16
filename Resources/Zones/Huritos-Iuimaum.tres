@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://r14pnf7jrsko"]
+
+[ext_resource type="Resource" uid="uid://dgqax2vp10k0i" path="res://Resources/ZoneComponents/28.tres" id="1_b4vuh"]
+[ext_resource type="Resource" uid="uid://bdke46l0mhll3" path="res://Resources/ZoneComponents/20.tres" id="2_au4x0"]
+[ext_resource type="Resource" uid="uid://82glpmk5wspj" path="res://Resources/ZoneComponents/18.tres" id="3_hrxfm"]
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="4_aguea"]
+[ext_resource type="Resource" uid="uid://bluvnxfegpi53" path="res://Resources/ZoneComponents/26.tres" id="5_i62xa"]
+[ext_resource type="Resource" uid="uid://b1f30214q7y7q" path="res://Resources/ZoneComponents/30.tres" id="6_6ox5t"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="7_wxfsj"]
+
+[resource]
+script = ExtResource("7_wxfsj")
+Id = 540
+Type = 6
+Layer = 3
+DisplayName = "Huritos-Iuimaum"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_b4vuh"), ExtResource("2_au4x0"), ExtResource("3_hrxfm"), ExtResource("4_aguea"), ExtResource("5_i62xa"), ExtResource("4_aguea"), ExtResource("4_aguea"), ExtResource("4_aguea"), ExtResource("4_aguea"), ExtResource("6_6ox5t"), ExtResource("5_i62xa")]

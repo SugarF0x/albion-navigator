@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://ckyxr3mlqmg15"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_n4qjn"]
+
+[resource]
+script = ExtResource("1_n4qjn")
+Id = 170
+Type = 2
+Layer = 0
+DisplayName = "Cracked Earth"
+Position = Vector2(131.51, 345.57)
+Connections = [98, 101, 184, 84]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://beipyhpghiwyr"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_eeji5"]
+
+[resource]
+script = ExtResource("1_eeji5")
+Id = 354
+Type = 4
+Layer = 0
+DisplayName = "Creag Meagir"
+Position = Vector2(41.97, 245.85)
+Connections = [347, 355, 25]
+Components = []

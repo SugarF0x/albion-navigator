@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://m2mrpjvg1f35"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_hrw7q"]
+
+[resource]
+script = ExtResource("1_hrw7q")
+Id = 185
+Type = 2
+Layer = 0
+DisplayName = "Sandgust Cleft"
+Position = Vector2(52.42, 404.73)
+Connections = [175, 174, 181]
+Components = []

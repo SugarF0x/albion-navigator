@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://cxk1kxsgui0sk"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5fc8i"]
+
+[resource]
+script = ExtResource("1_5fc8i")
+Id = 291
+Type = 5
+Layer = 0
+DisplayName = "Windgrass Gully"
+Position = Vector2(-237.23, -152.1)
+Connections = [389, 275, 305]
+Components = []

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://b3gh6huuf3xfg"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_bp7t5"]
+
+[resource]
+script = ExtResource("1_bp7t5")
+Id = 281
+Type = 5
+Layer = 0
+DisplayName = "Razorrock Valley"
+Position = Vector2(-89.02, -123.25)
+Connections = [246, 314, 316, 303]
+Components = []

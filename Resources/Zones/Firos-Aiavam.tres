@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://ba0g6lygig6sg"]
+
+[ext_resource type="Resource" uid="uid://xx6i2ri5diwe" path="res://Resources/ZoneComponents/15.tres" id="1_4sjx4"]
+[ext_resource type="Resource" uid="uid://boxxg83hx5t6c" path="res://Resources/ZoneComponents/27.tres" id="2_1g7be"]
+[ext_resource type="Resource" uid="uid://csjxgciom1o2v" path="res://Resources/ZoneComponents/16.tres" id="3_jk0mr"]
+[ext_resource type="Resource" uid="uid://dnthr868ninua" path="res://Resources/ZoneComponents/32.tres" id="4_qf22u"]
+[ext_resource type="Resource" uid="uid://owlj1tfctd60" path="res://Resources/ZoneComponents/25.tres" id="5_ts277"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_4d3cx"]
+
+[resource]
+script = ExtResource("6_4d3cx")
+Id = 481
+Type = 6
+Layer = 5
+DisplayName = "Firos-Aiavam"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("2_1g7be"), ExtResource("3_jk0mr"), ExtResource("4_qf22u"), ExtResource("5_ts277")]

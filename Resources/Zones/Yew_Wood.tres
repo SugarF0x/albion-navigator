@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://jsoiqnsh2i82"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_5egs6"]
+
+[resource]
+script = ExtResource("1_5egs6")
+Id = 97
+Type = 3
+Layer = 0
+DisplayName = "Yew Wood"
+Position = Vector2(108.75, 289.49)
+Connections = [83, 105, 100]
+Components = []

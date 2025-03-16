@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dne8cxtx3wq86"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_nn8he"]
+
+[resource]
+script = ExtResource("1_nn8he")
+Id = 374
+Type = 5
+Layer = 0
+DisplayName = "Frostseep Ravine"
+Position = Vector2(-148.14, -260.29)
+Connections = [43, 401, 71]
+Components = []

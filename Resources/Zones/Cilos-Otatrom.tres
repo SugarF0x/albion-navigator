@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cm56wve2cerxd"]
+
+[ext_resource type="Resource" uid="uid://b14ay1ugdh6ei" path="res://Resources/ZoneComponents/48.tres" id="1_oqg7v"]
+[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_s4cw3"]
+[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="3_8omdn"]
+[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="4_00ymc"]
+[ext_resource type="Resource" uid="uid://bx3sdbpuyr6bq" path="res://Resources/ZoneComponents/47.tres" id="5_gy5ne"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_elmny"]
+
+[resource]
+script = ExtResource("6_elmny")
+Id = 440
+Type = 6
+Layer = 10
+DisplayName = "Cilos-Otatrom"
+Position = Vector2(0, 0)
+Connections = []
+Components = [ExtResource("1_oqg7v"), ExtResource("1_oqg7v"), ExtResource("2_s4cw3"), ExtResource("3_8omdn"), ExtResource("2_s4cw3"), ExtResource("2_s4cw3"), ExtResource("2_s4cw3"), ExtResource("2_s4cw3"), ExtResource("4_00ymc"), ExtResource("2_s4cw3"), ExtResource("5_gy5ne")]

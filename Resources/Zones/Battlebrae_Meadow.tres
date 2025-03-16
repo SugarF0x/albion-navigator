@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://fq8tbcneqhsu"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_dln3a"]
+
+[resource]
+script = ExtResource("1_dln3a")
+Id = 320
+Type = 5
+Layer = 0
+DisplayName = "Battlebrae Meadow"
+Position = Vector2(-107.48, -75.29)
+Connections = [287, 283, 357]
+Components = []

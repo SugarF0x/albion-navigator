@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://n2c6wdrm23d1"]
+
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_tegxl"]
+
+[resource]
+script = ExtResource("1_tegxl")
+Id = 173
+Type = 4
+Layer = 0
+DisplayName = "Shiftshadow Expanse"
+Position = Vector2(9.33, 328.66)
+Connections = [168, 187, 272, 172]
+Components = []

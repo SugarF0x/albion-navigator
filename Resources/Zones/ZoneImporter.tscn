@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2cs1l8q266ir"]
+
+[ext_resource type="Script" uid="uid://7jspv6kqgpcs" path="res://Resources/Zones/ZoneImporter.gd" id="1_slxro"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="2_71ngw"]
+
+[node name="ZoneImporter" type="Node"]
+script = ExtResource("1_slxro")
+resource = ExtResource("2_71ngw")
