@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://blqqj2y3ldns0"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_kya26"]
+
+[resource]
+script = ExtResource("1_kya26")
+Id = 8
+Type = 2
+DisplayName = "RockWood"
+Tier = 6
+Properties = [0, 11, 12]

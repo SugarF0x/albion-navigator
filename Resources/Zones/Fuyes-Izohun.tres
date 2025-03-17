@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://yjaeqh4hwkcf"]
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://momw0xdt02d7"]
 
-[ext_resource type="Resource" uid="uid://xrl6i8ebrwgv" path="res://Resources/ZoneComponents/40.tres" id="1_p18fv"]
-[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_t4yf2"]
-[ext_resource type="Resource" uid="uid://c1snwiqu7084i" path="res://Resources/ZoneComponents/35.tres" id="3_bcvlt"]
-[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="4_aupp0"]
-[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="5_t5iy1"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="6_ds4kh"]
+[ext_resource type="Resource" uid="uid://cb4tkk8p074af" path="res://Resources/ZoneComponents/8-Dungeon_Heretic.tres" id="1_p18fv"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_t4yf2"]
+[ext_resource type="Resource" uid="uid://3uwnbeu6utyk" path="res://Resources/ZoneComponents/8-Chest_Big-Blue.tres" id="3_bcvlt"]
+[ext_resource type="Resource" uid="uid://deydvqrt540uh" path="res://Resources/ZoneComponents/8-Dungeon_Keeper.tres" id="4_aupp0"]
+[ext_resource type="Resource" uid="uid://dev5laqiy32pf" path="res://Resources/ZoneComponents/8-Dungeon_Morgana.tres" id="5_t5iy1"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="6_ds4kh"]
 
 [resource]
 script = ExtResource("6_ds4kh")

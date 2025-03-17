@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://qi7uae37i62b"]
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://hfr1gvx7ab7v"]
 
-[ext_resource type="Resource" uid="uid://c5rc7mqwd224n" path="res://Resources/ZoneComponents/42.tres" id="1_rkywo"]
-[ext_resource type="Resource" uid="uid://c1snwiqu7084i" path="res://Resources/ZoneComponents/35.tres" id="2_yowe4"]
-[ext_resource type="Resource" uid="uid://04kfeff4borq" path="res://Resources/ZoneComponents/43.tres" id="3_pn1d6"]
-[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="4_36jr7"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_8itg7"]
+[ext_resource type="Resource" uid="uid://dev5laqiy32pf" path="res://Resources/ZoneComponents/8-Dungeon_Morgana.tres" id="1_rkywo"]
+[ext_resource type="Resource" uid="uid://3uwnbeu6utyk" path="res://Resources/ZoneComponents/8-Chest_Big-Blue.tres" id="2_yowe4"]
+[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="3_pn1d6"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="4_36jr7"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="5_8itg7"]
 
 [resource]
 script = ExtResource("5_8itg7")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://ff2fra1ubx0h"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_ymuqq"]
+
+[resource]
+script = ExtResource("1_ymuqq")
+Id = 45
+Type = 2
+DisplayName = "OreRock"
+Tier = 8
+Properties = [1, 10, 11]

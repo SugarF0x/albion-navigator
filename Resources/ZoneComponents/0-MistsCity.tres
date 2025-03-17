@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://d14liwr3l681f"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_3ixjy"]
+
+[resource]
+script = ExtResource("1_3ixjy")
+Id = 40
+Type = 3
+DisplayName = "Mistscity"
+Tier = 0
+Properties = []

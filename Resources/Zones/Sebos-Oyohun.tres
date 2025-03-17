@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://d4ky7h7dtfvxq"]
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://58mkglesna51"]
 
-[ext_resource type="Resource" uid="uid://b3lqylkiunb8e" path="res://Resources/ZoneComponents/37.tres" id="1_l6kev"]
-[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_wdu0s"]
-[ext_resource type="Resource" uid="uid://cr2820hiturk3" path="res://Resources/ZoneComponents/50.tres" id="3_lfdbm"]
-[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="4_frpop"]
-[ext_resource type="Resource" uid="uid://bg8umj7mw6iyw" path="res://Resources/ZoneComponents/53.tres" id="5_5q86g"]
-[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="6_u8j88"]
-[ext_resource type="Resource" uid="uid://bp3m7rd12e6sq" path="res://Resources/ZoneComponents/41.tres" id="7_xfra4"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="8_jxm4r"]
+[ext_resource type="Resource" uid="uid://ccwvqc6io06mg" path="res://Resources/ZoneComponents/8-Chest_Small-Gold.tres" id="1_l6kev"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_wdu0s"]
+[ext_resource type="Resource" uid="uid://cuj1vfhvk7uss" path="res://Resources/ZoneComponents/8-Gather_Small-Hide-Ore.tres" id="3_lfdbm"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="4_frpop"]
+[ext_resource type="Resource" uid="uid://b7gs3a3avi86" path="res://Resources/ZoneComponents/8-Gather_Small-Wood-Fiber.tres" id="5_5q86g"]
+[ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="6_u8j88"]
+[ext_resource type="Resource" uid="uid://deydvqrt540uh" path="res://Resources/ZoneComponents/8-Dungeon_Keeper.tres" id="7_xfra4"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="8_jxm4r"]
 
 [resource]
 script = ExtResource("8_jxm4r")

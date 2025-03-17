@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dj2w402v8kicw"]
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://dvvl4oujrpqku"]
 
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="1_4q0oo"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="1_4q0oo"]
 
 [resource]
 script = ExtResource("1_4q0oo")

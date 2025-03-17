@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://c1rcol5v24ky8"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_iud72"]
+
+[resource]
+script = ExtResource("1_iud72")
+Id = 20
+Type = 2
+DisplayName = "HideOre"
+Tier = 7
+Properties = [0, 14, 10]

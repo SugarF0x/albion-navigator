@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ZoneComponent" load_steps=2 format=3 uid="uid://cntsl3xwhc2d2"]
+
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_85ppe"]
+
+[resource]
+script = ExtResource("1_85ppe")
+Id = 32
+Type = 1
+DisplayName = "Chest"
+Tier = 6
+Properties = [0, 9]

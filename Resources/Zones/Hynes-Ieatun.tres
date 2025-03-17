@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://nhvawfk5i8b1"]
+[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://2v7wngch53gh"]
 
-[ext_resource type="Resource" uid="uid://du3xcdoq7cke" path="res://Resources/ZoneComponents/38.tres" id="1_a767k"]
-[ext_resource type="Resource" uid="uid://dg4lmo6er7kbn" path="res://Resources/ZoneComponents/34.tres" id="2_nq457"]
-[ext_resource type="Resource" uid="uid://bq7rs4g2nrngs" path="res://Resources/ZoneComponents/39.tres" id="3_4aeff"]
-[ext_resource type="Resource" uid="uid://b112dw6dvsyu1" path="res://Resources/ZoneComponents/36.tres" id="4_vok08"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zones/ZoneResource.cs" id="5_27mlm"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="1_a767k"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_nq457"]
+[ext_resource type="Resource" uid="uid://c463ckdcpybac" path="res://Resources/ZoneComponents/8-Dungeon_Avalonian.tres" id="3_4aeff"]
+[ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="4_vok08"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="5_27mlm"]
 
 [resource]
 script = ExtResource("5_27mlm")
