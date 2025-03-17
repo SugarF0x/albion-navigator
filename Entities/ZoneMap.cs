@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlbionNavigator.Data;
 using AlbionNavigator.Graph;
 using Godot;
+using GodotResourceGroups;
 
 namespace AlbionNavigator.Entities;
 
@@ -13,7 +13,8 @@ public partial class ZoneMap : ForceDirectedGraph
     [ExportGroup("Entities")] 
     [Export] public PackedScene NodeScene;
     [Export] public PackedScene LinkScene;
-
+    
+    private ResourceGroup ZoneGroup;
     private AudioPlayer AudioServer;
     
     public override void _Ready()
@@ -22,6 +23,7 @@ public partial class ZoneMap : ForceDirectedGraph
         if (LinkScene?.Instantiate() is not ZoneLink) throw new InvalidCastException("LinkScene is not a ZoneLink");
         
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
+        ZoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");
         
         PopulateZones();
         base._Ready();
@@ -37,10 +39,14 @@ public partial class ZoneMap : ForceDirectedGraph
         AddLink(link);
         AudioServer.Play(AudioPlayer.SoundId.PortalOpen);
     }
+    
+    // TODO: i really need to rethink the approach to ZoneNode; since data is now stored in resources they dont need most of that data
 
     private void PopulateZones()
     {
-        var zones = Zone.LoadZoneBinaries();
+
+        var zones = ZoneGroup.LoadAll().Cast<Zone>().ToArray();
+        Array.Sort(zones, (a, b) => a.Id - b.Id);
 
         for (var i = 0; i < zones.Length; i++)
         {
@@ -51,12 +57,12 @@ public partial class ZoneMap : ForceDirectedGraph
             node.Index = zone.Id;
             node.Connections = zone.Connections.ToList();
             if (node.Position != Vector2.Zero) node.Frozen = true;
-
+        
             node.Type = zone.Type;
             node.DisplayName = zone.DisplayName;
             
             AddNode(node);
-
+        
             foreach (var connection in zone.Connections.Where(index => index > i))
             {
                 if (LinkScene.Instantiate() is not ForceGraphLink link) continue;

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using AlbionNavigator.Data;
 using AlbionNavigator.Graph;
 using Godot;
 
@@ -53,7 +52,8 @@ public partial class ZoneNode : ForceGraphNode
 		{ Zone.ZoneType.Yellow, Colors.Yellow },
 		{ Zone.ZoneType.Red, Colors.Red },
 		{ Zone.ZoneType.Black, Colors.Black },
-		{ Zone.ZoneType.Road, Colors.White }
+		{ Zone.ZoneType.Road, Colors.White },
+		{ Zone.ZoneType.OutlandCity, Colors.Orange },
 	};
 
 	public override void _Ready()

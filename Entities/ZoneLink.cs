@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using AlbionNavigator.Data;
 using AlbionNavigator.Graph;
 using Godot;
 
