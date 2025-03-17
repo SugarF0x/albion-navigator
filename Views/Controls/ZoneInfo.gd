@@ -1,0 +1,37 @@
+extends TabBar
+
+@onready var zone_line: AutoCompleteLineEdit = %ZoneLine
+@onready var search_button: Button = %SearchButton
+@onready var id_label: Label = %IdLabel
+@onready var type_label: Label = %TypeLabel
+@onready var layer_label: Label = %LayerLabel
+@onready var display_name_label: Label = %DisplayNameLabel
+@onready var connections_label: Label = %ConnectionsLabel
+@onready var components_container: VBoxContainer = %ComponentsContainer
+
+var zone_group := preload('res://Resources/ZoneGroup.tres')
+var zones: Array[Zone] = []
+var zone_names: Array[String] = []
+
+func _ready() -> void:
+	for zone in zone_group.load_all():
+		zones.append(zone as Zone)
+		zone_names.append(zone.DisplayName)
+	
+	zone_line.options = zone_names
+	search_button.pressed.connect(on_search)
+
+func on_search() -> void:
+	var search_value := zone_line.get_value()
+	if not search_value.is_empty(): show_zone_details(search_value)
+
+func show_zone_details(zone_name: String) -> void:
+	var zone_index := zone_names.find(zone_name)
+	if zone_index < 0: return
+	
+	var zone := zones[zone_index]
+	id_label.text = "Id: {id}".format({ "id": zone.Id })
+	type_label.text = "Type: {type}".format({ "type": zone.Type })
+	layer_label.text = "Layer: {layer}".format({ "layer": zone.Layer })
+	display_name_label.text = "Display Name: {display_name}".format({ "display_name": zone.DisplayName })
+	connections_label.text = "Connections: {connections}".format({ "connections": ", ".join(zone.Connections) })
