@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="4_bhi7r"]
 [ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="5_n1rmu"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="6_iexa5"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="7_xk412"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_xk412"]
 
 [resource]
 script = ExtResource("7_xk412")

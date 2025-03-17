@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="2_wpi0q"]
 [ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="3_7b6ei"]
 [ext_resource type="Resource" uid="uid://dk2hn15lemyxo" path="res://Resources/ZoneComponents/7-Gather_Big-Hide-Ore.tres" id="4_2d83o"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="5_dauyc"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_dauyc"]
 
 [resource]
 script = ExtResource("5_dauyc")

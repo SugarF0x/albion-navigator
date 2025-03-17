@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://dk2hn15lemyxo" path="res://Resources/ZoneComponents/7-Gather_Big-Hide-Ore.tres" id="1_xj3a6"]
 [ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="2_u5yvs"]
 [ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="3_eapgc"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="4_vm0jn"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_vm0jn"]
 
 [resource]
 script = ExtResource("4_vm0jn")

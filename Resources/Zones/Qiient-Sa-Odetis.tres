@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_b4lni"]
 [ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="2_ugy1t"]
 [ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="3_0ovrc"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="4_rtmd2"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_rtmd2"]
 
 [resource]
 script = ExtResource("4_rtmd2")

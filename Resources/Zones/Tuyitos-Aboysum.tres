@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://d0ugldaulij7k" path="res://Resources/ZoneComponents/8-Gather_Small-Ore-Stone.tres" id="4_cgwxq"]
 [ext_resource type="Resource" uid="uid://cj3rqm1lyv2ms" path="res://Resources/ZoneComponents/8-Gather_Big-Stone-Wood.tres" id="5_5h68y"]
 [ext_resource type="Resource" uid="uid://c83kowwpee5fa" path="res://Resources/ZoneComponents/8-Gather_Small-Stone-Wood.tres" id="6_5m3gf"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="7_6jw77"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_6jw77"]
 
 [resource]
 script = ExtResource("7_6jw77")

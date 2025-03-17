@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="3_j3yml"]
 [ext_resource type="Resource" uid="uid://cb4tkk8p074af" path="res://Resources/ZoneComponents/8-Dungeon_Heretic.tres" id="4_fsf5o"]
 [ext_resource type="Resource" uid="uid://cj3rqm1lyv2ms" path="res://Resources/ZoneComponents/8-Gather_Big-Stone-Wood.tres" id="5_kcufn"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="6_5mds6"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_5mds6"]
 
 [resource]
 script = ExtResource("6_5mds6")

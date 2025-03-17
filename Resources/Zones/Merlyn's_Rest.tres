@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=2 format=3 uid="uid://c62smbapvw5m4"]
+[gd_resource type="Resource" script_class="Zone" load_steps=3 format=3 uid="uid://c62smbapvw5m4"]
 
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="1_loh3p"]
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_f3ycc"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="1_loh3p"]
 
 [resource]
 script = ExtResource("1_loh3p")
 Id = 86
-Type = 1
+Type = 7
 Layer = 0
 DisplayName = "Merlyn's Rest"
 Position = Vector2(119.23, -95.41)
-Connections = [150, 116, 134]
-Components = []
+Connections = Array[int]([150, 116, 134])
+Components = Array[ExtResource("1_f3ycc")]([])

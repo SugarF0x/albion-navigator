@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://3uwnbeu6utyk" path="res://Resources/ZoneComponents/8-Chest_Big-Blue.tres" id="2_x6f03"]
 [ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="3_gaeq0"]
 [ext_resource type="Resource" uid="uid://ccwvqc6io06mg" path="res://Resources/ZoneComponents/8-Chest_Small-Gold.tres" id="4_jbj1s"]
-[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/ZoneResource.cs" id="5_u3ext"]
+[ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_u3ext"]
 
 [resource]
 script = ExtResource("5_u3ext")
