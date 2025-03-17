@@ -1,8 +1,7 @@
 using Godot;
-using System;
 
 [GlobalClass]
-public partial class ZoneResource : Resource
+public partial class Zone : Resource
 {
     public enum ZoneType
     {

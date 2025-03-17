@@ -7,7 +7,7 @@ const ZONE_COMPONENTS_GROUP = preload("res://Resources/ZoneComponentsGroup.tres"
 @export_tool_button('Reimport') var reimport := reimport_data
 
 func reimport_data() -> void:
-	if resource.new() is not ZoneResource: return
+	if resource.new() is not Zone: return
 	
 	var save_path := "res://Resources/Zones/"
 	var data_file := FileAccess.open("res://Resources/zoneData.json", FileAccess.READ)
@@ -20,7 +20,7 @@ func reimport_data() -> void:
 	var components_resource_map := ZONE_COMPONENTS_GROUP.load_all()
 	
 	for entry: Dictionary in json_data:
-		var res: ZoneResource = resource.new()
+		var res: Zone = resource.new()
 		
 		res.Id = int(entry["id"])
 		res.Type = int(entry["type"])
