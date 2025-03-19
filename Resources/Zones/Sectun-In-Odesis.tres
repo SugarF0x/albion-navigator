@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://dw2v2iyh2r227"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://dw2v2iyh2r227"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_vmpl8"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_vmpl8"]
 [ext_resource type="Resource" uid="uid://c1rcol5v24ky8" path="res://Resources/ZoneComponents/7-Gather_Small-Hide-Ore.tres" id="2_gosya"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="3_jpxr3"]
-[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="4_n8m0x"]
+[ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="2_jpxr3"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_n8m0x"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_2bdxa"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 12
 DisplayName = "Sectun-In-Odesis"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_vmpl8"), ExtResource("2_gosya"), ExtResource("3_jpxr3"), ExtResource("4_n8m0x")]
+Components = [ExtResource("1_vmpl8"), ExtResource("2_jpxr3"), ExtResource("3_n8m0x"), ExtResource("2_gosya")]

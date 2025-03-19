@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://m4gj8msemn12"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://m4gj8msemn12"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_0fmt6"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_lkxu8"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_0fmt6"]
-[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="3_e7rr1"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_e7rr1"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_w1r2x"]
 
 [resource]
@@ -13,4 +13,4 @@ Layer = 1
 DisplayName = "Coues-Exakrom"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_lkxu8"), ExtResource("1_lkxu8"), ExtResource("1_lkxu8"), ExtResource("1_lkxu8"), ExtResource("1_lkxu8"), ExtResource("1_lkxu8"), ExtResource("2_0fmt6"), ExtResource("1_lkxu8"), ExtResource("3_e7rr1"), ExtResource("1_lkxu8")]
+Components = [ExtResource("1_0fmt6"), ExtResource("1_0fmt6"), ExtResource("1_0fmt6"), ExtResource("1_0fmt6"), ExtResource("1_0fmt6"), ExtResource("1_0fmt6"), ExtResource("1_lkxu8"), ExtResource("1_0fmt6"), ExtResource("3_e7rr1"), ExtResource("1_0fmt6")]

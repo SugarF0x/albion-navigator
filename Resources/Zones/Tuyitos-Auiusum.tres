@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dc5nfeh671ipc"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://dc5nfeh671ipc"]
 
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="1_ak1xh"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_0u54j"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="1_ak1xh"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="3_0u54j"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="3_gq635"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="4_b7mtl"]
-[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="5_waqqh"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="4_gq635"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="5_b7mtl"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_m3nsj"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 1
 DisplayName = "Tuyitos-Auiusum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_ak1xh"), ExtResource("2_0u54j"), ExtResource("3_gq635"), ExtResource("3_gq635"), ExtResource("4_b7mtl"), ExtResource("5_waqqh")]
+Components = [ExtResource("1_ak1xh"), ExtResource("3_gq635"), ExtResource("3_0u54j"), ExtResource("3_0u54j"), ExtResource("4_gq635"), ExtResource("5_b7mtl")]

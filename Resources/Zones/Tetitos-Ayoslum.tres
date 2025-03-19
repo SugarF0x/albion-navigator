@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cyi6n7th26non"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://cyi6n7th26non"]
 
-[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="1_euh5s"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="1_euh5s"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="2_0ex4u"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="3_u1twy"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="4_60x7x"]
-[ext_resource type="Resource" uid="uid://dbjtwkl4cmdwb" path="res://Resources/ZoneComponents/7-Gather_Small-Stone-Wood.tres" id="5_u572t"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_u1twy"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="4_60x7x"]
+[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="5_u572t"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_d3my5"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Tetitos-Ayoslum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_euh5s"), ExtResource("2_0ex4u"), ExtResource("3_u1twy"), ExtResource("2_0ex4u"), ExtResource("4_60x7x"), ExtResource("5_u572t"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u"), ExtResource("2_0ex4u")]
+Components = [ExtResource("1_euh5s"), ExtResource("2_u1twy"), ExtResource("2_0ex4u"), ExtResource("2_u1twy"), ExtResource("4_60x7x"), ExtResource("5_u572t"), ExtResource("2_u1twy"), ExtResource("2_u1twy"), ExtResource("2_u1twy"), ExtResource("2_u1twy")]

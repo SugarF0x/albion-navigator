@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bogb2mk4wil76"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bogb2mk4wil76"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_73ve0"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_p4iqh"]
-[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="2_73ve0"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="3_lr604"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="4_dpitg"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="5_lhg3c"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="2_lr604"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="3_dpitg"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="4_lhg3c"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_t3mfr"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 1
 DisplayName = "Xuyitos-Aioblos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_p4iqh"), ExtResource("2_73ve0"), ExtResource("3_lr604"), ExtResource("4_dpitg"), ExtResource("1_p4iqh"), ExtResource("3_lr604"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("1_p4iqh"), ExtResource("5_lhg3c")]
+Components = [ExtResource("1_73ve0"), ExtResource("2_lr604"), ExtResource("3_dpitg"), ExtResource("4_lhg3c"), ExtResource("1_73ve0"), ExtResource("3_dpitg"), ExtResource("1_73ve0"), ExtResource("1_73ve0"), ExtResource("1_73ve0"), ExtResource("1_73ve0"), ExtResource("1_p4iqh")]

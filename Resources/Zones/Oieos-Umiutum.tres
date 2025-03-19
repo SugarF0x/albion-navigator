@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bldrmycduoyd4"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bldrmycduoyd4"]
 
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="1_biuaw"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="1_biuaw"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_28mw0"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="3_qb5od"]
-[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="4_1rega"]
-[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="5_lded6"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_qb5od"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="3_1rega"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="5_lded6"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_7ono0"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 1
 DisplayName = "Oieos-Umiutum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_biuaw"), ExtResource("2_28mw0"), ExtResource("3_qb5od"), ExtResource("4_1rega"), ExtResource("4_1rega"), ExtResource("5_lded6"), ExtResource("4_1rega")]
+Components = [ExtResource("1_biuaw"), ExtResource("2_qb5od"), ExtResource("3_1rega"), ExtResource("2_28mw0"), ExtResource("2_28mw0"), ExtResource("5_lded6"), ExtResource("2_28mw0")]

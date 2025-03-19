@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://hck1pypfijfh"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://hck1pypfijfh"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_axpqo"]
-[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="2_mj8xj"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="3_rufqs"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_axpqo"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_mj8xj"]
 [ext_resource type="Resource" uid="uid://dpa6faprq3h8l" path="res://Resources/ZoneComponents/7-Gather_Big-Wood-Fiber.tres" id="4_rq3r1"]
+[ext_resource type="Resource" uid="uid://dlcakkekn13n8" path="res://Resources/ZoneComponents/7-Gather_Small-Fiber-Hide.tres" id="4_rufqs"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_cybx7"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 12
 DisplayName = "Quatun-Et-Odetum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_axpqo"), ExtResource("2_mj8xj"), ExtResource("3_rufqs"), ExtResource("4_rq3r1")]
+Components = [ExtResource("1_axpqo"), ExtResource("4_rq3r1"), ExtResource("3_mj8xj"), ExtResource("4_rufqs")]

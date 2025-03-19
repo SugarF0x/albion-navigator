@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://dsm15qq0401ne"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://dsm15qq0401ne"]
 
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="1_k6rtw"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_mbcet"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="2_k6rtw"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="3_jgk0f"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="4_qiyu1"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="2_jgk0f"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="4_qiyu1"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="5_ne8me"]
-[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="6_nj5gv"]
+[ext_resource type="Resource" uid="uid://bbc26ytiicdtq" path="res://Resources/ZoneComponents/6-Gather_Big-Ore-Stone.tres" id="6_ne8me"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="7_brsrj"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_wiml7"]
 
@@ -17,4 +17,4 @@ Layer = 6
 DisplayName = "Hieos-Aiigaum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_mbcet"), ExtResource("2_k6rtw"), ExtResource("3_jgk0f"), ExtResource("4_qiyu1"), ExtResource("5_ne8me"), ExtResource("6_nj5gv"), ExtResource("7_brsrj"), ExtResource("3_jgk0f")]
+Components = [ExtResource("1_k6rtw"), ExtResource("2_jgk0f"), ExtResource("7_brsrj"), ExtResource("4_qiyu1"), ExtResource("1_mbcet"), ExtResource("6_ne8me"), ExtResource("5_ne8me"), ExtResource("7_brsrj")]

@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="Zone" load_steps=3 format=3 uid="uid://dacuvisw4cp1a"]
+[gd_resource type="Resource" script_class="Zone" load_steps=2 format=3 uid="uid://dacuvisw4cp1a"]
 
-[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="1_1d8hs"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="1_5oe0a"]
 
 [resource]
@@ -10,5 +9,5 @@ Type = 7
 Layer = 0
 DisplayName = "Arthur's Rest"
 Position = Vector2(-91.78, -65.62)
-Connections = Array[int]([319, 288, 413, 320])
-Components = Array[ExtResource("1_1d8hs")]([])
+Connections = [319, 288, 413, 320]
+Components = []

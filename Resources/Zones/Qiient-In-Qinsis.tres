@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://3601drsog2sr"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://3601drsog2sr"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_bdor1"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="2_a12k4"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_bdor1"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="2_a12k4"]
 [ext_resource type="Resource" uid="uid://c1rcol5v24ky8" path="res://Resources/ZoneComponents/7-Gather_Small-Hide-Ore.tres" id="3_grn2d"]
-[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="4_r6ngn"]
+[ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="3_r6ngn"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_g4ncw"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 11
 DisplayName = "Qiient-In-Qinsis"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_bdor1"), ExtResource("2_a12k4"), ExtResource("3_grn2d"), ExtResource("4_r6ngn")]
+Components = [ExtResource("1_bdor1"), ExtResource("2_a12k4"), ExtResource("3_r6ngn"), ExtResource("3_grn2d")]

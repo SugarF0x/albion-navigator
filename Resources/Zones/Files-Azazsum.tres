@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://xt8gbohg1snd"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://xt8gbohg1snd"]
 
-[ext_resource type="Resource" uid="uid://cb4tkk8p074af" path="res://Resources/ZoneComponents/8-Dungeon_Heretic.tres" id="1_842fu"]
-[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_wgobf"]
-[ext_resource type="Resource" uid="uid://ccwvqc6io06mg" path="res://Resources/ZoneComponents/8-Chest_Small-Gold.tres" id="3_gnb4x"]
-[ext_resource type="Resource" uid="uid://beewoe647x085" path="res://Resources/ZoneComponents/8-Gather_Big-Hide-Ore.tres" id="4_grkca"]
+[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="1_842fu"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="2_wgobf"]
+[ext_resource type="Resource" uid="uid://q4njktba4ri2" path="res://Resources/ZoneComponents/8-Gather_Small-Fiber-Hide.tres" id="3_gnb4x"]
+[ext_resource type="Resource" uid="uid://d0ugldaulij7k" path="res://Resources/ZoneComponents/8-Gather_Small-Ore-Stone.tres" id="5_grkca"]
 [ext_resource type="Resource" uid="uid://ff2fra1ubx0h" path="res://Resources/ZoneComponents/8-Gather_Big-Ore-Stone.tres" id="5_m8jqp"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_lkbj0"]
 
@@ -15,4 +15,4 @@ Layer = 10
 DisplayName = "Files-Azazsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_842fu"), ExtResource("2_wgobf"), ExtResource("3_gnb4x"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("4_grkca"), ExtResource("2_wgobf"), ExtResource("5_m8jqp")]
+Components = [ExtResource("1_842fu"), ExtResource("2_wgobf"), ExtResource("3_gnb4x"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("2_wgobf"), ExtResource("5_m8jqp"), ExtResource("2_wgobf"), ExtResource("5_grkca")]

@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://7u1phw018r0i"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://7u1phw018r0i"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_ldw0k"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_u6shy"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="3_ineqd"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_u6shy"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="4_ineqd"]
 [ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="4_vcxxd"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_m0py4"]
 
@@ -14,4 +14,4 @@ Layer = 6
 DisplayName = "Cilos-Ofailos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_ldw0k"), ExtResource("1_ldw0k"), ExtResource("2_u6shy"), ExtResource("2_u6shy"), ExtResource("1_ldw0k"), ExtResource("3_ineqd"), ExtResource("4_vcxxd")]
+Components = [ExtResource("1_u6shy"), ExtResource("1_u6shy"), ExtResource("1_ldw0k"), ExtResource("1_ldw0k"), ExtResource("1_u6shy"), ExtResource("4_vcxxd"), ExtResource("4_ineqd")]

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=10 format=3 uid="uid://bwp8ipiir3dpn"]
+[gd_resource type="Resource" script_class="Zone" load_steps=10 format=3 uid="uid://bwp8ipiir3dpn"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_7pd6o"]
-[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="2_dy6vv"]
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="3_6f6xb"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_80xiv"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_7pd6o"]
+[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="2_dy6vv"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="3_6f6xb"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="4_80xiv"]
 [ext_resource type="Resource" uid="uid://c1rcol5v24ky8" path="res://Resources/ZoneComponents/7-Gather_Small-Hide-Ore.tres" id="5_3t4vx"]
-[ext_resource type="Resource" uid="uid://dk2hn15lemyxo" path="res://Resources/ZoneComponents/7-Gather_Big-Hide-Ore.tres" id="6_6mum3"]
-[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="7_1bndy"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="6_3t4vx"]
 [ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="8_1upb3"]
+[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="8_6mum3"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="9_7uo8w"]
 
 [resource]
@@ -18,4 +18,4 @@ Layer = 3
 DisplayName = "Cieites-Ugumlos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_7pd6o"), ExtResource("2_dy6vv"), ExtResource("3_6f6xb"), ExtResource("4_80xiv"), ExtResource("5_3t4vx"), ExtResource("6_6mum3"), ExtResource("7_1bndy"), ExtResource("8_1upb3")]
+Components = [ExtResource("1_7pd6o"), ExtResource("2_dy6vv"), ExtResource("3_6f6xb"), ExtResource("4_80xiv"), ExtResource("8_1upb3"), ExtResource("6_3t4vx"), ExtResource("5_3t4vx"), ExtResource("8_6mum3")]

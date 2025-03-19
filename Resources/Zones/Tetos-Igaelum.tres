@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://borji7qxs2xpy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://borji7qxs2xpy"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_c341f"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_hca3f"]
 [ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="2_c341f"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="3_ueo0x"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_uswkd"]
-[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="5_rjuqc"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="2_ueo0x"]
+[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="5_uswkd"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_7mxdr"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 1
 DisplayName = "Tetos-Igaelum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_hca3f"), ExtResource("2_c341f"), ExtResource("3_ueo0x"), ExtResource("1_hca3f"), ExtResource("1_hca3f"), ExtResource("1_hca3f"), ExtResource("1_hca3f"), ExtResource("1_hca3f"), ExtResource("1_hca3f"), ExtResource("4_uswkd"), ExtResource("5_rjuqc")]
+Components = [ExtResource("1_c341f"), ExtResource("2_ueo0x"), ExtResource("2_c341f"), ExtResource("1_c341f"), ExtResource("1_c341f"), ExtResource("1_c341f"), ExtResource("1_c341f"), ExtResource("1_c341f"), ExtResource("1_c341f"), ExtResource("1_hca3f"), ExtResource("5_uswkd")]

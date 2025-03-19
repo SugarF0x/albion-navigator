@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bxfllgj01f85w"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bxfllgj01f85w"]
 
-[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_axhuq"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_axhuq"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_gw7qb"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_4u3fr"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="4_o2nti"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="5_uh5jx"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="3_gw7qb"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="4_4u3fr"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_o2nti"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_r2rsf"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Ponitos-Aiayrom"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_axhuq"), ExtResource("1_axhuq"), ExtResource("1_axhuq"), ExtResource("2_gw7qb"), ExtResource("3_4u3fr"), ExtResource("4_o2nti"), ExtResource("5_uh5jx"), ExtResource("1_axhuq")]
+Components = [ExtResource("2_gw7qb"), ExtResource("2_gw7qb"), ExtResource("2_gw7qb"), ExtResource("2_axhuq"), ExtResource("3_gw7qb"), ExtResource("4_4u3fr"), ExtResource("5_o2nti"), ExtResource("2_gw7qb")]

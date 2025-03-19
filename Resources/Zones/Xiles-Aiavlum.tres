@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://oh4n4vq63hao"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://oh4n4vq63hao"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_i3qtq"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_qekt7"]
-[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="2_i3qtq"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="3_lr1ep"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_1mog7"]
+[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="2_lr1ep"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="3_1mog7"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_afql3"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 6
 DisplayName = "Xiles-Aiavlum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("2_i3qtq"), ExtResource("3_lr1ep"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("1_qekt7"), ExtResource("4_1mog7")]
+Components = [ExtResource("1_i3qtq"), ExtResource("1_i3qtq"), ExtResource("2_lr1ep"), ExtResource("3_1mog7"), ExtResource("1_i3qtq"), ExtResource("1_i3qtq"), ExtResource("1_i3qtq"), ExtResource("1_i3qtq"), ExtResource("1_qekt7")]

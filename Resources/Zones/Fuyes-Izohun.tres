@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://momw0xdt02d7"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://momw0xdt02d7"]
 
-[ext_resource type="Resource" uid="uid://cb4tkk8p074af" path="res://Resources/ZoneComponents/8-Dungeon_Heretic.tres" id="1_p18fv"]
-[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_t4yf2"]
+[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="1_p18fv"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="2_t4yf2"]
 [ext_resource type="Resource" uid="uid://3uwnbeu6utyk" path="res://Resources/ZoneComponents/8-Chest_Big-Blue.tres" id="3_bcvlt"]
-[ext_resource type="Resource" uid="uid://deydvqrt540uh" path="res://Resources/ZoneComponents/8-Dungeon_Keeper.tres" id="4_aupp0"]
-[ext_resource type="Resource" uid="uid://dev5laqiy32pf" path="res://Resources/ZoneComponents/8-Dungeon_Morgana.tres" id="5_t5iy1"]
+[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="4_bcvlt"]
+[ext_resource type="Resource" uid="uid://cuj1vfhvk7uss" path="res://Resources/ZoneComponents/8-Gather_Small-Hide-Ore.tres" id="5_aupp0"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_ds4kh"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 10
 DisplayName = "Fuyes-Izohun"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_p18fv"), ExtResource("2_t4yf2"), ExtResource("3_bcvlt"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("4_aupp0"), ExtResource("5_t5iy1")]
+Components = [ExtResource("1_p18fv"), ExtResource("2_t4yf2"), ExtResource("3_bcvlt"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("2_t4yf2"), ExtResource("4_bcvlt"), ExtResource("5_aupp0")]

@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://clrnte2h8r84g"]
+[gd_resource type="Resource" script_class="Zone" load_steps=8 format=3 uid="uid://clrnte2h8r84g"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_h0bg6"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="2_2324w"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_2d2fg"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_rpfst"]
-[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="5_ap4c5"]
+[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="2_h0bg6"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="3_2324w"]
+[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="5_2d2fg"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="6_8q6pf"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="6_rpfst"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_pwesc"]
 
 [resource]
@@ -16,4 +16,4 @@ Layer = 1
 DisplayName = "Ceros-Aeaylum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_h0bg6"), ExtResource("2_2324w"), ExtResource("3_2d2fg"), ExtResource("4_rpfst"), ExtResource("5_ap4c5"), ExtResource("1_h0bg6"), ExtResource("6_8q6pf"), ExtResource("1_h0bg6")]
+Components = [ExtResource("6_8q6pf"), ExtResource("2_h0bg6"), ExtResource("3_2324w"), ExtResource("1_h0bg6"), ExtResource("5_2d2fg"), ExtResource("6_8q6pf"), ExtResource("6_rpfst"), ExtResource("6_8q6pf")]

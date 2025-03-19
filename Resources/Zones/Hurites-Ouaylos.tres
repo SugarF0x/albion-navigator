@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://bn2dawllm88jp"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://bn2dawllm88jp"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_isg8t"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_w1svd"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="2_isg8t"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="3_8vk6s"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="2_8vk6s"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_rb7ko"]
 
 [resource]
@@ -13,4 +13,4 @@ Layer = 6
 DisplayName = "Hurites-Ouaylos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("2_isg8t"), ExtResource("1_w1svd"), ExtResource("3_8vk6s"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd"), ExtResource("1_w1svd")]
+Components = [ExtResource("1_isg8t"), ExtResource("1_isg8t"), ExtResource("2_8vk6s"), ExtResource("1_isg8t"), ExtResource("1_w1svd"), ExtResource("1_isg8t"), ExtResource("1_isg8t"), ExtResource("1_isg8t"), ExtResource("1_isg8t"), ExtResource("1_isg8t")]

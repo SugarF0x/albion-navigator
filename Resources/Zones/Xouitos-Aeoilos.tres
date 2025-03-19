@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://d0dggv6pq10cj"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://d0dggv6pq10cj"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_gbl2l"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_pw4ug"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_pw4ug"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="3_gj010"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_uj1pv"]
 
 [resource]
@@ -13,4 +13,4 @@ Layer = 1
 DisplayName = "Xouitos-Aeoilos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_gbl2l"), ExtResource("1_gbl2l"), ExtResource("1_gbl2l"), ExtResource("2_pw4ug"), ExtResource("3_gj010"), ExtResource("2_pw4ug"), ExtResource("2_pw4ug")]
+Components = [ExtResource("1_pw4ug"), ExtResource("1_pw4ug"), ExtResource("1_pw4ug"), ExtResource("1_gbl2l"), ExtResource("2_pw4ug"), ExtResource("1_gbl2l"), ExtResource("1_gbl2l")]

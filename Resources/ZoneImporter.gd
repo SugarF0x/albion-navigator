@@ -18,6 +18,7 @@ func reimport_data() -> void:
 		if file.contains(".tres"): dir.remove(save_path + file)
 	
 	var components_resource_map := ZONE_COMPONENTS_GROUP.load_all()
+	components_resource_map.sort_custom(func (a: ZoneComponent, b: ZoneComponent) -> bool: return a.Id < b.Id)
 	
 	for entry: Dictionary in json_data:
 		var res: Zone = resource.new()

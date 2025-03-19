@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://ce6krmebsr25l"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://ce6krmebsr25l"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_ifmtu"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_ifmtu"]
+[ext_resource type="Resource" uid="uid://dlcakkekn13n8" path="res://Resources/ZoneComponents/7-Gather_Small-Fiber-Hide.tres" id="2_4qyh4"]
 [ext_resource type="Resource" uid="uid://dpa6faprq3h8l" path="res://Resources/ZoneComponents/7-Gather_Big-Wood-Fiber.tres" id="2_bsh3v"]
-[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="3_4qyh4"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_n4kno"]
-[ext_resource type="Resource" uid="uid://dbdm01shscyw7" path="res://Resources/ZoneComponents/7-Gather_Big-Ore-Stone.tres" id="5_rqfdi"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="4_n4kno"]
+[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="5_rqfdi"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_bhqbj"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 4
 DisplayName = "Xases-Ataglos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_ifmtu"), ExtResource("1_ifmtu"), ExtResource("2_bsh3v"), ExtResource("3_4qyh4"), ExtResource("1_ifmtu"), ExtResource("4_n4kno"), ExtResource("5_rqfdi")]
+Components = [ExtResource("1_ifmtu"), ExtResource("1_ifmtu"), ExtResource("2_4qyh4"), ExtResource("2_bsh3v"), ExtResource("1_ifmtu"), ExtResource("4_n4kno"), ExtResource("5_rqfdi")]

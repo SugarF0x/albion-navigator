@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://hfr1gvx7ab7v"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://hfr1gvx7ab7v"]
 
 [ext_resource type="Resource" uid="uid://dev5laqiy32pf" path="res://Resources/ZoneComponents/8-Dungeon_Morgana.tres" id="1_rkywo"]
+[ext_resource type="Resource" uid="uid://cuj1vfhvk7uss" path="res://Resources/ZoneComponents/8-Gather_Small-Hide-Ore.tres" id="1_yowe4"]
 [ext_resource type="Resource" uid="uid://3uwnbeu6utyk" path="res://Resources/ZoneComponents/8-Chest_Big-Blue.tres" id="2_yowe4"]
-[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="3_pn1d6"]
-[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="4_36jr7"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="4_pn1d6"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_8itg7"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 7
 DisplayName = "Tilitos-Ataglos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_rkywo"), ExtResource("2_yowe4"), ExtResource("3_pn1d6"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7"), ExtResource("4_36jr7")]
+Components = [ExtResource("1_yowe4"), ExtResource("2_yowe4"), ExtResource("1_rkywo"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6"), ExtResource("4_pn1d6")]

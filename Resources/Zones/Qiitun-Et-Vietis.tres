@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://cdrecm4m606qf"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://cdrecm4m606qf"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_v8lx3"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="2_vuki7"]
-[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="3_ej8yu"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_v8lx3"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="2_vuki7"]
+[ext_resource type="Resource" uid="uid://dbjtwkl4cmdwb" path="res://Resources/ZoneComponents/7-Gather_Small-Stone-Wood.tres" id="3_ej8yu"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_monec"]
 
 [resource]

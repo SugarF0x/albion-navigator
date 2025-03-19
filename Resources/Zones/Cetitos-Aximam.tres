@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bucodycmmjbmw"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://bucodycmmjbmw"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_oa68e"]
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="2_wnqne"]
-[ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="3_3utuu"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_c8g3o"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_oa68e"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="2_wnqne"]
+[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="3_3utuu"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="4_c8g3o"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_qiym5"]
 
 [resource]

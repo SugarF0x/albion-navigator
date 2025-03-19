@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://c80y2cgjvuudf"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://c80y2cgjvuudf"]
 
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="1_fpo1o"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_u18p8"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="2_fpo1o"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="3_g61jh"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="4_dt24p"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="2_g61jh"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="4_dt24p"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="5_y74aq"]
-[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="6_ac211"]
+[ext_resource type="Resource" uid="uid://bbc26ytiicdtq" path="res://Resources/ZoneComponents/6-Gather_Big-Ore-Stone.tres" id="6_y74aq"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="7_yn7nn"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_xnmbf"]
 
@@ -17,4 +17,4 @@ Layer = 6
 DisplayName = "Hilitos-Aiigaum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_u18p8"), ExtResource("2_fpo1o"), ExtResource("3_g61jh"), ExtResource("4_dt24p"), ExtResource("5_y74aq"), ExtResource("6_ac211"), ExtResource("7_yn7nn"), ExtResource("3_g61jh")]
+Components = [ExtResource("1_fpo1o"), ExtResource("2_g61jh"), ExtResource("7_yn7nn"), ExtResource("4_dt24p"), ExtResource("1_u18p8"), ExtResource("6_y74aq"), ExtResource("5_y74aq"), ExtResource("7_yn7nn")]

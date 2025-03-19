@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cj1nnb8uit8ck"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://cj1nnb8uit8ck"]
 
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="1_t0ul3"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="2_kjvlg"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="3_g8j21"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_u2qm4"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="1_t0ul3"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="2_kjvlg"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="3_g8j21"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="5_5p5nq"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="5_u2qm4"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_aliy3"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 1
 DisplayName = "Pures-Ouozlum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_t0ul3"), ExtResource("2_kjvlg"), ExtResource("3_g8j21"), ExtResource("4_u2qm4"), ExtResource("5_5p5nq")]
+Components = [ExtResource("1_t0ul3"), ExtResource("2_kjvlg"), ExtResource("3_g8j21"), ExtResource("5_5p5nq"), ExtResource("5_u2qm4")]

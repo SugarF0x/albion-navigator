@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://d8xui6iusm6v"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://d8xui6iusm6v"]
 
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="1_vgx3d"]
-[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="2_3os4a"]
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="3_75wdl"]
-[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="4_w7v75"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="1_vgx3d"]
+[ext_resource type="Resource" uid="uid://dbjtwkl4cmdwb" path="res://Resources/ZoneComponents/7-Gather_Small-Stone-Wood.tres" id="2_3os4a"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="3_75wdl"]
+[ext_resource type="Resource" uid="uid://dk2hn15lemyxo" path="res://Resources/ZoneComponents/7-Gather_Big-Hide-Ore.tres" id="4_w7v75"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_5yym3"]
 
 [resource]

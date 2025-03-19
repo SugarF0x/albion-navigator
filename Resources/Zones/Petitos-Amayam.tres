@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://ijvlf4qyqm4t"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://ijvlf4qyqm4t"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_1es8e"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_tlr2w"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="2_1es8e"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="3_whpho"]
 [ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="4_2iy5a"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="4_whpho"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_rhcin"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 1
 DisplayName = "Petitos-Amayam"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_tlr2w"), ExtResource("1_tlr2w"), ExtResource("2_1es8e"), ExtResource("1_tlr2w"), ExtResource("3_whpho"), ExtResource("1_tlr2w"), ExtResource("4_2iy5a")]
+Components = [ExtResource("1_1es8e"), ExtResource("1_1es8e"), ExtResource("4_2iy5a"), ExtResource("1_1es8e"), ExtResource("1_tlr2w"), ExtResource("1_1es8e"), ExtResource("4_whpho")]

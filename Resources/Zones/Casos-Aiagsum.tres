@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://deuvh672hmygy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://deuvh672hmygy"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_fba20"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_nqfrx"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="2_fba20"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_6dws8"]
-[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="4_8o3kg"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="5_bon0l"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="6_g3uag"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="7_81n6v"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="2_6dws8"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="3_8o3kg"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_bon0l"]
+[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="6_g3uag"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="7_81n6v"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_j4rxa"]
 
 [resource]
@@ -17,4 +17,4 @@ Layer = 6
 DisplayName = "Casos-Aiagsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_nqfrx"), ExtResource("2_fba20"), ExtResource("3_6dws8"), ExtResource("4_8o3kg"), ExtResource("5_bon0l"), ExtResource("1_nqfrx"), ExtResource("6_g3uag"), ExtResource("7_81n6v")]
+Components = [ExtResource("1_fba20"), ExtResource("2_6dws8"), ExtResource("3_8o3kg"), ExtResource("4_bon0l"), ExtResource("1_nqfrx"), ExtResource("1_fba20"), ExtResource("6_g3uag"), ExtResource("7_81n6v")]

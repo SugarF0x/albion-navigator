@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://4vsrkwlm4l22"]
+[gd_resource type="Resource" script_class="Zone" load_steps=8 format=3 uid="uid://4vsrkwlm4l22"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_m6lxg"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="2_rdwjx"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_pfavn"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="4_4ncca"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_m0wrm"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_rdwjx"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="2_pfavn"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="3_4ncca"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="5_m0wrm"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="6_cuajn"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_2vvw4"]
 
@@ -16,4 +16,4 @@ Layer = 1
 DisplayName = "Oynitos-Uromlum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_m6lxg"), ExtResource("2_rdwjx"), ExtResource("3_pfavn"), ExtResource("4_4ncca"), ExtResource("5_m0wrm"), ExtResource("6_cuajn"), ExtResource("1_m6lxg")]
+Components = [ExtResource("1_rdwjx"), ExtResource("2_pfavn"), ExtResource("3_4ncca"), ExtResource("6_cuajn"), ExtResource("5_m0wrm"), ExtResource("1_m6lxg"), ExtResource("1_rdwjx")]

@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bkjtsgw23slf"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bkjtsgw23slf"]
 
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="1_7w0px"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="1_7w0px"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_8trg0"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_37rgb"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_8trg0"]
-[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="4_msndm"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_pj64w"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="3_msndm"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="5_pj64w"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_14g4a"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Ooros-Ecunsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_7w0px"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("3_8trg0"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("4_msndm"), ExtResource("5_pj64w"), ExtResource("2_37rgb")]
+Components = [ExtResource("1_7w0px"), ExtResource("2_8trg0"), ExtResource("2_8trg0"), ExtResource("3_msndm"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("2_37rgb"), ExtResource("5_pj64w"), ExtResource("2_8trg0")]

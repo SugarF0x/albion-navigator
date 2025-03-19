@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://dapqc3k2ltxiw"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://dapqc3k2ltxiw"]
 
+[ext_resource type="Resource" uid="uid://dlcakkekn13n8" path="res://Resources/ZoneComponents/7-Gather_Small-Fiber-Hide.tres" id="1_aqanw"]
 [ext_resource type="Resource" uid="uid://dpa6faprq3h8l" path="res://Resources/ZoneComponents/7-Gather_Big-Wood-Fiber.tres" id="1_eijon"]
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="2_aqanw"]
-[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="3_n8qqc"]
-[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="4_jyeqq"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="5_mqjrr"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="2_n8qqc"]
+[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="4_jyeqq"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="5_mqjrr"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_km2j8"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 3
 DisplayName = "Xoritos-Exostum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_eijon"), ExtResource("2_aqanw"), ExtResource("3_n8qqc"), ExtResource("4_jyeqq"), ExtResource("5_mqjrr"), ExtResource("2_aqanw"), ExtResource("2_aqanw"), ExtResource("2_aqanw"), ExtResource("2_aqanw")]
+Components = [ExtResource("1_aqanw"), ExtResource("2_n8qqc"), ExtResource("1_eijon"), ExtResource("4_jyeqq"), ExtResource("5_mqjrr"), ExtResource("2_n8qqc"), ExtResource("2_n8qqc"), ExtResource("2_n8qqc"), ExtResource("2_n8qqc")]

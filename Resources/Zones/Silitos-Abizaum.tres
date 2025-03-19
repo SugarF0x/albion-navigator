@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b6tkckf30ilwn"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://b6tkckf30ilwn"]
 
-[ext_resource type="Resource" uid="uid://cj3rqm1lyv2ms" path="res://Resources/ZoneComponents/8-Gather_Big-Stone-Wood.tres" id="1_dyt46"]
-[ext_resource type="Resource" uid="uid://dev5laqiy32pf" path="res://Resources/ZoneComponents/8-Dungeon_Morgana.tres" id="2_me1wn"]
-[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="3_wmgg0"]
-[ext_resource type="Resource" uid="uid://beewoe647x085" path="res://Resources/ZoneComponents/8-Gather_Big-Hide-Ore.tres" id="4_8d7ek"]
+[ext_resource type="Resource" uid="uid://ccwvqc6io06mg" path="res://Resources/ZoneComponents/8-Chest_Small-Gold.tres" id="1_dyt46"]
+[ext_resource type="Resource" uid="uid://cuj1vfhvk7uss" path="res://Resources/ZoneComponents/8-Gather_Small-Hide-Ore.tres" id="2_me1wn"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="3_wmgg0"]
+[ext_resource type="Resource" uid="uid://ff2fra1ubx0h" path="res://Resources/ZoneComponents/8-Gather_Big-Ore-Stone.tres" id="4_8d7ek"]
 [ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="5_fkjid"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_6j6s6"]
 

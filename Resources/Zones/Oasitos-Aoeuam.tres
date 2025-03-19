@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://byfr4roh1omyx"]
+[gd_resource type="Resource" script_class="Zone" load_steps=8 format=3 uid="uid://byfr4roh1omyx"]
 
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="1_r2n01"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="2_xrq4y"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="3_r2n01"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="3_yv1pc"]
 [ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="4_aud8h"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="4_xrq4y"]
 [ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="5_jg6ok"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="6_yxmw4"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_x7i28"]
 
 [resource]
@@ -16,4 +16,4 @@ Layer = 1
 DisplayName = "Oasitos-Aoeuam"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_r2n01"), ExtResource("2_xrq4y"), ExtResource("3_yv1pc"), ExtResource("4_aud8h"), ExtResource("5_jg6ok"), ExtResource("6_yxmw4"), ExtResource("2_xrq4y")]
+Components = [ExtResource("5_jg6ok"), ExtResource("3_yv1pc"), ExtResource("3_r2n01"), ExtResource("4_xrq4y"), ExtResource("4_aud8h"), ExtResource("2_xrq4y"), ExtResource("3_yv1pc")]

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://c1tqmwasd0vkh"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://c1tqmwasd0vkh"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_f2aif"]
-[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="2_nhhr3"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_f2aif"]
 [ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="3_2agky"]
-[ext_resource type="Resource" uid="uid://dk2hn15lemyxo" path="res://Resources/ZoneComponents/7-Gather_Big-Hide-Ore.tres" id="4_tbwl8"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="3_nhhr3"]
+[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="4_2agky"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_pbvlu"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 2
 DisplayName = "Cetitos-Avixnum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("2_nhhr3"), ExtResource("1_f2aif"), ExtResource("3_2agky"), ExtResource("4_tbwl8")]
+Components = [ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("1_f2aif"), ExtResource("3_2agky"), ExtResource("1_f2aif"), ExtResource("3_nhhr3"), ExtResource("4_2agky")]

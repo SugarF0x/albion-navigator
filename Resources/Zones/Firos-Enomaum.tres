@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://5iqwq6lk6hdy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=8 format=3 uid="uid://5iqwq6lk6hdy"]
 
-[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="1_6xbok"]
+[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="1_6xbok"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_6cbca"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_vlibb"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_6cbca"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_q6lhx"]
-[ext_resource type="Resource" uid="uid://dbjtwkl4cmdwb" path="res://Resources/ZoneComponents/7-Gather_Small-Stone-Wood.tres" id="5_aey6n"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="3_q6lhx"]
+[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="5_aey6n"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="6_l1eqw"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_i8qhk"]
 
@@ -16,4 +16,4 @@ Layer = 6
 DisplayName = "Firos-Enomaum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_6xbok"), ExtResource("2_vlibb"), ExtResource("3_6cbca"), ExtResource("4_q6lhx"), ExtResource("5_aey6n"), ExtResource("6_l1eqw")]
+Components = [ExtResource("1_6xbok"), ExtResource("2_6cbca"), ExtResource("3_q6lhx"), ExtResource("6_l1eqw"), ExtResource("5_aey6n"), ExtResource("2_vlibb")]

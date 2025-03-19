@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://p8m0iv38lkfb"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://p8m0iv38lkfb"]
 
-[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="1_bk7no"]
-[ext_resource type="Resource" uid="uid://dlcakkekn13n8" path="res://Resources/ZoneComponents/7-Gather_Small-Fiber-Hide.tres" id="2_gwwvp"]
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="3_bsp51"]
+[ext_resource type="Resource" uid="uid://c1rcol5v24ky8" path="res://Resources/ZoneComponents/7-Gather_Small-Hide-Ore.tres" id="1_bk7no"]
+[ext_resource type="Resource" uid="uid://dbdm01shscyw7" path="res://Resources/ZoneComponents/7-Gather_Big-Ore-Stone.tres" id="2_gwwvp"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="3_bsp51"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_0s14i"]
 
 [resource]

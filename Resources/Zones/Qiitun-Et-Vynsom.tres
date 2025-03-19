@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://dj0ye5pglqncl"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://dj0ye5pglqncl"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_ic367"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_ic367"]
 [ext_resource type="Resource" uid="uid://c1rcol5v24ky8" path="res://Resources/ZoneComponents/7-Gather_Small-Hide-Ore.tres" id="2_5y3fo"]
-[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="3_60vv1"]
+[ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="2_60vv1"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_hkaq6"]
 
 [resource]
@@ -13,4 +13,4 @@ Layer = 12
 DisplayName = "Qiitun-Et-Vynsom"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_ic367"), ExtResource("2_5y3fo"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("3_60vv1")]
+Components = [ExtResource("1_ic367"), ExtResource("2_60vv1"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("1_ic367"), ExtResource("2_5y3fo")]

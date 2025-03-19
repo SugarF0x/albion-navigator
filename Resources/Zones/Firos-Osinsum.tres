@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bndehhfuidck1"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bndehhfuidck1"]
 
 [ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="1_0tbba"]
-[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="2_wunw0"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="3_53psd"]
-[ext_resource type="Resource" uid="uid://dbdm01shscyw7" path="res://Resources/ZoneComponents/7-Gather_Big-Ore-Stone.tres" id="4_yduae"]
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="5_7skcm"]
+[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="1_wunw0"]
+[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="2_53psd"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_yduae"]
+[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="4_7skcm"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_qpe0h"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 8
 DisplayName = "Firos-Osinsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_0tbba"), ExtResource("2_wunw0"), ExtResource("3_53psd"), ExtResource("4_yduae"), ExtResource("5_7skcm"), ExtResource("1_0tbba")]
+Components = [ExtResource("1_wunw0"), ExtResource("2_53psd"), ExtResource("3_yduae"), ExtResource("4_7skcm"), ExtResource("1_0tbba"), ExtResource("1_wunw0")]

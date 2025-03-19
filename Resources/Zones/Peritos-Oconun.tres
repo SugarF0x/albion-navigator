@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://mvtbr3da4jpy"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://mvtbr3da4jpy"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_fsw4q"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_rqrly"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="2_fsw4q"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="3_qguos"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_7wlb7"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="2_qguos"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="3_7wlb7"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_76lgp"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 6
 DisplayName = "Peritos-Oconun"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_rqrly"), ExtResource("2_fsw4q"), ExtResource("3_qguos"), ExtResource("1_rqrly"), ExtResource("2_fsw4q"), ExtResource("4_7wlb7"), ExtResource("2_fsw4q"), ExtResource("1_rqrly")]
+Components = [ExtResource("1_fsw4q"), ExtResource("2_qguos"), ExtResource("3_7wlb7"), ExtResource("1_fsw4q"), ExtResource("2_qguos"), ExtResource("1_rqrly"), ExtResource("2_qguos"), ExtResource("1_fsw4q")]

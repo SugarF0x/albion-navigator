@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=8 format=3 uid="uid://2hkdsjca3ep"]
+[gd_resource type="Resource" script_class="Zone" load_steps=8 format=3 uid="uid://2hkdsjca3ep"]
 
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="1_jefmh"]
+[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="1_jefmh"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_61lcd"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="2_qwyan"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="3_61lcd"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="4_cib80"]
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="5_dllbq"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="6_6inw8"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="3_cib80"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="4_dllbq"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="5_6inw8"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="7_m7fyb"]
 
 [resource]
@@ -16,4 +16,4 @@ Layer = 1
 DisplayName = "Xuros-Eyoztum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_jefmh"), ExtResource("2_qwyan"), ExtResource("3_61lcd"), ExtResource("4_cib80"), ExtResource("2_qwyan"), ExtResource("5_dllbq"), ExtResource("2_qwyan"), ExtResource("2_qwyan"), ExtResource("2_qwyan"), ExtResource("2_qwyan"), ExtResource("6_6inw8")]
+Components = [ExtResource("1_jefmh"), ExtResource("2_61lcd"), ExtResource("3_cib80"), ExtResource("4_dllbq"), ExtResource("2_61lcd"), ExtResource("5_6inw8"), ExtResource("2_61lcd"), ExtResource("2_61lcd"), ExtResource("2_61lcd"), ExtResource("2_61lcd"), ExtResource("2_qwyan")]

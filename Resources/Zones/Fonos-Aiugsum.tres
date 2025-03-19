@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://b8wi1ohrmnvsk"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://b8wi1ohrmnvsk"]
 
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="1_inyxo"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="2_00131"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="3_vaman"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="1_inyxo"]
+[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_00131"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="3_vaman"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="4_pjpl2"]
 [ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="4_v1w2q"]
-[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="5_pjpl2"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_jrixt"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Fonos-Aiugsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_inyxo"), ExtResource("2_00131"), ExtResource("3_vaman"), ExtResource("3_vaman"), ExtResource("4_v1w2q"), ExtResource("5_pjpl2")]
+Components = [ExtResource("1_inyxo"), ExtResource("2_00131"), ExtResource("3_vaman"), ExtResource("3_vaman"), ExtResource("4_pjpl2"), ExtResource("4_v1w2q")]

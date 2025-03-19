@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://cact2bgd1dw0v"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://cact2bgd1dw0v"]
 
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="1_m76gi"]
+[ext_resource type="Resource" uid="uid://blqqj2y3ldns0" path="res://Resources/ZoneComponents/6-Gather_Small-Stone-Wood.tres" id="1_m76gi"]
 [ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="2_lv44d"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="3_ccv42"]
-[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="4_issag"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="5_0pg7n"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="6_u6231"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_lv44d"]
+[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="5_ccv42"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="6_issag"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="7_0pg7n"]
 [ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="7_6wm0y"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_pxwnd"]
 
@@ -17,4 +17,4 @@ Layer = 6
 DisplayName = "Fuyitos-Acalun"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_m76gi"), ExtResource("2_lv44d"), ExtResource("3_ccv42"), ExtResource("4_issag"), ExtResource("5_0pg7n"), ExtResource("6_u6231"), ExtResource("7_6wm0y")]
+Components = [ExtResource("1_m76gi"), ExtResource("7_6wm0y"), ExtResource("2_lv44d"), ExtResource("4_lv44d"), ExtResource("5_ccv42"), ExtResource("6_issag"), ExtResource("7_0pg7n")]

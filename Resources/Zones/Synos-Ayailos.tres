@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=5 format=3 uid="uid://b6xgovi1edsby"]
+[gd_resource type="Resource" script_class="Zone" load_steps=5 format=3 uid="uid://b6xgovi1edsby"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_bfokt"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="2_jl4fw"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_jl4fw"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="3_2vick"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="4_2sp61"]
 
@@ -13,4 +13,4 @@ Layer = 6
 DisplayName = "Synos-Ayailos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_bfokt"), ExtResource("1_bfokt"), ExtResource("2_jl4fw"), ExtResource("1_bfokt"), ExtResource("1_bfokt"), ExtResource("1_bfokt"), ExtResource("1_bfokt"), ExtResource("3_2vick"), ExtResource("1_bfokt")]
+Components = [ExtResource("1_jl4fw"), ExtResource("1_jl4fw"), ExtResource("3_2vick"), ExtResource("1_jl4fw"), ExtResource("1_jl4fw"), ExtResource("1_jl4fw"), ExtResource("1_jl4fw"), ExtResource("1_bfokt"), ExtResource("1_jl4fw")]

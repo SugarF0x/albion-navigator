@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://shqrs3c86fkc"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://shqrs3c86fkc"]
 
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_tepge"]
-[ext_resource type="Resource" uid="uid://d14liwr3l681f" path="res://Resources/ZoneComponents/0-MistsCity.tres" id="2_11b65"]
-[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="3_3y7k6"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_aae4j"]
+[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="2_tepge"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="3_11b65"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="5_3y7k6"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="5_ltc1x"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_3w24b"]
 
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Fynites-Aeaosum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_tepge"), ExtResource("2_11b65"), ExtResource("3_3y7k6"), ExtResource("4_aae4j"), ExtResource("5_ltc1x"), ExtResource("1_tepge")]
+Components = [ExtResource("5_ltc1x"), ExtResource("2_tepge"), ExtResource("3_11b65"), ExtResource("1_tepge"), ExtResource("5_3y7k6"), ExtResource("5_ltc1x")]

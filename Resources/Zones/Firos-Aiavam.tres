@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bfl2qelugq82f"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bfl2qelugq82f"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_4sjx4"]
-[ext_resource type="Resource" uid="uid://dbdm01shscyw7" path="res://Resources/ZoneComponents/7-Gather_Big-Ore-Stone.tres" id="2_1g7be"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="3_jk0mr"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_4sjx4"]
+[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="2_1g7be"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="3_jk0mr"]
 [ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="4_qf22u"]
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="5_ts277"]
+[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="4_ts277"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_4d3cx"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 5
 DisplayName = "Firos-Aiavam"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("2_1g7be"), ExtResource("3_jk0mr"), ExtResource("4_qf22u"), ExtResource("5_ts277")]
+Components = [ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("1_4sjx4"), ExtResource("2_1g7be"), ExtResource("3_jk0mr"), ExtResource("4_ts277"), ExtResource("4_qf22u")]

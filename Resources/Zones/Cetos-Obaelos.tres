@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://bksydx7gig0ku"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://bksydx7gig0ku"]
 
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="1_hk3cd"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_wxbgn"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="2_hk3cd"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="3_jjdrb"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="4_k0ud0"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="4_jjdrb"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_ub1w3"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 1
 DisplayName = "Cetos-Obaelos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_wxbgn"), ExtResource("1_wxbgn"), ExtResource("2_hk3cd"), ExtResource("2_hk3cd"), ExtResource("1_wxbgn"), ExtResource("3_jjdrb"), ExtResource("4_k0ud0")]
+Components = [ExtResource("1_hk3cd"), ExtResource("1_hk3cd"), ExtResource("1_wxbgn"), ExtResource("1_wxbgn"), ExtResource("1_hk3cd"), ExtResource("2_hk3cd"), ExtResource("4_jjdrb")]

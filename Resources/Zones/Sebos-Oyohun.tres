@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://58mkglesna51"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://58mkglesna51"]
 
-[ext_resource type="Resource" uid="uid://ccwvqc6io06mg" path="res://Resources/ZoneComponents/8-Chest_Small-Gold.tres" id="1_l6kev"]
-[ext_resource type="Resource" uid="uid://es20iy2m2d5p" path="res://Resources/ZoneComponents/7-Gather_Small-Wood-Fiber.tres" id="2_wdu0s"]
-[ext_resource type="Resource" uid="uid://cuj1vfhvk7uss" path="res://Resources/ZoneComponents/8-Gather_Small-Hide-Ore.tres" id="3_lfdbm"]
+[ext_resource type="Resource" uid="uid://q4njktba4ri2" path="res://Resources/ZoneComponents/8-Gather_Small-Fiber-Hide.tres" id="1_l6kev"]
+[ext_resource type="Resource" uid="uid://c83kowwpee5fa" path="res://Resources/ZoneComponents/8-Gather_Small-Stone-Wood.tres" id="3_wdu0s"]
 [ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="4_frpop"]
-[ext_resource type="Resource" uid="uid://b7gs3a3avi86" path="res://Resources/ZoneComponents/8-Gather_Small-Wood-Fiber.tres" id="5_5q86g"]
+[ext_resource type="Resource" uid="uid://c463ckdcpybac" path="res://Resources/ZoneComponents/8-Dungeon_Avalonian.tres" id="4_lfdbm"]
+[ext_resource type="Resource" uid="uid://dryqa8dnap85u" path="res://Resources/ZoneComponents/8-Gather_Big-Wood-Fiber.tres" id="5_frpop"]
 [ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="6_u8j88"]
-[ext_resource type="Resource" uid="uid://deydvqrt540uh" path="res://Resources/ZoneComponents/8-Dungeon_Keeper.tres" id="7_xfra4"]
+[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="7_5q86g"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_jxm4r"]
 
 [resource]
@@ -17,4 +17,4 @@ Layer = 7
 DisplayName = "Sebos-Oyohun"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_l6kev"), ExtResource("2_wdu0s"), ExtResource("3_lfdbm"), ExtResource("4_frpop"), ExtResource("5_5q86g"), ExtResource("6_u8j88"), ExtResource("2_wdu0s"), ExtResource("7_xfra4")]
+Components = [ExtResource("1_l6kev"), ExtResource("4_frpop"), ExtResource("3_wdu0s"), ExtResource("4_lfdbm"), ExtResource("5_frpop"), ExtResource("6_u8j88"), ExtResource("4_frpop"), ExtResource("7_5q86g")]

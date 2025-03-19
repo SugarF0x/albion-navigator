@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=6 format=3 uid="uid://lhr1jckedi8a"]
+[gd_resource type="Resource" script_class="Zone" load_steps=6 format=3 uid="uid://lhr1jckedi8a"]
 
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="1_hdrdx"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="1_hdrdx"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="2_snqxh"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_yxo54"]
 [ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="3_yxo54"]
-[ext_resource type="Resource" uid="uid://cntsl3xwhc2d2" path="res://Resources/ZoneComponents/6-Chest_Small-Gold.tres" id="4_m5vau"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="5_j22u7"]
 
 [resource]
@@ -14,4 +14,4 @@ Layer = 1
 DisplayName = "Conitos-Uruxtum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_hdrdx"), ExtResource("2_snqxh"), ExtResource("2_snqxh"), ExtResource("2_snqxh"), ExtResource("2_snqxh"), ExtResource("3_yxo54"), ExtResource("2_snqxh"), ExtResource("4_m5vau"), ExtResource("2_snqxh")]
+Components = [ExtResource("1_hdrdx"), ExtResource("2_yxo54"), ExtResource("2_yxo54"), ExtResource("2_yxo54"), ExtResource("2_yxo54"), ExtResource("2_snqxh"), ExtResource("2_yxo54"), ExtResource("3_yxo54"), ExtResource("2_yxo54")]

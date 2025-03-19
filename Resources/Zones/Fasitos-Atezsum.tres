@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://y3a1d05b4bc"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://y3a1d05b4bc"]
 
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="1_pmghx"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="1_pmghx"]
+[ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_h7kvx"]
 [ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="2_kklyg"]
-[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="3_h7kvx"]
-[ext_resource type="Resource" uid="uid://rp6iymqjo5fi" path="res://Resources/ZoneComponents/4-Dungeon_Morgana.tres" id="4_2x22m"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_s83x5"]
+[ext_resource type="Resource" uid="uid://d00cr4pssoixq" path="res://Resources/ZoneComponents/6-Gather_Big-Wood-Fiber.tres" id="3_2x22m"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="5_s83x5"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_rj6lk"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Fasitos-Atezsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_pmghx"), ExtResource("2_kklyg"), ExtResource("3_h7kvx"), ExtResource("4_2x22m"), ExtResource("5_s83x5"), ExtResource("2_kklyg")]
+Components = [ExtResource("1_pmghx"), ExtResource("2_h7kvx"), ExtResource("3_2x22m"), ExtResource("2_kklyg"), ExtResource("5_s83x5"), ExtResource("2_h7kvx")]

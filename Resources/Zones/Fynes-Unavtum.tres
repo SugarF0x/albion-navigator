@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=9 format=3 uid="uid://cvcnfu50mb8k7"]
+[gd_resource type="Resource" script_class="Zone" load_steps=9 format=3 uid="uid://cvcnfu50mb8k7"]
 
-[ext_resource type="Resource" uid="uid://bbc26ytiicdtq" path="res://Resources/ZoneComponents/6-Gather_Big-Ore-Stone.tres" id="1_6cu0a"]
-[ext_resource type="Resource" uid="uid://bhd56n5gtcgd7" path="res://Resources/ZoneComponents/7-Gather_Big-Stone-Wood.tres" id="2_i8bkf"]
+[ext_resource type="Resource" uid="uid://c11kupwq4vg3n" path="res://Resources/ZoneComponents/6-Dungeon_Keeper.tres" id="1_6cu0a"]
+[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="2_i8bkf"]
 [ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="3_5rd6v"]
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="4_i1qxr"]
-[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="5_5vitq"]
-[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="6_o2g74"]
-[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="7_xwxel"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="3_i1qxr"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="4_5vitq"]
+[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="6_o2g74"]
+[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="7_xwxel"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="8_sjg4r"]
 
 [resource]
@@ -17,4 +17,4 @@ Layer = 3
 DisplayName = "Fynes-Unavtum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_6cu0a"), ExtResource("2_i8bkf"), ExtResource("3_5rd6v"), ExtResource("4_i1qxr"), ExtResource("5_5vitq"), ExtResource("6_o2g74"), ExtResource("7_xwxel"), ExtResource("3_5rd6v")]
+Components = [ExtResource("1_6cu0a"), ExtResource("2_i8bkf"), ExtResource("3_i1qxr"), ExtResource("4_5vitq"), ExtResource("3_5rd6v"), ExtResource("6_o2g74"), ExtResource("7_xwxel"), ExtResource("3_i1qxr")]

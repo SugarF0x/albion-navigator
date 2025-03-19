@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://bh4br8t65vw4m"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://bh4br8t65vw4m"]
 
-[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="1_pcfbu"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_pcfbu"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_wkoan"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_upgac"]
-[ext_resource type="Resource" uid="uid://bgj60ab8hjcs3" path="res://Resources/ZoneComponents/6-Dungeon_Morgana.tres" id="4_8cyy5"]
-[ext_resource type="Resource" uid="uid://dnrho51vwv405" path="res://Resources/ZoneComponents/6-Dungeon_Heretic.tres" id="5_of2le"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="3_wkoan"]
+[ext_resource type="Resource" uid="uid://rtmfgijsq78b" path="res://Resources/ZoneComponents/6-Gather_Big-Stone-Wood.tres" id="4_upgac"]
+[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_8cyy5"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_l5t64"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Poros-Aiayrom"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_pcfbu"), ExtResource("1_pcfbu"), ExtResource("1_pcfbu"), ExtResource("2_wkoan"), ExtResource("3_upgac"), ExtResource("4_8cyy5"), ExtResource("5_of2le"), ExtResource("1_pcfbu")]
+Components = [ExtResource("2_wkoan"), ExtResource("2_wkoan"), ExtResource("2_wkoan"), ExtResource("2_pcfbu"), ExtResource("3_wkoan"), ExtResource("4_upgac"), ExtResource("5_8cyy5"), ExtResource("2_wkoan")]

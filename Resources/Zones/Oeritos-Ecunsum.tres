@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://d2d4wfiwguppv"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://d2d4wfiwguppv"]
 
-[ext_resource type="Resource" uid="uid://dbbulb6ydlt5t" path="res://Resources/ZoneComponents/6-Chest_Big-Blue.tres" id="1_nrqce"]
+[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="1_nrqce"]
+[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_58i64"]
 [ext_resource type="Resource" uid="uid://dd1xv3sq31tks" path="res://Resources/ZoneComponents/4-Chest_Small-Green.tres" id="2_fk4ue"]
-[ext_resource type="Resource" uid="uid://g7ux1lwa0gic" path="res://Resources/ZoneComponents/4-Dungeon_Heretic.tres" id="3_58i64"]
-[ext_resource type="Resource" uid="uid://b5yrnqdt6ym0p" path="res://Resources/ZoneComponents/4-Chest_Big-Blue.tres" id="4_xb7r8"]
-[ext_resource type="Resource" uid="uid://d4mntttjmqs85" path="res://Resources/ZoneComponents/4-Dungeon_Undead.tres" id="5_r2rty"]
+[ext_resource type="Resource" uid="uid://dupqu4s8s3v1b" path="res://Resources/ZoneComponents/6-Gather_Small-Wood-Fiber.tres" id="3_xb7r8"]
+[ext_resource type="Resource" uid="uid://bbksi3dxp3vlx" path="res://Resources/ZoneComponents/6-Gather_Small-Fiber-Hide.tres" id="5_r2rty"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_5gbxc"]
 
 [resource]
@@ -15,4 +15,4 @@ Layer = 6
 DisplayName = "Oeritos-Ecunsum"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_nrqce"), ExtResource("2_fk4ue"), ExtResource("2_fk4ue"), ExtResource("3_58i64"), ExtResource("4_xb7r8"), ExtResource("4_xb7r8"), ExtResource("4_xb7r8"), ExtResource("4_xb7r8"), ExtResource("4_xb7r8"), ExtResource("5_r2rty"), ExtResource("2_fk4ue")]
+Components = [ExtResource("1_nrqce"), ExtResource("2_58i64"), ExtResource("2_58i64"), ExtResource("3_xb7r8"), ExtResource("2_fk4ue"), ExtResource("2_fk4ue"), ExtResource("2_fk4ue"), ExtResource("2_fk4ue"), ExtResource("2_fk4ue"), ExtResource("5_r2rty"), ExtResource("2_58i64")]

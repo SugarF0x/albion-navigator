@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="ZoneResource" load_steps=7 format=3 uid="uid://cserge51ik8oc"]
+[gd_resource type="Resource" script_class="Zone" load_steps=7 format=3 uid="uid://cserge51ik8oc"]
 
-[ext_resource type="Resource" uid="uid://c4xhp7vd7e4ek" path="res://Resources/ZoneComponents/6-Gather_Big-Fiber-Hide.tres" id="1_0fn53"]
-[ext_resource type="Resource" uid="uid://cbbq88e58bixi" path="res://Resources/ZoneComponents/6-Gather_Small-Ore-Stone.tres" id="2_mp4xa"]
-[ext_resource type="Resource" uid="uid://8rsl564bpgi6" path="res://Resources/ZoneComponents/7-Gather_Big-Fiber-Hide.tres" id="3_rb2wm"]
-[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="4_53k8o"]
+[ext_resource type="Resource" uid="uid://cjp1ydusqs56r" path="res://Resources/ZoneComponents/6-Chest_Small-Green.tres" id="1_0fn53"]
+[ext_resource type="Resource" uid="uid://byheyhr1eitm2" path="res://Resources/ZoneComponents/6-Dungeon_Undead.tres" id="2_mp4xa"]
+[ext_resource type="Resource" uid="uid://c4eiunt7hhnjr" path="res://Resources/ZoneComponents/7-Gather_Small-Ore-Stone.tres" id="3_rb2wm"]
+[ext_resource type="Resource" uid="uid://dlcakkekn13n8" path="res://Resources/ZoneComponents/7-Gather_Small-Fiber-Hide.tres" id="5_53k8o"]
 [ext_resource type="Resource" uid="uid://dpa6faprq3h8l" path="res://Resources/ZoneComponents/7-Gather_Big-Wood-Fiber.tres" id="5_ptfi0"]
 [ext_resource type="Script" uid="uid://5qqi0htibfpg" path="res://Resources/Zone.cs" id="6_4aq2h"]
 
@@ -15,4 +15,4 @@ Layer = 3
 DisplayName = "Sasos-Egeylos"
 Position = Vector2(0, 0)
 Connections = []
-Components = [ExtResource("1_0fn53"), ExtResource("2_mp4xa"), ExtResource("3_rb2wm"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("4_53k8o"), ExtResource("5_ptfi0"), ExtResource("2_mp4xa")]
+Components = [ExtResource("1_0fn53"), ExtResource("2_mp4xa"), ExtResource("3_rb2wm"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("1_0fn53"), ExtResource("5_ptfi0"), ExtResource("5_53k8o"), ExtResource("2_mp4xa")]
