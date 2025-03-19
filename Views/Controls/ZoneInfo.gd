@@ -23,6 +23,11 @@ func _ready() -> void:
 	zone_line.options = zone_names
 	search_button.pressed.connect(on_search)
 
+func _input(_event: InputEvent) -> void:
+	if not Input.is_action_just_pressed("ui_text_submit"): return
+	if not zone_line.has_focus(): return
+	on_search()
+
 func on_search() -> void:
 	var search_value := zone_line.get_value()
 	if not search_value.is_empty(): show_zone_details(search_value)
