@@ -26,11 +26,17 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if not Input.is_action_just_pressed("ui_text_submit"): return
 	if not zone_line.has_focus(): return
+	accept_event()
 	on_search()
 
 func on_search() -> void:
 	var search_value := zone_line.get_value()
-	if not search_value.is_empty(): show_zone_details(search_value)
+	if search_value.is_empty(): return
+	
+	show_zone_details(search_value)
+	zone_line.text = ""
+	zone_line.text_changed.emit("")
+	zone_line.grab_focus.call_deferred()
 
 func show_zone_details(zone_name: String) -> void:
 	var zone_index := zone_names.find(zone_name)
