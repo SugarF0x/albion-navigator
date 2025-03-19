@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://btu85apbgmywu" path="res://Views/Graph.gd" id="1_fh4y3"]
 [ext_resource type="Script" uid="uid://da6ry8n1uof4i" path="res://Views/GraphCamera.gd" id="2_6qgp7"]
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="3_s17xd"]
-[ext_resource type="Texture2D" uid="uid://bibl4as6bnc21" path="res://Assets/map-background.png" id="4_ky6eh"]
+[ext_resource type="Texture2D" uid="uid://bj7bj7l45nl6w" path="res://Assets/map-background-hq.png" id="4_3gtab"]
 [ext_resource type="PackedScene" uid="uid://esc4xrtpbro0" path="res://Entities/ZoneMap.tscn" id="5_sbrde"]
 
 [sub_resource type="Curve" id="Curve_pxj3m"]
@@ -31,8 +31,8 @@ grow_vertical = 2
 color = Color(0, 1, 1, 1)
 
 [node name="MapBackground" type="Sprite2D" parent="."]
-scale = Vector2(1.55, 1.55)
-texture = ExtResource("4_ky6eh")
+scale = Vector2(0.194, 0.194)
+texture = ExtResource("4_3gtab")
 
 [node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]
 AlphaDecayCurve = SubResource("Curve_pxj3m")
