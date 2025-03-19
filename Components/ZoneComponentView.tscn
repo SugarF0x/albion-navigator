@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b447vwne1h6dp" path="res://Assets/Icons/fiber.png" id="3_x5i3r"]
 
 [node name="ZoneComponentView" type="Control"]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0

@@ -7,7 +7,7 @@ extends TabBar
 @onready var layer_label: Label = %LayerLabel
 @onready var display_name_label: Label = %DisplayNameLabel
 @onready var connections_label: Label = %ConnectionsLabel
-@onready var components_container: HBoxContainer = %ComponentsContainer
+@onready var components_container: HFlowContainer = %ComponentsContainer
 
 const ZONE_COMPONENT_VIEW = preload("res://Components/ZoneComponentView.tscn")
 const ZONE_GROUP := preload('res://Resources/ZoneGroup.tres')
