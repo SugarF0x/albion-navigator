@@ -67,8 +67,10 @@ text = "Display Name:"
 
 [node name="ConnectionsLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer1"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 23)
 layout_mode = 2
 text = "Connections:"
+autowrap_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
