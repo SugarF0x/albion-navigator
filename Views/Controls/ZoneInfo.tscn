@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://e7gt3euxcl6m"]
+[gd_scene load_steps=5 format=3 uid="uid://e7gt3euxcl6m"]
 
 [ext_resource type="Script" uid="uid://b4q3xyqtkmffr" path="res://Views/Controls/ZoneInfo.gd" id="1_u2rx1"]
 [ext_resource type="PackedScene" uid="uid://bfmunp6jd17dq" path="res://Components/AutoCompleteLineEdit.tscn" id="2_40ynl"]
+[ext_resource type="PackedScene" uid="uid://di8mt45prjmnl" path="res://Components/ZoneComponentStack.tscn" id="3_88qs0"]
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="4_402yf"]
 
 [node name="ZoneInfo" type="TabBar"]
 anchors_preset = 15
@@ -76,6 +78,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "Components:"
 
-[node name="ComponentsContainer" type="HFlowContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="ZoneComponentStack" parent="MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("3_88qs0")]
 unique_name_in_owner = true
 layout_mode = 2
+components = Array[ExtResource("4_402yf")]([])
