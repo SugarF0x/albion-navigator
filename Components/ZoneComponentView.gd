@@ -5,6 +5,13 @@ class_name ZoneComponentView extends Control
 @onready var secondary_texture: TextureRect = %SecondaryTexture
 @onready var is_big_label: Label = %IsBigLabel
 @onready var tier_label: Label = %TierLabel
+@onready var count_container: PanelContainer = %CountContainer
+@onready var count_label: Label = %CountLabel
+
+@export var count: int = 1 :
+	set(value):
+		count = value
+		register_count()
 
 @export var component: ZoneComponent :
 	set(item):
@@ -50,6 +57,12 @@ var icons: Dictionary = {
 	"STONE" = preload("res://Assets/Icons/stone.png"),
 	"WOOD" = preload("res://Assets/Icons/wood.png"),
 }
+
+func register_count() -> void:
+	if not is_node_ready(): await ready
+	
+	count_container.visible = count > 1
+	count_label.text = str(count)
 
 func register_properties() -> void:
 	if not is_node_ready(): await ready

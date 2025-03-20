@@ -51,6 +51,12 @@ project/assembly_name="Albion Navigator"
 
 enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray"
+}
+
 [global_group]
 
 ForceGraph=""
