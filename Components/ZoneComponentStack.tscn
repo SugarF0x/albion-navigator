@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://di8mt45prjmnl"]
+
+[ext_resource type="Script" uid="uid://dyf5u1o6iwpg6" path="res://Components/ZoneComponentStack.gd" id="1_j26av"]
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="2_hyfqg"]
+[ext_resource type="Resource" uid="uid://bk2hd6le6vw0v" path="res://Resources/ZoneComponents/4-Dungeon_Keeper.tres" id="3_l3am5"]
+[ext_resource type="Resource" uid="uid://cwh5g0ba10t3h" path="res://Resources/ZoneComponents/6-Gather_Big-Hide-Ore.tres" id="4_uta0h"]
+
+[node name="ZoneComponentStack" type="HFlowContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 132.0
+grow_horizontal = 2
+script = ExtResource("1_j26av")
+components = Array[ExtResource("2_hyfqg")]([ExtResource("3_l3am5"), ExtResource("3_l3am5"), ExtResource("4_uta0h")])
