@@ -1,5 +1,6 @@
 extends TabBar
 
+@onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ZoneMap
 @onready var zone_line: AutoCompleteLineEdit = %ZoneLine
 @onready var search_button: Button = %SearchButton
 @onready var id_label: Label = %IdLabel
@@ -43,12 +44,13 @@ var zones: Array[Zone] = []
 var zone_names: Array[String] = []
 
 func _ready() -> void:
-	for zone in ZONE_GROUP.load_all():
-		zones.append(zone as Zone)
-		zone_names.append(zone.DisplayName)
+	for zone in ZONE_GROUP.load_all(): zones.append(zone as Zone)
+	zones.sort_custom(func (a: Zone, b: Zone) -> bool: return a.Id < b.Id)
+	for zone in zones: zone_names.append(zone.DisplayName)
 	
 	zone_line.options = zone_names
 	search_button.pressed.connect(on_search)
+	if graph: graph.PortalRegistered.connect(auto_inspect_added_portal)
 
 func _input(_event: InputEvent) -> void:
 	if not Input.is_action_just_pressed("ui_text_submit"): return
@@ -56,11 +58,14 @@ func _input(_event: InputEvent) -> void:
 	accept_event()
 	on_search()
 
+func auto_inspect_added_portal(from: int, to: int) -> void:
+	show_zone_details(to)
+
 func on_search() -> void:
 	var search_value := zone_line.get_value()
 	if search_value.is_empty(): return
 	
-	show_zone_details(search_value)
+	show_zone_details_by_name(search_value)
 	
 	zone_line.text = ""
 	zone_line.text_changed.emit("")
@@ -69,8 +74,11 @@ func on_search() -> void:
 	# hacky solution to update tab size but it works (disgusting)
 	(get_parent_control() as TabContainer).tab_changed.emit(-1)
 
-func show_zone_details(zone_name: String) -> void:
+func show_zone_details_by_name(zone_name: String) -> void:
 	var zone_index := zone_names.find(zone_name)
+	show_zone_details(zone_index)
+
+func show_zone_details(zone_index: int) -> void:
 	if zone_index < 0: return
 	
 	var zone := zones[zone_index]

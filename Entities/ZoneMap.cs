@@ -17,6 +17,9 @@ public partial class ZoneMap : ForceDirectedGraph
     private ResourceGroup ZoneGroup;
     private AudioPlayer AudioServer;
     
+    [Signal]
+    public delegate void PortalRegisteredEventHandler(int from, int to);
+    
     public override void _Ready()
     {
         if (NodeScene?.Instantiate() is not ZoneNode) throw new InvalidCastException("NodeScene is not a ZoneNode");
@@ -38,13 +41,13 @@ public partial class ZoneMap : ForceDirectedGraph
         link.ExpiresAt = expiration;
         AddLink(link);
         AudioServer.Play(AudioPlayer.SoundId.PortalOpen);
+        EmitSignal(SignalName.PortalRegistered, source, target);
     }
     
     // TODO: i really need to rethink the approach to ZoneNode; since data is now stored in resources they dont need most of that data
 
     private void PopulateZones()
     {
-
         var zones = ZoneGroup.LoadAll().Cast<Zone>().ToArray();
         Array.Sort(zones, (a, b) => a.Id - b.Id);
 
