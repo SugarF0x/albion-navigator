@@ -72,7 +72,6 @@ public partial class ForceDirectedGraph : Node2D
             EmitSignal(SignalName.SimulationStopped);
         }
     }
-    
 
     public void AddNode(ForceGraphNode node) => NodesContainer.AddChild(node);
     public void AddLink(ForceGraphLink link) => LinksContainer.AddChild(link);

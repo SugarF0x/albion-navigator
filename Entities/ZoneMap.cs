@@ -15,6 +15,7 @@ public partial class ZoneMap : ForceDirectedGraph
     [Export] public PackedScene LinkScene;
     
     private ResourceGroup ZoneGroup;
+    private Zone[] Zones = [];
     private AudioPlayer AudioServer;
     
     [Signal]
@@ -30,9 +31,19 @@ public partial class ZoneMap : ForceDirectedGraph
         
         PopulateZones();
         base._Ready();
+
+        SimulationStopped += SyncZoneResourcePositions;
     }
 
-    public void AddPortal(int source, int target, string expiration)
+    private void SyncZoneResourcePositions()
+    {
+        foreach (var node in Nodes)
+        {
+            Zones[node.Index].Position = node.Position;
+        }
+    }
+
+    public void AddPortal(int source, int target, string expiration, bool isManual = false)
     {
         if (LinkScene.Instantiate() is not ZoneLink link) return;
         if (ZoneLink.IsStampExpired(expiration)) return;
@@ -41,19 +52,19 @@ public partial class ZoneMap : ForceDirectedGraph
         link.ExpiresAt = expiration;
         AddLink(link);
         AudioServer.Play(AudioPlayer.SoundId.PortalOpen);
-        EmitSignal(SignalName.PortalRegistered, source, target);
+        if (isManual) EmitSignal(SignalName.PortalRegistered, source, target);
     }
     
     // TODO: i really need to rethink the approach to ZoneNode; since data is now stored in resources they dont need most of that data
 
     private void PopulateZones()
     {
-        var zones = ZoneGroup.LoadAll().Cast<Zone>().ToArray();
-        Array.Sort(zones, (a, b) => a.Id - b.Id);
+        Zones = ZoneGroup.LoadAll().Cast<Zone>().ToArray();
+        Array.Sort(Zones, (a, b) => a.Id - b.Id);
 
-        for (var i = 0; i < zones.Length; i++)
+        for (var i = 0; i < Zones.Length; i++)
         {
-            var zone = zones[i];
+            var zone = Zones[i];
             if (NodeScene.Instantiate() is not ZoneNode node) continue;
             
             node.Position = zone.Position;
