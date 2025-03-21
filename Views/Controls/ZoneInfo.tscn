@@ -45,6 +45,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Search"
 
+[node name="ZoomButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer1/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Zoom"
+
 [node name="IdLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer1"]
 unique_name_in_owner = true
 layout_mode = 2
