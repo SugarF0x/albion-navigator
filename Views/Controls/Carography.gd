@@ -53,7 +53,7 @@ func register_new_link() -> void:
 	
 	if source < 0 or target < 0: return
 	
-	graph.AddPortal(source, target, get_input_expiration())
+	graph.AddPortal(source, target, get_input_expiration(), true)
 	
 	target_zone_edit.text = ""
 	target_zone_edit.text_changed.emit("")
