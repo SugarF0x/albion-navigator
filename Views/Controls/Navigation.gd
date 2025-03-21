@@ -1,5 +1,7 @@
 extends TabBar
 
+const ZONE_GROUP := preload("res://Resources/ZoneGroup.tres")
+
 @onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ZoneMap
 @onready var shortest_route_from_input: AutoCompleteLineEdit = %ShortestRouteFromInput
 @onready var shortest_route_to_input: AutoCompleteLineEdit = %ShortestRouteToInput
@@ -47,20 +49,22 @@ var zone_type_to_emoji_map: Dictionary = {
   }
 
 func _ready() -> void:
-	graph.ChildrenRegistered.connect(register_zone_names)
+	register_zone_names()
 	shortest_route_find_button.pressed.connect(find_shortest_path)
 	shortest_route_clear_button.pressed.connect(clear_shortest_path)
 	shortest_route_copy_button.pressed.connect(copy_shortest_path)
 
-func register_zone_names(nodes: Array, _links: Array) -> void:
+func register_zone_names() -> void:
 	zone_names.clear()
-	var road_zone_names: Array[String]
 	
-	for node: ForceGraphNode in nodes:
-		if node is not ZoneNode: continue
-		if node.DisplayName == "": continue
-		zone_names.append(node.DisplayName)
-		if node.Type == ZoneType.Road: road_zone_names.append(node.DisplayName)
+	var zones := ZONE_GROUP.load_all()
+	zones.sort_custom(func (a: Zone, b: Zone) -> bool: return a.Id < b.Id)
+	
+	var road_zone_names: Array[String] = []
+	
+	for zone in zones:
+		zone_names.append(zone.DisplayName)
+		if zone.Type == ZoneType.Road: road_zone_names.append(zone.DisplayName)
 	
 	shortest_route_from_input.options = zone_names
 	shortest_route_to_input.options = zone_names

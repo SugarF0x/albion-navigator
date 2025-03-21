@@ -1,6 +1,7 @@
 extends TabBar
 
 const LinkScene := preload("res://Entities/ZoneLink.tscn")
+const ZONE_GROUP := preload("res://Resources/ZoneGroup.tres")
 
 @onready var graph := get_tree().get_first_node_in_group("ForceGraph") as ZoneMap
 @onready var register_button: Button = $MarginContainer/HBoxContainer/VBoxContainer/RegisterButton
@@ -13,7 +14,7 @@ const LinkScene := preload("res://Entities/ZoneLink.tscn")
 @onready var seconds_edit: LineEdit = $MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/SecondsEdit
 
 func _ready() -> void:
-	graph.ChildrenRegistered.connect(register_zone_names)
+	register_zone_names()
 	register_button.pressed.connect(register_new_link)
 	cartography_captures.preview_image_changed.connect(on_preview_image_changed)
 
@@ -25,12 +26,13 @@ func _input(_event: InputEvent) -> void:
 	
 	register_new_link()
 
-func register_zone_names(nodes: Array, _links: Array) -> void:
-	var zone_names: Array[String]
-	for node: ForceGraphNode in nodes:
-		if node is not ZoneNode: continue
-		if node.DisplayName == "": continue
-		zone_names.append(node.DisplayName)
+func register_zone_names() -> void:
+	var zones := ZONE_GROUP.load_all()
+	zones.sort_custom(func (a: Zone, b: Zone) -> bool: return a.Id < b.Id)
+	
+	var zone_names: Array[String] = []
+	for zone in zones:
+		zone_names.append(zone.DisplayName)
 	
 	source_zone_edit.options = zone_names
 	target_zone_edit.options = zone_names
