@@ -60,6 +60,7 @@ folder_colors={
 [global_group]
 
 ForceGraph=""
+GraphCamera=""
 
 [godot_resource_groups]
 

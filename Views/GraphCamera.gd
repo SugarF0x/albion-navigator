@@ -1,4 +1,4 @@
-extends Camera2D
+class_name GraphCamera extends Camera2D
 
 @onready var background_shader_rect: ColorRect = %BackgroundShaderRect
 
@@ -37,14 +37,18 @@ func _input(event: InputEvent) -> void:
 		position -= event.relative * (Vector2.ONE / zoom)
 		return
 
-func adjust_zoom(out := false) -> void:
-	var delta := 0.1 if out else -0.1
-	var new_zoom := zoom + Vector2(delta, delta)
+func set_zoom_level(value: float) -> void:
+	var new_zoom := Vector2(value, value)
 	new_zoom.x = clamp(new_zoom.x, min_zoom, max_zoom)
 	new_zoom.y = clamp(new_zoom.y, min_zoom, max_zoom)
 	zoom = new_zoom
 	
 	adjust_zone_label_visibility()
+
+func adjust_zoom(out := false) -> void:
+	var delta := 0.1 if out else -0.1
+	var new_zoom := zoom.x + delta
+	set_zoom_level(new_zoom)
 
 var are_names_hidden := true
 func adjust_zone_label_visibility() -> void:
@@ -60,3 +64,16 @@ func adjust_zone_label_visibility() -> void:
 func set_is_mouse_in_scope(value: bool) -> void: 
 	is_mouse_in_scope = value
 	if not value: is_dragging = false
+
+func transition_to_position(new_pos: Vector2, new_zoom: float) -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_method(tween_position.bind(position, zoom.x, new_pos, new_zoom), 0.0, 1.0, .75)
+
+func tween_position(percent: float, start_pos: Vector2, start_zoom: float, end_pos: Vector2, end_zoom: float) -> void:
+	position = start_pos.lerp(end_pos, percent)
+	var zoom_value := lerpf(start_zoom, end_zoom, percent)
+	zoom = Vector2(zoom_value, zoom_value)
+	adjust_zone_label_visibility()
