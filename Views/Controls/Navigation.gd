@@ -84,13 +84,17 @@ var currently_selected_links: PackedInt32Array = [] :
 		
 		var first_link: ZoneLink = graph.Links[value[0]]
 		var first_link_names: Array[int] = [first_link.Source, first_link.Target]
-		var second_link: ZoneLink = graph.Links[value[1]]
+		var second_link: ZoneLink = graph.Links[value[mini(1, value.size() - 1)]]
 		var second_link_names: Array[int] = [second_link.Source, second_link.Target]
 		
-		var node_indexes: Array[int] = first_link_names.filter(func (node_name: int) -> bool: return not second_link_names.has(node_name))
-		for link_index in value:
-			node_indexes.append(graph.Links[link_index].Target if node_indexes[node_indexes.size() - 1] != graph.Links[link_index].Target else graph.Links[link_index].Source)
-			
+		var node_indexes: Array[int] = []
+		if value.size() > 1:
+			node_indexes = first_link_names.filter(func (node_name: int) -> bool: return not second_link_names.has(node_name))
+			for link_index in value:
+				node_indexes.append(graph.Links[link_index].Target if node_indexes[maxi(0, node_indexes.size() - 1)] != graph.Links[link_index].Target else graph.Links[link_index].Source)
+		else:
+			node_indexes = first_link_names
+		
 		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
 		var names := nodes.map(func (node: ZoneNode) -> String: return "{type} {name}".format({ "type": zone_type_to_emoji_map[node.Type], "name": node.DisplayName }))
 		shortest_route_path_label.text = "\n".join(names)
