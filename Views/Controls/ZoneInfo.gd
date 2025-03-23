@@ -64,6 +64,8 @@ func _input(_event: InputEvent) -> void:
 
 func auto_inspect_added_portal(from: int, to: int) -> void:
 	show_zone_details(to)
+	await graph.SimulationStopped
+	zoom_into_node(to)
 
 func on_search() -> void:
 	var search_value := zone_line.get_value()
