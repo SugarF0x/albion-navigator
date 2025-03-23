@@ -128,6 +128,57 @@ public partial class ZoneMap : ForceDirectedGraph
 
         return [];
     }
+
+    
+    // TODO: man, this c#-gd bridging masturbation is driving me crazy, i should just stick to c# for everything, really
+    public Godot.Collections.Array<Godot.Collections.Array<int>> FindAllPathsOut(int source, bool searchForRoyalExit)
+    {
+        var results = new Godot.Collections.Array<Godot.Collections.Array<int>>();
+        var invalidExits = searchForRoyalExit ? new[] { Zone.ZoneType.Black, Zone.ZoneType.OutlandCity, Zone.ZoneType.Road } : new[] { Zone.ZoneType.Road };
+        
+        if (!invalidExits.Contains(Zones[source].Type)) return results;
+
+        var queue = new List<List<int>> { new () };
+        queue.First().Add(source);
+        
+        var visited = new HashSet<int> { source };
+
+        while (queue.Count > 0)
+        {
+            var path = queue.First();
+            queue.RemoveAt(0);
+            
+            var node = path.Last();
+            var neighbors = Nodes[node].Connections;
+
+            foreach (var neighbor in neighbors)
+            {
+                var neighborZone = Zones[neighbor];
+                if (invalidExits.Contains(neighborZone.Type))
+                {
+                    if (!visited.Add(neighbor)) continue;
+                    
+                    var copy = new List<int>(path) { neighbor };
+                    queue.Add(copy);
+                    continue;
+                }
+                
+                var fullPath = new List<int>(path) { neighbor };
+
+                var links = new Godot.Collections.Array<int>();
+                for (var i = 0; i < fullPath.Count - 1; i++)
+                {
+                    var from = fullPath[i];
+                    var to  = fullPath[i + 1];
+                    links.Add(Nodes[from].ConnectionLinkIndexes[Nodes[from].Connections.IndexOf(to)]);
+                }
+                
+                results.Add(links);
+            }
+        }
+        
+        return results;
+    }
     
     public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type)
     {

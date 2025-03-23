@@ -9,7 +9,7 @@ const ZONE_GROUP := preload("res://Resources/ZoneGroup.tres")
 @onready var shortest_route_path_label: Label = %ShortestRoutePathLabel
 @onready var shortest_route_copy_button: Button = %ShortestRouteCopyButton
 @onready var shortest_route_clear_button: Button = %ShortestRouteClearButton
-@onready var all_paths_outinput: AutoCompleteLineEdit = %AllPathsOutinput
+@onready var all_paths_out_input: AutoCompleteLineEdit = %AllPathsOutinput
 @onready var all_paths_out_find_button: Button = %AllPathsOutFindButton
 @onready var all_paths_out_to_royal_toggle: CheckButton = %AllPathsOutToRoyalToggle
 @onready var all_paths_out_previous_button: Button = %AllPathsOutPreviousButton
@@ -18,6 +18,7 @@ const ZONE_GROUP := preload("res://Resources/ZoneGroup.tres")
 @onready var all_paths_out_path_label: Label = %AllPathsOutPathLabel
 @onready var all_paths_out_copy_button: Button = %AllPathsOutCopyButton
 
+var zones: Array[Zone] = []
 var zone_names: Array[String] = []
 
 enum HighlightType {
@@ -53,11 +54,13 @@ func _ready() -> void:
 	shortest_route_find_button.pressed.connect(find_shortest_path)
 	shortest_route_clear_button.pressed.connect(clear_shortest_path)
 	shortest_route_copy_button.pressed.connect(copy_shortest_path)
+	all_paths_out_find_button.pressed.connect(find_all_paths_out)
 
 func register_zone_names() -> void:
 	zone_names.clear()
+	zones.clear()
 	
-	var zones := ZONE_GROUP.load_all()
+	for zone in ZONE_GROUP.load_all(): zones.append(zone as Zone)
 	zones.sort_custom(func (a: Zone, b: Zone) -> bool: return a.Id < b.Id)
 	
 	var road_zone_names: Array[String] = []
@@ -68,7 +71,7 @@ func register_zone_names() -> void:
 	
 	shortest_route_from_input.options = zone_names
 	shortest_route_to_input.options = zone_names
-	all_paths_outinput.options = road_zone_names
+	all_paths_out_input.options = road_zone_names
 
 func call_resize() -> void:
 	# hacky solution to update tab size but it works
@@ -76,6 +79,7 @@ func call_resize() -> void:
 
 var currently_selected_links: PackedInt32Array = [] :
 	set(value):
+		# TODO: reuse this logic for the all paths out display
 		currently_selected_links = value
 		if value.size() == 0:
 			shortest_route_path_label.text = ""
@@ -137,3 +141,17 @@ func clear_shortest_path() -> void:
 
 func copy_shortest_path() -> void:
 	DisplayServer.clipboard_set(shortest_route_path_label.text)
+
+func find_all_paths_out() -> void:
+	var from := all_paths_out_input.get_value()
+	if from.is_empty(): return
+	
+	var zone_index := zone_names.find(from)
+	if zone_index < 0 or zone_index >= zones.size(): return
+	
+	var all_paths_out: Array[Array] = graph.FindAllPathsOut(zone_index, all_paths_out_to_royal_toggle.button_pressed)
+	print(zone_index, " ", zones[zone_index].DisplayName)
+	print(all_paths_out)
+	# i forgor these are actually link indexes, not node indexes :skull:
+	#print(all_paths_out.map(func (path: Array) -> Array: return path.map(func (id: int) -> String: return zones[id].DisplayName)))
+	
