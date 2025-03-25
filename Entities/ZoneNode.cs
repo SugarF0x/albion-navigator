@@ -59,6 +59,8 @@ public partial class ZoneNode : ForceGraphNode
 	public override void _Ready()
 	{
 		DisplayName = _displayName;
+
+		if (Engine.IsEditorHint()) return;
 		HideName();
 	}
 	
