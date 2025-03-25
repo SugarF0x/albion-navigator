@@ -77,14 +77,38 @@ func call_resize() -> void:
 	# hacky solution to update tab size but it works
 	(get_parent_control() as TabContainer).tab_changed.emit(-1)
 
+func get_min_links_expiration(links: PackedInt32Array) -> String:
+	var min_expiration: String
+	for i in links:
+		var link: ZoneLink = graph.Links[i]
+		var expiration: String = link.ExpiresAt
+		if expiration.is_empty(): continue
+		if min_expiration.is_empty(): min_expiration = expiration; continue
+		
+		var expiration_date := Time.get_unix_time_from_datetime_string(expiration)
+		var min_expiration_date := Time.get_unix_time_from_datetime_string(min_expiration)
+		
+		min_expiration = min_expiration if min_expiration_date < expiration_date else expiration
+	
+	return min_expiration
+
+func get_path_string_in_discord_format(zone_indexes: Array[int], link_indexes: PackedInt32Array) -> String:
+	if zone_indexes.size() == 0: return ""
+	
+	var nodes := zone_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
+	var names := nodes.map(func (node: ZoneNode) -> String: return "{type} {name}".format({ "type": zone_type_to_emoji_map[node.Type], "name": node.DisplayName }))
+	return "\n".join(names)
+	
+	var min_expiration := get_min_links_expiration(link_indexes)
+	if not min_expiration.is_empty():
+		shortest_route_path_label.text = "Expires: <t:{expiration}:R>\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": Time.get_unix_time_from_datetime_string(min_expiration) })
+
+var currently_selected_path_node_indexes: Array[int] = []
 var currently_selected_links: PackedInt32Array = [] :
 	set(value):
-		# TODO: reuse this logic for the all paths out display
 		currently_selected_links = value
-		if value.size() == 0:
-			shortest_route_path_label.text = ""
-			call_resize()
-			return
+		currently_selected_path_node_indexes.clear()
+		if value.size() == 0: return
 		
 		var first_link: ZoneLink = graph.Links[value[0]]
 		var first_link_names: Array[int] = [first_link.Source, first_link.Target]
@@ -99,27 +123,7 @@ var currently_selected_links: PackedInt32Array = [] :
 		else:
 			node_indexes = first_link_names
 		
-		var nodes := node_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
-		var names := nodes.map(func (node: ZoneNode) -> String: return "{type} {name}".format({ "type": zone_type_to_emoji_map[node.Type], "name": node.DisplayName }))
-		shortest_route_path_label.text = "\n".join(names)
-		
-		var min_expiration: String
-		for i in value:
-			var link: ZoneLink = graph.Links[i]
-			var expiration: String = link.ExpiresAt
-			# TODO: expiration might be miscalculated (timezone offset error), gotta check on that
-			if expiration.is_empty(): continue
-			if min_expiration.is_empty(): min_expiration = expiration; continue
-			
-			var expiration_date := Time.get_unix_time_from_datetime_string(expiration)
-			var min_expiration_date := Time.get_unix_time_from_datetime_string(min_expiration)
-			
-			min_expiration = min_expiration if min_expiration_date < expiration_date else expiration
-		
-		if not min_expiration.is_empty():
-			shortest_route_path_label.text = "Expires: <t:{expiration}:R>\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": Time.get_unix_time_from_datetime_string(min_expiration) })
-		
-		call_resize()
+		currently_selected_path_node_indexes = node_indexes
 
 func find_shortest_path() -> void:
 	graph.HighlightLinks(currently_selected_links)
@@ -133,13 +137,22 @@ func find_shortest_path() -> void:
 	var to_index := zone_names.find(to)
 	
 	currently_selected_links = graph.FindShortestPath(from_index, to_index)
+	if currently_selected_links.size() == 0: 
+		call_resize()
+		return
+	
 	graph.HighlightLinks(currently_selected_links, HighlightType.Path)
+	shortest_route_path_label.text = get_path_string_in_discord_format(currently_selected_path_node_indexes, currently_selected_links)
+	call_resize()
 
 func clear_shortest_path() -> void:
 	graph.HighlightLinks(currently_selected_links)
 	currently_selected_links = []
+	shortest_route_path_label.text = ""
+	call_resize()
 
 func copy_shortest_path() -> void:
+	if currently_selected_links.size() == 0: return
 	DisplayServer.clipboard_set(shortest_route_path_label.text)
 
 func find_all_paths_out() -> void:
