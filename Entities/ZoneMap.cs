@@ -131,6 +131,7 @@ public partial class ZoneMap : ForceDirectedGraph
 
     
     // TODO: man, this c#-gd bridging masturbation is driving me crazy, i should just stick to c# for everything, really
+    /// <returns>Returns only paths that include portal connection. If none is found, returns a single on-land path. If starting zone is already in exit area, returns empty array</returns>
     public Godot.Collections.Array<Godot.Collections.Array<int>> FindAllPathsOut(int source, bool searchForRoyalExit)
     {
         var results = new Godot.Collections.Array<Godot.Collections.Array<int>>();
@@ -176,8 +177,13 @@ public partial class ZoneMap : ForceDirectedGraph
                 results.Add(links);
             }
         }
-        
-        return results;
+
+        if (results.Count == 0) return results;
+
+        var pathsWithPortal = results.Where(path => path.Any(link => new[] { Zones[Links[link].Source].Type, Zones[Links[link].Target].Type }.Contains(Zone.ZoneType.Road))).ToArray();
+        if (pathsWithPortal.Length == 0) return results[..1];
+
+        return new Godot.Collections.Array<Godot.Collections.Array<int>>(pathsWithPortal);
     }
     
     public void HighlightLinks(int[] indexes, ZoneLink.HighlightType type)
