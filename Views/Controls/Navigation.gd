@@ -37,8 +37,10 @@ enum ZoneType {
 	Red, 
 	Black, 
 	Road,
+	OutlandCity,
 }
 
+# TODO: this should probably come from settings
 var zone_type_to_emoji_map: Dictionary = {
 	ZoneType.StartingCity: ':house_with_garden:',
 	ZoneType.City: ':european_castle:',
@@ -46,7 +48,8 @@ var zone_type_to_emoji_map: Dictionary = {
 	ZoneType.Yellow: ':yellow_zone:',
 	ZoneType.Red: ':red_zone:',
 	ZoneType.Black: ':black_zone:',
-	ZoneType.Road: ':portal:'
+	ZoneType.Road: ':portal:',
+	ZoneType.OutlandCity: ':house_abandoned:',
   }
 
 func _ready() -> void:
@@ -55,6 +58,11 @@ func _ready() -> void:
 	shortest_route_clear_button.pressed.connect(clear_shortest_path)
 	shortest_route_copy_button.pressed.connect(copy_shortest_path)
 	all_paths_out_find_button.pressed.connect(find_all_paths_out)
+	all_paths_out_copy_button.pressed.connect(copy_shortest_path_out)
+	all_paths_out_previous_button.pressed.connect(func() -> void: selected_path_out_index = maxi(selected_path_out_index - 1, 0))
+	all_paths_out_next_button.pressed.connect(func() -> void: selected_path_out_index = mini(selected_path_out_index + 1, all_paths_out.size() - 1))
+	all_paths_out_previous_button.disabled = true
+	all_paths_out_next_button.disabled = true
 
 func register_zone_names() -> void:
 	zone_names.clear()
@@ -63,15 +71,11 @@ func register_zone_names() -> void:
 	for zone in ZONE_GROUP.load_all(): zones.append(zone as Zone)
 	zones.sort_custom(func (a: Zone, b: Zone) -> bool: return a.Id < b.Id)
 	
-	var road_zone_names: Array[String] = []
-	
-	for zone in zones:
-		zone_names.append(zone.DisplayName)
-		if zone.Type == ZoneType.Road: road_zone_names.append(zone.DisplayName)
+	for zone in zones: zone_names.append(zone.DisplayName)
 	
 	shortest_route_from_input.options = zone_names
 	shortest_route_to_input.options = zone_names
-	all_paths_out_input.options = road_zone_names
+	all_paths_out_input.options = zone_names
 
 func call_resize() -> void:
 	# hacky solution to update tab size but it works
@@ -97,11 +101,11 @@ func get_path_string_in_discord_format(zone_indexes: Array[int], link_indexes: P
 	
 	var nodes := zone_indexes.map(func (i: int) -> ZoneNode: return graph.Nodes[i])
 	var names := nodes.map(func (node: ZoneNode) -> String: return "{type} {name}".format({ "type": zone_type_to_emoji_map[node.Type], "name": node.DisplayName }))
-	return "\n".join(names)
+	var route_stack := "\n".join(names)
 	
 	var min_expiration := get_min_links_expiration(link_indexes)
-	if not min_expiration.is_empty():
-		shortest_route_path_label.text = "Expires: <t:{expiration}:R>\n{rest}".format({ "rest": shortest_route_path_label.text, "expiration": Time.get_unix_time_from_datetime_string(min_expiration) })
+	if min_expiration.is_empty(): return route_stack
+	return "Expires: <t:{expiration}:R>\n{rest}".format({ "rest": route_stack, "expiration": Time.get_unix_time_from_datetime_string(min_expiration) })
 
 var currently_selected_path_node_indexes: Array[int] = []
 var currently_selected_links: PackedInt32Array = [] :
@@ -155,16 +159,47 @@ func copy_shortest_path() -> void:
 	if currently_selected_links.size() == 0: return
 	DisplayServer.clipboard_set(shortest_route_path_label.text)
 
+func copy_shortest_path_out() -> void:
+	if currently_selected_links.size() == 0: return
+	DisplayServer.clipboard_set(all_paths_out_path_label.text)
+
+func update_all_paths_out_label() -> void:
+	all_paths_out_list_index_label.text = "{index}/{length}".format({ "index": selected_path_out_index + 1, "length": all_paths_out.size() })
+
+var all_paths_out: Array[Array] = [] : 
+	set(value):
+		all_paths_out = value
+		update_all_paths_out_label()
+
+var selected_path_out_index := -1 :
+	set(value):
+		if value == selected_path_out_index: return
+		graph.HighlightLinks(currently_selected_links)
+		all_paths_out_previous_button.disabled = value <= 0
+		all_paths_out_next_button.disabled = value >= all_paths_out.size() - 1
+		
+		selected_path_out_index = value
+		update_all_paths_out_label()
+		if value < 0: 
+			all_paths_out_path_label.text = ""
+			call_resize()
+			return
+		
+		currently_selected_links = all_paths_out[value]
+		graph.HighlightLinks(all_paths_out[value], HighlightType.Path)
+		all_paths_out_path_label.text = get_path_string_in_discord_format(currently_selected_path_node_indexes, currently_selected_links)
+		call_resize()
+
 func find_all_paths_out() -> void:
+	all_paths_out.clear()
+	selected_path_out_index = -1
+	
 	var from := all_paths_out_input.get_value()
 	if from.is_empty(): return
 	
 	var zone_index := zone_names.find(from)
 	if zone_index < 0 or zone_index >= zones.size(): return
 	
-	var all_paths_out: Array[Array] = graph.FindAllPathsOut(zone_index, all_paths_out_to_royal_toggle.button_pressed)
-	print(zone_index, " ", zones[zone_index].DisplayName)
-	print(all_paths_out)
-	# i forgor these are actually link indexes, not node indexes :skull:
-	#print(all_paths_out.map(func (path: Array) -> Array: return path.map(func (id: int) -> String: return zones[id].DisplayName)))
+	all_paths_out = graph.FindAllPathsOut(zone_index, all_paths_out_to_royal_toggle.button_pressed)
+	if all_paths_out.size() > 0: selected_path_out_index = 0
 	
