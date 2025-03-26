@@ -74,6 +74,7 @@ public partial class ZoneMap : ForceDirectedGraph
         
             node.Type = zone.Type;
             node.DisplayName = zone.DisplayName;
+            node.Zone = zone;
             
             AddNode(node);
         

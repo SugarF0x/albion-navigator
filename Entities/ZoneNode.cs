@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AlbionNavigator.Graph;
 using Godot;
@@ -33,6 +34,32 @@ public partial class ZoneNode : ForceGraphNode
 			CallDeferred(nameof(UpdateLabelAttributes));
 		}
 	}
+
+	private string _layerName = "";
+	[Export] public string LayerName
+	{
+		get => _layerName;
+		set
+		{
+			_layerName = value;
+			if (LayerLabel == null) return;
+			
+			LayerLabel.Text = value;
+			LayerLabel.ResetSize();
+			CallDeferred(nameof(UpdateLabelAttributes));
+		}
+	}
+
+	private Zone _zone;
+	[Export] public Zone Zone
+	{
+		get => _zone;
+		set
+		{
+			_zone = value;
+			LayerName = value.Layer != Zone.ZoneLayer.NonApplicable ? value.Layer.ToString() : "";
+		}
+	}
 	
 	private const float NodeRadius = 5f;
 
@@ -40,9 +67,12 @@ public partial class ZoneNode : ForceGraphNode
 	{
 		NameLabel.PivotOffset = NameLabel.Size / 2;
 		NameLabel.Position = -NameLabel.PivotOffset with { Y = -NameLabel.PivotOffset.Y + NameLabel.Size.Y / 20 + NodeRadius };
+		LayerLabel.PivotOffset = LayerLabel.Size / 2;
+		LayerLabel.Position = -LayerLabel.PivotOffset with { Y = -LayerLabel.PivotOffset.Y + LayerLabel.Size.Y / 20 - NodeRadius * 2 };
 	}
 
 	[Export] public Label NameLabel;
+	[Export] public Label LayerLabel;
 
 	public readonly Dictionary<Zone.ZoneType, Color> TypeToColorMap = new()
 	{
@@ -71,8 +101,8 @@ public partial class ZoneNode : ForceGraphNode
 		ApplyOpacity();
 	}
 
-	public void ShowName() { NameLabel.Show(); }
-	public void HideName() { NameLabel.Hide(); }
+	public void ShowName() { NameLabel.Show(); LayerLabel.Show(); }
+	public void HideName() { NameLabel.Hide(); LayerLabel.Hide(); }
 	
 	private void ApplyOpacity()
 	{
