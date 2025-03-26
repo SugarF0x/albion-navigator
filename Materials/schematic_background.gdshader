@@ -15,16 +15,16 @@ uniform float threshold_divider = 1.9;
 
 void fragment() {
 	vec2 uv = FRAGCOORD.xy / SCREEN_PIXEL_SIZE;
-	
+
 	COLOR = base_color;
-	
+
 	bool is_on_cell_border = (
 		mod(FRAGCOORD.x, cell_size) < cell_thickness / threshold_divider
 		|| mod(FRAGCOORD.x, cell_size) > cell_size - cell_thickness / threshold_divider
 		|| mod(FRAGCOORD.y, cell_size) < cell_thickness / threshold_divider
 		|| mod(FRAGCOORD.y, cell_size) > cell_size - cell_thickness / threshold_divider
 	);
-	
+
 	float grid_size = cell_size * grid_multiplier;
 	bool is_on_grid_border = (
 		mod(FRAGCOORD.x, grid_size) < grid_thickness / threshold_divider
@@ -32,13 +32,13 @@ void fragment() {
 		|| mod(FRAGCOORD.y, grid_size) < grid_thickness / threshold_divider
 		|| mod(FRAGCOORD.y, grid_size) > grid_size - grid_thickness / threshold_divider
 	);
-	
+
 	if (is_on_grid_border) {
 		COLOR = grid_color;
 	} else if (is_on_cell_border) {
 		COLOR = cell_color;
 	}
-	
+
 	float darkness_factor = clamp(UV.y - 0.60, 0.0, 0.40);
 	COLOR = vec4(COLOR.rgb * (1.0 - darkness_factor), COLOR.a);
 }
