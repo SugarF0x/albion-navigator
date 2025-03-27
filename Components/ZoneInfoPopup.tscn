@@ -1,0 +1,47 @@
+[gd_scene load_steps=12 format=3 uid="uid://db3mnsgfk6k5"]
+
+[ext_resource type="Script" uid="uid://cxwc2hlqlyddh" path="res://Components/ZoneInfoPopup.gd" id="1_vo0fo"]
+[ext_resource type="Resource" uid="uid://58mkglesna51" path="res://Resources/Zones/Sebos-Oyohun.tres" id="2_m2vow"]
+[ext_resource type="PackedScene" uid="uid://di8mt45prjmnl" path="res://Components/ZoneComponentStack.tscn" id="3_xrjym"]
+[ext_resource type="Script" uid="uid://bijvftetl6l8k" path="res://Resources/ZoneComponent.cs" id="4_5hxqx"]
+[ext_resource type="Resource" uid="uid://q4njktba4ri2" path="res://Resources/ZoneComponents/8-Gather_Small-Fiber-Hide.tres" id="5_omqiq"]
+[ext_resource type="Resource" uid="uid://cda68lu25f7uu" path="res://Resources/ZoneComponents/8-Chest_Small-Green.tres" id="6_fqd5r"]
+[ext_resource type="Resource" uid="uid://c83kowwpee5fa" path="res://Resources/ZoneComponents/8-Gather_Small-Stone-Wood.tres" id="7_vkdtv"]
+[ext_resource type="Resource" uid="uid://c463ckdcpybac" path="res://Resources/ZoneComponents/8-Dungeon_Avalonian.tres" id="8_mc4w7"]
+[ext_resource type="Resource" uid="uid://dryqa8dnap85u" path="res://Resources/ZoneComponents/8-Gather_Big-Wood-Fiber.tres" id="9_3fwa6"]
+[ext_resource type="Resource" uid="uid://bqirwv28tm8p2" path="res://Resources/ZoneComponents/8-Chest_Big-Gold.tres" id="10_pofgi"]
+[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="11_iyt6q"]
+
+[node name="ZoneInfoPopup" type="PanelContainer"]
+offset_right = 216.0
+offset_bottom = 270.0
+script = ExtResource("1_vo0fo")
+zone = ExtResource("2_m2vow")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sebos-Oyohun"
+
+[node name="LayerLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "L3Hub"
+
+[node name="ZoneComponentStack" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_xrjym")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+components = Array[ExtResource("4_5hxqx")]([ExtResource("5_omqiq"), ExtResource("6_fqd5r"), ExtResource("7_vkdtv"), ExtResource("8_mc4w7"), ExtResource("9_3fwa6"), ExtResource("10_pofgi"), ExtResource("6_fqd5r"), ExtResource("11_iyt6q")])
