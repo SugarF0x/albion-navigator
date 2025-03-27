@@ -26,7 +26,7 @@ public partial class ZoneNode : ForceGraphNode
 		set
 		{
 			_displayName = value;
-			if (NameLabel == null) return;
+			if (NameLabel == null || value == null) return;
 			
 			NameLabel.Text = value.Replace(" ", "\n");
 		}

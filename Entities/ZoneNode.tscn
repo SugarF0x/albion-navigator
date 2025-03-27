@@ -4,6 +4,8 @@
 
 [node name="ZoneNode" type="Node2D"]
 script = ExtResource("1_mwetv")
+DisplayName = "Sample Name"
+LayerName = "Sample Layer"
 
 [node name="DisplayNameLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -20,7 +22,7 @@ grow_vertical = 2
 pivot_offset = Vector2(28, 24)
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 4
-text = "Display
+text = "Sample
 Name"
 horizontal_alignment = 1
 
@@ -40,5 +42,5 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 4
-text = "Layer Name"
+text = "Sample Layer"
 horizontal_alignment = 1
