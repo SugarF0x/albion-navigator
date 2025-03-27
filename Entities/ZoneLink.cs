@@ -9,7 +9,7 @@ namespace AlbionNavigator.Entities;
 public partial class ZoneLink : ForceGraphLink
 {
     [Export] public Line2D Outline;
-    [Export] public float OutlineWidth = 1f;
+    [Export] public float OutlineWidth = 5f;
     
     public string ExpiresAt { get; set; }
     
@@ -100,7 +100,7 @@ public partial class ZoneLink : ForceGraphLink
 
     public void Highlight(HighlightType type)
     {
-        SetWidth(1f);
+        SetWidth(5f);
         switch (type)
         {
             case HighlightType.Default: Line.DefaultColor = Colors.White; return;
@@ -108,11 +108,11 @@ public partial class ZoneLink : ForceGraphLink
             case HighlightType.RoadToContinent: Line.DefaultColor = Colors.Cyan with { A = .5f }; return;
             case HighlightType.Path: 
                 Line.DefaultColor = Colors.Purple;
-                SetWidth(5f, true);
+                SetWidth(10f, true);
                 return;
             case HighlightType.WayOut: 
                 Line.DefaultColor = Colors.Red;
-                SetWidth(5f, true);
+                SetWidth(10f, true);
                 return;
             default: GD.Print("Unknown highlight type"); return;
         }

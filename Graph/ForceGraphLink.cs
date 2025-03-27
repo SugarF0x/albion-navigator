@@ -7,7 +7,7 @@ namespace AlbionNavigator.Graph;
 public partial class ForceGraphLink : Node2D
 {
     [Export] public Line2D Line;
-    [Export] public float DesiredDistance = 30f;
+    [Export] public float DesiredDistance = 30f * 4f;
 
     public int Source = -1;
     public int Target = -1;

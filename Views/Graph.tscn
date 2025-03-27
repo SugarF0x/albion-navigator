@@ -14,7 +14,10 @@ point_count = 3
 script = ExtResource("1_fh4y3")
 
 [node name="GraphCamera" type="Camera2D" parent="." node_paths=PackedStringArray("zone_map") groups=["GraphCamera"]]
+zoom = Vector2(0.25, 0.25)
 script = ExtResource("2_6qgp7")
+min_zoom = 0.2
+max_zoom = 2.0
 zone_map = NodePath("../ZoneMap")
 
 [node name="BackgroundShaderLayer" type="CanvasLayer" parent="."]
@@ -31,7 +34,6 @@ grow_vertical = 2
 color = Color(0, 1, 1, 1)
 
 [node name="MapBackground" type="Sprite2D" parent="."]
-scale = Vector2(0.194, 0.194)
 texture = ExtResource("4_3gtab")
 
 [node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]

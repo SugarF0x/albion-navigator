@@ -52,7 +52,7 @@ func adjust_zoom(out := false) -> void:
 
 var are_names_hidden := true
 func adjust_zone_label_visibility() -> void:
-	var should_hide := zoom.x < 4.0
+	var should_hide := zoom.x < 1.0
 	if should_hide == are_names_hidden: return
 	are_names_hidden = should_hide
 	

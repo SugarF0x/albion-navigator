@@ -67,7 +67,7 @@ public partial class ZoneMap : ForceDirectedGraph
             var zone = Zones[i];
             if (NodeScene.Instantiate() is not ZoneNode node) continue;
             
-            node.Position = zone.Position;
+            node.Position = zone.Position * 5.1f;
             node.Index = zone.Id;
             node.Connections = zone.Connections.ToList();
             if (node.Position != Vector2.Zero) node.Frozen = true;

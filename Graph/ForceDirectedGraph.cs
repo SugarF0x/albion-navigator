@@ -25,8 +25,8 @@ public partial class ForceDirectedGraph : Node2D
 
     [ExportGroup("Gravitational pull")]
     [Export] public float GravityStrength = 0.1f;
-    [Export] public float CentralStrength = 1f;
-    [Export] public float GravityDesiredDistance = 200f;
+    [Export] public float CentralStrength = 1f * 5f;
+    [Export] public float GravityDesiredDistance = 200f * 5f;
 
     [ExportGroup("Debug")] 
     [Export] public bool DrawQuadTree;

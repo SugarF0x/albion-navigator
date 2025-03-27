@@ -2,49 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bq3hnbs4js4it" path="res://Entities/ZoneNode.cs" id="1_mwetv"]
 
-[node name="ZoneNode" type="Node2D" node_paths=PackedStringArray("NameLabel", "LayerLabel")]
+[node name="ZoneNode" type="Node2D"]
 script = ExtResource("1_mwetv")
-DisplayName = "Display Name"
-LayerName = "Layer Name"
-NameLabel = NodePath("DisplayNameLabel")
-LayerLabel = NodePath("LayerLabel")
 
 [node name="DisplayNameLabel" type="Label" parent="."]
+unique_name_in_owner = true
 z_index = 10
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -56.5
-offset_top = -36.85
-offset_right = 56.5
-offset_bottom = 56.15
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.5
+offset_top = 16.0
+offset_right = 28.5
+offset_bottom = 65.0
 grow_horizontal = 2
-scale = Vector2(0.1, 0.1)
-pivot_offset = Vector2(56.5, 46.5)
+grow_vertical = 2
+pivot_offset = Vector2(28, 24)
 size_flags_horizontal = 4
-theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 4
 text = "Display
 Name"
 horizontal_alignment = 1
 
 [node name="LayerLabel" type="Label" parent="."]
+unique_name_in_owner = true
 z_index = 10
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -93.0
-offset_top = -30.25
-offset_right = 93.0
-offset_bottom = 14.75
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -40.0
+offset_right = 47.0
+offset_bottom = -17.0
 grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.1, 0.1)
-pivot_offset = Vector2(93, 22.5)
+grow_vertical = 0
 size_flags_horizontal = 4
-theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 4
 text = "Layer Name"
 horizontal_alignment = 1

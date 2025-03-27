@@ -8,12 +8,12 @@ public partial class ForceGraphNode : Node2D
 {
     [ExportGroup("Forces")]
     [Export] public bool Frozen { get; set; }
-    [Export] public float Strength { get; set; } = -40f;
+    [Export] public float Strength { get; set; } = -40f * 25f;
     [Export] public float VelocityDecay { get; set; } = 0.6f;
 
     [ExportGroup("Initial Node Position")]
-    [Export] public float InitialRadius { get; set; } = 30f;
-    [Export] public float InitialAngle { get; set; } = float.Pi * (3f - float.Sqrt(5f));
+    [Export] public float InitialRadius { get; set; } = 30f * 5.1f;
+    [Export] public float InitialAngle { get; set; } = float.Pi * (3f - float.Sqrt(5f * 5.1f));
     
     // TODO: now that i think about it, i am not convinced Index and Connections should even be here to begin with but rather be part of force directed graph instead
     public int Index { get; set; } = -1;
