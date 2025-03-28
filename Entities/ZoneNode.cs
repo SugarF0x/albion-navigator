@@ -93,12 +93,14 @@ public partial class ZoneNode : ForceGraphNode
 		HoverArea.MouseEntered += ShowPopup;
 		HoverArea.MouseExited += HidePopup;
 	}
+
+	private float ElementOpacity => Engine.IsEditorHint() ? 1f : Connections.Count > 0 ? 1f : 0.25f;
 	
 	public override void _Draw()
 	{
-		DrawCircle(Vector2.Zero, NodeRadius, Colors.White);
-		DrawCircle(Vector2.Zero, NodeRadius * .8f, TypeToColorMap[Type]);
-		ApplyOpacity();
+		DrawCircle(Vector2.Zero, NodeRadius, Colors.White with { A = ElementOpacity });
+		DrawCircle(Vector2.Zero, NodeRadius * .8f, TypeToColorMap[Type] with { A = ElementOpacity });
+		ApplyElementOpacity();
 	}
 
 	public void ShowName() { NameLabel.Show(); LayerLabel.Show(); }
@@ -107,9 +109,9 @@ public partial class ZoneNode : ForceGraphNode
 	public void ShowPopup() { ZoneInfoPopup.Call("fade", false); }
 	public void HidePopup() { ZoneInfoPopup.Call("fade", true); }
 
-	private void ApplyOpacity()
+	private void ApplyElementOpacity()
 	{
-		if (Engine.IsEditorHint()) return;
-		Modulate = Modulate with { A = Connections.Count > 0 ? 1f : 0.25f };
+		NameLabel.Modulate = NameLabel.Modulate with { A = ElementOpacity };
+		LayerLabel.Modulate = LayerLabel.Modulate with { A = ElementOpacity };
 	}
 }
