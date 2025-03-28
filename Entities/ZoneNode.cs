@@ -56,6 +56,7 @@ public partial class ZoneNode : ForceGraphNode
 			
 			LayerName = value.Layer != Zone.ZoneLayer.NonApplicable ? value.Layer.ToString() : "";
 			DisplayName = value.DisplayName;
+			UpdateZoneInfoPopup();
 		}
 	}
 	
@@ -86,9 +87,9 @@ public partial class ZoneNode : ForceGraphNode
 		ZoneInfoPopup = GetNode<Control>("%ZoneInfoPopup");
 		if (Engine.IsEditorHint()) return;
 		
-		Zone = Zone;
-		ZoneInfoPopup.Set("zone", Zone);
+		GetBaseZoneInfoPopupOffset();
 		HideName();
+		Zone = Zone;
 		ZoneInfoPopup.Visible = false;
 		HoverArea.MouseEntered += ShowPopup;
 		HoverArea.MouseExited += HidePopup;
@@ -113,5 +114,20 @@ public partial class ZoneNode : ForceGraphNode
 	{
 		NameLabel.Modulate = NameLabel.Modulate with { A = ElementOpacity };
 		LayerLabel.Modulate = LayerLabel.Modulate with { A = ElementOpacity };
+	}
+
+	private Vector2 BaseZoneInfoPopupOffset = new(0, 0);
+	private void GetBaseZoneInfoPopupOffset()
+	{
+		BaseZoneInfoPopupOffset = ZoneInfoPopup.Position with { Y = ZoneInfoPopup.Position.Y + ZoneInfoPopup.Size.Y };
+	}
+
+	private void UpdateZoneInfoPopup()
+	{
+		if (!IsNodeReady()) return;
+		
+		ZoneInfoPopup.Set("zone", Zone);
+		ZoneInfoPopup.ResetSize();
+		ZoneInfoPopup.Position = BaseZoneInfoPopupOffset with { Y = BaseZoneInfoPopupOffset.Y - ZoneInfoPopup.Size.Y };
 	}
 }

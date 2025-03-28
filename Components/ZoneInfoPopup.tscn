@@ -29,6 +29,8 @@ theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -44,4 +46,6 @@ text = "L3Hub"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 components = Array[ExtResource("4_5hxqx")]([ExtResource("5_omqiq"), ExtResource("6_fqd5r"), ExtResource("7_vkdtv"), ExtResource("8_mc4w7"), ExtResource("9_3fwa6"), ExtResource("10_pofgi"), ExtResource("6_fqd5r"), ExtResource("11_iyt6q")])
