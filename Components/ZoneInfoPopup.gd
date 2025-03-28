@@ -1,5 +1,5 @@
 @tool
-extends PanelContainer
+class_name ZoneInfoPopup extends PanelContainer
 
 enum ZoneLayer {
 	NonApplicable,
@@ -31,3 +31,15 @@ enum ZoneLayer {
 		layer_label.text = ZoneLayer.keys()[value.Layer]
 		layer_label.visible = value.Layer > 0
 		zone_component_stack.components = value.Components
+
+func fade(out := true) -> void:
+	if not out: visible = true
+	modulate = Color(1,1,1,1 if out else 0)
+	
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "modulate", Color(1,1,1,0 if out else 1), .5)
+	if out: 
+		await tween.finished
+		visible = false

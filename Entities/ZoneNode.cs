@@ -63,6 +63,8 @@ public partial class ZoneNode : ForceGraphNode
 
 	private Label NameLabel;
 	private Label LayerLabel;
+	private Control HoverArea;
+	private Control ZoneInfoPopup;
 
 	public readonly Dictionary<Zone.ZoneType, Color> TypeToColorMap = new()
 	{
@@ -80,10 +82,16 @@ public partial class ZoneNode : ForceGraphNode
 	{
 		NameLabel = GetNode<Label>("%DisplayNameLabel");
 		LayerLabel = GetNode<Label>("%LayerLabel");
-		
+		HoverArea = GetNode<Control>("%HoverArea");
+		ZoneInfoPopup = GetNode<Control>("%ZoneInfoPopup");
 		if (Engine.IsEditorHint()) return;
+		
 		Zone = Zone;
+		ZoneInfoPopup.Set("zone", Zone);
 		HideName();
+		ZoneInfoPopup.Visible = false;
+		HoverArea.MouseEntered += ShowPopup;
+		HoverArea.MouseExited += HidePopup;
 	}
 	
 	public override void _Draw()
@@ -95,7 +103,10 @@ public partial class ZoneNode : ForceGraphNode
 
 	public void ShowName() { NameLabel.Show(); LayerLabel.Show(); }
 	public void HideName() { NameLabel.Hide(); LayerLabel.Hide(); }
-	
+
+	public void ShowPopup() { ZoneInfoPopup.Call("fade", false); }
+	public void HidePopup() { ZoneInfoPopup.Call("fade", true); }
+
 	private void ApplyOpacity()
 	{
 		if (Engine.IsEditorHint()) return;

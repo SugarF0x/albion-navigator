@@ -1,11 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm2ouia1v1w2j"]
+[gd_scene load_steps=3 format=3 uid="uid://cm2ouia1v1w2j"]
 
 [ext_resource type="Script" uid="uid://bq3hnbs4js4it" path="res://Entities/ZoneNode.cs" id="1_mwetv"]
+[ext_resource type="PackedScene" uid="uid://db3mnsgfk6k5" path="res://Components/ZoneInfoPopup.tscn" id="2_u8q7d"]
 
 [node name="ZoneNode" type="Node2D"]
 script = ExtResource("1_mwetv")
 DisplayName = "Sample Name"
 LayerName = "Sample Layer"
+
+[node name="HoverArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="DisplayNameLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -44,3 +60,15 @@ size_flags_horizontal = 4
 theme_override_constants/outline_size = 4
 text = "Sample Layer"
 horizontal_alignment = 1
+
+[node name="ZoneInfoPopup" parent="." instance=ExtResource("2_u8q7d")]
+unique_name_in_owner = true
+z_index = 15
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -310.0
+offset_right = 256.0
+offset_bottom = -40.0
+grow_vertical = 0
