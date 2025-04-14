@@ -35,6 +35,8 @@ public partial class LoadingOverlay : CanvasLayer
         }
 
         _majorProgressBar.Value = 1.0;
+
+        _ = Task.Delay(1000).ContinueWith(_ => { QueueFree(); });
     }
 
     private Task LoadZones()
