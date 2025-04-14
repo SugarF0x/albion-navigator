@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://b45oj22hmvkv8"]
+
+[ext_resource type="Script" uid="uid://0efl8sic42f3" path="res://Views/LoadingOverlay.cs" id="1_yl8ip"]
+
+[node name="LoadingOverlay" type="CanvasLayer"]
+script = ExtResource("1_yl8ip")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Panel" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 90.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="MajorProgressBar" type="ProgressBar" parent="Control/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+
+[node name="MinorProgressBar" type="ProgressBar" parent="Control/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 1.0
+
+[node name="ProgressLabel" type="Label" parent="Control/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "loading text"
+horizontal_alignment = 1

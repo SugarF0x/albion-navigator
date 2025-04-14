@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Godot;
-using GodotResourceGroups;
 
 namespace AlbionNavigator.Autoload.Services;
 
@@ -57,7 +55,7 @@ public class LinkService
     public delegate void LinksUpdatedHandler(LinkUpdateType type, ZoneLink link);
     public event LinksUpdatedHandler LinksUpdated;
 
-    public List<ZoneLink> Links;
+    public List<ZoneLink> Links = [];
 
     private LinkService()
     {
@@ -85,12 +83,12 @@ public class LinkService
         Links.Add(link);
         // TODO: schedule removal on expiration
 
-        var updateType = expiration switch
+        LinksUpdated?.Invoke(GetUpdateType(), link);
+        return;
+
+        LinkUpdateType GetUpdateType()
         {
-            not null => LinkUpdateType.PortalRegistered,
-            _ => LinkUpdateType.StaticRegistered,
-        };
-        
-        LinksUpdated?.Invoke(updateType, link);
+            return string.IsNullOrEmpty(expiration) ? LinkUpdateType.PortalRegistered : LinkUpdateType.StaticRegistered;
+        }
     }
 }
