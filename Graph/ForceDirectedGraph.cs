@@ -50,8 +50,6 @@ public partial class ForceDirectedGraph : Node2D
     
     private ForceGraphNode[] FloatingNodes = [];
 
-    // TODO: disable underscore for private fields rule in Rider, kinda hate it tbh
-    
     public override void _Ready()
     {
         _random.Seed = "peepee-poopoo".Hash();
