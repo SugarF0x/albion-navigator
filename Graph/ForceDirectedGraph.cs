@@ -53,6 +53,7 @@ public partial class ForceDirectedGraph : Node2D
     public override void _Ready()
     {
         _random.Seed = "peepee-poopoo".Hash();
+        AlphaDistance = 1f - Alpha;
         
         ConnectChildListeners();
     }
@@ -128,7 +129,7 @@ public partial class ForceDirectedGraph : Node2D
     
     public void Reheat(float value)
     {
-        Alpha = float.Max(Alpha, value);
+        AlphaDistance = float.Max(Alpha, value);
     }
 
     private bool IsSimulationRunning;
