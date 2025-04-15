@@ -37,6 +37,7 @@ color = Color(0, 1, 1, 1)
 texture = ExtResource("4_3gtab")
 
 [node name="ZoneMap" parent="." groups=["ForceGraph"] instance=ExtResource("5_sbrde")]
+Alpha = 0.0
 AlphaDecayCurve = SubResource("Curve_pxj3m")
 AlphaStep = 0.008
 

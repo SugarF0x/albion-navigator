@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dds21sejjugrf"]
+[gd_scene load_steps=9 format=3 uid="uid://dds21sejjugrf"]
 
 [ext_resource type="PackedScene" uid="uid://5xo5eyb2yrqb" path="res://Views/Graph.tscn" id="1_xcdcb"]
 [ext_resource type="Script" uid="uid://bmqsmv1nloa6c" path="res://HomeTabs.gd" id="2_0yvgt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://e3kqvbw7jo7" path="res://Views/Controls/Navigation.tscn" id="5_pe60m"]
 [ext_resource type="PackedScene" uid="uid://kjjcfdort7nc" path="res://Views/Controls/Settings.tscn" id="6_5yqxp"]
 [ext_resource type="PackedScene" uid="uid://e7gt3euxcl6m" path="res://Views/Controls/ZoneInfo.tscn" id="6_f516x"]
+[ext_resource type="PackedScene" uid="uid://b45oj22hmvkv8" path="res://Views/LoadingOverlay.tscn" id="8_34ysk"]
 
 [node name="Home" type="Node"]
 
@@ -49,3 +50,5 @@ metadata/_tab_index = 3
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
+
+[node name="LoadingOverlay" parent="." instance=ExtResource("8_34ysk")]

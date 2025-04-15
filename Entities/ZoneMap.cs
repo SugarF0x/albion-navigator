@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AlbionNavigator.Autoload.Services;
 using AlbionNavigator.Graph;
 using Godot;
 using GodotResourceGroups;
@@ -10,6 +11,8 @@ namespace AlbionNavigator.Entities;
 [GlobalClass]
 public partial class ZoneMap : ForceDirectedGraph
 {
+    public static ZoneMap Instance;
+    
     [ExportGroup("Entities")] 
     [Export] public PackedScene NodeScene;
     [Export] public PackedScene LinkScene;
@@ -28,11 +31,16 @@ public partial class ZoneMap : ForceDirectedGraph
         
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
         ZoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");
-        
-        PopulateZones();
+
+        Instance = this;
         base._Ready();
 
         SimulationStopped += SyncZoneResourcePositions;
+    }
+
+    public override void _ExitTree()
+    {
+        Instance = null;
     }
 
     private void SyncZoneResourcePositions()
@@ -57,9 +65,9 @@ public partial class ZoneMap : ForceDirectedGraph
     
     // TODO: i really need to rethink the approach to ZoneNode; since data is now stored in resources they dont need most of that data
 
-    private void PopulateZones()
+    public void PopulateZones()
     {
-        Zones = ZoneGroup.LoadAll().Cast<Zone>().ToArray();
+        Zones = ZoneService.Instance.Zones;
         Array.Sort(Zones, (a, b) => a.Id - b.Id);
 
         for (var i = 0; i < Zones.Length; i++)

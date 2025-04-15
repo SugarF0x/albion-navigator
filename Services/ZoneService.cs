@@ -31,6 +31,7 @@ public class ZoneService
         LoadZones();
     }
 
+    // TODO: figure out how to speed this up - limited by fps currently (sync is 6s and async is 12s at 144fps)
     private void LoadZones()
     {
         var zoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");

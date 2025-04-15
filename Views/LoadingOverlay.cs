@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using AlbionNavigator.Autoload.Services;
+using AlbionNavigator.Entities;
 using Godot;
 using GodotResourceGroups;
 
@@ -34,9 +35,9 @@ public partial class LoadingOverlay : CanvasLayer
             await serviceLoaders[i]();
         }
 
-        _majorProgressBar.Value = 1.0;
+        _majorProgressBar.Value = 0.99;
 
-        _ = Task.Delay(1000).ContinueWith(_ => { QueueFree(); });
+        CallDeferred("OnAllServicesLoaded");
     }
 
     private Task LoadZones()
@@ -69,5 +70,18 @@ public partial class LoadingOverlay : CanvasLayer
     {
         _ = LinkService.Instance;
         return Task.CompletedTask;
+    }
+
+    private void OnAllServicesLoaded()
+    {
+        if (ZoneMap.Instance == null) throw new ArgumentNullException(nameof(ZoneMap.Instance));
+        
+        _progressLabel.Text = "Populating map...";
+        _minorProgressBar.Value = 0.0;
+        
+        ZoneMap.Instance.PopulateZones();
+        ZoneMap.Instance.Reheat(0f);
+        
+        QueueFree();
     }
 }
