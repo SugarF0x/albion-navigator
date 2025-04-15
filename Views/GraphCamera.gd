@@ -2,7 +2,7 @@ class_name GraphCamera extends Camera2D
 
 @onready var background_shader_rect: ColorRect = %BackgroundShaderRect
 
-@export var min_zoom := 0.5
+@export var min_zoom := 0.08
 @export var max_zoom := 8.0
 @export var zone_map: ZoneMap 
 
