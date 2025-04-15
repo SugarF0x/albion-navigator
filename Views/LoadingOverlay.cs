@@ -76,9 +76,14 @@ public partial class LoadingOverlay : CanvasLayer
     {
         if (ZoneMap.Instance == null) throw new ArgumentNullException(nameof(ZoneMap.Instance));
         
-        _progressLabel.Text = "Populating map...";
+        _progressLabel.Text = "Populating map... (app might freeze for a second or two)";
         _minorProgressBar.Value = 0.0;
-        
+
+        ToSignal(GetTree(), "process_frame").OnCompleted(StartSimulation);
+    }
+
+    private void StartSimulation()
+    {
         ZoneMap.Instance.PopulateZones();
         ZoneMap.Instance.Reheat(0f);
         
