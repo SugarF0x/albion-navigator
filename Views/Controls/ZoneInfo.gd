@@ -86,7 +86,7 @@ func on_search() -> void:
 
 func zoom_into_node(id: int) -> void:
 	var position := zones[id].Position + graph.position
-	camera.transition_to_position(position, camera.max_zoom)
+	camera.transition_to_position(position, 3.0)
 
 func zoom_on_current() -> void:
 	if inspected_id < 0: return

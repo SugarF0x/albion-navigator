@@ -70,7 +70,7 @@ func transition_to_position(new_pos: Vector2, new_zoom: float) -> void:
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	
-	tween.tween_method(tween_position.bind(position, zoom.x, new_pos, new_zoom), 0.0, 1.0, .75)
+	tween.tween_method(tween_position.bind(position, zoom.x, new_pos, minf(new_zoom, max_zoom)), 0.0, 1.0, .75)
 
 func tween_position(percent: float, start_pos: Vector2, start_zoom: float, end_pos: Vector2, end_zoom: float) -> void:
 	position = start_pos.lerp(end_pos, percent)
