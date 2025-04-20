@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using AlbionNavigator.Services;
 using Godot;
 
 namespace AlbionNavigator.Graph;
@@ -28,14 +30,14 @@ public partial class ForceGraphLink : Node2D
         Target = to;
     }
 
-    public virtual bool DrawLink(ForceGraphNode[] nodes)
+    public virtual bool DrawLink()
     {
         Line.ClearPoints();
-        if (Source < 0 || Source > nodes.Length) return false;
-        if (Target < 0 || Target > nodes.Length) return false;
+        if (Source < 0 || Source > ZoneService.Instance.Zones.Length) return false;
+        if (Target < 0 || Target > ZoneService.Instance.Zones.Length) return false;
         
-        Line.AddPoint(nodes[Source].Position);
-        Line.AddPoint(nodes[Target].Position);
+        Line.AddPoint(ZoneService.Instance.Zones[Source].Position);
+        Line.AddPoint(ZoneService.Instance.Zones[Target].Position);
 
         return true;
     }

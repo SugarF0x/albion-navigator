@@ -149,7 +149,7 @@ public partial class ForceDirectedGraph : Node2D
         ApplyForces();
         
         foreach (var node in Nodes) node.UpdatePosition();
-        foreach (var link in Links) link.DrawLink(Nodes);
+        foreach (var link in Links) link.DrawLink();
     }
 
     private void ApplyForces()

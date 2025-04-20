@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using AlbionNavigator.Graph;
+using AlbionNavigator.Services;
 using Godot;
 
 namespace AlbionNavigator.Entities;
@@ -19,15 +20,17 @@ public partial class ZoneLink : ForceGraphLink
     public override void _Ready()
     {
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
+        InitHighlight();
+        DrawLink();
     }
 
-    public override bool DrawLink(ForceGraphNode[] nodes)
+    public override bool DrawLink()
     {
         Outline.ClearPoints();
-        if (!base.DrawLink(nodes)) return false;
+        if (!base.DrawLink()) return false;
         
-        Outline.AddPoint(nodes[Target].Position);
-        Outline.AddPoint(nodes[Source].Position);
+        Outline.AddPoint(ZoneService.Instance.Zones[Target].Position);
+        Outline.AddPoint(ZoneService.Instance.Zones[Source].Position);
         
         return true;
     }
@@ -36,7 +39,6 @@ public partial class ZoneLink : ForceGraphLink
     {
         base.Initialize(graphIndex, nodes);
         InitExpiry();
-        InitHighlight(nodes);
     }
     
     protected override void InitStrength(ForceGraphNode[] nodes)
@@ -69,13 +71,12 @@ public partial class ZoneLink : ForceGraphLink
         GetTree().CreateTimer(GetExpirationInSeconds(ExpiresAt)).Timeout += ClosePortal;
     }
 
-    private void InitHighlight(ForceGraphNode[] nodes)
+    private void InitHighlight()
     {
-        var sourceNode = nodes[Source];
-        var targetNode = nodes[Target];
+        var sourceNode = ZoneService.Instance.Zones[Source];
+        var targetNode = ZoneService.Instance.Zones[Target];
 
-        if (sourceNode is not ZoneNode sourceZoneNode || targetNode is not ZoneNode targetZoneNode) return;
-        Zone.ZoneType[] zoneTypes = [sourceZoneNode.Type, targetZoneNode.Type];
+        Zone.ZoneType[] zoneTypes = [sourceNode.Type, targetNode.Type];
         
         if (zoneTypes.All(type => type == Zone.ZoneType.City)) DefaultHighlightType = HighlightType.CityPortal;
         if (zoneTypes.Any(type => type == Zone.ZoneType.Road) && zoneTypes.Any(type => type != Zone.ZoneType.Road)) DefaultHighlightType = HighlightType.RoadToContinent;
