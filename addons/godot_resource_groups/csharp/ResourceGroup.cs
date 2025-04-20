@@ -1,4 +1,10 @@
+
+
+using System.Collections.Generic;
+using Godot;
 // ReSharper disable once CheckNamespace
+using System.Threading.Tasks;
+
 namespace GodotResourceGroups
 {
     using Godot;
@@ -133,6 +139,44 @@ namespace GodotResourceGroups
             PushInto(items, destination);
         }
 
+        public UnboundResourceLoader LoadAllInBackgroundUnbound(Action callback)
+        {
+            var loader = new UnboundResourceLoader();
+            
+            Task.Run(() =>
+            {
+                for (var i = 0; i < Paths.Count; i++)
+                {
+                    var path = Paths[i];
+
+                    loader.Path = path;
+                    loader.Progress = (float)i / Paths.Count;
+                    
+                    var err = ResourceLoader.LoadThreadedRequest(path);
+                    if (err != Error.Ok)
+                    {
+                        GD.PrintErr($"Failed to request load for: {path}");
+                        continue;
+                    }
+
+                    while (ResourceLoader.LoadThreadedGetStatus(path) == ResourceLoader.ThreadLoadStatus.InProgress)
+                    {
+                        OS.DelayMsec(10);
+                    }
+
+                    var res = ResourceLoader.LoadThreadedGet(path);
+                    if (res != null) loader.Resources.Add(res);
+                    else GD.PrintErr($"Failed to load: {path}");
+                }
+                
+                loader.Progress = 1f;
+                loader.Finished = true;
+                callback?.Invoke();
+            });
+
+            return loader;
+        }
+
 
         private static string[] ToArray(IEnumerable<string> enumerable)
         {
@@ -154,4 +198,12 @@ namespace GodotResourceGroups
             }
         }
     }
+}
+
+public class UnboundResourceLoader
+{
+    public List<Resource> Resources = [];
+    public string Path;
+    public float Progress;
+    public bool Finished;
 }
