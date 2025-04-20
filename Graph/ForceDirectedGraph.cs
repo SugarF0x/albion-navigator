@@ -118,7 +118,7 @@ public partial class ForceDirectedGraph : Node2D
 
     private void InitializeChildren()
     {
-        for (var i = 0; i < Nodes.Length; i++) Nodes[i].Initialize(i);
+        for (var i = 0; i < Nodes.Length; i++) Nodes[i].Initialize();
         for (var i = 0; i < Links.Length; i++) Links[i].Initialize(i, Nodes);
     }
 
@@ -132,7 +132,7 @@ public partial class ForceDirectedGraph : Node2D
         AlphaDistance = float.Max(Alpha, value);
     }
 
-    private bool IsSimulationRunning;
+    protected bool IsSimulationRunning;
     
     private void Step()
     {

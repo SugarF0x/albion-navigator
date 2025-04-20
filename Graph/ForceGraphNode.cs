@@ -44,24 +44,10 @@ public partial class ForceGraphNode : Node2D
         Position = new Vector2(radius * float.Cos(angle), radius * float.Sin(angle));
     }
     
-    public void Initialize(int graphIndex)
+    public void Initialize()
     {
-        InitIndex(graphIndex);
-        InitPosition();
         InitConnections();
         QueueRedraw();
-    }
-
-    private void InitIndex(int graphIndex)
-    {
-        Index = graphIndex;
-    }
-
-    private void InitPosition()
-    {
-        if (Frozen) return;
-        if (Position != Vector2.Zero) return;
-        PlaceNodeSpirally();
     }
 
     private void InitConnections()
