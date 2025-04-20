@@ -72,7 +72,7 @@ public partial class ZoneMap : ForceDirectedGraph
         node.Position = zone.Position;
         if (node.Position == Vector2.Zero)
         {
-            node.PlaceNodeSpirally();
+            node.PlaceNodeSpirally(node.Index - 200);
         }
         else
         {
