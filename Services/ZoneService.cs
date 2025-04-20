@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using Godot;
 using GodotResourceGroups;
 
-namespace AlbionNavigator.Autoload.Services;
+namespace AlbionNavigator.Services;
 
 public class ZoneService
 {
@@ -14,12 +12,8 @@ public class ZoneService
         get => _instance ??= new ZoneService();
     }
 
+    public UnboundResourceLoader Loader;
     public bool IsReady;
-
-    private ResourceGroupBackgroundLoader _loader;
-    public delegate void ResourceLoadedHandler(ResourceGroupBackgroundLoader.ResourceLoadingInfo loadingInfo);
-    public event ResourceLoadedHandler ResourceLoaded;
-    private void EmitResourceLoaded(ResourceGroupBackgroundLoader.ResourceLoadingInfo loadingInfo) => ResourceLoaded?.Invoke(loadingInfo);
 
     public delegate void AllResourcesLoadedHandler();
     public event AllResourcesLoadedHandler AllResourcesLoaded;
@@ -31,27 +25,17 @@ public class ZoneService
         LoadZones();
     }
 
-    // TODO: figure out how to speed this up - limited by fps currently (sync is 6s and async is 12s at 144fps)
     private void LoadZones()
     {
         var zoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");
-        _loader = zoneGroup.LoadAllInBackground(EmitResourceLoaded);
-
-        List<Resource> zoneList = [];
-        ResourceLoaded += Handler;
-        
+        Loader = zoneGroup.LoadAllInBackgroundUnbound(OnAllLoaded);
         return;
-
-        void Handler(ResourceGroupBackgroundLoader.ResourceLoadingInfo info)
+        
+        void OnAllLoaded()
         {
-            zoneList.Add(info.Resource);
-            if (!info.Last) return;
-            
-            Zones = zoneList.Cast<Zone>().ToArray();
+            Zones = Loader.Resources.Cast<Zone>().ToArray();
             Array.Sort(Zones, (a, b) => a.Id - b.Id);
-            
             IsReady = true;
-            ResourceLoaded -= Handler;
             AllResourcesLoaded?.Invoke();
         }
     }

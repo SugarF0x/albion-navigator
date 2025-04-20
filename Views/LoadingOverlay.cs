@@ -1,20 +1,29 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
-using AlbionNavigator.Autoload.Services;
 using AlbionNavigator.Entities;
+using AlbionNavigator.Services;
 using Godot;
-using GodotResourceGroups;
+
+namespace AlbionNavigator.Views;
 
 public partial class LoadingOverlay : CanvasLayer
 {
     private ProgressBar _majorProgressBar;
     private ProgressBar _minorProgressBar;
     private Label _progressLabel;
+
+    private Action _updateLabels;
     
     public override void _Ready()
     {
         OnReady();
         LoadServices();
+    }
+
+    public override void _Process(double delta)
+    {
+        _updateLabels?.Invoke();
     }
 
     private void OnReady()
@@ -47,21 +56,24 @@ public partial class LoadingOverlay : CanvasLayer
 
         var tcs = new TaskCompletionSource();
         
-        zoneService.ResourceLoaded += OnResourceLoaded;
         zoneService.AllResourcesLoaded += OnAllResourcesLoaded;
+        _updateLabels = () =>
+        {
+            var loader = ZoneService.Instance.Loader;
+            var resource = (Zone)loader.Resources.Last();
+            if (resource == null) return;
+            
+            _progressLabel.Text = $"Loaded Zone: {resource.DisplayName}";
+            _minorProgressBar.Value = loader.Progress;
+        };
 
         return tcs.Task;
         
-        void OnResourceLoaded(ResourceGroupBackgroundLoader.ResourceLoadingInfo info)
-        {
-            _progressLabel.Text = $"Loaded Zone: {((Zone)info.Resource).DisplayName}";
-            _minorProgressBar.Value = info.Progress;
-        }
-        
         void OnAllResourcesLoaded()
         {
-            zoneService.ResourceLoaded -= OnResourceLoaded;
             zoneService.AllResourcesLoaded -= OnAllResourcesLoaded;
+            _updateLabels = null;
+            _minorProgressBar.Value = 1f;
             tcs.SetResult();
         }
     }
@@ -79,7 +91,7 @@ public partial class LoadingOverlay : CanvasLayer
         _progressLabel.Text = "Populating map... (app might freeze for a second or two)";
         _minorProgressBar.Value = 0.0;
 
-        ToSignal(GetTree(), "process_frame").OnCompleted(StartSimulation);
+        ToSignal(GetTree(), "process_frame").OnCompleted(() => CallDeferred("StartSimulation"));
     }
 
     private void StartSimulation()

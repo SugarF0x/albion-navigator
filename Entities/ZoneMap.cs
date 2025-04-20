@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlbionNavigator.Autoload.Services;
 using AlbionNavigator.Graph;
+using AlbionNavigator.Services;
 using Godot;
 using GodotResourceGroups;
 
