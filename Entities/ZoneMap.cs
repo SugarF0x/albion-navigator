@@ -4,7 +4,6 @@ using System.Linq;
 using AlbionNavigator.Graph;
 using AlbionNavigator.Services;
 using Godot;
-using GodotResourceGroups;
 
 namespace AlbionNavigator.Entities;
 
@@ -17,8 +16,6 @@ public partial class ZoneMap : ForceDirectedGraph
     [Export] public PackedScene NodeScene;
     [Export] public PackedScene LinkScene;
     
-    private ResourceGroup ZoneGroup;
-    private Zone[] Zones = [];
     private AudioPlayer AudioServer;
     
     [Signal]
@@ -30,12 +27,9 @@ public partial class ZoneMap : ForceDirectedGraph
         if (LinkScene?.Instantiate() is not ZoneLink) throw new InvalidCastException("LinkScene is not a ZoneLink");
         
         AudioServer = GetNode<AudioPlayer>("/root/AudioPlayer");
-        ZoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");
 
         Instance = this;
         base._Ready();
-
-        SimulationStopped += SyncZoneResourcePositions;
     }
 
     public override void _ExitTree()
@@ -43,11 +37,17 @@ public partial class ZoneMap : ForceDirectedGraph
         Instance = null;
     }
 
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (IsSimulationRunning) SyncZoneResourcePositions();
+    }
+
     private void SyncZoneResourcePositions()
     {
         foreach (var node in Nodes)
         {
-            Zones[node.Index].Position = node.Position;
+            ZoneService.Instance.Zones[node.Index].Position = node.Position;
         }
     }
 
@@ -62,36 +62,35 @@ public partial class ZoneMap : ForceDirectedGraph
         AudioServer.Play(AudioPlayer.SoundId.PortalOpen);
         if (isManual) EmitSignal(SignalName.PortalRegistered, source, target);
     }
-    
-    // TODO: i really need to rethink the approach to ZoneNode; since data is now stored in resources they dont need most of that data
 
-    public void PopulateZones()
+    public void InstantiateNode(Zone zone)
     {
-        Zones = ZoneService.Instance.Zones;
-        Array.Sort(Zones, (a, b) => a.Id - b.Id);
-
-        for (var i = 0; i < Zones.Length; i++)
+        if (NodeScene.Instantiate() is not ZoneNode node) return;
+        
+        node.Index = zone.Id;
+        zone.Position *= 5.1f;
+        node.Position = zone.Position;
+        if (node.Position == Vector2.Zero)
         {
-            var zone = Zones[i];
-            if (NodeScene.Instantiate() is not ZoneNode node) continue;
-            
-            node.Position = zone.Position * 5.1f;
-            node.Index = zone.Id;
-            node.Connections = zone.Connections.ToList();
-            if (node.Position != Vector2.Zero) node.Frozen = true;
+            node.PlaceNodeSpirally();
+        }
+        else
+        {
+            node.Frozen = true;
+        }
         
-            node.Type = zone.Type;
-            node.DisplayName = zone.DisplayName;
-            node.Zone = zone;
+        node.Connections = zone.Connections.ToList();
+        node.Type = zone.Type;
+        node.DisplayName = zone.DisplayName;
+        node.Zone = zone;
             
-            AddNode(node);
+        AddNode(node);
         
-            foreach (var connection in zone.Connections.Where(index => index > i))
-            {
-                if (LinkScene.Instantiate() is not ForceGraphLink link) continue;
-                link.Connect(i, connection);
-                AddLink(link);
-            }
+        foreach (var connection in zone.Connections.Where(index => index < zone.Id))
+        {
+            if (LinkScene.Instantiate() is not ForceGraphLink link) continue;
+            link.Connect(zone.Id, connection);
+            AddLink(link);
         }
     }
 
@@ -146,7 +145,7 @@ public partial class ZoneMap : ForceDirectedGraph
         var results = new Godot.Collections.Array<Godot.Collections.Array<int>>();
         var invalidExits = searchForRoyalExit ? new[] { Zone.ZoneType.Black, Zone.ZoneType.OutlandCity, Zone.ZoneType.Road } : new[] { Zone.ZoneType.Road };
         
-        if (!invalidExits.Contains(Zones[source].Type)) return results;
+        if (!invalidExits.Contains(ZoneService.Instance.Zones[source].Type)) return results;
 
         var queue = new List<List<int>> { new () };
         queue.First().Add(source);
@@ -163,7 +162,7 @@ public partial class ZoneMap : ForceDirectedGraph
 
             foreach (var neighbor in neighbors)
             {
-                var neighborZone = Zones[neighbor];
+                var neighborZone = ZoneService.Instance.Zones[neighbor];
                 if (invalidExits.Contains(neighborZone.Type))
                 {
                     if (!visited.Add(neighbor)) continue;
@@ -189,7 +188,7 @@ public partial class ZoneMap : ForceDirectedGraph
 
         if (results.Count == 0) return results;
 
-        var pathsWithPortal = results.Where(path => path.Any(link => new[] { Zones[Links[link].Source].Type, Zones[Links[link].Target].Type }.Contains(Zone.ZoneType.Road))).ToArray();
+        var pathsWithPortal = results.Where(path => path.Any(link => new[] { ZoneService.Instance.Zones[Links[link].Source].Type, ZoneService.Instance.Zones[Links[link].Target].Type }.Contains(Zone.ZoneType.Road))).ToArray();
         if (pathsWithPortal.Length == 0) return results[..1];
 
         return new Godot.Collections.Array<Godot.Collections.Array<int>>(pathsWithPortal);
