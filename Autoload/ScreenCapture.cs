@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -81,14 +82,14 @@ public partial class ScreenCapture : Node
     private void ProcessImage(System.Drawing.Bitmap bitmap)
     {
         var zoneNames = ZoneService.Instance.Zones.Select(zone => zone.DisplayName).ToArray();
-        var templatePath = ProjectSettings.GlobalizePath("res://Assets/Parsing/portal-pass-icon-fhd.png");
+        var templatePath = @"D:\Godot\albion-navigator\Assets\Parsing\portal-pass-icon-fhd.png"; // ProjectSettings.GlobalizePath("res://Assets/Parsing/portal-pass-icon-fhd.png");
+
         var parseData = MapDataParser.Parse(bitmap, templatePath);
-        
         var source = FuzzySharp.Process.ExtractOne(parseData.Source, zoneNames);
         var target = FuzzySharp.Process.ExtractOne(parseData.Target, zoneNames);
         var timeout = GetExpiration(parseData.Timeout);
         
-        GD.Print($"{source} {target} {timeout}");
+        ZoneMap.AddPortal(source.Index, target.Index, timeout);
     }
 
     private static string GetExpiration(string timestamp)

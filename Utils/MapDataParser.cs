@@ -2,8 +2,6 @@
 using Bitmap = System.Drawing.Bitmap;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using Godot;
 using OpenCvSharp;
 using Tesseract;
 using Rect = OpenCvSharp.Rect;
@@ -16,10 +14,6 @@ public static class MapDataParser
     public record struct SampleRegionData(string Source, string Target, string Timeout);
     public static SampleRegionData Parse(Bitmap sampleSrc, string templateSrc)
     {
-        // i have no fucking clue as to why this fails
-        using var engine = new TesseractEngine(@"C:\Tesseract", "eng", EngineMode.Default);
-        GD.Print("Peepee Poopoo");
-        
         var (sample, template) = PrepareSample(sampleSrc, templateSrc);
         using (sample)
         using (template)
@@ -70,9 +64,8 @@ public static class MapDataParser
 
     private static string OcrRead(Mat sample, string whitelist = "")
     {
-        const string tessDataPath = @".\Assets\Parsing";
-        GD.Print(Path.GetFullPath(tessDataPath));
-        using var engine = new TesseractEngine(Path.GetFullPath(tessDataPath), "eng", EngineMode.Default);
+        // const string tessDataPath = @".\Assets\Parsing";
+        using var engine = new TesseractEngine(@"C:\Tesseract\tessdata", "eng", EngineMode.Default);
         if (whitelist.Length > 0) engine.SetVariable("tessedit_char_whitelist", whitelist);
         
         using var pix = Pix.LoadFromMemory(sample.ToBytes());
