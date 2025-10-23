@@ -1,18 +1,25 @@
-﻿namespace AlbionNavigator.Utils;
-
+﻿using OpenCvSharp.Extensions;
+using Bitmap = System.Drawing.Bitmap;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Godot;
 using OpenCvSharp;
 using Tesseract;
 using Rect = OpenCvSharp.Rect;
 using Size = OpenCvSharp.Size;
 
+namespace AlbionNavigator.Utils;
+
 public static class MapDataParser
 {
     public record struct SampleRegionData(string Source, string Target, string Timeout);
-    public static SampleRegionData Parse(string sampleSrc, string templateSrc)
+    public static SampleRegionData Parse(Bitmap sampleSrc, string templateSrc)
     {
+        // i have no fucking clue as to why this fails
+        using var engine = new TesseractEngine(@"C:\Tesseract", "eng", EngineMode.Default);
+        GD.Print("Peepee Poopoo");
+        
         var (sample, template) = PrepareSample(sampleSrc, templateSrc);
         using (sample)
         using (template)
@@ -31,13 +38,16 @@ public static class MapDataParser
         }
     }
 
-    private static (Mat sample, Mat template) PrepareSample(string sampleSrc, string templateSrc)
+    private static (Mat sample, Mat template) PrepareSample(Bitmap sampleSrc, string templateSrc)
     {
-        using var rawSample = Cv2.ImRead(sampleSrc);
+        using var rawSample = sampleSrc.ToMat();
         var scale = 1920.0 / rawSample.Width;
 
+        using var downChanneledSample = new Mat();
+        Cv2.CvtColor(rawSample, downChanneledSample, ColorConversionCodes.BGRA2BGR);
+
         var sample = new Mat();
-        Cv2.Resize(rawSample, sample, new Size(rawSample.Width * scale, rawSample.Height * scale));
+        Cv2.Resize(downChanneledSample, sample, new Size(downChanneledSample.Width * scale, downChanneledSample.Height * scale));
         var template = Cv2.ImRead(templateSrc);
 
         return (sample, template);
@@ -46,7 +56,7 @@ public static class MapDataParser
     private static (Mat Source, Mat Target, Mat Timeout) TemplateMatch(Mat sample, Mat template)
     {
         using var result = new Mat();
-
+        
         Cv2.MatchTemplate(sample, template, result, TemplateMatchModes.CCoeffNormed);
         Cv2.MinMaxLoc(result, out _, out var maxVal, out _, out var maxLoc);
 
@@ -60,8 +70,9 @@ public static class MapDataParser
 
     private static string OcrRead(Mat sample, string whitelist = "")
     {
-        var tessDataPath = Path.Combine(Directory.GetCurrentDirectory(), "Assets", "tessData");
-        using var engine = new TesseractEngine(tessDataPath, "eng", EngineMode.Default);
+        const string tessDataPath = @".\Assets\Parsing";
+        GD.Print(Path.GetFullPath(tessDataPath));
+        using var engine = new TesseractEngine(Path.GetFullPath(tessDataPath), "eng", EngineMode.Default);
         if (whitelist.Length > 0) engine.SetVariable("tessedit_char_whitelist", whitelist);
         
         using var pix = Pix.LoadFromMemory(sample.ToBytes());

@@ -37,6 +37,10 @@ ScreenCapture="*res://Autoload/ScreenCapture.tscn"
 PersistedStore="*res://Autoload/PersistedStore.tscn"
 AudioPlayer="*res://Autoload/AudioPlayer.tscn"
 
+[copy_files_on_export]
+
+files=Array[PackedStringArray]([PackedStringArray("res://Assets/Parsing/tessData", "Assets/Parsing/tessData", "")])
+
 [debug]
 
 gdscript/warnings/untyped_declaration=2
@@ -52,7 +56,7 @@ project/assembly_name="Albion Navigator"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/copy_files_on_export/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [file_customization]
 

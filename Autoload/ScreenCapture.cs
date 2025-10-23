@@ -1,6 +1,12 @@
-﻿using System.Drawing;
-using System.Drawing.Imaging;
+﻿using System;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
+using AlbionNavigator.Entities;
+using AlbionNavigator.Services;
+using AlbionNavigator.Utils;
 using Godot;
 
 namespace AlbionNavigator.Autoload;
@@ -10,7 +16,17 @@ public partial class ScreenCapture : Node
 {
     [Signal]
     public delegate void ScreenCapturedEventHandler(Texture2D texture);
+
+    private ZoneMap ZoneMap;
     
+    public override void _Ready()
+    {
+        base._Ready();
+        var graph = GetTree().GetFirstNodeInGroup("ForceGraph");
+        if (graph is not ZoneMap zoneMap) return;
+        ZoneMap = zoneMap;
+    }
+
 #if GODOT_WINDOWS
     [DllImport("user32.dll")]
     private static extern int GetAsyncKeyState(int vKey);
@@ -31,8 +47,8 @@ public partial class ScreenCapture : Node
 
     private void CheckForBindPress()
     {
-        var isControlPressed = GetAsyncKeyState(VK_CONTROL) > 0;
-        var isSPressed = GetAsyncKeyState(VK_S) > 0;
+        var isControlPressed = (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0;
+        var isSPressed = (GetAsyncKeyState(VK_S) & 0x8000) != 0;
         
         if (!DidReleaseBind) DidReleaseBind = !isControlPressed || !isSPressed;
         if (DidJustPressBind) DidJustPressBind = false;
@@ -53,25 +69,34 @@ public partial class ScreenCapture : Node
             graphics.CopyFromScreen(0, 0, 0, 0, new Size(screenWidth, screenHeight));
         }
 
-        var width = bitmap.Width;
-        var height = bitmap.Height;
-        var image = Godot.Image.CreateEmpty(width, height, false, Godot.Image.Format.Rgba8);
-            
-        var rect = new Rectangle(0, 0, width, height);
-        var bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, PixelFormat.Format32bppArgb);
-
-        var pixelData = new byte[bitmapData.Stride * height];
-        Marshal.Copy(bitmapData.Scan0, pixelData, 0, pixelData.Length);
-        bitmap.UnlockBits(bitmapData);
-
-        for (var i = 0; i < pixelData.Length; i += 4)
-        {
-            (pixelData[i], pixelData[i + 2]) = (pixelData[i + 2], pixelData[i]);
+        try {
+            ProcessImage(bitmap);
         }
+        catch (InvalidImage)
+        {
+            GD.Print("Failed to parse image");
+        }
+    }
 
-        image.SetData(width, height, false, Godot.Image.Format.Rgba8, pixelData);
-            
-        EmitSignal(SignalName.ScreenCaptured, ImageTexture.CreateFromImage(image));
+    private void ProcessImage(System.Drawing.Bitmap bitmap)
+    {
+        var zoneNames = ZoneService.Instance.Zones.Select(zone => zone.DisplayName).ToArray();
+        var templatePath = ProjectSettings.GlobalizePath("res://Assets/Parsing/portal-pass-icon-fhd.png");
+        var parseData = MapDataParser.Parse(bitmap, templatePath);
+        
+        var source = FuzzySharp.Process.ExtractOne(parseData.Source, zoneNames);
+        var target = FuzzySharp.Process.ExtractOne(parseData.Target, zoneNames);
+        var timeout = GetExpiration(parseData.Timeout);
+        
+        GD.Print($"{source} {target} {timeout}");
+    }
+
+    private static string GetExpiration(string timestamp)
+    {
+        var add = TimeSpan.ParseExact(timestamp, @"hh\:mm\:ss", CultureInfo.InvariantCulture);
+        var now = DateTime.Now;
+        var result = now.Add(add);
+        return result.ToString("yyyy-MM-ddTHH:mm:ss");
     }
 #endif
 }
