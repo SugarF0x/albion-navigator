@@ -16,4 +16,7 @@
   <ItemGroup>
     <Folder Include="Assets\Parsing\tessdata\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Parsing\portal-pass-icon-fhd-2.png" />
+  </ItemGroup>
 </Project>
