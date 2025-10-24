@@ -61,11 +61,11 @@ public static class MapDataParser
         Cv2.MatchTemplate(sample, template, result, TemplateMatchModes.CCoeffNormed);
         Cv2.MinMaxLoc(result, out _, out var maxVal, out _, out var maxLoc);
 
-        if (maxVal < .9) throw new InvalidImage("Could not match template image - portal frame missing or obstructed");
+        if (maxVal < .8) throw new InvalidImage("Could not match template image - portal frame missing or obstructed");
         return (
-            CropMat(sample, new Rect(350, 40, 310, 37)),
-            CropMat(sample, new Rect(maxLoc.X - 208, maxLoc.Y - 35, 243, 27)),
-            CropMat(sample, new Rect(maxLoc.X + 3, maxLoc.Y + 24, 65, 20))
+            CropMat(sample, new Rect(476, 28, 220, 35)),
+            CropMat(sample, new Rect(maxLoc.X - 138, maxLoc.Y - 27, 150, 20)),
+            CropMat(sample, new Rect(maxLoc.X, maxLoc.Y + 18, 65, 18))
         );
     }
 
@@ -85,32 +85,48 @@ public static class MapDataParser
     {
         var isTimerUnderAnHour = IsTextRed(sample);
         
+        using var resized = new Mat();
+        Cv2.Resize(sample, resized, new Size(sample.Width * 4, sample.Height * 4));
+        
         using var invertedSample = new Mat();
-        Cv2.BitwiseNot(sample, invertedSample);
+        Cv2.BitwiseNot(resized, invertedSample);
 
         using var graySample = new Mat();
         Cv2.CvtColor(invertedSample, graySample, ColorConversionCodes.BGR2GRAY);
         
-        using var mask = new Mat();
-        Cv2.Threshold(graySample, mask, 150, 255, ThresholdTypes.Binary);
+        using var invBinary = new Mat();
+        Cv2.Threshold(graySample, invBinary, isTimerUnderAnHour ? 170 : 150, 255, ThresholdTypes.BinaryInv);
+
+        using var binary = new Mat();
+        Cv2.BitwiseNot(invBinary, binary);
+
+        using var trimmed = ImageCleaner.RemoveSmallDarkObjectsByArea(binary, .28);
         
-        using var maskColor = mask.Clone();
-        graySample.SetTo(new Scalar(255, 255, 255), maskColor);
+        using var mask = new Mat();
+        Cv2.BitwiseNot(trimmed, mask);
+        if (isTimerUnderAnHour)
+        {
+            using var kernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(5, 5));
+            Cv2.Dilate(mask, mask, kernel, iterations: 1);            
+        }
+        else
+        {
+            using var verticalKernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(1, 2));
+            Cv2.Erode(mask, mask, verticalKernel, iterations: 1);  
+            using var horizonalKernel = Cv2.GetStructuringElement(MorphShapes.Rect, new Size(2, 1));
+            Cv2.Erode(mask, mask, horizonalKernel, iterations: 2);  
+        }
 
         using var invertedMask = new Mat();
-        Cv2.BitwiseNot(maskColor, invertedMask);
-        graySample.SetTo(new Scalar(0, 0, 0), invertedMask);
-
-        using var trimmed = ImageCleaner.RemoveSmallDarkObjectsByArea(graySample);
+        Cv2.BitwiseNot(mask, invertedMask);
         
         var parsedSegments = new List<string>();
-        foreach (var r in TextSegmenter.FindTextSegments(trimmed))
+        foreach (var r in TextSegmenter.FindTextSegments(invertedMask, 0))
         {
-            using var e = CropMat(trimmed, r);
-            using var resized = new Mat();
-            Cv2.Resize(e, resized, new Size(e.Width * 4, e.Height * 4));
+            using var e = CropMat(invertedMask, r);
             using var padded = new Mat();
-            Cv2.CopyMakeBorder(resized, padded, 0, 0, 1, 1, BorderTypes.Constant, Scalar.White);
+            Cv2.CopyMakeBorder(e, padded, 0, 0, 10, 10, BorderTypes.Constant, Scalar.White);
+            
             parsedSegments.Add(OcrRead(padded, "1234567890"));
         }
 
@@ -158,18 +174,17 @@ public class InvalidImage(string message) : Exception(message);
 
 public static class ImageCleaner
 {
-    public static Mat RemoveSmallDarkObjectsByArea(Mat src, double areaRatioThreshold = 0.4, int threshold = 0)
+    public static Mat RemoveSmallDarkObjectsByArea(Mat binary, double areaRatioThreshold = 0.3)
     {
-        // 2. Threshold so dark pixels become white blobs in binary
-        var binary = new Mat();
-        Cv2.Threshold(src, binary, threshold, 255, ThresholdTypes.BinaryInv);
-
+        using var invertedBinary = new Mat();
+        Cv2.BitwiseNot(binary, invertedBinary);
+        
         // 3. Connected components
         var labels = new Mat();
         var stats = new Mat();
         var centroids = new Mat();
         var nLabels = Cv2.ConnectedComponentsWithStats(
-            binary, labels, stats, centroids,
+            invertedBinary, labels, stats, centroids,
             PixelConnectivity.Connectivity8, MatType.CV_32S
         );
 
@@ -198,11 +213,10 @@ public static class ImageCleaner
         }
 
         // 6. Copy large dark components onto white background
-        Mat result = Mat.Ones(src.Size(), src.Type()) * 255; // fill all white
-        src.CopyTo(result, mask);
+        Mat result = Mat.Ones(binary.Size(), binary.Type()) * 255; // fill all white
+        binary.CopyTo(result, mask);
 
         // Cleanup
-        binary.Dispose();
         labels.Dispose();
         stats.Dispose();
         centroids.Dispose();
@@ -278,9 +292,9 @@ public static class TextSegmenter
 
         switch (segments.Count)
         {
-            case < 4:
-                throw new InvalidImage($"Could not parse portal timer - insufficient segments: {segments.Count} < 4");
-            case 4:
+            case < 5:
+                throw new InvalidImage($"Could not parse portal timer - insufficient segments: {segments.Count} < 5");
+            case 5:
                 result.Add(segments[0]);
                 result.Add(MergeRects(segments[2], segments[3]));
                 break;
