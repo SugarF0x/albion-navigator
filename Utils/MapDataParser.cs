@@ -2,6 +2,10 @@
 using Bitmap = System.Drawing.Bitmap;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using Godot;
 using OpenCvSharp;
 using Tesseract;
 using Rect = OpenCvSharp.Rect;
@@ -14,6 +18,9 @@ public static class MapDataParser
     public record struct SampleRegionData(string Source, string Target, string Timeout);
     public static SampleRegionData Parse(Bitmap sampleSrc, string templateSrc)
     {
+        // polyfill for dev environment since it loads all DLLs in memory and results in Assembly.Location being null 
+        if (OS.HasFeature("editor")) TesseractEnviornment.CustomSearchPath = Path.Combine(Directory.GetCurrentDirectory(), @".godot\mono\temp\bin\Debug");
+        
         var (sample, template) = PrepareSample(sampleSrc, templateSrc);
         using (sample)
         using (template)
