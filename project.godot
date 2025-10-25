@@ -39,7 +39,7 @@ AudioPlayer="*res://Autoload/AudioPlayer.tscn"
 
 [copy_files_on_export]
 
-files=Array[PackedStringArray]([PackedStringArray("res://Assets/Parsing/tessData", "Assets/Parsing/tessData", "")])
+files=Array[PackedStringArray]([PackedStringArray("res://Assets/Parsing", "Assets/Parsing", "")])
 
 [debug]
 

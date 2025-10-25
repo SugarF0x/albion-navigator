@@ -16,12 +16,12 @@ namespace AlbionNavigator.Utils;
 public static class MapDataParser
 {
     public record struct SampleRegionData(string Source, string Target, string Timeout);
-    public static SampleRegionData Parse(Bitmap sampleSrc, string templateSrc)
+    public static SampleRegionData Parse(Bitmap sampleSrc)
     {
         // polyfill for dev environment since it loads all DLLs in memory and results in Assembly.Location being null 
         if (OS.HasFeature("editor")) TesseractEnviornment.CustomSearchPath = Path.Combine(Directory.GetCurrentDirectory(), @".godot\mono\temp\bin\Debug");
         
-        var (sample, template) = PrepareSample(sampleSrc, templateSrc);
+        var (sample, template) = PrepareSample(sampleSrc);
         using (sample)
         using (template)
         {
@@ -39,7 +39,7 @@ public static class MapDataParser
         }
     }
 
-    private static (Mat sample, Mat template) PrepareSample(Bitmap sampleSrc, string templateSrc)
+    private static (Mat sample, Mat template) PrepareSample(Bitmap sampleSrc)
     {
         using var rawSample = sampleSrc.ToMat();
         var scale = 1920.0 / rawSample.Width;
@@ -49,7 +49,7 @@ public static class MapDataParser
 
         var sample = new Mat();
         Cv2.Resize(downChanneledSample, sample, new Size(downChanneledSample.Width * scale, downChanneledSample.Height * scale));
-        var template = Cv2.ImRead(templateSrc);
+        var template = Cv2.ImRead(GetAssetPath("res://Assets/Parsing/portal-pass-icon-fhd-2.png"));
 
         return (sample, template);
     }
@@ -57,6 +57,8 @@ public static class MapDataParser
     private static (Mat Source, Mat Target, Mat Timeout) TemplateMatch(Mat sample, Mat template)
     {
         using var result = new Mat();
+        
+        GD.Print(GetAssetPath("res://Assets/Parsing/tessdata"));
         
         Cv2.MatchTemplate(sample, template, result, TemplateMatchModes.CCoeffNormed);
         Cv2.MinMaxLoc(result, out _, out var maxVal, out _, out var maxLoc);
@@ -71,8 +73,7 @@ public static class MapDataParser
 
     private static string OcrRead(Mat sample, string whitelist = "")
     {
-        // const string tessDataPath = @".\Assets\Parsing";
-        using var engine = new TesseractEngine(@"C:\Tesseract\tessdata", "eng", EngineMode.Default);
+        using var engine = new TesseractEngine(GetAssetPath("res://Assets/Parsing/tessdata"), "eng", EngineMode.Default);
         if (whitelist.Length > 0) engine.SetVariable("tessedit_char_whitelist", whitelist);
         
         using var pix = Pix.LoadFromMemory(sample.ToBytes());
@@ -167,6 +168,11 @@ public static class MapDataParser
         var ratio = redPixels / totalPixels;
 
         return ratio > redRatioThreshold;
+    }
+
+    private static string GetAssetPath(string localPath)
+    {
+        return OS.HasFeature("editor") ? ProjectSettings.GlobalizePath(localPath) : OS.GetExecutablePath().GetBaseDir().PathJoin(localPath.Replace("res://", ""));
     }
 }
 

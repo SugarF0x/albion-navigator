@@ -80,9 +80,8 @@ public partial class ScreenCapture : Node
     private void ProcessImage(System.Drawing.Bitmap bitmap)
     {
         var zoneNames = ZoneService.Instance.Zones.Select(zone => zone.DisplayName).ToArray();
-        var templatePath = @"D:\Godot\albion-navigator\Assets\Parsing\portal-pass-icon-fhd-2.png"; // ProjectSettings.GlobalizePath("res://Assets/Parsing/portal-pass-icon-fhd.png");
 
-        var parseData = MapDataParser.Parse(bitmap, templatePath);
+        var parseData = MapDataParser.Parse(bitmap);
         var source = FuzzySharp.Process.ExtractOne(parseData.Source, zoneNames);
         var target = FuzzySharp.Process.ExtractOne(parseData.Target, zoneNames);
         var timeout = GetExpiration(parseData.Timeout);
