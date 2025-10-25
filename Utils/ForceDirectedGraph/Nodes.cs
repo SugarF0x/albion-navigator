@@ -1,12 +1,11 @@
 ﻿using System.Numerics;
-using GraphNode = AlbionNavigator.Utils.ForceDirectedGraph.Datum.Node;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph;
 
 public partial class Simulation
 {
-    private GraphNode[] _nodes = [];
-    public GraphNode[] Nodes
+    private Datum.Node[] _nodes = [];
+    public Datum.Node[] Nodes
     {
         get => _nodes;
         set
