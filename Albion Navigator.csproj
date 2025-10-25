@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Parsing\tessdata\" />
+    <Folder Include="Utils\ForceDirectedGraph\Node\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Parsing\portal-pass-icon-fhd-2.png" />
