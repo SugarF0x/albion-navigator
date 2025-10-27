@@ -19,4 +19,7 @@
   <ItemGroup>
     <Content Include="Assets\Parsing\portal-pass-icon-fhd-2.png" />
   </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="UnitTests\**\*.cs" />
+    </ItemGroup>
 </Project>
