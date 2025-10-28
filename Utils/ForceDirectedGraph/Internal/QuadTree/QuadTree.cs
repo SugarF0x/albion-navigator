@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using AlbionNavigator.Utils.ForceDirectedGraph.Internal.QuadTree.Internal;
 
@@ -17,4 +18,18 @@ public partial class QuadTree<T>
     public bool IsVoid => !IsBranch && !IsLeaf;
 
     public QuadTree<T> Root => Parent != null ? Parent.Root : this;
+
+    public override string ToString() => ToString(0);
+    public string ToString(int depth)
+    {
+        string[] log =
+        [
+            $"QuadTree<{typeof(T).Name}> {{",
+            $"  {Rect.ToString(depth + 1)}",
+            $"  IsLeaf: {IsLeaf}",
+            $"}}",
+        ];
+
+        return string.Join('\n' + new string(' ', depth * 2), log);
+    }
 }

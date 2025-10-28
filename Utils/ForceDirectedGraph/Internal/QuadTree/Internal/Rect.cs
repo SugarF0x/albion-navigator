@@ -59,4 +59,18 @@ public struct Rect(Vector2 position, Vector2 size)
             Size = Vector2.Max(End, rect.End) - Vector2.Min(Position, rect.Position),
         };
     }
+    
+    public override string ToString() => ToString(0);
+    public string ToString(int depth)
+    {
+        string[] log =
+        [
+            $"Rect {{",
+            $"  Position: {Position}",
+            $"  Size: {Size}",
+            $"}}",
+        ];
+
+        return string.Join('\n' + new string(' ', depth * 2), log);
+    }
 }
