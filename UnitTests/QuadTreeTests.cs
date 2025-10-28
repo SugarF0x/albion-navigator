@@ -45,6 +45,18 @@ public sealed class QuadTreeTests
             return false;
         });
     }
+
+    [TestMethod]
+    public void VisitAfterTests()
+    {
+        var tree = new QuadTree<Data>().Add([
+            (new Vector2(0, 0), new Data(0, "a")),
+            (new Vector2(0.5f, 0.5f), new Data(1, "b")),
+            (new Vector2(2.5f, 2.5f), new Data(2, "c")),
+        ]);
+
+        tree.VisitAfter(Console.WriteLine);
+    }
 }
 
 public record Data(int Index, string Value);
