@@ -7,9 +7,6 @@ public class Link : Force
 {
     public int Iterations = 1;
     
-    private Node[] Nodes = [];
-    private Func<float> Jiggle = () => new Random().NextSingle() / 100f;
-    
     private int[] NodeIndexToConnectionsCountMap;
     private float[] LinkIndexToPullBiasMap;
     private float[] LinkIndexToStrengthMap;
@@ -22,7 +19,7 @@ public class Link : Force
         set
         {
             _links = value;
-            SetupLinks();
+            Setup();
         }
     }
 
@@ -59,15 +56,8 @@ public class Link : Force
         GetLinkStrength = link => 1f / int.Min(NodeIndexToConnectionsCountMap[link.Source.Index], NodeIndexToConnectionsCountMap[link.Target.Index]);
         GetLinkDistance = _ => 30f;
     }
-    
-    public override void Initialize(Node[] nodes, Func<float> random)
-    {
-        Nodes = nodes;
-        Jiggle = random;
-        SetupLinks();
-    }
 
-    private void SetupLinks()
+    protected override void Setup()
     {
         NodeIndexToConnectionsCountMap = new int[Nodes.Length];
         var count = NodeIndexToConnectionsCountMap;
@@ -110,8 +100,8 @@ public class Link : Force
             foreach (var (source, target, index) in Links)
             {
                 var springVelocity = target.Position + target.Velocity - source.Position - source.Velocity;
-                if (springVelocity.X == 0f) springVelocity.X = Jiggle();
-                if (springVelocity.Y == 0f) springVelocity.Y = Jiggle();
+                if (springVelocity.X == 0f) springVelocity.X = Jiggle;
+                if (springVelocity.Y == 0f) springVelocity.Y = Jiggle;
 
                 var length = float.Sqrt(springVelocity.X * springVelocity.X + springVelocity.Y * springVelocity.Y);
                 var adjustedLengthMultiplier = (length - LinkIndexToDistanceMap[index]) / length * alpha * LinkIndexToStrengthMap[index];

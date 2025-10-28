@@ -8,7 +8,7 @@ public partial class Simulation
 
     private void InitializeForce(Force.Force force)
     {
-        force.Initialize(Nodes, Jiggle);
+        force.Initialize(Nodes, Random);
     }
 
     private void InitializeAllForces()
