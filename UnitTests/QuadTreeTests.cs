@@ -29,6 +29,22 @@ public sealed class QuadTreeTests
         Assert.IsTrue(tree.IsBranch);
         Assert.AreNotEqual(tree, tree.Root);
     }
+
+    [TestMethod]
+    public void VisitTests()
+    {
+        var tree = new QuadTree<Data>().Add([
+            (new Vector2(0, 0), new Data(0, "a")),
+            (new Vector2(0.5f, 0.5f), new Data(1, "b")),
+            (new Vector2(2.5f, 2.5f), new Data(2, "c")),
+        ]);
+
+        tree.Visit(item =>
+        {
+            Console.WriteLine(item);
+            return false;
+        });
+    }
 }
 
 public record Data(int Index, string Value);
