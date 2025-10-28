@@ -1,5 +1,4 @@
 ﻿using System;
-using AlbionNavigator.Utils.ForceDirectedGraph.Datum;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph.Force;
 
@@ -35,7 +34,6 @@ public class Link : Force
     }
     
     private Func<Datum.Link, float> _getLinkDistance;
-
     public Func<Datum.Link, float> GetLinkDistance
     {
         get =>  _getLinkDistance;

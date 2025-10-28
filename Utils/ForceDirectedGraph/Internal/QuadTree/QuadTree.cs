@@ -7,7 +7,7 @@ namespace AlbionNavigator.Utils.ForceDirectedGraph.Internal.QuadTree;
 
 public partial class QuadTree<T>
 {
-    private Rect Rect;
+    public Rect Rect;
     
     private QuadTree<T> Parent;
     public QuadTree<T>[] Children;
