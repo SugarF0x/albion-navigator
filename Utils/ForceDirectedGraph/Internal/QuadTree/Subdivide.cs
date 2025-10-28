@@ -10,6 +10,7 @@ public partial class QuadTree<T>
         if (leaf == null) throw new QuadTreeSubdivisionException("Subdivision failed: leaf is null");
         
         Leaf = null;
+        Children = new QuadTree<T>[4];
         Children[quadIndex] = new QuadTree<T>
         {
             Rect = Rect.ShrinkToQuadrantIndex(quadIndex),

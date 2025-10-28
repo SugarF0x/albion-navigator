@@ -20,10 +20,14 @@ public partial class QuadTree<T> where T : class
 
     private QuadTree<T> ExpandToCoverPoint(Vector2 point)
     {
+        var treeQuadrantIndex = point.GetRelativeQuadrantIndex(Rect.Position);
+        
         Parent = new QuadTree<T>
         {
-            Rect = Rect.ExpandFromQuadrantIndex(point.GetRelativeQuadrantIndex(Rect.Position))
+            Rect = Rect.ExpandFromQuadrantIndex(treeQuadrantIndex),
+            Children = new QuadTree<T>[4]
         };
+        Parent.Children[treeQuadrantIndex] = this;
         
         return Parent.Cover(point);
     }

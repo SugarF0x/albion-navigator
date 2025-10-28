@@ -31,7 +31,7 @@ public struct Rect(Vector2 position, Vector2 size)
             default: throw new ArgumentOutOfRangeException(nameof(index), index, null);
         }
 
-        return this;
+        return rect;
     }
     
     public Rect ShrinkToQuadrantIndex(int index)

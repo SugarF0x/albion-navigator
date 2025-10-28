@@ -19,9 +19,15 @@ public sealed class QuadTreeTests
     public void AddTests()
     {
         var tree = new QuadTree<Data>();
-        tree.Add(Vector2.One, new Data(0, "e"));
+        Assert.IsTrue(tree.IsVoid);
         
+        tree.Add(Vector2.One, new Data(0, "a"));
         Assert.IsTrue(tree.IsLeaf);
+        Assert.AreEqual(tree, tree.Root);
+        
+        tree.Add(new Vector2(0.5f, 0.5f), new Data(1, "b"));
+        Assert.IsTrue(tree.IsBranch);
+        Assert.AreNotEqual(tree, tree.Root);
     }
 }
 

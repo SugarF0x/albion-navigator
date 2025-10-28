@@ -15,4 +15,6 @@ public partial class QuadTree<T>
     public bool IsBranch => Children != null;
     public bool IsLeaf => !IsBranch && Leaf != null;
     public bool IsVoid => !IsBranch && !IsLeaf;
+
+    public QuadTree<T> Root => Parent != null ? Parent.Root : this;
 }
