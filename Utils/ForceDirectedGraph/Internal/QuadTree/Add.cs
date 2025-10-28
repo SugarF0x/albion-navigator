@@ -28,7 +28,7 @@ public partial class QuadTree<T>
         while (tree.IsBranch)
         {
             var nextQuadrantIndex = tree.Rect.Center.GetRelativeQuadrantIndex(point);
-            var nextNode = tree.Children[nextQuadrantIndex] ?? new QuadTree<T>
+            var nextNode = tree.Children[nextQuadrantIndex] ??= new QuadTree<T>
             {
                 Rect = tree.Rect.ShrinkToQuadrantIndex(nextQuadrantIndex)
             };
@@ -38,6 +38,7 @@ public partial class QuadTree<T>
 
         if (tree.IsVoid || (tree.IsLeaf && tree.Leaf.Position == point))
         {
+            tree.Leaf ??= new Leaf<T> { Position = point, Data = [] };
             tree.Leaf.Data.Add(data);
             return this;
         }
@@ -82,8 +83,8 @@ public partial class QuadTree<T>
         boundingBox = items.Skip(1).Aggregate(boundingBox, (current, node) => current.Merge(new Rect(node.point, Vector2.Zero)));
 
         Cover(boundingBox.Position).Cover(boundingBox.End);
-        foreach (var (point, data) in items) Add(point, data, false);
+        foreach (var (point, data) in items) Root.Add(point, data, false);
         
-        return this;
+        return Root;
     }
 }
