@@ -48,9 +48,6 @@ public class ManyBody : Force
 
     private void InitializeStrength()
     {
-        GD.Print("Nodes ", Nodes);
-        GD.Print("Strengths ", Strengths);
-        GD.Print("GetNodeStrength ", GetNodeStrength);
         foreach (var node in Nodes) Strengths[node.Index] = GetNodeStrength(node);
     }
 

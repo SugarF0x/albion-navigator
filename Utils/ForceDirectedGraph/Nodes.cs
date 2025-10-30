@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph;
 
@@ -29,5 +30,12 @@ public partial class Simulation
             node.Position.X = radius * float.Cos(angle);
             node.Position.Y = radius * float.Sin(angle);
         }
+    }
+
+    public void SetSize(int size)
+    {
+        Nodes = Enumerable.Range(0, size)
+            .Select(_ => new Datum.Node())
+            .ToArray();
     }
 }

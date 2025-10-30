@@ -54,6 +54,10 @@ window/size/viewport_height=600
 
 project/assembly_name="Albion Navigator"
 
+[editor]
+
+naming/scene_name_casing=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/copy_files_on_export/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/script-ide/plugin.cfg")
