@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
-using AlbionNavigator.Utils.ForceDirectedGraph.Datum;
 using AlbionNavigator.Utils.ForceDirectedGraph.Internal.QuadTree;
+using Godot;
+using Node = AlbionNavigator.Utils.ForceDirectedGraph.Datum.Node;
+using Vector2 = System.Numerics.Vector2;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph.Force;
 
@@ -16,7 +17,7 @@ public class ManyBody : Force
     private float Alpha;
 
     private float[] Strengths;
-    private Dictionary<QuadTree<Node>, NodeChargeAccumulator> TreeToAccumulatorMap = new();
+    private readonly Dictionary<QuadTree<Node>, NodeChargeAccumulator> TreeToAccumulatorMap = new();
     
     private Func<Node, float> _getNodeStrength;
     public Func<Node, float> GetNodeStrength
@@ -28,6 +29,16 @@ public class ManyBody : Force
             InitializeStrength();
         }
     }
+    
+    public ManyBody()
+    {
+        AssignDefaultGetters();
+    }
+
+    private void AssignDefaultGetters()
+    {
+        GetNodeStrength = _ => -30f;
+    }
 
     protected override void Setup()
     {
@@ -37,6 +48,9 @@ public class ManyBody : Force
 
     private void InitializeStrength()
     {
+        GD.Print("Nodes ", Nodes);
+        GD.Print("Strengths ", Strengths);
+        GD.Print("GetNodeStrength ", GetNodeStrength);
         foreach (var node in Nodes) Strengths[node.Index] = GetNodeStrength(node);
     }
 
