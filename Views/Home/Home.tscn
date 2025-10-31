@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0qyuaj0pyugi"]
+[gd_scene load_steps=13 format=3 uid="uid://d0qyuaj0pyugi"]
 
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="1_35clt"]
 [ext_resource type="PackedScene" uid="uid://c7cmtvxlm62wm" path="res://Views/Home/LogBox/LogboxUi.tscn" id="2_br8cn"]
+[ext_resource type="PackedScene" uid="uid://dwrd88f6mec0i" path="res://Views/Home/ControlPanel/NavigationTab/NavigationTab.tscn" id="3_4c38c"]
+[ext_resource type="PackedScene" uid="uid://c4y18v6tjklmb" path="res://Views/Home/ControlPanel/ZoneInfoTab/ZoneInfoTab.tscn" id="4_v6ytx"]
+[ext_resource type="PackedScene" uid="uid://d05gkfuj6vas6" path="res://Views/Home/ControlPanel/SettingsTab/SettingsTab.tscn" id="5_bkahw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wuu5"]
 bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
@@ -98,10 +101,10 @@ theme_override_constants/margin_bottom = 16
 [node name="Logbox" parent="HBoxContainer/VBoxContainer/LogboxPanel/LogboxContainer" instance=ExtResource("2_br8cn")]
 layout_mode = 2
 
-[node name="TabContainer" type="TabContainer" parent="HBoxContainer"]
+[node name="ControlPanel" type="TabContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
-theme_override_constants/tab_separation = 8
+theme_override_constants/tab_separation = 16
 theme_override_font_sizes/font_size = 24
 theme_override_styles/panel = SubResource("StyleBoxFlat_br8cn")
 theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_jqtsb")
@@ -111,16 +114,16 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_v6ytx")
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_br8cn")
 current_tab = 0
 
-[node name="TabBar" type="TabBar" parent="HBoxContainer/TabContainer"]
+[node name="Navigation" parent="HBoxContainer/ControlPanel" instance=ExtResource("3_4c38c")]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="TabBar2" type="TabBar" parent="HBoxContainer/TabContainer"]
+[node name="Zone Info" parent="HBoxContainer/ControlPanel" instance=ExtResource("4_v6ytx")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="TabBar3" type="TabBar" parent="HBoxContainer/TabContainer"]
+[node name="Settings" parent="HBoxContainer/ControlPanel" instance=ExtResource("5_bkahw")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2

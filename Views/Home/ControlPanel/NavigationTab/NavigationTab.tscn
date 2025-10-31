@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dwrd88f6mec0i"]
+
+[node name="NavigationTab" type="TabBar"]
