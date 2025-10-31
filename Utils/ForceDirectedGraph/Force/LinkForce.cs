@@ -1,8 +1,9 @@
 ﻿using System;
+using AlbionNavigator.Utils.ForceDirectedGraph.Datum;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph.Force;
 
-public class Link : Force
+public class LinkForce : Force
 {
     public int Iterations = 1;
     
@@ -11,8 +12,8 @@ public class Link : Force
     private float[] LinkIndexToStrengthMap;
     private float[] LinkIndexToDistanceMap;
 
-    private Datum.Link[] _links = [];
-    public Datum.Link[] Links
+    private Link[] _links = [];
+    public Link[] Links
     {
         get => _links;
         set
@@ -22,8 +23,8 @@ public class Link : Force
         }
     }
 
-    private Func<Datum.Link, float> _getLinkStrength;
-    public Func<Datum.Link, float> GetLinkStrength
+    private Func<Link, float> _getLinkStrength;
+    public Func<Link, float> GetLinkStrength
     {
         get => _getLinkStrength;
         set
@@ -33,8 +34,8 @@ public class Link : Force
         }
     }
     
-    private Func<Datum.Link, float> _getLinkDistance;
-    public Func<Datum.Link, float> GetLinkDistance
+    private Func<Link, float> _getLinkDistance;
+    public Func<Link, float> GetLinkDistance
     {
         get =>  _getLinkDistance;
         set
@@ -44,7 +45,7 @@ public class Link : Force
         }
     }
 
-    public Link()
+    public LinkForce()
     {
         AssignDefaultGetters();
     }
@@ -61,7 +62,6 @@ public class Link : Force
         if (Nodes.Length == 0) return;
 
         var count = NodeIndexToConnectionsCountMap;
-        
         for (var i = 0; i < Links.Length; i++)
         {
             var link = Links[i];

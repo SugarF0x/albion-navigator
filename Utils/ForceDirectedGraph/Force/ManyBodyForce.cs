@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Utils.ForceDirectedGraph.Internal.QuadTree;
-using Godot;
 using Node = AlbionNavigator.Utils.ForceDirectedGraph.Datum.Node;
-using Vector2 = System.Numerics.Vector2;
+using System.Numerics;
 
 namespace AlbionNavigator.Utils.ForceDirectedGraph.Force;
 
-public class ManyBody : Force
+public class ManyBodyForce : Force
 {
     public float DistanceMinSquared = 1f;
     public float DistanceMaxSquared = float.MaxValue;
@@ -30,7 +29,7 @@ public class ManyBody : Force
         }
     }
     
-    public ManyBody()
+    public ManyBodyForce()
     {
         AssignDefaultGetters();
     }
