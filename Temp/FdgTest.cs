@@ -39,12 +39,12 @@ public partial class FdgTest : Node2D
 			Links[i] = link;
 		}
 		
-		// Simulation.StartAsync();
+		Simulation.StartAsync();
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Simulation.Step();
+		// Simulation.Step();
 		
 		for (var i = 0; i < Nodes.Length; i++)
 		{
