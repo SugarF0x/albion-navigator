@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0qyuaj0pyugi"]
 
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="1_35clt"]
-[ext_resource type="PackedScene" uid="uid://sihpxqdxlb0r" path="res://Views/Home/Logbox/LogboxUI.tscn" id="2_br8cn"]
+[ext_resource type="PackedScene" uid="uid://c7cmtvxlm62wm" path="res://Views/Home/LogBox/LogboxUi.tscn" id="2_br8cn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wuu5"]
 bg_color = Color(0.06743774, 0.067437746, 0.06743769, 1)

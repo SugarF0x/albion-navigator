@@ -3,10 +3,10 @@ using Godot;
 
 namespace AlbionNavigator.Services;
 
-public class Logbox
+public class LogBox
 {
-    private static Logbox _instance;
-    public static Logbox Instance => _instance ??= new Logbox();
+    private static LogBox _instance;
+    public static LogBox Instance => _instance ??= new LogBox();
     
     public delegate void NewEntryAddedHandler(Log log);
     public event NewEntryAddedHandler NewEntryAdded;

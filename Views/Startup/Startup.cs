@@ -27,7 +27,7 @@ public partial class Startup : Control
 
 	private void OnAllResourcesLoaded()
 	{
-		Logbox.Instance.Add("All resources loaded");
+		LogBox.Instance.Add("All resources loaded");
 		GetTree().ChangeSceneToFile("res://Views/Home/Home.tscn");
 	}
 }

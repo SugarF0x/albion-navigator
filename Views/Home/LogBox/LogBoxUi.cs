@@ -2,7 +2,9 @@ using System;
 using AlbionNavigator.Services;
 using Godot;
 
-public partial class LogboxUI : ScrollContainer
+namespace AlbionNavigator.Views.Home.LogBox;
+
+public partial class LogBoxUi : ScrollContainer
 {
 	private Label SampleLog;
 	private VBoxContainer LogsContainer;
@@ -13,8 +15,8 @@ public partial class LogboxUI : ScrollContainer
 		LogsContainer = GetNode<VBoxContainer>("%LogsContainer");
 		LogsContainer.RemoveChild(SampleLog);
 		
-		foreach (var log in Logbox.Instance.Logs) AddLog(log);
-		Logbox.Instance.NewEntryAdded += AddLog;
+		foreach (var log in Services.LogBox.Instance.Logs) AddLog(log);
+		Services.LogBox.Instance.NewEntryAdded += AddLog;
 	}
 
 	private void AddLog(Log log)
