@@ -65,7 +65,6 @@ public class ManyBody : Force
         var weight = 0f;
         
         var treeAccumulator = new NodeChargeAccumulator();
-        TreeToAccumulatorMap.Add(tree, treeAccumulator);
 
         if (tree.IsLeaf)
         {
@@ -91,6 +90,7 @@ public class ManyBody : Force
         }
 
         treeAccumulator.Charge = strength;
+        TreeToAccumulatorMap[tree] = treeAccumulator;
     }
 
     private bool ApplyAccumulatedForce(QuadTree<Node> tree, Node node)
