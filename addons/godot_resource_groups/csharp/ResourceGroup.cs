@@ -138,8 +138,8 @@ namespace GodotResourceGroups
                 .AsGodotObjectArray<Resource>();
             PushInto(items, destination);
         }
-
-        public UnboundResourceLoader LoadAllInBackgroundUnbound(Action callback)
+        
+        public UnboundResourceLoader LoadResourcesAsync(Action onLoaded)
         {
             var loader = new UnboundResourceLoader();
             
@@ -148,35 +148,28 @@ namespace GodotResourceGroups
                 for (var i = 0; i < Paths.Count; i++)
                 {
                     var path = Paths[i];
-
-                    loader.Path = path;
                     loader.Progress = (float)i / Paths.Count;
                     
-                    var err = ResourceLoader.LoadThreadedRequest(path);
-                    if (err != Error.Ok)
-                    {
-                        GD.PrintErr($"Failed to request load for: {path}");
-                        continue;
-                    }
+                    ResourceLoader.LoadThreadedRequest(path);
+                    ResourceLoader.ThreadLoadStatus status;
+                    
+                    do status = ResourceLoader.LoadThreadedGetStatus(path);
+                    while (status == ResourceLoader.ThreadLoadStatus.InProgress);
 
-                    while (ResourceLoader.LoadThreadedGetStatus(path) == ResourceLoader.ThreadLoadStatus.InProgress)
-                    {
-                        OS.DelayMsec(10);
-                    }
-
+                    if (status != ResourceLoader.ThreadLoadStatus.Loaded) continue;
+                    
                     var res = ResourceLoader.LoadThreadedGet(path);
                     if (res != null) loader.Resources.Add(res);
-                    else GD.PrintErr($"Failed to load: {path}");
                 }
-                
+            }).ContinueWith(_ =>
+            {
                 loader.Progress = 1f;
                 loader.Finished = true;
-                callback?.Invoke();
+                onLoaded();
             });
-
+            
             return loader;
         }
-
 
         private static string[] ToArray(IEnumerable<string> enumerable)
         {
