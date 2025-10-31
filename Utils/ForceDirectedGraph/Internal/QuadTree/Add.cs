@@ -8,6 +8,8 @@ public partial class QuadTree<T>
 {
     public QuadTree<T> Add(Vector2 point, T data, bool cover = true)
     {
+        if (Parent != null) return Parent.Add(point, data, cover);
+        
         if (cover)
         {
             var coverTree = Cover(point);
@@ -73,6 +75,8 @@ public partial class QuadTree<T>
 
     public QuadTree<T> Add((Vector2 point, T data)[] items)
     {
+        if (Parent != null) return Parent.Add(items);
+        
         switch (items.Length)
         {
             case 0: return this;
@@ -83,8 +87,8 @@ public partial class QuadTree<T>
         boundingBox = items.Skip(1).Aggregate(boundingBox, (current, node) => current.Merge(new Rect(node.point, Vector2.Zero)));
 
         Cover(boundingBox.Position).Cover(boundingBox.End);
-        foreach (var (point, data) in items) Root.Add(point, data, false);
+        foreach (var (point, data) in items) Add(point, data, false);
         
-        return Root;
+        return this;
     }
 }
