@@ -28,7 +28,7 @@ config/description="Albion Cartography Management Tool"
 config/version="0.1.0"
 run/main_scene="uid://ds2c1h4gnxm5g"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
-boot_splash/image="uid://rqw4jmkmwpev"
+boot_splash/image="uid://boojlswi3icmp"
 config/icon="res://Assets/icon.png"
 
 [autoload]
@@ -47,8 +47,7 @@ gdscript/warnings/untyped_declaration=2
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=600
+window/size/mode=2
 
 [dotnet]
 
