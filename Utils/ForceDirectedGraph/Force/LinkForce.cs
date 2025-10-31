@@ -58,6 +58,8 @@ public class Link : Force
     protected override void Setup()
     {
         NodeIndexToConnectionsCountMap = new int[Nodes.Length];
+        if (Nodes.Length == 0) return;
+
         var count = NodeIndexToConnectionsCountMap;
         
         for (var i = 0; i < Links.Length; i++)
