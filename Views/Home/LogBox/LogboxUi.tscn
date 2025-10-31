@@ -1,20 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7cmtvxlm62wm"]
+[gd_scene load_steps=3 format=3 uid="uid://c7cmtvxlm62wm"]
 
 [ext_resource type="Script" uid="uid://c87e3m50wacff" path="res://Views/Home/LogBox/LogBoxUi.cs" id="1_cquwk"]
+[ext_resource type="Theme" uid="uid://cisqadqoygo1h" path="res://Assets/Themes/ContentPanel.tres" id="1_umkyl"]
 
-[node name="Logbox" type="ScrollContainer"]
+[node name="LogBox" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_umkyl")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Grid" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
 script = ExtResource("1_cquwk")
 
-[node name="LogsContainer" type="VBoxContainer" parent="."]
+[node name="LogsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/Grid"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="SampleLog" type="Label" parent="LogsContainer"]
+[node name="SampleLog" type="Label" parent="PanelContainer/MarginContainer/Grid/LogsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24

@@ -91,14 +91,7 @@ custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0wuu5")
 
-[node name="LogboxContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/LogboxPanel"]
-layout_mode = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 16
-
-[node name="Logbox" parent="HBoxContainer/VBoxContainer/LogboxPanel/LogboxContainer" instance=ExtResource("2_br8cn")]
+[node name="Logbox" parent="HBoxContainer/VBoxContainer/LogboxPanel" instance=ExtResource("2_br8cn")]
 layout_mode = 2
 
 [node name="ControlPanel" type="TabContainer" parent="HBoxContainer"]
