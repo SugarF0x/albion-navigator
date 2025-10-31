@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0qyuaj0pyugi"]
+[gd_scene load_steps=10 format=3 uid="uid://d0qyuaj0pyugi"]
 
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="1_35clt"]
 [ext_resource type="PackedScene" uid="uid://c7cmtvxlm62wm" path="res://Views/Home/LogBox/LogboxUi.tscn" id="2_br8cn"]
@@ -8,10 +8,42 @@ bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
 border_width_top = 8
 border_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtsb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br8cn"]
 bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
 border_width_left = 8
 border_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtsb"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 8.0
+bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
+border_width_left = 8
+border_width_bottom = 8
+border_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4c38c"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+content_margin_bottom = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c38c"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+content_margin_bottom = 0.0
+bg_color = Color(0.12941177, 0.14901961, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6ytx"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+content_margin_bottom = 0.0
+bg_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br8cn"]
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -66,7 +98,29 @@ theme_override_constants/margin_bottom = 16
 [node name="Logbox" parent="HBoxContainer/VBoxContainer/LogboxPanel/LogboxContainer" instance=ExtResource("2_br8cn")]
 layout_mode = 2
 
-[node name="ControlsPanelPlaceholder" type="PanelContainer" parent="HBoxContainer"]
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jqtsb")
+theme_override_constants/tab_separation = 8
+theme_override_font_sizes/font_size = 24
+theme_override_styles/panel = SubResource("StyleBoxFlat_br8cn")
+theme_override_styles/tabbar_background = SubResource("StyleBoxFlat_jqtsb")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_4c38c")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_4c38c")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_v6ytx")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_br8cn")
+current_tab = 0
+
+[node name="TabBar" type="TabBar" parent="HBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="TabBar2" type="TabBar" parent="HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="TabBar3" type="TabBar" parent="HBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
