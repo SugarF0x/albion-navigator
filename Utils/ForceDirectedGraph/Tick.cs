@@ -38,6 +38,13 @@ public partial class Simulation
         FinishSimulation();
     }
 
+    public bool Step()
+    {
+        if (Alpha < AlphaMin) return false;
+        Tick();
+        return true;
+    }
+
     public async void StartAsync()
     {
         try
@@ -49,12 +56,11 @@ public partial class Simulation
             {
                 while (Alpha >= AlphaMin) Tick();
             });
-            // TODO: need to double check if it runs in main thread or not
             FinishSimulation();
         }
         catch (Exception e)
         {
-            GD.PrintErr("Simulation failed: " + e.Message);
+            GD.PrintErr("Simulation failed: " + e);
         }
     }
 
