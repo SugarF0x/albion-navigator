@@ -51,7 +51,7 @@ public class Link : Force
 
     private void AssignDefaultGetters()
     {
-        GetLinkStrength = link => 1f / int.Min(NodeIndexToConnectionsCountMap[link.Source.Index], NodeIndexToConnectionsCountMap[link.Target.Index]);
+        GetLinkStrength = link => 1f / int.Min(NodeIndexToConnectionsCountMap[link.Source], NodeIndexToConnectionsCountMap[link.Target]);
         GetLinkDistance = _ => 30f;
     }
 
@@ -64,15 +64,15 @@ public class Link : Force
         {
             var link = Links[i];
             link.Index = i;
-            count[link.Source.Index]++;
-            count[link.Target.Index]++;
+            count[link.Source]++;
+            count[link.Target]++;
         }
 
         LinkIndexToPullBiasMap = new float[Links.Length];
         for (var i = 0; i < Links.Length; i++)
         {
             var link = Links[i];
-            LinkIndexToPullBiasMap[i] = (float)count[link.Source.Index] / (count[link.Source.Index] + count[link.Target.Index]);
+            LinkIndexToPullBiasMap[i] = (float)count[link.Source] / (count[link.Source] + count[link.Target]);
         }
 
         InitializeStrength();
@@ -95,18 +95,21 @@ public class Link : Force
     {
         for (var k = 0; k < Iterations; k++)
         {
-            foreach (var (source, target, index) in Links)
+            foreach (var (sourceIndex, targetIndex, linkIndex) in Links)
             {
+                var source = Nodes[sourceIndex];
+                var target = Nodes[targetIndex];
+                
                 var springVelocity = target.Position + target.Velocity - source.Position - source.Velocity;
                 if (springVelocity.X == 0f) springVelocity.X = Jiggle;
                 if (springVelocity.Y == 0f) springVelocity.Y = Jiggle;
 
                 var length = float.Sqrt(springVelocity.X * springVelocity.X + springVelocity.Y * springVelocity.Y);
-                var adjustedLengthMultiplier = (length - LinkIndexToDistanceMap[index]) / length * alpha * LinkIndexToStrengthMap[index];
+                var adjustedLengthMultiplier = (length - LinkIndexToDistanceMap[linkIndex]) / length * alpha * LinkIndexToStrengthMap[linkIndex];
                 springVelocity *= adjustedLengthMultiplier;
             
-                target.Velocity -= springVelocity * LinkIndexToPullBiasMap[index];
-                source.Velocity += springVelocity * (1f - LinkIndexToPullBiasMap[index]);
+                target.Velocity -= springVelocity * LinkIndexToPullBiasMap[linkIndex];
+                source.Velocity += springVelocity * (1f - LinkIndexToPullBiasMap[linkIndex]);
             }
         }
     }

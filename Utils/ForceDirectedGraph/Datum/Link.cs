@@ -1,17 +1,15 @@
 ﻿namespace AlbionNavigator.Utils.ForceDirectedGraph.Datum;
 
-public class Link(Node source, Node target)
+public struct Link(int sourceIndex, int targetIndex)
 {
-    // TODO: source and targets might as well be indexes => change class to struct
-    
     public int Index;
-    public Node Source = source;
-    public Node Target = target;
+    public int Source = sourceIndex;
+    public int Target = targetIndex;
 
-    public void Deconstruct(out Node source, out Node target, out int index)
+    public void Deconstruct(out int sourceIndex, out int targetIndex, out int linkIndex)
     {
-        source = Source;
-        target = Target;
-        index = Index;
+        sourceIndex = Source;
+        targetIndex = Target;
+        linkIndex = Index;
     }
 }
