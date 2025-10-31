@@ -58,18 +58,19 @@ size_flags_horizontal = 4
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(512, 0)
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
 
 [node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_iqsdf")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "Loading resources"
 horizontal_alignment = 1
 
 [node name="TaskLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "taskname"
 horizontal_alignment = 1
 
@@ -78,6 +79,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/background = SubResource("StyleBoxFlat_1i8ey")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rpjs7")
 max_value = 1.0
