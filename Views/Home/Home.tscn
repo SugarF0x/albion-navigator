@@ -4,10 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://c7cmtvxlm62wm" path="res://Views/Home/LogBox/LogboxUi.tscn" id="2_br8cn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wuu5"]
-bg_color = Color(0.06743774, 0.067437746, 0.06743769, 1)
+bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
+border_width_top = 8
+border_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtsb"]
-bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
+bg_color = Color(0.14509805, 0.16862746, 0.20392157, 1)
+border_width_left = 8
+border_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
 
 [node name="Home" type="Control"]
 layout_mode = 3
