@@ -1,5 +1,6 @@
-using AlbionNavigator.Services;
+using System.Linq;
 using AlbionNavigator.Utils.ForceDirectedGraph;
+using AlbionNavigator.Utils.ForceDirectedGraph.Datum;
 using AlbionNavigator.Utils.ForceDirectedGraph.Force;
 using Godot;
 
@@ -7,14 +8,17 @@ public partial class FdgTest : Node2D
 {
 	public Simulation Simulation;
 	private const int NodesCount = 800;
+	private const int LinksCount = 100;
 	private const int PositionScale = 2;
-	private Node2D[] Nodes = new Node2D[NodesCount];
 	private Vector2 Midpoint;
-	
+	private Node2D[] Nodes = new Node2D[NodesCount];
+	private Line2D[] Links = new Line2D[LinksCount];
+
 	public override void _Ready()
 	{
 		Midpoint = DisplayServer.WindowGetSize() / 2;
 		InitSimulation();
+		
 		var texture = GD.Load<Texture2D>("res://Assets/icon.png");
 		for (var i = 0; i < NodesCount; i++)
 		{
@@ -26,16 +30,37 @@ public partial class FdgTest : Node2D
 			node.AddChild(image);
 			Nodes[i] = node;
 		}
-		Simulation.StartAsync();
+
+		for (var i = 0; i < LinksCount; i++)
+		{
+			var link = new Line2D();
+			link.Width = 1f;
+			AddChild(link);
+			Links[i] = link;
+		}
+		
+		// Simulation.StartAsync();
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		Simulation.Step();
+		
 		for (var i = 0; i < Nodes.Length; i++)
 		{
 			var node = Nodes[i];
 			var simulationNode = Simulation.Nodes[i];
 			node.Position = new Vector2(simulationNode.Position.X, simulationNode.Position.Y) * PositionScale + Midpoint;
+		}
+		
+		for (var i = 0; i < Links.Length; i++)
+		{
+			var link = Links[i];
+			link.Points =
+			[
+				Nodes[i].Position,
+				Nodes[NodesCount - i - 1].Position
+			];
 		}
 	}
 
@@ -46,8 +71,17 @@ public partial class FdgTest : Node2D
 		Simulation.OnSimulationStarted += () => GD.Print("Simulation started");
 		Simulation.OnSimulationFinished += () => GD.Print("Simulation finished");
 		
-		// Simulation.AddForce(new Link());
-		Simulation.AddForce(new ManyBody
+		Simulation.AddForce(new LinkForce
+		{
+			Links = Enumerable.Range(0, LinksCount).Select(i => new Link
+			{
+				Source = i,
+				Target = NodesCount - i - 1
+			}).ToArray(),
+			GetLinkDistance = _ => 15f
+		});
+		
+		Simulation.AddForce(new ManyBodyForce
 		{
 			DistanceMaxSquared = 32f * 32f
 		});
