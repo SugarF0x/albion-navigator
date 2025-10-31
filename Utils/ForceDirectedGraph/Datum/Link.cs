@@ -2,6 +2,8 @@
 
 public class Link(Node source, Node target)
 {
+    // TODO: source and targets might as well be indexes => change class to struct
+    
     public int Index;
     public Node Source = source;
     public Node Target = target;
