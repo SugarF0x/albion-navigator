@@ -27,6 +27,6 @@ public partial class Startup : Control
 
 	private void OnAllResourcesLoaded()
 	{
-		GD.Print("OnAllResourcesLoaded");
+		GetTree().ChangeSceneToFile("res://Views/Home/Home.tscn");
 	}
 }
