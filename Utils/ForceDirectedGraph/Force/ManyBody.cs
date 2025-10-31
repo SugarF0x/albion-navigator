@@ -76,7 +76,7 @@ public class ManyBody : Force
         {
             var centerOfMass = Vector2.Zero;
             
-            foreach (var branch in tree.Children)
+            foreach (var branch in tree.Children.Where(child => child != null))
             {
                 var branchAccumulator = TreeToAccumulatorMap[branch];
                 var charge = float.Abs(branchAccumulator.Charge);
