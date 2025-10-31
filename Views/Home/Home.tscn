@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0qyuaj0pyugi"]
+[gd_scene load_steps=5 format=3 uid="uid://d0qyuaj0pyugi"]
 
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="1_35clt"]
+[ext_resource type="PackedScene" uid="uid://sihpxqdxlb0r" path="res://Views/Home/Logbox/LogboxUI.tscn" id="2_br8cn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wuu5"]
+bg_color = Color(0.06743774, 0.067437746, 0.06743769, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtsb"]
+bg_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -40,10 +47,22 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LogboxPlaceholer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="LogboxPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0wuu5")
+
+[node name="LogboxContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/LogboxPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="Logbox" parent="HBoxContainer/VBoxContainer/LogboxPanel/LogboxContainer" instance=ExtResource("2_br8cn")]
 layout_mode = 2
 
 [node name="ControlsPanelPlaceholder" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqtsb")
