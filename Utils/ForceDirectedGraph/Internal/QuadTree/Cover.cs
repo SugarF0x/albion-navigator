@@ -17,18 +17,25 @@ public partial class QuadTree<T> where T : class
         Rect.Position = new Vector2(float.Floor(point.X), float.Floor(point.Y));
         Rect.Size = Vector2.One;
     }
-
+    
     private QuadTree<T> ExpandToCoverPoint(Vector2 point)
     {
         var treeQuadrantIndex = point.GetRelativeQuadrantIndex(Rect.Position);
-        
-        Parent = new QuadTree<T>
+        var expandedRect = Rect.ExpandFromQuadrantIndex(treeQuadrantIndex);
+
+        if (IsBranch)
         {
-            Rect = Rect.ExpandFromQuadrantIndex(treeQuadrantIndex),
-            Children = new QuadTree<T>[4]
-        };
-        Parent.Children[treeQuadrantIndex] = this;
+            Parent = new QuadTree<T>
+            {
+                Rect = expandedRect,
+                Children = new QuadTree<T>[4]
+            };
+            Parent.Children[treeQuadrantIndex] = this;
         
-        return Parent.Cover(point);
+            return Parent.Cover(point);            
+        }
+
+        Rect = expandedRect;
+        return Cover(point);
     }
 }
