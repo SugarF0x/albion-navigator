@@ -7,7 +7,7 @@ const TablesPluginSettingsClass := preload("res://addons/resources_spreadsheet_v
 
 @onready var node_folder_path : LineEdit = $"HeaderContentSplit/VBoxContainer/HBoxContainer/HBoxContainer/Path"
 @onready var node_recent_paths : OptionButton = $"HeaderContentSplit/VBoxContainer/HBoxContainer/HBoxContainer2/RecentPaths"
-@onready var node_table_root : GridContainer = $"HeaderContentSplit/MarginContainer/FooterContentSplit/Panel/Scroll/MarginContainer/TableGrid"
+@onready var node_table_root : Container = $"HeaderContentSplit/MarginContainer/FooterContentSplit/Panel/Scroll/MarginContainer/TableGrid"
 @onready var node_columns : HBoxContainer = $"HeaderContentSplit/VBoxContainer/Columns/Columns"
 @onready var node_page_manager : Control = $"HeaderContentSplit/VBoxContainer/HBoxContainer3/Pages"
 @onready var node_class_filter : Control = $"HeaderContentSplit/VBoxContainer/Search/Search/Class"
@@ -130,7 +130,7 @@ func display_folder(folderpath : String, sort_by : StringName = "", sort_reverse
 	if folderpath.get_extension() == "":
 		folderpath = folderpath.trim_suffix("/") + "/"
 
-	if folderpath.ends_with(".tres") and !(load(folderpath) is ResourceTablesImport):
+	if (folderpath.ends_with(".tres") or folderpath.ends_with(".res")) and !(load(folderpath) is ResourceTablesImport):
 		folderpath = folderpath.get_base_dir() + "/"
 
 	node_recent_paths.add_path_to_recent(folderpath)
@@ -220,7 +220,7 @@ func fill_property_data(res : Resource):
 	var column_values := []
 	var i := -1
 	for x in res.get_property_list():
-		if x[&"usage"] & PROPERTY_USAGE_EDITOR != 0 and x[&"name"] != "script":
+		if can_display_property(x):
 			i += 1
 			columns.append(x[&"name"])
 			column_types.append(x[&"type"])
@@ -256,7 +256,7 @@ func fill_property_data_many(resources : Array):
 
 	i = -1
 	for x in found_props.values():
-		if x[&"usage"] & PROPERTY_USAGE_EDITOR != 0 and x[&"name"] != "script":
+		if can_display_property(x):
 			i += 1
 			columns.append(x[&"name"])
 			column_types.append(x[&"type"])
@@ -265,6 +265,16 @@ func fill_property_data_many(resources : Array):
 			column_values.append(io.get_value(x[&"owner_object"], columns[i]))
 
 	_selection.initialize_editors(column_values, column_types, column_hints)
+
+
+func can_display_property(property_info : Dictionary):
+	var prop_type : int = property_info[&"type"]
+	return (
+		prop_type != TYPE_CALLABLE
+		and prop_type != TYPE_SIGNAL
+		and property_info[&"usage"] & PROPERTY_USAGE_EDITOR != 0
+		and property_info[&"name"] != "script"
+	)
 
 
 func insert_row_sorted(res : Resource, loaded_rows : Array, sort_by : StringName, sort_reverse : bool):
@@ -286,16 +296,16 @@ func insert_row_sorted(res : Resource, loaded_rows : Array, sort_by : StringName
 
 func compare_values(a, b) -> bool:
 	if a == null or b == null: return b == null
+	if a is float or a is int:
+		return a > b
+
 	if a is Color:
 		return a.h > b.h if a.h != b.h else a.v > b.v
 
 	if a is Resource:
 		return a.resource_path > b.resource_path
-	
-	if a is Array:
-		return a.size() > b.size()
-		
-	return a > b
+
+	return str(a).filenocasecmp_to(str(b)) > 0
 
 
 func column_can_solo_open(column_index : int) -> bool:
@@ -320,7 +330,7 @@ func _update_row(row_index : int, color_rows : bool = true):
 	var current_node : Control
 	var next_color := Color.WHITE
 	var column_editors : Array = _selection.column_editors
-	var shortened_path : String = rows[row_index].resource_path.substr(current_path.length()).trim_suffix(".tres")
+	var shortened_path : String = rows[row_index].resource_path.substr(current_path.length()).trim_suffix(".tres").trim_suffix(".res")
 	for i in columns.size():
 		if node_table_root.get_child_count() <= (row_index - first_row) * columns.size() + i:
 			current_node = column_editors[i].create_cell(self)

@@ -9,8 +9,24 @@ func get_value(entry, key : String):
 
 
 func set_value(entry, key : String, value, index : int):
-	entry[key] = value
+	var prev_value = entry[key]
+	if prev_value is StringName:
+		entry[key] = StringName(value)
+		return
 
+	if prev_value is String:
+		entry[key] = String(value)
+		return
+
+	if prev_value is float:
+		entry[key] = float(value)
+		return
+
+	if prev_value is int:
+		entry[key] = int(value)
+		return
+
+	entry[key] = value
 
 func save_entries(all_entries : Array, indices : Array, repeat : bool = true):
 	# No need to save. Resources are saved with Ctrl+S
@@ -23,23 +39,39 @@ func create_resource(entry) -> Resource:
 
 
 func duplicate_rows(rows : Array, name_input : String):
+	var new_path := ""
 	if rows.size() == 1:
 		var new_row = rows[0].duplicate()
-		new_row.resource_path = rows[0].resource_path.get_base_dir() + "/" + name_input + ".tres"
+		var res_extension := ".res" if rows[0].resource_path.ends_with(".res") else ".tres"
+		new_path = rows[0].resource_path.get_base_dir() + "/" + name_input + res_extension
+		while ResourceLoader.exists(new_path):
+			new_path = new_path.trim_suffix(res_extension) + "_copy" + res_extension
+
+		new_row.resource_path = new_path
 		ResourceSaver.save(new_row)
 		return
 
 	var new_row
 	for x in rows:
 		new_row = x.duplicate()
-		new_row.resource_path = x.resource_path.get_basename() + name_input + ".tres"
+		var res_extension := ".res" if x.resource_path.ends_with(".res") else ".tres"
+		new_path = x.resource_path.get_basename() + name_input + res_extension
+		while ResourceLoader.exists(new_path):
+			new_path = new_path.trim_suffix(res_extension) + "_copy" + res_extension
+
+		new_row.resource_path = new_path
 		ResourceSaver.save(new_row)
 
 
 func rename_row(row, new_name : String):
+	var res_extension : String = ".res" if row.resource_path.ends_with(".res") else ".tres"
+	var new_path : String = row.resource_path.get_base_dir() + "/" + new_name + res_extension
+	while FileAccess.file_exists(new_path):
+		new_path = new_path.trim_suffix(res_extension) + "_copy" + res_extension
+
 	var new_row = row
 	DirAccess.open("res://").remove(row.resource_path)
-	new_row.resource_path = row.resource_path.get_base_dir() + "/" + new_name + ".tres"
+	new_row.resource_path = new_path
 	ResourceSaver.save(new_row)
 
 
@@ -80,7 +112,7 @@ func import_from_path(folderpath : String, insert_func : Callable, sort_by : Str
 
 	var loaded_res_unique := {}
 	for x in file_stack:
-		if !x.ends_with(".tres"):
+		if !x.ends_with(".tres") and !x.ends_with(".res"):
 			continue
 
 		if solo_property.is_empty():

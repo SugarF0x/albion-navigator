@@ -5,7 +5,7 @@ const TablesPluginSettingsClass := preload("res://addons/resources_spreadsheet_v
 
 @onready var editor_view : Control = $"../../../../../.."
 @onready var grid_scroll : ScrollContainer = $"../../Scroll"
-@onready var grid : GridContainer = $"../../Scroll/MarginContainer/TableGrid"
+@onready var grid : Container = $"../../Scroll/MarginContainer/TableGrid"
 
 var children : Array[Control] = []
 var children_copy_cells : Array[Control] = []
@@ -32,7 +32,7 @@ func _on_grid_updated() -> void:
 	await get_tree().process_frame
 
 	var first_visible_column := 0
-	for i in grid.columns:
+	for i in editor_view.columns.size():
 		if grid.get_child(i).visible:
 			first_visible_column = i
 			break

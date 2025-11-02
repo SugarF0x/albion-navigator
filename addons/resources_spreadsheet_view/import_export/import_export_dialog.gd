@@ -22,10 +22,8 @@ var import_data : ResourceTablesImport
 func _ready():
 	hide()
 	show()
-	if get_parent().get("min_size"):
-		get_parent().min_size = Vector2(600, 400)
-
-	get_parent().size = Vector2(600, 400)
+	if get_parent().get("size"):
+		get_parent().size = Vector2(600, 400)
 	
 	file_dialog_use_script.file_selected.connect(_on_file_dialog_file_selected)
 
@@ -44,7 +42,7 @@ func _on_file_selected(path : String):
 
 	import_data = null
 	for x in DirAccess.get_files_at(path.get_base_dir()):
-		if !x.ends_with(".tres"):
+		if !x.ends_with(".tres") and !x.ends_with(".res"):
 			continue
 
 		var found_res := load(path.get_base_dir().path_join(x))
@@ -61,11 +59,16 @@ func _on_file_selected(path : String):
 	$"Import/Margins/Scroll/Box/StyleSettingsI"._send_signal()
 
 	if editor_view.rows.size() > 0:
-		script_path_field.text = editor_view.rows[0].get_script().resource_path
+		var using_script = editor_view.rows[0].get_script()
+		if using_script != null:
+			script_path_field.text = using_script.resource_path
 
 	await get_tree().process_frame
 	get_parent().popup_centered()
+	await get_tree().process_frame
+	get_parent().min_size = get_combined_minimum_size()
 	position = Vector2.ZERO
+	size = get_parent().size
 
 
 func _on_files_selected(paths : PackedStringArray):
@@ -107,7 +110,9 @@ func _create_new_settings_file(textfile_path : String):
 	import_data.script_classname = classname_field.text
 	if script_path_field.text:
 		var existing_resource : Resource = load(script_path_field.text).new()
-		import_data.prop_types = ResourceTablesImport.get_resource_property_types(existing_resource, import_data.prop_names)
+		var uniques := {}
+		import_data.prop_types = ResourceTablesImport.get_resource_property_types(existing_resource, import_data.prop_names, uniques)
+		import_data.uniques = uniques
 
 	else:
 		import_data.load_property_names_from_textfile(textfile_path, entries)
@@ -185,8 +190,10 @@ func _on_import_edit_pressed():
 func _on_export_csv_pressed():
 	var exported_cols : Array = editor_view.columns.duplicate()
 	exported_cols.erase(&"resource_local_to_scene")
-	for x in editor_view.node_columns.hidden_columns[editor_view.current_path].keys():
-		exported_cols.erase(x)
+	var column_properties : Dictionary = editor_view.node_columns.column_properties[editor_view.current_path]
+	for k in column_properties:
+		if column_properties[k].get(&"visibility", 1.0) == 0.0:
+			exported_cols.erase(k)
 
 	ResourceTablesExportFormatCsv.export_to_file(editor_view.rows, exported_cols, import_data.edited_path, import_data)
 	await get_tree().process_frame

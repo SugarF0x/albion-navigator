@@ -88,6 +88,9 @@ func string_to_property(string : String, col_index : int):
 				return int(uniques[col_index]["N_A"])
 
 			else:
+				if !uniques.has(col_index):
+					return -1
+
 				return int(uniques[col_index][string.capitalize().replace(" ", "_").to_upper()])
 				# if string.is_valid_int():
 				# 	return int(uniques[col_index][string.capitalize().replace(" ", "_").to_upper()])
@@ -116,9 +119,6 @@ func string_to_property(string : String, col_index : int):
 
 func property_to_string(value, col_index : int) -> String:
 	if value == null: return ""
-	if prop_types[col_index] is PackedStringArray:
-		return prop_types[col_index][value].capitalize()
-
 	match prop_types[col_index]:
 		PropType.STRING:
 			return str(value)
@@ -136,16 +136,27 @@ func property_to_string(value, col_index : int) -> String:
 			return value.resource_path
 
 		PropType.COLLECTION:
-			value = value.duplicate()
 			if value is Array:
+				var new_value := []
+				new_value.resize(value.size())
 				for i in value.size():
+					new_value[i] = value[i]
 					if value[i] is Resource:
-						value[i] = value[i].resource_path
+						new_value[i] = value[i].resource_path
+
+				value = new_value
 
 			if value is Dictionary:
+				var new_value := {}
 				for k in value:
+					new_value[k] = value[k]
 					if value[k] is Resource:
-						value[k] = value[k].resource_path
+						new_value[k] = value[k].resource_path
+
+					if k is Resource:
+						new_value[k.resource_path] = new_value[k]
+
+				value = new_value
 
 			return str(value)
 
@@ -257,6 +268,7 @@ func generate_script(entries, has_classname = true) -> GDScript:
 func load_property_names_from_textfile(path : String, loaded_entries : Array):
 	prop_types.resize(prop_names.size())
 	prop_types.fill(4)
+	var enums_exist := false
 	for i in prop_names.size():
 		prop_names[i] = loaded_entries[0][i]\
 			.replace("\"", "")\
@@ -282,6 +294,7 @@ func load_property_names_from_textfile(path : String, loaded_entries : Array):
 			prop_types[i] = ResourceTablesImport.PropType.COLOR
 		else:
 			prop_types[i] = ResourceTablesImport.PropType.STRING
+			enums_exist = true
 
 
 func load_external_script(script_res : Script):
@@ -308,8 +321,6 @@ func load_external_script(script_res : Script):
 
 			else:
 				result_for_prop[cur_value.to_upper()] = result_for_prop.size()
-
-	uniques = result
 
 
 func strings_to_resource(strings : Array, destination_path : String) -> Resource:
@@ -342,14 +353,11 @@ func strings_to_resource(strings : Array, destination_path : String) -> Resource
 		new_res.resource_path = new_path
 
 	for i in mini(prop_names.size(), strings.size()):
-		var skip_next := false
-		var cast_array := false
-
+		var property_value = string_to_property(strings[i], i)
 		# This is awful, but the workaround for typed casting
 		# 	https://github.com/godotengine/godot/issues/72620
-		var property_value = string_to_property(strings[i], i)
-		if property_value is Array:
-			var property_value_as_typed := new_res.get(prop_names[i])
+		if property_value is Array or property_value is Dictionary:
+			var property_value_as_typed = new_res.get(prop_names[i])
 			property_value_as_typed.assign(property_value)
 			new_res.set(prop_names[i], property_value_as_typed)
 
@@ -374,7 +382,7 @@ func resource_to_strings(res : Resource):
 func get_uniques(entries : Array) -> Dictionary:
 	var result := {}
 	for i in prop_types.size():
-		if prop_types[i] == PropType.ENUM:
+		if prop_types[i] is PropType and prop_types[i] == PropType.ENUM:
 			var cur_value := ""
 			result[i] = {}
 			for j in entries.size():
@@ -405,26 +413,34 @@ static func change_name_to_format(name : String, case : int, delim : String):
 		return string.to_upper()
 
 
-static func get_resource_property_types(res : Resource, properties : Array) -> Array:
-	var result := []
+static func get_resource_property_types(res : Resource, properties : Array, uniques : Dictionary) -> Array:
+	var result : Array[PropType] = []
 	result.resize(properties.size())
 	result.fill(PropType.STRING)
 	var cur_type := 0
 	for x in res.get_property_list():
-		var found := properties.find(x["name"])
-		if found == -1: continue
-		if x["usage"] & PROPERTY_USAGE_EDITOR != 0:
-			if x["hint"] == PROPERTY_HINT_ENUM:
-				
-				var enum_values : PackedStringArray = x["hint_string"].split(",")
+		var poroperty_index := properties.find(x[&"name"])
+		if poroperty_index == -1: continue
+		if x[&"usage"] & PROPERTY_USAGE_EDITOR != 0:
+			if x[&"hint"] == PROPERTY_HINT_ENUM:
+				var enum_values : PackedStringArray = x[&"hint_string"].split(",")
+				var enum_value_dict := {}
+				var max_enum_value := 0
 				for i in enum_values.size():
 					var index_found : int = enum_values[i].find(":")
-					if index_found == -1: continue
-					enum_values[i] = enum_values[i].left(index_found)
+					if index_found == -1:
+						enum_value_dict[enum_values[i].to_upper()] = max_enum_value
+						max_enum_value += 1
+						continue
 
-				result[found] = enum_values
+					var k = enum_values[i].left(index_found).to_upper()
+					var v = enum_values[i].right(index_found + 1).to_int()
+					enum_value_dict[k] = v
+
+				uniques[poroperty_index] = enum_value_dict
+				result[poroperty_index] = PropType.ENUM
 
 			else:
-				result[found] = TYPE_MAP.get(x["type"], PropType.STRING)
+				result[poroperty_index] = TYPE_MAP.get(x[&"type"], PropType.STRING)
 	
 	return result
