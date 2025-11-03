@@ -17,6 +17,8 @@ public partial class LogBoxUi : ScrollContainer
 		
 		foreach (var log in Services.LogBox.Instance.Logs) AddLog(log);
 		Services.LogBox.Instance.NewEntryAdded += AddLog;
+		LinkService.Instance.LinkExpirationUpdated += LogLinkExpirationUpdate;
+		LinkService.Instance.ExpiredLinkRemoved += LogExpiredLinkRemoval;
 	}
 
 	private void AddLog(Log log)
@@ -24,5 +26,20 @@ public partial class LogBoxUi : ScrollContainer
 		if (SampleLog.Duplicate() is not Label newLog) throw new Exception("Sample log is not a Label");
 		newLog.Text = log.ToString();
 		LogsContainer.AddChild(newLog);
+	}
+
+	// do these callbacks belong here?
+	private void LogLinkExpirationUpdate(ZoneLink link)
+	{
+		var source = ZoneService.Instance.Zones[link.Source];
+		var target = ZoneService.Instance.Zones[link.Target];
+		Services.LogBox.Instance.Add($"Link expiration updated: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
+	}
+
+	private void LogExpiredLinkRemoval(ZoneLink link)
+	{
+		var source = ZoneService.Instance.Zones[link.Source];
+		var target = ZoneService.Instance.Zones[link.Target];
+		Services.LogBox.Instance.Add($"Link expired: {source.DisplayName} -> {target.DisplayName}");
 	}
 }
