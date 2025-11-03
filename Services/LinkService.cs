@@ -1,94 +1,210 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Godot;
 
 namespace AlbionNavigator.Services;
 
-public struct ZoneLink
-{
-    public ZoneLink(int source, int target, string expiration)
-    {
-        Connections = [source, target];
-        Array.Sort(Connections);
-        _expiration = expiration;
-    }
-
-    public readonly int[] Connections;
-    private readonly string _expiration;
-
-    private Task _expirationTask;
-    public Task ExpirationTask
-    {
-        get
-        {
-            if (_expiration == null) return null;
-            return _expirationTask ??= Task.Delay(GetExpirationInSeconds(_expiration));
-        }
-    }
-    
-    private static int GetExpirationInSeconds(string timestamp)
-    {
-        var targetDateTime = DateTime.Parse(timestamp);
-        var currentDateTime = DateTime.UtcNow;
-        var difference = targetDateTime - currentDateTime;
-        return (int)difference.TotalSeconds;
-    }
-}
-
 public class LinkService
 {
-    private static LinkService _instance;
-    public static LinkService Instance {
-        set => ArgumentNullException.ThrowIfNull(value);
-        get => _instance ??= new LinkService();
-    }
-
-    public enum LinkUpdateType
-    {
-        Unknown,
-        StaticRegistered,
-        PortalRegistered,
-        PortalExpired,
-    }
+    private readonly Action<string, LogType> Log;
+    private readonly Action PersistLinks;
     
-    public delegate void LinksUpdatedHandler(LinkUpdateType type, ZoneLink link);
-    public event LinksUpdatedHandler LinksUpdated;
+    private static LinkService _instance;
+    public static LinkService Instance => _instance ??= new LinkService();
 
+    public event Action<ZoneLink> NewLinkAdded;
+    public event Action<ZoneLink> ExpiredLinkRemoved;
+    public event Action<ZoneLink> LinkExpirationUpdated;
+    
+    /// permanent last, soon-to-expire first
     public List<ZoneLink> Links = [];
 
-    private LinkService()
+    public LinkService() : this(null, null) {}
+    public LinkService(Action persist, Action<string, LogType> log)
     {
-        LoadLinks();
+        PersistLinks = persist ?? DefaultPersist;
+        Log = log ?? LogBox.Instance.Add;
     }
 
-    private void LoadLinks()
+    public void RegisterLinks()
+    {
+        RegisterStaticLinks();
+        LoadStoreLinks();
+    }
+
+    private void RegisterStaticLinks()
     {
         var zoneService = ZoneService.Instance;
-        if (!zoneService.IsReady) throw new FieldAccessException("Cant access Zone Service when not ready");
-        
-        for (var i = 0; i < zoneService.Zones.Length; i++)
+        if (zoneService == null) throw new FieldAccessException("Cant access zone service when not ready");
+
+        var zones = zoneService.Zones;
+        foreach (var zone in zones)
         {
-            var zone = zoneService.Zones[i];
-            foreach (var connection in zone.Connections.Where(index => index > i))
+            var source = zone.Id;
+            foreach (var target in zone.Connections.Where(connection => connection > source))
             {
-                AddLink(i, connection);
+                AddLink(source, target, null);
             }
         }
     }
-
-    public void AddLink(int source, int target, string expiration = null)
+    
+    public bool AddLink(int source, int target, string expiration) => AddLink(new ZoneLink(source, target, expiration));
+    public bool AddLink(ZoneLink[] links) => links.Aggregate(false, (current, zoneLink) => current | AddLink(zoneLink));
+    public bool AddLink(ZoneLink newLink)
     {
-        var link = new ZoneLink(source, target, expiration);
-        Links.Add(link);
-        // TODO: schedule removal on expiration
-
-        LinksUpdated?.Invoke(GetUpdateType(), link);
-        return;
-
-        LinkUpdateType GetUpdateType()
+        if (newLink.IsPermanent)
         {
-            return string.IsNullOrEmpty(expiration) ? LinkUpdateType.PortalRegistered : LinkUpdateType.StaticRegistered;
+            InsertLink(newLink);
+            return true;
         }
+        
+        for (var i = 0; i < Links.Count; i++)
+        {
+            var link = Links[i];
+            if (link.IsPermanent) break;
+            if (!link.IsSameSignature(newLink)) continue;
+            if (!link.IsLaterThanExpiration(newLink.Expiration)) return false;
+            
+            Links.RemoveAt(i);
+            break;
+        }
+
+        InsertLink(newLink);
+        
+        PersistLinks();
+        
+        NewLinkAdded?.Invoke(newLink);
+        Log($"Link added: {newLink}", LogType.Default);
+        
+        return true;
+    }
+    
+    // TODO: performance can be increased by List.BinarySearch
+    private void InsertLink(ZoneLink newLink)
+    {
+        if (Links.Count == 0 || newLink.IsPermanent)
+        {
+            Links.Add(newLink);
+            return;
+        }
+
+        for (var i = 0; i < Links.Count; i++)
+        {
+            var link = Links[i];
+            if (link.IsPermanent || newLink.IsLaterThanExpiration(link.Expiration))
+            {
+                Links.Insert(i, newLink);
+                return;
+            }
+
+            if (i != Links.Count - 1) continue;
+            
+            Links.Add(newLink);
+            return;
+        }
+    }
+    
+    #region Persistence
+    private const int Version = 0;
+    private const string SavePath = "user://store.save";
+    private const string SampleSavePath = "user://sample_store.save";
+    
+    private void LoadStoreLinks() => LoadLinksFromFile(SavePath);
+    public void LoadSampleLinks() => LoadLinksFromFile(SampleSavePath, true);
+
+    private void LoadLinksFromFile(string path, bool overrideTimestamps = false)
+    {
+        if (!FileAccess.FileExists(path)) return;
+        using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
+        
+        var content = file.GetAsText().Split("|");
+        var version = int.Parse(content[0]);
+        var data = content[1].Split(";");
+
+        if (version != Version) return;
+
+        foreach (var item in data)
+        {
+            if (item == "") continue;
+            
+            try
+            {
+                var chunks = item.Split(',');
+                var source = int.Parse(chunks[0]);
+                var target = int.Parse(chunks[1]);
+                var expiration = overrideTimestamps ? FiveMinuteOffsetTimestamp : chunks[2];
+                if (DateTimeOffset.TryParse(expiration, out var timestamp) && timestamp > DateTimeOffset.UtcNow) AddLink(source, target, expiration);
+            }
+            catch
+            {
+                Log("Failed to parse store link: " + item, LogType.Error);
+            }
+        }
+    }
+    
+    private void DefaultPersist()
+    {
+        var portalConnections = new List<ZoneLink>();
+        for (var i = Links.Count - 1; i >= 0; i--)
+        {
+            var link = Links[i];
+            if (link.Expiration == null) break;
+            portalConnections.Add(link);
+        }
+
+        portalConnections.Reverse();
+        var dataString = portalConnections.Aggregate($"{Version}|", (current, link) => current + $"{link.Source},{link.Target},{link.Expiration};");
+        
+        using var file = FileAccess.Open(SavePath, FileAccess.ModeFlags.Write);
+        file.StoreString(dataString);
+    }
+
+    private static string FiveMinuteOffsetTimestamp => DateTimeOffset.UtcNow.AddMinutes(5).ToString("O");
+    #endregion
+}
+
+public readonly struct ZoneLink(int source, int target, string expiration) : IEquatable<ZoneLink>
+{
+    public readonly int Source = source;
+    public readonly int Target = target;
+    public readonly string Expiration = expiration;
+
+    public bool IsPermanent => Expiration == null;
+    
+    public bool IsSameSignature(ZoneLink value) => value.Source == Source && value.Target == Target;
+
+    // TODO: perhaps add > and < operators to compare expirations 
+    /// <returns>
+    /// true if timestamp is later than its own expiration,
+    /// false otherwise
+    /// </returns>
+    public bool IsLaterThanExpiration(string timestamp)
+    {
+        if (
+            DateTimeOffset.TryParse(timestamp, out var value) 
+            && DateTimeOffset.TryParse(Expiration, out var expiration)
+        ) return value > expiration;
+        return false;
+    }
+
+    public override string ToString() => $"ZoneLink({Source}, {Target}, {Expiration})";
+    
+    public static bool operator == (ZoneLink left, ZoneLink right) => left.Equals(right);
+    public static bool operator != (ZoneLink left, ZoneLink right) => left.Equals(right);
+
+    public bool Equals(ZoneLink other)
+    {
+        return Source == other.Source && Target == other.Target && Expiration == other.Expiration;
+    }
+
+    public override bool Equals(object obj)
+    {
+        return obj is ZoneLink other && Equals(other);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Source, Target, Expiration);
     }
 }

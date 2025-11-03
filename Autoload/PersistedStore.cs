@@ -7,6 +7,8 @@ using Godot;
 
 namespace AlbionNavigator.Autoload;
 
+// TODO: remove this bs
+
 public partial class PersistedStore : Node
 {
     private const int VERSION = 0;
