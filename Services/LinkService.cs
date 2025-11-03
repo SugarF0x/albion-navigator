@@ -183,6 +183,7 @@ public class LinkService
 
         if (version != Version) return;
 
+        var linksLoaded = 0;
         foreach (var item in data)
         {
             if (item == "") continue;
@@ -193,13 +194,19 @@ public class LinkService
                 var source = int.Parse(chunks[0]);
                 var target = int.Parse(chunks[1]);
                 var expiration = overrideTimestamps ? FiveMinuteOffsetTimestamp : chunks[2];
-                if (DateTimeOffset.TryParse(expiration, out var timestamp) && timestamp > DateTimeOffset.UtcNow) AddLink(source, target, expiration);
+                if (DateTimeOffset.TryParse(expiration, out var timestamp) && timestamp > DateTimeOffset.UtcNow)
+                {
+                    AddLink(source, target, expiration);
+                    linksLoaded++;
+                }
             }
             catch
             {
                 Log("Failed to parse store link: " + item, LogType.Error);
             }
         }
+        
+        Log("Loaded links: " + linksLoaded, LogType.Default);
     }
     
     private void DefaultPersist()
