@@ -39,4 +39,5 @@ public partial class Zone : Resource
     [Export] public Vector2 Position { get; set; }
     [Export] public Godot.Collections.Array<int> Connections { get; set; } = [];
     [Export] public Godot.Collections.Array<ZoneComponent> Components { get; set; } = [];
+    // TODO: add zone tier (also need to repull source data since some zones have changed tiers)
 }

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh057prskc2p8"]
-
-[ext_resource type="Script" uid="uid://cswen32ijbkqt" path="res://Autoload/PersistedStore.cs" id="1_2ut7n"]
-
-[node name="PersistedStore" type="Node"]
-script = ExtResource("1_2ut7n")

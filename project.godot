@@ -34,7 +34,6 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 ScreenCapture="*res://Autoload/ScreenCapture.tscn"
-PersistedStore="*res://Autoload/PersistedStore.tscn"
 AudioPlayer="*res://Autoload/AudioPlayer.tscn"
 
 [copy_files_on_export]
