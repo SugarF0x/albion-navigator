@@ -56,27 +56,29 @@ public class LinkService
         if (newLink.IsPermanent)
         {
             InsertLink(newLink);
+            NewLinkAdded?.Invoke(newLink);
             return true;
         }
-        
+
+        var didUpdateExpiration = false;
         for (var i = 0; i < Links.Count; i++)
         {
             var link = Links[i];
             if (link.IsPermanent) break;
             if (!link.IsSameSignature(newLink)) continue;
             if (!link.IsLaterThanExpiration(newLink.Expiration)) return false;
-            
+
+            didUpdateExpiration = true;
             Links.RemoveAt(i);
             break;
         }
 
         InsertLink(newLink);
-        
-        PersistLinks();
-        
-        NewLinkAdded?.Invoke(newLink);
+        if (didUpdateExpiration) LinkExpirationUpdated?.Invoke(newLink);
+        else NewLinkAdded?.Invoke(newLink);
         Log($"Link added: {newLink}", LogType.Default);
         
+        PersistLinks();
         return true;
     }
     
