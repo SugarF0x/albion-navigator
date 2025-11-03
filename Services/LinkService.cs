@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using Timer = System.Timers.Timer;
 
 namespace AlbionNavigator.Services;
 
@@ -88,6 +89,7 @@ public class LinkService
         if (Links.Count == 0 || newLink.IsPermanent)
         {
             Links.Add(newLink);
+            ScheduleExpiration();
             return;
         }
 
@@ -97,17 +99,72 @@ public class LinkService
             if (link.IsPermanent || newLink.IsLaterThanExpiration(link.Expiration))
             {
                 Links.Insert(i, newLink);
+                ScheduleExpiration();
                 return;
             }
 
             if (i != Links.Count - 1) continue;
             
             Links.Add(newLink);
+            ScheduleExpiration();
             return;
         }
     }
     
+    #region Expiration
+    
+    private Timer ExpirationTimer;
+
+    private void ScheduleExpiration()
+    {
+        ExpirationTimer?.Stop();
+        ExpirationTimer?.Dispose();
+
+        if (Links.Count == 0) return;
+        var link = Links.First();
+
+        if (link.IsPermanent) return;
+        var now = DateTimeOffset.Now;
+        if (!DateTimeOffset.TryParse(link.Expiration, out var expiration))
+        {
+            Log("Failed to schedule expiration", LogType.Error);
+            return;
+        }
+
+        var delay = (expiration - now).TotalMilliseconds;
+        if (delay <= 0)
+        {
+            PopExpiredLinks();            
+            return;
+        }
+
+        ExpirationTimer = new Timer(delay) { AutoReset = false };
+        ExpirationTimer.Elapsed += (_, _) => PopExpiredLinks();
+        ExpirationTimer.Start();
+    }
+    
+    private void PopExpiredLinks()
+    {
+        var indexesToPop =  new List<int>();
+        for (var i = 0; i < Links.Count; i++)
+        {
+            var link = Links[i];
+            if (link.IsPermanent) break;
+            if (DateTimeOffset.TryParse(link.Expiration, out var dt) && dt < DateTimeOffset.UtcNow) indexesToPop.Add(i);
+        }
+
+        foreach (var i in indexesToPop)
+        {
+            var link = Links[i];
+            Links.RemoveAt(i);
+            ExpiredLinkRemoved?.Invoke(link);
+        }
+
+        ScheduleExpiration();
+    }
+    #endregion
     #region Persistence
+    
     private const int Version = 0;
     private const string SavePath = "user://store.save";
     private const string SampleSavePath = "user://sample_store.save";
@@ -163,6 +220,7 @@ public class LinkService
     }
 
     private static string FiveMinuteOffsetTimestamp => DateTimeOffset.UtcNow.AddMinutes(5).ToString("O");
+    
     #endregion
 }
 
@@ -170,6 +228,7 @@ public readonly struct ZoneLink(int source, int target, string expiration) : IEq
 {
     public readonly int Source = source;
     public readonly int Target = target;
+    // TODO: store expiration as long and only stringify/parse it during persist/load
     public readonly string Expiration = expiration;
 
     public bool IsPermanent => Expiration == null;
