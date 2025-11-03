@@ -1,6 +1,8 @@
 using AlbionNavigator.Services;
 using Godot;
 
+namespace AlbionNavigator.Views.Home.ControlPanel.SettingsTab;
+
 public partial class SettingsTab : MarginContainer
 {
 	private Button LoadSampleLinksButton;
