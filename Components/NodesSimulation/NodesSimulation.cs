@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Resources;
@@ -87,12 +88,18 @@ public partial class NodesSimulation : Control
 				Source = i,
 				Target = Zones.Length - i - 1
 			}).ToArray(),
-			GetLinkDistance = _ => 15f
+			GetLinkStrength = link => 
+				new List<Zone.ZoneType> { Zones[link.Source].Type, Zones[link.Target].Type }.Count(type => type == Zone.ZoneType.Road) switch
+				{
+					1 => 0,
+					2 => .5f,
+					_ => 1
+				}
 		});
 		
 		Simulation.AddForce(new ManyBodyForce
 		{
-			DistanceMaxSquared = 32f * 32f
+			GetNodeStrength = _ => -3
 		});
 		
 		Simulation.Nodes = Enumerable.Range(0, NodeElements.Count)
