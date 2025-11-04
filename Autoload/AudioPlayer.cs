@@ -42,7 +42,7 @@ public partial class AudioPlayer : Node
 
 	public override void _Ready()
 	{
-		var screenCapture = GetNode<ScreenCapture>("/root/ScreenCapture");
-		screenCapture.ScreenCaptured += _ => Play(SoundId.CameraShutter);
+		// var screenCapture = GetNode<ScreenCapture>("/root/ScreenCapture");
+		// screenCapture.ScreenCaptured += _ => Play(SoundId.CameraShutter);
 	}
 }
