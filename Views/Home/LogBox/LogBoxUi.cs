@@ -19,6 +19,7 @@ public partial class LogBoxUi : ScrollContainer
 		Services.LogBox.Instance.NewEntryAdded += AddLog;
 		LinkService.Instance.LinkExpirationUpdated += LogLinkExpirationUpdate;
 		LinkService.Instance.ExpiredLinkRemoved += LogExpiredLinkRemoval;
+		LinkService.Instance.NewLinkAdded += LogNewLinkAdded;
 	}
 
 	private void AddLog(Log log)
@@ -28,7 +29,6 @@ public partial class LogBoxUi : ScrollContainer
 		LogsContainer.AddChild(newLog);
 	}
 
-	// do these callbacks belong here?
 	private void LogLinkExpirationUpdate(ZoneLink link)
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
@@ -41,5 +41,12 @@ public partial class LogBoxUi : ScrollContainer
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];
 		Services.LogBox.Instance.Add($"Link expired: {source.DisplayName} -> {target.DisplayName}");
+	}
+
+	private void LogNewLinkAdded(ZoneLink link)
+	{
+		var source = ZoneService.Instance.Zones[link.Source];
+		var target = ZoneService.Instance.Zones[link.Target];
+		Services.LogBox.Instance.Add($"Link added: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
 	}
 }
