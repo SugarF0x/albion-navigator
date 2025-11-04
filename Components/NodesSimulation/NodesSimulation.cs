@@ -99,8 +99,11 @@ public partial class NodesSimulation : Control
 		
 		Simulation.AddForce(new ManyBodyForce
 		{
-			GetNodeStrength = _ => -3
+			GetNodeStrength = _ => -40
 		});
+		
+		Simulation.AddForce(new XForce());
+		Simulation.AddForce(new YForce());
 		
 		Simulation.Nodes = Enumerable.Range(0, NodeElements.Count)
 			.Select(i => new Node
