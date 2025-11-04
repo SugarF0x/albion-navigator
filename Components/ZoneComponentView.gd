@@ -46,16 +46,16 @@ enum ZoneComponentProperty {
 }
 
 var icons: Dictionary = {
-	"CHEST_BLUE" = preload("res://Assets/Icons/chest-blue.png"),
-	"CHEST_GOLD" = preload("res://Assets/Icons/chest-gold.png"),
-	"CHEST_GREEN" = preload("res://Assets/Icons/chest-green.png"),
-	"DUNGEON" = preload("res://Assets/Icons/dungeon.png"),
-	"FIBER" = preload("res://Assets/Icons/fiber.png"),
-	"HIDE" = preload("res://Assets/Icons/hide.png"),
-	"MIST_CITY" = preload("res://Assets/Icons/mist-city.png"),
-	"ORE" = preload("res://Assets/Icons/ore.png"),
-	"STONE" = preload("res://Assets/Icons/stone.png"),
-	"WOOD" = preload("res://Assets/Icons/wood.png"),
+	"CHEST_BLUE" = preload("res://Assets/Images/ZoneComponentIcons/chest-blue.png"),
+	"CHEST_GOLD" = preload("res://Assets/Images/ZoneComponentIcons/chest-gold.png"),
+	"CHEST_GREEN" = preload("res://Assets/Images/ZoneComponentIcons/chest-green.png"),
+	"DUNGEON" = preload("res://Assets/Images/ZoneComponentIcons/dungeon.png"),
+	"FIBER" = preload("res://Assets/Images/ZoneComponentIcons/fiber.png"),
+	"HIDE" = preload("res://Assets/Images/ZoneComponentIcons/hide.png"),
+	"MIST_CITY" = preload("res://Assets/Images/ZoneComponentIcons/mist-city.png"),
+	"ORE" = preload("res://Assets/Images/ZoneComponentIcons/ore.png"),
+	"STONE" = preload("res://Assets/Images/ZoneComponentIcons/stone.png"),
+	"WOOD" = preload("res://Assets/Images/ZoneComponentIcons/wood.png"),
 }
 
 func register_count() -> void:

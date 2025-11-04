@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bbjtcy7bnwpw1" path="res://Components/ZoneComponentView.gd" id="1_xsqs1"]
 [ext_resource type="Resource" uid="uid://dpa6faprq3h8l" path="res://Resources/ZoneComponents/7-Gather_Big-Wood-Fiber.tres" id="2_jluim"]
-[ext_resource type="Texture2D" uid="uid://bm3sbbinm7g7x" path="res://Assets/Icons/wood.png" id="3_0q2r3"]
-[ext_resource type="Texture2D" uid="uid://b447vwne1h6dp" path="res://Assets/Icons/fiber.png" id="3_x5i3r"]
+[ext_resource type="Texture2D" uid="uid://bm3sbbinm7g7x" path="res://Assets/Images/ZoneComponentIcons/wood.png" id="3_0q2r3"]
+[ext_resource type="Texture2D" uid="uid://b447vwne1h6dp" path="res://Assets/Images/ZoneComponentIcons/fiber.png" id="3_x5i3r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jluim"]
 bg_color = Color(1, 0, 0, 1)

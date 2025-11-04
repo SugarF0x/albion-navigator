@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v7lqr4enpyyq"
-path="res://.godot/imported/trash.png-187a58a4eea0cc480ade91e0fd07fb22.ctex"
+uid="uid://dstw6i47qpiov"
+path="res://.godot/imported/chest-gold.png-ba67c839aedcd4ca7f4d71e494e9bc96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/trash.png"
-dest_files=["res://.godot/imported/trash.png-187a58a4eea0cc480ade91e0fd07fb22.ctex"]
+source_file="res://Assets/Images/ZoneComponentIcons/chest-gold.png"
+dest_files=["res://.godot/imported/chest-gold.png-ba67c839aedcd4ca7f4d71e494e9bc96.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
