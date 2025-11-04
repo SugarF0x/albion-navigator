@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://iir4eplwop3u"]
-
-[ext_resource type="Script" uid="uid://y6bgj5p48dae" path="res://Temp/FdgTest.cs" id="1_6ij43"]
-
-[node name="FdgTest" type="Node2D"]
-script = ExtResource("1_6ij43")
