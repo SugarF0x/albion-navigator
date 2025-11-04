@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using AlbionNavigator.Resources;
 using GodotResourceGroups;
 
 namespace AlbionNavigator.Services;
@@ -21,7 +22,7 @@ public class ZoneService
         var zoneGroup = ResourceGroup.Of("res://Resources/ZoneGroup.tres");
         Loader = zoneGroup.LoadResourcesAsync(() =>
         {
-            Zones = Loader.Resources.Cast<Zone>().ToArray();
+            Zones = Loader.Resources.Cast<Zone>().OrderBy(a => a.Id).ToArray();
             IsReady = true;
             AllResourcesLoaded?.Invoke();
         });
