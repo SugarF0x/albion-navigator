@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0qyuaj0pyugi"]
+[gd_scene load_steps=14 format=3 uid="uid://d0qyuaj0pyugi"]
 
 [ext_resource type="Material" uid="uid://ubqwj3yjdpe5" path="res://Materials/schematic_background.tres" id="1_35clt"]
 [ext_resource type="PackedScene" uid="uid://c7cmtvxlm62wm" path="res://Views/Home/LogBox/LogboxUi.tscn" id="2_br8cn"]
+[ext_resource type="PackedScene" uid="uid://st208urcgmam" path="res://Views/Home/WorldMap/WorldMap.tscn" id="2_v6ytx"]
 [ext_resource type="PackedScene" uid="uid://dwrd88f6mec0i" path="res://Views/Home/ControlPanel/NavigationTab/NavigationTab.tscn" id="3_4c38c"]
 [ext_resource type="PackedScene" uid="uid://c4y18v6tjklmb" path="res://Views/Home/ControlPanel/ZoneInfoTab/ZoneInfoTab.tscn" id="4_v6ytx"]
 [ext_resource type="PackedScene" uid="uid://d05gkfuj6vas6" path="res://Views/Home/ControlPanel/SettingsTab/SettingsTab.tscn" id="5_bkahw"]
@@ -81,10 +82,14 @@ dragger_visibility = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
+dragger_visibility = 2
 
-[node name="GraphNodePlaceholder" type="Control" parent="HBoxContainer/VBoxContainer"]
+[node name="WorldMapContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="WorldMap" parent="HBoxContainer/VBoxContainer/WorldMapContainer" instance=ExtResource("2_v6ytx")]
+layout_mode = 2
 
 [node name="LogboxPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ua75d5ws62jt"]
+
+[ext_resource type="Texture2D" uid="uid://ifaenxoploxl" path="res://Assets/Images/NodeIcons/portal.png" id="1_4ld80"]
+[ext_resource type="Script" uid="uid://deqtv2o6napp5" path="res://Components/NodesSimulation/NodeScene.cs" id="1_722f8"]
+
+[node name="NodeScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_722f8")
+
+[node name="NodeIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("1_4ld80")

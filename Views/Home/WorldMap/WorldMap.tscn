@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://st208urcgmam"]
+
+[ext_resource type="PackedScene" uid="uid://cldjxdwrfk5fn" path="res://Components/NodesSimulation/NodesSimulation.tscn" id="1_5kii8"]
+
+[node name="WorldMap" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="NodesSimulation" parent="." instance=ExtResource("1_5kii8")]
+layout_mode = 0

@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://7csqa1louc4h"]
+
+[node name="LinkScene" type="Line2D"]
+width = 2.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldjxdwrfk5fn"]
+
+[ext_resource type="Script" uid="uid://dqrdd35iwp5xf" path="res://Components/NodesSimulation/NodesSimulation.cs" id="1_pm5ok"]
+[ext_resource type="PackedScene" uid="uid://ua75d5ws62jt" path="res://Components/NodesSimulation/NodeScene.tscn" id="2_mw1ac"]
+[ext_resource type="PackedScene" uid="uid://7csqa1louc4h" path="res://Components/NodesSimulation/LinkScene.tscn" id="3_arklg"]
+
+[node name="NodesSimulation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pm5ok")
+NodeScene = ExtResource("2_mw1ac")
+LinkScene = ExtResource("3_arklg")
+
+[node name="LinksContainer" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+
+[node name="NodesContainer" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0

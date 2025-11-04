@@ -1,4 +1,5 @@
 using System.Linq;
+using AlbionNavigator.Resources;
 using AlbionNavigator.Services;
 using Godot;
 
