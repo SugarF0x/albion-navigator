@@ -37,6 +37,7 @@ public partial class WorldMap : Control
 
 		LinkService.Instance.NewLinkAdded += OnLinkAdded;
 		LinkService.Instance.ExpiredLinkRemoved += OnLinkExpired;
+		LinkService.Instance.LinkExpirationUpdated += OnLinkExpirationUpdated;
 	}
 
 	public override void _ExitTree()
@@ -66,5 +67,10 @@ public partial class WorldMap : Control
 	{
 		NodesSimulation.AddLink(link, index);
 		NodesSimulation.StartSimulation();
+	}
+
+	private void OnLinkExpirationUpdated(ZoneLink link, int from, int to)
+	{
+		NodesSimulation.MoveLinkElementByIndex(from, to);
 	}
 }

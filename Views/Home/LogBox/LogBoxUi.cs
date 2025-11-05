@@ -35,7 +35,7 @@ public partial class LogBoxUi : ScrollContainer
 		LogsContainer.AddChild(newLog);
 	}
 
-	private void LogLinkExpirationUpdate(ZoneLink link, int _)
+	private void LogLinkExpirationUpdate(ZoneLink link, int from, int to)
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];

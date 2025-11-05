@@ -16,7 +16,7 @@ public class LinkService
 
     public event Action<ZoneLink, int> NewLinkAdded;
     public event Action<ZoneLink, int> ExpiredLinkRemoved;
-    public event Action<ZoneLink, int> LinkExpirationUpdated;
+    public event Action<ZoneLink, int, int> LinkExpirationUpdated;
     
     /// permanent last, soon-to-expire first
     public List<ZoneLink> Links = [];
@@ -61,7 +61,7 @@ public class LinkService
             return true;
         }
 
-        var didUpdateExpiration = false;
+        var expirationUpdateFromIndex = -1;
         for (var i = 0; i < Links.Count; i++)
         {
             var link = Links[i];
@@ -69,13 +69,13 @@ public class LinkService
             if (!link.IsSameSignature(newLink)) continue;
             if (!link.IsLaterThanExpiration(newLink.Expiration)) return false;
 
-            didUpdateExpiration = true;
+            expirationUpdateFromIndex = i;
             Links.RemoveAt(i);
             break;
         }
 
         var index = InsertLink(newLink);
-        if (didUpdateExpiration) LinkExpirationUpdated?.Invoke(newLink, index);
+        if (expirationUpdateFromIndex >= 0) LinkExpirationUpdated?.Invoke(newLink, expirationUpdateFromIndex, index);
         else NewLinkAdded?.Invoke(newLink, index);
         
         PersistLinks();

@@ -193,4 +193,12 @@ public partial class NodesSimulation : Control
 			Target = link.Target
 		}).ToArray();
 	}
+
+	public void MoveLinkElementByIndex(int from, int to)
+	{
+		LinksContainer.MoveChild(LinksContainer.GetChild(from), to);
+		var element = LinkElements[from];
+		LinkElements.RemoveAt(from);
+		LinkElements.Insert(to, element);
+	}
 }
