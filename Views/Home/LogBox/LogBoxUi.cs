@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AlbionNavigator.Services;
 using Godot;
 
@@ -18,8 +19,13 @@ public partial class LogBoxUi : ScrollContainer
 		foreach (var log in Services.LogBox.Instance.Logs) AddLog(log);
 		Services.LogBox.Instance.NewEntryAdded += AddLog;
 		LinkService.Instance.LinkExpirationUpdated += LogLinkExpirationUpdate;
-		LinkService.Instance.ExpiredLinkRemoved += LogExpiredLinkRemoval;
+		LinkService.Instance.ExpiredLinkRemoved += EnqueueExpirationLog;
 		LinkService.Instance.NewLinkAdded += LogNewLinkAdded;
+	}
+
+	public override void _Process(double delta)
+	{
+		ProcessLogExpiredLinkRemovalQueue();
 	}
 
 	private void AddLog(Log log)
@@ -36,11 +42,21 @@ public partial class LogBoxUi : ScrollContainer
 		Services.LogBox.Instance.Add($"Link expiration updated: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
 	}
 
-	private void LogExpiredLinkRemoval(ZoneLink link, int _)
+	private readonly Queue<ZoneLink> ExpirationQueue = new ();
+	private void EnqueueExpirationLog(ZoneLink link, int _) { lock (ExpirationQueue) ExpirationQueue.Enqueue(link); }
+	private void ProcessLogExpiredLinkRemovalQueue()
 	{
-		var source = ZoneService.Instance.Zones[link.Source];
-		var target = ZoneService.Instance.Zones[link.Target];
-		Services.LogBox.Instance.Add($"Link expired: {source.DisplayName} -> {target.DisplayName}");
+		lock (ExpirationQueue)
+		{
+			if (ExpirationQueue.Count == 0) return;
+			while (ExpirationQueue.Count > 0)
+			{
+				var link = ExpirationQueue.Dequeue();
+				var source = ZoneService.Instance.Zones[link.Source];
+				var target = ZoneService.Instance.Zones[link.Target];
+				Services.LogBox.Instance.Add($"Link expired: {source.DisplayName} -> {target.DisplayName}");				
+			}
+		}
 	}
 
 	private void LogNewLinkAdded(ZoneLink link, int _)
