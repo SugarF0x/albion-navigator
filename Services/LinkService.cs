@@ -152,6 +152,7 @@ public class LinkService
             if (DateTimeOffset.TryParse(link.Expiration, out var dt) && dt < DateTimeOffset.UtcNow) indexesToPop.Add(i);
         }
 
+        indexesToPop.Reverse();
         foreach (var i in indexesToPop)
         {
             var link = Links[i];
