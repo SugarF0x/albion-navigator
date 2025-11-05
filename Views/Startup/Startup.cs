@@ -3,6 +3,8 @@ using AlbionNavigator.Resources;
 using AlbionNavigator.Services;
 using Godot;
 
+namespace AlbionNavigator.Views.Startup;
+
 public partial class Startup : Control
 {
 	private Label TaskLabel;
@@ -22,6 +24,7 @@ public partial class Startup : Control
 		if (loader.Resources.Count == 0) return;
 		
 		var zone = (Zone)loader.Resources.Last();
+		if (zone == null) return;
 		TaskLabel.Text = zone.DisplayName;
 		TaskProgressBar.Value = loader.Progress;
 	}
