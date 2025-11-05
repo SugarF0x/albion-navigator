@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using AlbionNavigator.Resources;
+using FuzzySharp;
 using GodotResourceGroups;
 
 namespace AlbionNavigator.Services;
@@ -27,4 +28,6 @@ public class ZoneService
             AllResourcesLoaded?.Invoke();
         });
     }
+
+    public int GetProbableZoneIndexFromDisplayName(string name) => Process.ExtractOne(name, Zones.Select(zone => zone.DisplayName)).Index;
 }

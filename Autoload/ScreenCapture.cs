@@ -1,5 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
+using System.Globalization;
 using System.Runtime.InteropServices;
+using AlbionNavigator.Services;
 using AlbionNavigator.Utils;
 using Godot;
 
@@ -50,8 +53,12 @@ public partial class ScreenCapture : Node
         }
 
         try {
-            // TODO: add link
-            MapDataParser.Parse(bitmap);
+            var (source, target, timeout) = MapDataParser.Parse(bitmap);
+            LinkService.Instance.AddLink(
+                ZoneService.Instance.GetProbableZoneIndexFromDisplayName(source),
+                ZoneService.Instance.GetProbableZoneIndexFromDisplayName(target),
+                (DateTimeOffset.UtcNow + TimeSpan.ParseExact(timeout, "hh\\:mm\\:ss", CultureInfo.InvariantCulture)).ToString("O")
+            );
         }
         catch (InvalidImage)
         {
