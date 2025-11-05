@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://7csqa1louc4h"]
+[gd_scene load_steps=2 format=3 uid="uid://7csqa1louc4h"]
+
+[ext_resource type="Script" uid="uid://cfq56d0jsyhh6" path="res://Components/NodesSimulation/LinkScene.cs" id="1_w25ta"]
 
 [node name="LinkScene" type="Line2D"]
 width = 2.0
+script = ExtResource("1_w25ta")

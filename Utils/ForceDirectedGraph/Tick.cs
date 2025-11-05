@@ -7,7 +7,7 @@ namespace AlbionNavigator.Utils.ForceDirectedGraph;
 
 public partial class Simulation
 {
-    public void Tick(int iterations = 1)
+    private void Tick(int iterations = 1)
     {
         for (var k = 0; k < iterations; k++)
         {

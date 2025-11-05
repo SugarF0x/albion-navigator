@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Resources;
@@ -15,57 +16,62 @@ public partial class NodesSimulation : Control
 	[Export] public PackedScene NodeScene;
 	[Export] public PackedScene LinkScene;
 	[Export] public float PositionScale = 1f;
+	[Export] public float AlphaReheatValue = .5f;
 	
-	public Zone[] Zones = ZoneService.Instance.Zones;
-	public List<ZoneLink> Links = LinkService.Instance.Links;
+	private Zone[] _zones = [];
+	public Zone[] Zones
+	{
+		get => _zones;
+		set
+		{
+			_zones = value;
+			InitializeZones();
+		}
+	}
+	
+	private List<ZoneLink> _links = [];
+	public List<ZoneLink> Links
+	{
+		get => _links;
+		set
+		{
+			_links = value;
+			InitializeLinks();
+		}
+	}
 
 	private Control NodesContainer;
 	private Control LinksContainer;
 
-	public List<NodeScene> NodeElements = [];
-	public List<Line2D> LinkElements = [];
+	private List<NodeScene> NodeElements = [];
+	private List<LinkScene> LinkElements = [];
 
-	private readonly Simulation Simulation = new ();
+	private readonly Simulation Simulation = new ()
+	{
+		InitialRadius = 50
+	};
 	
 	public override void _Ready()
 	{
 		NodesContainer = GetNode<Control>("%NodesContainer");
 		LinksContainer = GetNode<Control>("%LinksContainer");
 		
-		foreach (var zone in Zones)
-		{
-			if (NodeScene.Instantiate() is not NodeScene nodeScene) continue;
-			NodesContainer.AddChild(nodeScene);
-			NodeElements.Add(nodeScene);
-			
-			nodeScene.Value = zone;
-		}
-
-		foreach (var link in Links)
-		{
-			if (LinkScene.Instantiate() is not Line2D linkScene) continue;
-			LinksContainer.AddChild(linkScene);
-			LinkElements.Add(linkScene);
-			
-			var source = ZoneService.Instance.Zones[link.Source];
-			var target = ZoneService.Instance.Zones[link.Target];
-			linkScene.Points = [source.Position, target.Position];
-		}
-
-		InitSimulation();
-		Simulation.StartAsync();
+		InitializeZones();
+		InitializeLinks();
+		InitializeSimulation();
 	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
-		// TODO: only process this when simulation is running, have it be its own function and also run it on scale update
+		if (!Simulation.IsSimulationRunning) return;
+		
 		for (var i = 0; i < NodeElements.Count; i++)
 		{
 			var node = NodeElements[i];
 			var simulationNode = Simulation.Nodes[i];
 			node.Position = new Vector2(simulationNode.Position.X, simulationNode.Position.Y) * PositionScale;
 		}
-		
+
 		for (var i = 0; i < LinkElements.Count; i++)
 		{
 			var link = Links[i];
@@ -78,32 +84,88 @@ public partial class NodesSimulation : Control
 		}
 	}
 
-	private void InitSimulation()
+	public void StartSimulation()
 	{
-		Simulation.AddForce(new LinkForce
+		Simulation.Alpha = float.Max(Simulation.Alpha, AlphaReheatValue);
+		Simulation.StartAsync();
+	}
+	
+	private void InitializeZones()
+	{
+		foreach (var child in NodesContainer.GetChildren()) child.QueueFree();
+		NodeElements.Clear();
+		
+		foreach (var zone in Zones)
 		{
-			Links = Enumerable.Range(0, Links.Count).Select(i => new Link
-			{
-				Source = i,
-				Target = Zones.Length - i - 1
-			}).ToArray(),
-			GetLinkStrength = link => 
-				new List<Zone.ZoneType> { Zones[link.Source].Type, Zones[link.Target].Type }.Count(type => type == Zone.ZoneType.Road) switch
+			if (NodeScene.Instantiate() is not NodeScene nodeScene) continue;
+			NodesContainer.AddChild(nodeScene);
+			NodeElements.Add(nodeScene);
+			
+			nodeScene.Value = zone;
+		}
+
+		InitializeSimulationNodes();
+	}
+
+	private void InitializeLinks()
+	{
+		foreach (var child in LinksContainer.GetChildren()) child.QueueFree();
+		LinkElements.Clear();
+
+		foreach (var link in Links) AddLink(link);
+		InitializeSimulationLinks();
+	}
+
+	public void AddLink(ZoneLink link, int index = -1)
+	{
+		if (LinkScene.Instantiate() is not LinkScene linkScene) return;
+		LinksContainer.AddChild(linkScene);
+		if (index >=  0) LinksContainer.MoveChild(linkScene, index);
+		LinkElements.Insert(index < 0 ? LinkElements.Count : index, linkScene);
+			
+		var source = ZoneService.Instance.Zones[link.Source];
+		var target = ZoneService.Instance.Zones[link.Target];
+		linkScene.Points = [source.Position, target.Position];
+		linkScene.Link = link;
+
+		if (index >= 0) InitializeSimulationLinks();
+	}
+
+	public void RemoveLink(ZoneLink _, int index)
+	{
+		var child = LinksContainer.GetChild(index);
+		child.QueueFree();
+		LinkElements.RemoveAt(index);
+		InitializeSimulationLinks();
+	}
+
+	private readonly LinkForce LinkForce = new ();
+	private readonly ManyBodyForce ManyBodyForce = new ();
+	
+	private void InitializeSimulation()
+	{
+		LinkForce.GetLinkStrength = link =>
+			new List<Zone.ZoneType> { Zones[link.Source].Type, Zones[link.Target].Type }.Count(type =>
+					type == Zone.ZoneType.Road) switch
 				{
 					1 => 0,
 					2 => .5f,
 					_ => 1
-				}
-		});
+				};
+
+		ManyBodyForce.GetNodeStrength = _ => -40;
 		
-		Simulation.AddForce(new ManyBodyForce
-		{
-			GetNodeStrength = _ => -40
-		});
-		
+		Simulation.AddForce(LinkForce);
+		Simulation.AddForce(ManyBodyForce);
 		Simulation.AddForce(new XForce());
 		Simulation.AddForce(new YForce());
-		
+
+		InitializeSimulationNodes();
+		InitializeSimulationLinks();
+	}
+
+	private void InitializeSimulationNodes()
+	{
 		Simulation.Nodes = Enumerable.Range(0, NodeElements.Count)
 			.Select(i => new Node
 			{
@@ -111,5 +173,14 @@ public partial class NodesSimulation : Control
 				Position = new System.Numerics.Vector2(NodeElements[i].Position.X, NodeElements[i].Position.Y)
 			})
 			.ToArray();
+	}
+
+	private void InitializeSimulationLinks()
+	{
+		LinkForce.Links = Links.Select(link => new Link
+		{
+			Source = link.Source,
+			Target = link.Target
+		}).ToArray();
 	}
 }

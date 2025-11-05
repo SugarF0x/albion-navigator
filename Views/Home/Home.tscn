@@ -50,6 +50,7 @@ bg_color = Color(0.21176471, 0.23921569, 0.2901961, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_br8cn"]
 
 [node name="Home" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
