@@ -30,7 +30,14 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme = ExtResource("2_gb64y")
 
-[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DebugContainer" type="FoldableContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_gb64y")
+theme_override_font_sizes/font_size = 32
+title = "Debug Options"
+
+[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
