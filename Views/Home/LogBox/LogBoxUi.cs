@@ -23,7 +23,7 @@ public partial class LogBoxUi : ScrollContainer
 		LinkService.Instance.NewLinkAdded += LogNewLinkAdded;
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		ProcessLogExpiredLinkRemovalQueue();
 	}

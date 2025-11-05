@@ -18,7 +18,7 @@ public partial class WorldMap : Control
 		NodesSimulation.StartSimulation();
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		ProcessLinkExpirationThreadQueue();
 	}
