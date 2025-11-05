@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Godot;
 
@@ -49,6 +50,7 @@ public partial class Simulation
     {
         try
         {
+            if (IsSimulationRunning) return;
             if (!(Alpha >= AlphaMin)) return;
         
             StartSimulation();
