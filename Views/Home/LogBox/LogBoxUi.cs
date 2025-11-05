@@ -29,21 +29,21 @@ public partial class LogBoxUi : ScrollContainer
 		LogsContainer.AddChild(newLog);
 	}
 
-	private void LogLinkExpirationUpdate(ZoneLink link)
+	private void LogLinkExpirationUpdate(ZoneLink link, int _)
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];
 		Services.LogBox.Instance.Add($"Link expiration updated: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
 	}
 
-	private void LogExpiredLinkRemoval(ZoneLink link)
+	private void LogExpiredLinkRemoval(ZoneLink link, int _)
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];
 		Services.LogBox.Instance.Add($"Link expired: {source.DisplayName} -> {target.DisplayName}");
 	}
 
-	private void LogNewLinkAdded(ZoneLink link)
+	private void LogNewLinkAdded(ZoneLink link, int _)
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];

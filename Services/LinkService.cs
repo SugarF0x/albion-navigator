@@ -14,9 +14,9 @@ public class LinkService
     private static LinkService _instance;
     public static LinkService Instance => _instance ??= new LinkService();
 
-    public event Action<ZoneLink> NewLinkAdded;
-    public event Action<ZoneLink> ExpiredLinkRemoved;
-    public event Action<ZoneLink> LinkExpirationUpdated;
+    public event Action<ZoneLink, int> NewLinkAdded;
+    public event Action<ZoneLink, int> ExpiredLinkRemoved;
+    public event Action<ZoneLink, int> LinkExpirationUpdated;
     
     /// permanent last, soon-to-expire first
     public List<ZoneLink> Links = [];
@@ -56,8 +56,8 @@ public class LinkService
     {
         if (newLink.IsPermanent)
         {
-            InsertLink(newLink);
-            NewLinkAdded?.Invoke(newLink);
+            var insertedAt = InsertLink(newLink);
+            NewLinkAdded?.Invoke(newLink, insertedAt);
             return true;
         }
 
@@ -74,40 +74,37 @@ public class LinkService
             break;
         }
 
-        InsertLink(newLink);
-        if (didUpdateExpiration) LinkExpirationUpdated?.Invoke(newLink);
-        else NewLinkAdded?.Invoke(newLink);
+        var index = InsertLink(newLink);
+        if (didUpdateExpiration) LinkExpirationUpdated?.Invoke(newLink, index);
+        else NewLinkAdded?.Invoke(newLink, index);
         
         PersistLinks();
         return true;
     }
     
     // TODO: performance can be increased by List.BinarySearch
-    private void InsertLink(ZoneLink newLink)
+    private int InsertLink(ZoneLink newLink)
     {
         if (Links.Count == 0 || newLink.IsPermanent)
         {
             Links.Add(newLink);
             ScheduleExpiration();
-            return;
+            return Links.Count - 1;
         }
 
         for (var i = 0; i < Links.Count; i++)
         {
             var link = Links[i];
-            if (link.IsPermanent || newLink.IsLaterThanExpiration(link.Expiration))
-            {
-                Links.Insert(i, newLink);
-                ScheduleExpiration();
-                return;
-            }
-
-            if (i != Links.Count - 1) continue;
+            if (!link.IsPermanent && !newLink.IsLaterThanExpiration(link.Expiration)) continue;
             
-            Links.Add(newLink);
+            Links.Insert(i, newLink);
             ScheduleExpiration();
-            return;
+            return i;
         }
+
+        Links.Add(newLink);
+        ScheduleExpiration();
+        return Links.Count - 1;
     }
     
     #region Expiration
@@ -157,7 +154,7 @@ public class LinkService
         {
             var link = Links[i];
             Links.RemoveAt(i);
-            ExpiredLinkRemoved?.Invoke(link);
+            ExpiredLinkRemoved?.Invoke(link, i);
         }
 
         ScheduleExpiration();
