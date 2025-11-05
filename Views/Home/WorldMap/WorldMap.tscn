@@ -4,14 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://cldjxdwrfk5fn" path="res://Components/NodesSimulation/NodesSimulation.tscn" id="1_5kii8"]
 [ext_resource type="Script" uid="uid://cv7chxgi8te8x" path="res://Views/Home/WorldMap/WorldMap.cs" id="1_7ysfx"]
 
-[node name="WorldMap" type="Control" node_paths=PackedStringArray("MapBackground", "NodesSimulation")]
+[node name="WorldMap" type="Control" node_paths=PackedStringArray("MapBackground", "NodesSimulation", "PanWrapper")]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7ysfx")
-MapBackground = NodePath("MapBackground")
-NodesSimulation = NodePath("NodesSimulation")
+MapBackground = NodePath("PanWrapper/MapBackground")
+NodesSimulation = NodePath("PanWrapper/NodesSimulation")
+PanWrapper = NodePath("PanWrapper")
 
-[node name="MapBackground" type="TextureRect" parent="."]
+[node name="PanWrapper" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[node name="MapBackground" type="TextureRect" parent="PanWrapper"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = -409.6
@@ -21,6 +34,6 @@ offset_bottom = 4608.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_3mklh")
 
-[node name="NodesSimulation" parent="." instance=ExtResource("1_5kii8")]
+[node name="NodesSimulation" parent="PanWrapper" instance=ExtResource("1_5kii8")]
 unique_name_in_owner = true
 layout_mode = 0

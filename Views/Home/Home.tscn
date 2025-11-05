@@ -85,12 +85,9 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 dragger_visibility = 2
 
-[node name="WorldMapContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="WorldMap" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_v6ytx")]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="WorldMap" parent="HBoxContainer/VBoxContainer/WorldMapContainer" instance=ExtResource("2_v6ytx")]
-layout_mode = 2
 
 [node name="LogboxPanel" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)

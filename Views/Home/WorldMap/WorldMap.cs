@@ -10,9 +10,11 @@ public partial class WorldMap : Control
 	[Export] public float MapScale = 2f;
 	[Export] public TextureRect MapBackground;
 	[Export] public NodesSimulation NodesSimulation;
+	[Export] public Control PanWrapper;
 	
 	public override void _Ready()
 	{
+		CallDeferred(nameof(SetupPosition));
 		SetupMapLayout();
 		SetupNodesSimulation();
 		NodesSimulation.StartSimulation();
@@ -21,6 +23,11 @@ public partial class WorldMap : Control
 	public override void _PhysicsProcess(double delta)
 	{
 		ProcessLinkExpirationThreadQueue();
+	}
+
+	private void SetupPosition()
+	{
+		PanWrapper.Position = Size / 2;
 	}
 
 	private void SetupMapLayout()
@@ -92,7 +99,7 @@ public partial class WorldMap : Control
 				break;
 			}
 			case InputEventMouseMotion motionEvent when IsDragging:
-				Position += motionEvent.Relative;
+				PanWrapper.Position += motionEvent.Relative;
 				break;
 		}
 	}
