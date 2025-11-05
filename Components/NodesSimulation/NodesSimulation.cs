@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Resources;
@@ -13,10 +12,9 @@ namespace AlbionNavigator.Components.NodesSimulation;
 
 public partial class NodesSimulation : Control
 {
-	private const float PositionScale = 1.5f;
-	
 	[Export] public PackedScene NodeScene;
 	[Export] public PackedScene LinkScene;
+	[Export] public float PositionScale = 1f;
 	
 	public Zone[] Zones = ZoneService.Instance.Zones;
 	public List<ZoneLink> Links = LinkService.Instance.Links;
@@ -60,6 +58,7 @@ public partial class NodesSimulation : Control
 	
 	public override void _PhysicsProcess(double delta)
 	{
+		// TODO: only process this when simulation is running, have it be its own function and also run it on scale update
 		for (var i = 0; i < NodeElements.Count; i++)
 		{
 			var node = NodeElements[i];

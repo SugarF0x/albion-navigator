@@ -1,10 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://st208urcgmam"]
+[gd_scene load_steps=4 format=3 uid="uid://st208urcgmam"]
 
+[ext_resource type="Texture2D" uid="uid://bj7bj7l45nl6w" path="res://Assets/Images/map-background-hq.png" id="1_3mklh"]
 [ext_resource type="PackedScene" uid="uid://cldjxdwrfk5fn" path="res://Components/NodesSimulation/NodesSimulation.tscn" id="1_5kii8"]
+[ext_resource type="Script" uid="uid://cv7chxgi8te8x" path="res://Views/Home/WorldMap/WorldMap.cs" id="1_7ysfx"]
 
-[node name="WorldMap" type="Control"]
+[node name="WorldMap" type="Control" node_paths=PackedStringArray("MapBackground", "NodesSimulation")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_7ysfx")
+MapBackground = NodePath("MapBackground")
+NodesSimulation = NodePath("NodesSimulation")
+
+[node name="MapBackground" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -409.6
+offset_top = -512.0
+offset_right = 3686.4
+offset_bottom = 4608.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3mklh")
 
 [node name="NodesSimulation" parent="." instance=ExtResource("1_5kii8")]
+unique_name_in_owner = true
 layout_mode = 0
