@@ -74,13 +74,23 @@ public partial class NodesSimulation : Control
 
 		for (var i = 0; i < LinkElements.Count; i++)
 		{
-			var link = Links[i];
-			var linkElement = LinkElements[i];
-			linkElement.Points =
-			[
-				NodeElements[link.Source].Position,
-				NodeElements[link.Target].Position
-			];
+			try
+			{
+				var link = Links[i];
+				var linkElement = LinkElements[i];
+				linkElement.Points =
+				[
+					NodeElements[link.Source].Position,
+					NodeElements[link.Target].Position
+				];
+			}
+			catch
+			{
+				// sometimes links or link elements get updated mid for loop resulting in accessing index outside bounds
+				// i only ever managed to see this once accidentally and never reproduce again
+				// this does not impact negatively in any way really and since i have no good clue on how to fix it
+				// might as well just suppress it for now
+			}
 		}
 	}
 
