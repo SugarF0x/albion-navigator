@@ -84,7 +84,7 @@ public partial class WorldMap : Control
 	private bool IsDragging;
 	private Vector2 DragStartPos;
 
-	public override void _Input(InputEvent @event)
+	public override void _GuiInput(InputEvent @event)
 	{
 		switch (@event)
 		{
