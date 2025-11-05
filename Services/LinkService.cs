@@ -216,6 +216,12 @@ public class LinkService
         file.StoreString(dataString);
     }
 
+    public void FlushStorage()
+    {
+        if (!FileAccess.FileExists(SavePath)) return;
+        DirAccess.RemoveAbsolute(SavePath);
+    }
+
     private static string FiveMinuteOffsetTimestamp => DateTimeOffset.UtcNow.AddMinutes(5).ToString("O");
     
     #endregion
