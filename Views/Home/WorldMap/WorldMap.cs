@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AlbionNavigator.Components.NodesSimulation;
 using AlbionNavigator.Services;
@@ -90,12 +91,37 @@ public partial class WorldMap : Control
 		{
 			case InputEventMouseButton buttonEvent:
 			{
-				if (buttonEvent.ButtonIndex == MouseButton.Left)
+				var zoomFactor = 1f;
+				switch (buttonEvent.ButtonIndex)
 				{
-					IsDragging = buttonEvent.Pressed;
-					DragStartPos = buttonEvent.Position;
+					case MouseButton.Left:
+						IsDragging = buttonEvent.Pressed;
+						DragStartPos = buttonEvent.Position;
+						break;
+					case MouseButton.WheelUp:
+						zoomFactor = 1.1f;
+						break;
+					case MouseButton.WheelDown:
+						zoomFactor = 0.9f;
+						break;
+					case MouseButton.None:
+					case MouseButton.Right:
+					case MouseButton.Middle:
+					case MouseButton.WheelLeft:
+					case MouseButton.WheelRight:
+					case MouseButton.Xbutton1:
+					case MouseButton.Xbutton2:
+					default:
+						break;
 				}
 
+				if (zoomFactor is > 1f or < 1f)
+				{
+					var mouseContentPos = (buttonEvent.Position - PanWrapper.Position) / PanWrapper.Scale;
+					PanWrapper.Scale *= zoomFactor;
+					PanWrapper.Position = buttonEvent.Position - mouseContentPos * PanWrapper.Scale;
+				}
+				
 				break;
 			}
 			case InputEventMouseMotion motionEvent when IsDragging:
