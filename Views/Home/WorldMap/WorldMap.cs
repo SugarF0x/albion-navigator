@@ -73,4 +73,27 @@ public partial class WorldMap : Control
 	{
 		NodesSimulation.MoveLinkElementByIndex(from, to);
 	}
+	
+	private bool IsDragging;
+	private Vector2 DragStartPos;
+
+	public override void _Input(InputEvent @event)
+	{
+		switch (@event)
+		{
+			case InputEventMouseButton buttonEvent:
+			{
+				if (buttonEvent.ButtonIndex == MouseButton.Left)
+				{
+					IsDragging = buttonEvent.Pressed;
+					DragStartPos = buttonEvent.Position;
+				}
+
+				break;
+			}
+			case InputEventMouseMotion motionEvent when IsDragging:
+				Position += motionEvent.Relative;
+				break;
+		}
+	}
 }
