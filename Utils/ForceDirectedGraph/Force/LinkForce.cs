@@ -66,6 +66,7 @@ public class LinkForce : Force
         {
             var link = Links[i];
             link.Index = i;
+            Links[i] = link;
             count[link.Source]++;
             count[link.Target]++;
         }
