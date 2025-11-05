@@ -201,15 +201,7 @@ public class LinkService
     
     private void DefaultPersist()
     {
-        var portalConnections = new List<ZoneLink>();
-        for (var i = Links.Count - 1; i >= 0; i--)
-        {
-            var link = Links[i];
-            if (link.Expiration == null) break;
-            portalConnections.Add(link);
-        }
-
-        portalConnections.Reverse();
+        var portalConnections = Links.Where(link => !link.IsPermanent).ToList();
         var dataString = portalConnections.Aggregate($"{Version}|", (current, link) => current + $"{link.Source},{link.Target},{link.Expiration};");
         
         using var file = FileAccess.Open(SavePath, FileAccess.ModeFlags.Write);
