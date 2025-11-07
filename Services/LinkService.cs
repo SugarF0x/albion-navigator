@@ -18,6 +18,7 @@ public class LinkService
     public event Action<ZoneLink, int> ExpiredLinkRemoved;
     public event Action<ZoneLink, int, int> LinkExpirationUpdated;
     
+    // TODO: use sorted list instead? question mark?
     /// permanent last, soon-to-expire first
     public List<ZoneLink> Links = [];
 
