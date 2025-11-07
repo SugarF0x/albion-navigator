@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7dgas5uyjnhs"]
+
+[ext_resource type="Script" uid="uid://djlepf8b2c86" path="res://Components/Navigation/PathListItem.cs" id="1_4wgkm"]
+[ext_resource type="Texture2D" uid="uid://ifaenxoploxl" path="res://Assets/Images/NodeIcons/portal.png" id="2_firc4"]
+
+[node name="PathListItem" type="HBoxContainer"]
+script = ExtResource("1_4wgkm")
+
+[node name="IndexLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1."
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_firc4")
+
+[node name="DisplayName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Display Name"

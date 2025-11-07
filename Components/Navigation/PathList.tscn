@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://boq7xw11kc02f"]
+
+[ext_resource type="Script" uid="uid://bhxsfww22cjgs" path="res://Components/Navigation/PathList.cs" id="1_kugmf"]
+[ext_resource type="PackedScene" uid="uid://c7dgas5uyjnhs" path="res://Components/Navigation/PathListItem.tscn" id="2_43g0p"]
+
+[node name="PathList" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kugmf")
+PathListItemScene = ExtResource("2_43g0p")
+
+[node name="PathListItem" parent="." instance=ExtResource("2_43g0p")]
+layout_mode = 2
+
+[node name="PathListItem2" parent="." instance=ExtResource("2_43g0p")]
+layout_mode = 2
+
+[node name="PathListItem3" parent="." instance=ExtResource("2_43g0p")]
+layout_mode = 2
