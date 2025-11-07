@@ -13,6 +13,8 @@ public partial class WorldMap : Control
 	[Export] public NodesSimulation NodesSimulation;
 	[Export] public Control PanWrapper;
 	
+	// TODO: should these map controls for grabbing and zoom inside NodesSimulation instead of WorldMap??
+	
 	public override void _Ready()
 	{
 		CallDeferred(nameof(SetupPosition));

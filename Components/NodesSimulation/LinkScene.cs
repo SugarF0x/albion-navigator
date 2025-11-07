@@ -18,6 +18,13 @@ public partial class LinkScene : Line2D
 		}
 	}
 
+	public override void _Ready()
+	{
+		// TODO: this should probably be elsewhere
+		NavigationService.Instance.ShortestPathUpdated += path =>
+			Highlight(IsLinkInPath(path) ? HighlightType.Path : DefaultHighlightType);
+	}
+
 	private HighlightType DefaultHighlightType = HighlightType.Default;
 	private void InitHighlight()
 	{
@@ -71,5 +78,15 @@ public partial class LinkScene : Line2D
 		RoadToContinent,
 		Path,
 		WayOut,
+	}
+
+	private bool IsLinkInPath(int[] path)
+	{
+		for (var i = 0; i < path.Length - 2; i++) 
+			if (
+				(path[i] == Link.Source && path[i + 1] == Link.Target)
+				|| (path[i] == Link.Target && path[i + 1] == Link.Source)
+				) return true;
+		return false;
 	}
 }
