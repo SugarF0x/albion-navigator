@@ -15,8 +15,12 @@ public partial class AudioPlayer : Node
 	[Export] public AudioStream PortalCloseSound;
 	[Export] public AudioStream ClockRetractSound;
 	
+	private static AudioPlayer _instance;
+	public static AudioPlayer Instance { get; private set; }
+	
 	public override void _Ready()
 	{
+		Instance = this;
 		LinkService.Instance.NewLinkAdded += (_, _) => QueuePlay(SoundId.PortalOpen);
 		LinkService.Instance.ExpiredLinkRemoved += (_, _) => QueuePlay(SoundId.PortalClose);
 		LinkService.Instance.LinkExpirationUpdated += (_, _, _) => QueuePlay(SoundId.ClockRetract);
