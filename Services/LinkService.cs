@@ -77,6 +77,7 @@ public class LinkService
         var index = InsertLink(newLink);
         if (expirationUpdateFromIndex >= 0) LinkExpirationUpdated?.Invoke(newLink, expirationUpdateFromIndex, index);
         else NewLinkAdded?.Invoke(newLink, index);
+        ZoneService.Instance.ExtendConnection(newLink.Source, newLink.Target);
         
         PersistLinks();
         return true;
@@ -155,6 +156,7 @@ public class LinkService
             var link = Links[i];
             Links.RemoveAt(i);
             ExpiredLinkRemoved?.Invoke(link, i);
+            ZoneService.Instance.PopConnection(link.Source, link.Target);
         }
 
         ScheduleExpiration();

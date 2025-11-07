@@ -30,4 +30,23 @@ public class ZoneService
     }
 
     public int GetProbableZoneIndexFromDisplayName(string name) => Process.ExtractOne(name, Zones.Select(zone => zone.DisplayName)).Index;
+
+    public void ExtendConnection(int from, int to)
+    {
+        var source = Zones[from];
+        var target = Zones[to];
+        if (source.Connections.Contains(to) || target.Connections.Contains(from)) return;
+        
+        source.Connections.Add(to);
+        target.Connections.Add(from);
+    }
+
+    public void PopConnection(int from, int to)
+    {
+        var source = Zones[from];
+        var target = Zones[to];
+
+        source.Connections = new Godot.Collections.Array<int>(source.Connections.Where(index => index != to));
+        target.Connections = new Godot.Collections.Array<int>(source.Connections.Where(index => index != from));
+    }
 }
