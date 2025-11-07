@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://kw805gn5xcoh"]
+[gd_scene load_steps=4 format=3 uid="uid://kw805gn5xcoh"]
 
 [ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="1_c4tve"]
 [ext_resource type="Script" uid="uid://dk5k5abafsma6" path="res://Views/Home/ControlPanel/NavigationTab/FindShortestPath.cs" id="2_4wkhy"]
+[ext_resource type="PackedScene" uid="uid://boq7xw11kc02f" path="res://Components/Navigation/PathList.tscn" id="3_yh15x"]
 
 [node name="FindShortestPath" type="FoldableContainer"]
 anchors_preset = 10
@@ -59,3 +60,7 @@ layout_mode = 2
 theme = ExtResource("1_c4tve")
 theme_override_font_sizes/font_size = 24
 text = "Find"
+
+[node name="PathList" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_yh15x")]
+unique_name_in_owner = true
+layout_mode = 2
