@@ -44,11 +44,12 @@ public partial class PathListItem : HBoxContainer
 	private void SyncIndexLabel()
 	{
 		IndexLabel.Text = $"{Index + 1}.";
-		IndexLabel.Visible = Index > 0;
+		IndexLabel.Visible = Index >= 0;
 	}
 
 	private void SyncZoneData()
 	{
+		if (Zone == null) return;
 		Icon.Texture = Zone.GetZoneTexture();
 		DisplayName.Text = Zone.DisplayName;
 	}
