@@ -32,7 +32,17 @@ public partial class LogBoxUi : ScrollContainer
 	{
 		if (SampleLog.Duplicate() is not Label newLog) throw new Exception("Sample log is not a Label");
 		newLog.Text = log.ToString();
+
+		var scrollBar = GetVScrollBar();
+		var shouldScrollToEnd = Math.Abs(scrollBar.MaxValue - scrollBar.Value) < 4;
 		LogsContainer.AddChild(newLog);
+		if (shouldScrollToEnd) CallDeferred(nameof(ScrollToEnd));
+	}
+
+	private void ScrollToEnd()
+	{
+		var scrollBar = GetVScrollBar();
+		scrollBar.Value = scrollBar.MaxValue;
 	}
 
 	private void LogLinkExpirationUpdate(ZoneLink link, int from, int to)
