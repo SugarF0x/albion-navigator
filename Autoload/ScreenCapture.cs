@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 using System.Runtime.InteropServices;
+using AlbionNavigator.Resources;
 using AlbionNavigator.Services;
 using AlbionNavigator.Utils;
 using Godot;
@@ -54,9 +55,13 @@ public partial class ScreenCapture : Node
 
         try {
             var (source, target, timeout) = MapDataParser.Parse(bitmap);
+            var sourceZone = ZoneService.Instance.Zones[ZoneService.Instance.GetProbableZoneIndexFromDisplayName(source)];
+            var targetZone = ZoneService.Instance.Zones[ZoneService.Instance.GetProbableZoneIndexFromDisplayName(target)];
+            if (sourceZone.Type != Zone.ZoneType.Road && targetZone.Type != Zone.ZoneType.Road) throw new InvalidImage("Cant connect two land zones from screen capture");
+            
             LinkService.Instance.AddLink(
-                ZoneService.Instance.GetProbableZoneIndexFromDisplayName(source),
-                ZoneService.Instance.GetProbableZoneIndexFromDisplayName(target),
+                sourceZone.Id,
+                targetZone.Id,
                 (DateTimeOffset.UtcNow + TimeSpan.ParseExact(timeout, "hh\\:mm\\:ss", CultureInfo.InvariantCulture)).ToString("O")
             );
         }
