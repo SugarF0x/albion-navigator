@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Components.Navigation;
 using AlbionNavigator.Services;
@@ -30,6 +31,7 @@ public partial class FindShortestPath : FoldableContainer
 		else ZoneService.Instance.AllResourcesLoaded += AssignOptions;
 
 		SearchShortestPathButton.Pressed += SearchShortestPath;
+		CopyButton.Pressed += CopyPath;
 		NavigationService.Instance.ShortestPathUpdated += SyncPathList;
 
 		SyncPathList([]);
@@ -58,5 +60,16 @@ public partial class FindShortestPath : FoldableContainer
 		var expiration = NavigationService.GetPathExpiration(path);
 		var formattedExpiration = expiration != null ? (DateTimeOffset.Parse(expiration) - DateTimeOffset.UtcNow).ToString(@"hh\:mm\:ss") : string.Empty;
 		ExpirationLabel.Text = $"Expires in: {formattedExpiration}";
+	}
+
+	private void CopyPath()
+	{
+		var items = new List<string>
+		{
+			$"Expires: <t:{DateTimeOffset.Parse(NavigationService.GetPathExpiration(NavigationService.Instance.LastShortestPath)).ToUnixTimeSeconds()}:R>"
+		};
+		items.AddRange(PathList.Zones.Select((zone, i) => $"{i + 1}. {SettingsService.Instance.ZoneTypeToChatIconCode.Value[zone.Type]} {zone.DisplayName}"));
+
+		DisplayServer.ClipboardSet(string.Join("\n", items));
 	}
 }
