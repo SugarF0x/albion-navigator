@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.Json;
+using AlbionNavigator.Resources;
 using AlbionNavigator.Utils;
 using Godot;
 
@@ -39,12 +41,13 @@ public class SettingsService
     }
 
     private const string SavePath = "user://settings.json";
+    private readonly JsonSerializerOptions SerializerOptions = new () { WriteIndented = true };
     
     private readonly Debouncer PersistDebouncer = new (500);
     private void Persist()
     {
         using var file = FileAccess.Open(SavePath, FileAccess.ModeFlags.Write);
-        file.StoreString(JsonSerializer.Serialize(this));
+        file.StoreString(JsonSerializer.Serialize(this, SerializerOptions));
     }
 
     private static SettingsService LoadSettings()
@@ -71,6 +74,19 @@ public class SettingsService
 
     public int Version { get; init; } = 1;
     [SubscribeOnInit] public Observable<float> Volume { get; init; } = new() { Value = 1f };
+    [SubscribeOnInit] public Observable<Dictionary<Zone.ZoneType, string>> ZoneTypeToChatIconCode { get; init; } = new()
+    {
+        Value = new Dictionary<Zone.ZoneType, string> {
+            [Zone.ZoneType.StartingCity] = ":house_with_garden:",
+            [Zone.ZoneType.City] = ":european_castle:",
+            [Zone.ZoneType.SafeArea] = ":blue_circle:",
+            [Zone.ZoneType.Yellow] = ":yellow_circle:",
+            [Zone.ZoneType.Red] = ":red_circle:",
+            [Zone.ZoneType.Black] = ":black_circle:",
+            [Zone.ZoneType.Road] = ":wing:",
+            [Zone.ZoneType.OutlandCity] = ":house_abandoned:",
+        }
+    };
 
     #endregion
 }
