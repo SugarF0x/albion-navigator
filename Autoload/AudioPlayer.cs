@@ -22,7 +22,7 @@ public partial class AudioPlayer : Node
 		Instance = this;
 
 		SyncVolumeSettings(SettingsService.Instance.Volume.Value);
-		SettingsService.Instance.Volume.Changed += SyncVolumeSettings;
+		SettingsService.Instance.Volume.ChangedTo += SyncVolumeSettings;
 		
 		LinkService.Instance.NewLinkAdded += (_, _) => QueuePlay(SoundId.PortalOpen);
 		LinkService.Instance.ExpiredLinkRemoved += (_, _) => QueuePlay(SoundId.PortalClose);

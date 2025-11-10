@@ -58,8 +58,6 @@ public static class MapDataParser
     {
         using var result = new Mat();
         
-        GD.Print(GetAssetPath("res://Assets/Parsing/tessdata"));
-        
         Cv2.MatchTemplate(sample, template, result, TemplateMatchModes.CCoeffNormed);
         Cv2.MinMaxLoc(result, out _, out var maxVal, out _, out var maxLoc);
 
