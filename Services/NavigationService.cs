@@ -123,4 +123,26 @@ public class NavigationService
         LastAllPathsOut = results.ToArray();
         return LastAllPathsOut;
     }
+    
+    public static string GetPathExpiration(int[] path)
+    {
+        string earliestExpiration = null;
+        for (var i = 1; i < path.Length; i++)
+        {
+            var target = ZoneService.Instance.Zones[path[i]];
+            var source = ZoneService.Instance.Zones[path[i - 1]];
+
+            if (target.Type != Zone.ZoneType.Road && source.Type != Zone.ZoneType.Road) continue;
+            var link = LinkService.Instance.Links.Find(link =>
+                (link.Source == source.Id && link.Target == target.Id)
+                || (link.Source == target.Id && link.Target == source.Id)
+            );
+			
+            if (link is { Source: 0, Target: 0 }) continue;
+            earliestExpiration ??= link.Expiration;
+            if (link.IsLaterThanExpiration(earliestExpiration)) earliestExpiration = link.Expiration;
+        }
+
+        return earliestExpiration;
+    }
 }

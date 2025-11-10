@@ -37,38 +37,34 @@ theme = ExtResource("2_gb64y")
 theme_override_font_sizes/font_size = 32
 title = "Debug Options"
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
+[node name="DebugButtonsContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/h_separation = 32
 columns = 2
 
-[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
+[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/DebugButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Load Sample Links"
 
-[node name="AddOneSampleLinkButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
+[node name="AddOneSampleLinkButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/DebugButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Add One Sample Link"
 
-[node name="AddShortPortalPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
+[node name="AddShortPortalPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/DebugButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Add Short Portal Path"
 
-[node name="FlushStorageButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
+[node name="FlushStorageButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/DebugButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Flush Storage"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
-layout_mode = 2
 
 [node name="SoundContainer" type="FoldableContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

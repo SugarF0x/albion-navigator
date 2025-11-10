@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using AlbionNavigator.Components.Navigation;
 using AlbionNavigator.Services;
@@ -11,14 +12,20 @@ public partial class FindShortestPath : FoldableContainer
 	private OptionButton ToOptionButton;
 	private Button SearchShortestPathButton;
 	private PathList PathList;
+	private VBoxContainer FoundPathContainer;
+	private Label ExpirationLabel;
+	private Button CopyButton;
 	
 	public override void _Ready()
 	{
 		FromOptionButton = GetNode<OptionButton>("%FromOptionButton"); 
 		ToOptionButton = GetNode<OptionButton>("%ToOptionButton");
 		SearchShortestPathButton = GetNode<Button>("%SearchShortestPathButton");
+		FoundPathContainer = GetNode<VBoxContainer>("%FoundPathContainer");
 		PathList = GetNode<PathList>("%PathList");
-
+		ExpirationLabel = GetNode<Label>("%ExpirationLabel");
+		CopyButton = GetNode<Button>("%CopyButton");
+		
 		if (ZoneService.Instance.IsReady) AssignOptions();
 		else ZoneService.Instance.AllResourcesLoaded += AssignOptions;
 
@@ -46,6 +53,10 @@ public partial class FindShortestPath : FoldableContainer
 	private void SyncPathList(int[] path)
 	{
 		PathList.Zones = path.Select(index => ZoneService.Instance.Zones[index]).ToArray();
-		PathList.Visible = PathList.Zones.Length > 0;
+		FoundPathContainer.Visible = PathList.Zones.Length > 0;
+
+		var expiration = NavigationService.GetPathExpiration(path);
+		var formattedExpiration = expiration != null ? (DateTimeOffset.Parse(expiration) - DateTimeOffset.UtcNow).ToString(@"hh\:mm\:ss") : string.Empty;
+		ExpirationLabel.Text = $"Expires in: {formattedExpiration}";
 	}
 }
