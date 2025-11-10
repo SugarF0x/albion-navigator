@@ -37,32 +37,38 @@ theme = ExtResource("2_gb64y")
 theme_override_font_sizes/font_size = 32
 title = "Debug Options"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 32
+columns = 2
 
-[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/VBoxContainer"]
+[node name="LoadSampleLinksButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Load Sample Links"
 
-[node name="AddOneSampleLinkButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/VBoxContainer"]
+[node name="AddOneSampleLinkButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Add One Sample Link"
 
-[node name="AddShortPortalPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/VBoxContainer"]
+[node name="AddShortPortalPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Add Short Portal Path"
 
-[node name="FlushStorageButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/VBoxContainer"]
+[node name="FlushStorageButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Flush Storage"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/DebugContainer"]
+layout_mode = 2
 
 [node name="SoundContainer" type="FoldableContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -99,3 +105,38 @@ step = 0.01
 value = 0.5
 tick_count = 100
 ticks_position = 3
+
+[node name="RouteIconToTextMapContainer" type="FoldableContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+title = "Route Icon Map"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/RouteIconToTextMapContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/RouteIconToTextMapContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/RouteIconToTextMapContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+columns = 2
+
+[node name="ZoneTypeDisplayNameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/RouteIconToTextMapContainer/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Zone Type"
+
+[node name="ZoneTypeIconTextEdit" type="TextEdit" parent="PanelContainer/MarginContainer/VBoxContainer/RouteIconToTextMapContainer/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_gb64y")
+theme_override_font_sizes/font_size = 24
+text = ":some-icon:"
