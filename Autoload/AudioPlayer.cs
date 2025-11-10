@@ -15,12 +15,15 @@ public partial class AudioPlayer : Node
 	[Export] public AudioStream PortalCloseSound;
 	[Export] public AudioStream ClockRetractSound;
 	
-	private static AudioPlayer _instance;
 	public static AudioPlayer Instance { get; private set; }
 	
 	public override void _Ready()
 	{
 		Instance = this;
+
+		SyncVolumeSettings(SettingsService.Instance.Volume.Value);
+		SettingsService.Instance.Volume.Changed += SyncVolumeSettings;
+		
 		LinkService.Instance.NewLinkAdded += (_, _) => QueuePlay(SoundId.PortalOpen);
 		LinkService.Instance.ExpiredLinkRemoved += (_, _) => QueuePlay(SoundId.PortalClose);
 		LinkService.Instance.LinkExpirationUpdated += (_, _, _) => QueuePlay(SoundId.ClockRetract);
@@ -30,6 +33,8 @@ public partial class AudioPlayer : Node
 	{
 		while (PlayQueue.Count > 0) Play(PlayQueue.Dequeue());
 	}
+
+	private void SyncVolumeSettings(float value) { StreamPlayer.VolumeLinear = value; }
 
 	private readonly Queue<SoundId> PlayQueue = [];
 	public void QueuePlay(SoundId id) => PlayQueue.Enqueue(id);

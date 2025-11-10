@@ -32,8 +32,8 @@ public partial class SettingsTab : MarginContainer
 			new ZoneLink(580, 630, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
 		]);
 
-		VolumeSlider.SetValueNoSignal(AudioPlayer.Instance.StreamPlayer.VolumeLinear);
-		VolumeSlider.ValueChanged += value => { AudioPlayer.Instance.StreamPlayer.VolumeLinear = (float)value; };
+		VolumeSlider.SetValueNoSignal(SettingsService.Instance.Volume.Value);
+		VolumeSlider.ValueChanged += value => { SettingsService.Instance.Volume.Value = (float)value; };
 		
 		if (!OS.HasFeature("debug")) DebugContainer.QueueFree();
 	}
