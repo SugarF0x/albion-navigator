@@ -100,6 +100,9 @@ public class LinkForce : Force
         {
             foreach (var (sourceIndex, targetIndex, linkIndex) in Links)
             {
+                // due to async nature sometimes mismatch happens on bulk addition, should not happen in real environment really
+                if (linkIndex >= LinkIndexToDistanceMap.Length) continue;
+                
                 var source = Nodes[sourceIndex];
                 var target = Nodes[targetIndex];
                 
