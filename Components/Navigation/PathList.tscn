@@ -12,11 +12,29 @@ grow_vertical = 2
 script = ExtResource("1_kugmf")
 PathListItemScene = ExtResource("2_43g0p")
 
-[node name="PathListItem" parent="." instance=ExtResource("2_43g0p")]
+[node name="PathItemsContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PathListItem2" parent="." instance=ExtResource("2_43g0p")]
+[node name="PathListItem" parent="PathItemsContainer" instance=ExtResource("2_43g0p")]
 layout_mode = 2
 
-[node name="PathListItem3" parent="." instance=ExtResource("2_43g0p")]
+[node name="PathListItem2" parent="PathItemsContainer" instance=ExtResource("2_43g0p")]
 layout_mode = 2
+
+[node name="PathListItem3" parent="PathItemsContainer" instance=ExtResource("2_43g0p")]
+layout_mode = 2
+
+[node name="ExpirationContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ExpirationLabel" type="Label" parent="ExpirationContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Expires in: 00:00:00"
+
+[node name="CopyButton" type="Button" parent="ExpirationContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Copy"

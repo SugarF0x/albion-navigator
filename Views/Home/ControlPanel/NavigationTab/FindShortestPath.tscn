@@ -68,17 +68,3 @@ layout_mode = 2
 [node name="PathList" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer" instance=ExtResource("3_yh15x")]
 unique_name_in_owner = true
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer"]
-layout_mode = 2
-
-[node name="ExpirationLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Expires in: "
-
-[node name="CopyButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Copy"
