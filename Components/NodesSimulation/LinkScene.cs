@@ -82,7 +82,7 @@ public partial class LinkScene : Line2D
 
 	private bool IsLinkInPath(int[] path)
 	{
-		for (var i = 0; i < path.Length - 2; i++) 
+		for (var i = 0; i < path.Length - 1; i++) 
 			if (
 				(path[i] == Link.Source && path[i + 1] == Link.Target)
 				|| (path[i] == Link.Target && path[i + 1] == Link.Source)
