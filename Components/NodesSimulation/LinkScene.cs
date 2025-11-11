@@ -20,8 +20,7 @@ public partial class LinkScene : Line2D
 
 	public override void _Ready()
 	{
-		// TODO: this should probably be elsewhere
-		NavigationService.Instance.ShortestPathUpdated += path =>
+		NavigationService.Instance.LastInspectedPathUpdated += path =>
 			Highlight(IsLinkInPath(path) ? HighlightType.Path : DefaultHighlightType);
 	}
 

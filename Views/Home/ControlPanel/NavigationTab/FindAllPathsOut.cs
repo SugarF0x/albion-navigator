@@ -80,6 +80,7 @@ public partial class FindAllPathsOut : FoldableContainer
 	{
 		PathList.Zones = RouteIndex >= 0 ? NavigationService.Instance.LastAllPathsOut[RouteIndex].Select(index => ZoneService.Instance.Zones[index]).ToArray() : [];
 		FoundPathContainer.Visible = PathList.Zones.Length > 0;
+		NavigationService.Instance.LastInspectedPath = RouteIndex >= 0 ? NavigationService.Instance.LastAllPathsOut[RouteIndex] : [];
 	}
 
 	private void UpdatePathListControlsLabel()

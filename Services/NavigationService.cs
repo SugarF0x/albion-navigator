@@ -145,4 +145,16 @@ public class NavigationService
 
         return earliestExpiration;
     }
+    
+    public event Action<int[]> LastInspectedPathUpdated;
+    private int[] _lastInspectedPath;
+    public int[] LastInspectedPath
+    {
+        get =>  _lastInspectedPath;
+        set
+        {
+            _lastInspectedPath = value;
+            LastInspectedPathUpdated?.Invoke(value);
+        }
+    }
 }

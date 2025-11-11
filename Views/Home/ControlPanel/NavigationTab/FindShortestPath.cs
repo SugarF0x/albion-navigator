@@ -42,7 +42,8 @@ public partial class FindShortestPath : FoldableContainer
 	private void SearchShortestPath()
 	{
 		if (FromOptionButton.Selected < 0 || ToOptionButton.Selected < 0) return;
-		NavigationService.Instance.FindShortestPath(FromOptionButton.Selected, ToOptionButton.Selected);
+		var path = NavigationService.Instance.FindShortestPath(FromOptionButton.Selected, ToOptionButton.Selected);
+		NavigationService.Instance.LastInspectedPath = path;
 	}
 
 	private void SyncPathList(int[] path)
