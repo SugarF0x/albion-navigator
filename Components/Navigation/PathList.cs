@@ -57,7 +57,7 @@ public partial class PathList : VBoxContainer
 	{
 		var items = new List<string>
 		{
-			$"Expires: <t:{DateTimeOffset.Parse(NavigationService.GetPathExpiration(NavigationService.Instance.LastShortestPath)).ToUnixTimeSeconds()}:R>"
+			$"Expires: <t:{DateTimeOffset.Parse(NavigationService.GetPathExpiration(Zones.Select(zone => zone.Id).ToArray())).ToUnixTimeSeconds()}:R>"
 		};
 		items.AddRange(Zones.Select((zone, i) => $"{i + 1}. {SettingsService.Instance.ZoneTypeToChatIconCode.Value[zone.Type]} {zone.DisplayName}"));
 

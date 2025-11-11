@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwrd88f6mec0i"]
+[gd_scene load_steps=6 format=3 uid="uid://dwrd88f6mec0i"]
 
 [ext_resource type="Script" uid="uid://cr7111w5k70pa" path="res://Views/Home/ControlPanel/NavigationTab/NavigationTab.cs" id="1_r84vx"]
 [ext_resource type="Theme" uid="uid://cisqadqoygo1h" path="res://Assets/Themes/ContentPanel.tres" id="2_3s4xq"]
 [ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="2_kkkrd"]
 [ext_resource type="PackedScene" uid="uid://kw805gn5xcoh" path="res://Views/Home/ControlPanel/NavigationTab/FindShortestPath.tscn" id="4_1yg80"]
+[ext_resource type="PackedScene" uid="uid://46fj3s3epafd" path="res://Views/Home/ControlPanel/NavigationTab/FindAllPathsOut.tscn" id="5_yx2va"]
 
 [node name="NavigationTab" type="MarginContainer"]
 anchors_preset = 10
@@ -33,4 +34,7 @@ theme = ExtResource("2_kkkrd")
 theme_override_constants/separation = 16
 
 [node name="FindShortestPath" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_1yg80")]
+layout_mode = 2
+
+[node name="FindAllPathsOut" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_yx2va")]
 layout_mode = 2

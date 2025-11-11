@@ -60,7 +60,7 @@ public class NavigationService
     }
     
     public event Action<int[][]> AllPathsOutUpdated;
-    private int[][] _lastAllPathsOut;
+    private int[][] _lastAllPathsOut = [];
     public int[][] LastAllPathsOut
     {
         get =>  _lastAllPathsOut;
@@ -73,7 +73,7 @@ public class NavigationService
     
     /// <returns>
     /// Returns sorted array of shortest zone index arrays representing paths out from source.
-    /// Searches for any land connections by default. Roay exit search looks for non-road and non-black zone connections.
+    /// Searches for any land connections by default. Royal exit search looks for non-road and non-black zone connections.
     /// </returns>
     public int[][] FindAllPathsOut(int source, bool searchForRoyalExit = false)
     {

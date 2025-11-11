@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://46fj3s3epafd"]
+
+[ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="1_sfr47"]
+[ext_resource type="Script" uid="uid://bj114v5dqw2m5" path="res://Views/Home/ControlPanel/NavigationTab/FindAllPathsOut.cs" id="2_oyohl"]
+[ext_resource type="PackedScene" uid="uid://boq7xw11kc02f" path="res://Components/Navigation/PathList.tscn" id="3_rt1yi"]
+
+[node name="FindAllPathsOut" type="FoldableContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 316.0
+grow_horizontal = 2
+theme = ExtResource("1_sfr47")
+title = "Find All Paths Out"
+script = ExtResource("2_oyohl")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NavigationTargetsContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="FromLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/NavigationTargetsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "From"
+
+[node name="FromOptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/NavigationTargetsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="SearchButtonsContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SearchAllPathsOutButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/SearchButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_sfr47")
+theme_override_font_sizes/font_size = 24
+text = "Find"
+
+[node name="RoyalExitSearchToggle" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/SearchButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Search for royal exit"
+
+[node name="FoundPathContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PathSelectionControlsContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 16
+
+[node name="PreviousPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer/PathSelectionControlsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "<<"
+
+[node name="CurrentPathLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer/PathSelectionControlsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0/0"
+
+[node name="NextPathButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer/PathSelectionControlsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ">>"
+
+[node name="PathList" parent="PanelContainer/MarginContainer/VBoxContainer/FoundPathContainer" instance=ExtResource("3_rt1yi")]
+unique_name_in_owner = true
+layout_mode = 2
