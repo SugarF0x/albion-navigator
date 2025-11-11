@@ -49,7 +49,8 @@ public partial class LogBoxUi : ScrollContainer
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];
-		Services.LogBox.Instance.Add($"Link expiration updated: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
+		var diff = DateTimeOffset.Parse(link.Expiration) - DateTimeOffset.UtcNow;
+		Services.LogBox.Instance.Add($@"Link expiration updated: {source.DisplayName} -> {target.DisplayName} : {diff:hh\:mm\:ss}");
 	}
 
 	private readonly Queue<ZoneLink> ExpirationQueue = new ();
@@ -73,6 +74,7 @@ public partial class LogBoxUi : ScrollContainer
 	{
 		var source = ZoneService.Instance.Zones[link.Source];
 		var target = ZoneService.Instance.Zones[link.Target];
-		Services.LogBox.Instance.Add($"Link added: {source.DisplayName} -> {target.DisplayName} : {link.Expiration}");
+		var diff = DateTimeOffset.Parse(link.Expiration) - DateTimeOffset.UtcNow;
+		Services.LogBox.Instance.Add($@"Link added: {source.DisplayName} -> {target.DisplayName} : {diff:hh\:mm\:ss}");
 	}
 }
