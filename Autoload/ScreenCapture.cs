@@ -64,6 +64,7 @@ public partial class ScreenCapture : Node
                 targetZone.Id,
                 (DateTimeOffset.UtcNow + TimeSpan.ParseExact(timeout, "hh\\:mm\\:ss", CultureInfo.InvariantCulture)).ToString("O")
             );
+            NavigationService.Instance.LastInspectedPath = [sourceZone.Id, targetZone.Id];
         }
         catch (InvalidImage)
         {

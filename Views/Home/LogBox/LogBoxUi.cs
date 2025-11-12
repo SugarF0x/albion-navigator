@@ -36,7 +36,6 @@ public partial class LogBoxUi : ScrollContainer
 		var scrollBar = GetVScrollBar();
 		var maxScroll = float.Max((float)scrollBar.MaxValue - scrollBar.Size.Y, 0);
 		var shouldScrollToEnd = Math.Abs(maxScroll - scrollBar.Value) < 1;
-		GD.Print($"maxScroll: {(int)scrollBar.MaxValue}");
 		LogsContainer.AddChild(newLog);
 		if (shouldScrollToEnd) CallDeferred(nameof(ScrollToEnd));
 	}

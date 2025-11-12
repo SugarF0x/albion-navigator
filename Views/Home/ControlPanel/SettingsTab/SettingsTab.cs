@@ -31,13 +31,21 @@ public partial class SettingsTab : MarginContainer
 		ZoneTypeSampleEdit = GetNode<TextEdit>("%ZoneTypeIconTextEdit");
 
 		LoadSampleLinksButton.Pressed += () => LinkService.Instance.LoadSampleLinks();;
-		AddOneSampleLinkButton.Pressed += () => LinkService.Instance.AddLink(new ZoneLink(0, 450, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")));
+		AddOneSampleLinkButton.Pressed += () =>
+		{
+			LinkService.Instance.AddLink(new ZoneLink(0, 450, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")));
+			NavigationService.Instance.LastInspectedPath = [0, 450];
+		};
 		FlushStorageButton.Pressed += () => LinkService.Instance.FlushStorage();
-		AddShortPortalPathButton.Pressed += () => LinkService.Instance.AddLink([
-			new ZoneLink(0, 450, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
-			new ZoneLink(450, 580, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
-			new ZoneLink(580, 630, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
-		]);
+		AddShortPortalPathButton.Pressed += () =>
+		{
+			LinkService.Instance.AddLink([
+				new ZoneLink(0, 450, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
+				new ZoneLink(450, 580, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
+				new ZoneLink(580, 630, DateTimeOffset.UtcNow.AddSeconds(3).ToString("O")),
+			]);
+			NavigationService.Instance.LastInspectedPath = [0, 450, 580, 630];
+		};
 
 		VolumeSlider.SetValueNoSignal(SettingsService.Instance.Volume.Value);
 		VolumeSlider.ValueChanged += value => { SettingsService.Instance.Volume.Value = (float)value; };

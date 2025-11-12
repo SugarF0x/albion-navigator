@@ -20,9 +20,15 @@ public partial class LinkScene : Line2D
 
 	public override void _Ready()
 	{
-		NavigationService.Instance.LastInspectedPathUpdated += path =>
-			Highlight(IsLinkInPath(path) ? HighlightType.Path : DefaultHighlightType);
+		NavigationService.Instance.LastInspectedPathUpdated += HighlightOnInspectedPathUpdated;
 	}
+
+	public override void _ExitTree()
+	{
+		NavigationService.Instance.LastInspectedPathUpdated -= HighlightOnInspectedPathUpdated;
+	}
+
+	private void HighlightOnInspectedPathUpdated(int[] path) => Highlight(IsLinkInPath(path) ? HighlightType.Path : DefaultHighlightType);
 
 	private HighlightType DefaultHighlightType = HighlightType.Default;
 	private void InitHighlight()
