@@ -34,15 +34,27 @@ public partial class LogBoxUi : ScrollContainer
 		newLog.Text = log.ToString();
 
 		var scrollBar = GetVScrollBar();
-		var shouldScrollToEnd = Math.Abs(scrollBar.MaxValue - scrollBar.Value) < 4;
+		var maxScroll = float.Max((float)scrollBar.MaxValue - scrollBar.Size.Y, 0);
+		var shouldScrollToEnd = Math.Abs(maxScroll - scrollBar.Value) < 1;
+		GD.Print($"maxScroll: {(int)scrollBar.MaxValue}");
 		LogsContainer.AddChild(newLog);
 		if (shouldScrollToEnd) CallDeferred(nameof(ScrollToEnd));
 	}
 
-	private void ScrollToEnd()
+	private async void ScrollToEnd()
 	{
-		var scrollBar = GetVScrollBar();
-		scrollBar.Value = scrollBar.MaxValue;
+		try
+		{
+			// max scroll value actually only updates on next frame
+			await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+		
+			var scrollBar = GetVScrollBar();
+			ScrollVertical = (int)scrollBar.MaxValue;
+		}
+		catch
+		{
+			// skip
+		}
 	}
 
 	private void LogLinkExpirationUpdate(ZoneLink link, int from, int to)
