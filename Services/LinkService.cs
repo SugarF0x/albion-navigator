@@ -68,7 +68,9 @@ public class LinkService
             var link = Links[i];
             if (link.IsPermanent) break;
             if (!link.IsSameSignature(newLink)) continue;
-            if (!link.IsLaterThanExpiration(newLink.Expiration)) return false;
+            // sometimes it parses a greater value and since there is no way to manually pop links this allows to
+            // continuously override timers until a correct reading is achieved 
+            // if (!link.IsLaterThanExpiration(newLink.Expiration)) return false;
 
             expirationUpdateFromIndex = i;
             Links.RemoveAt(i);
