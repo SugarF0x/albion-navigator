@@ -1,7 +1,6 @@
 using System.Linq;
 using AlbionNavigator.Services;
 using Godot;
-using OpenCvSharp.Dnn;
 
 namespace AlbionNavigator.Components.NodesSimulation;
 
