@@ -1,5 +1,4 @@
 using System.Linq;
-using AlbionNavigator.Resources;
 using AlbionNavigator.Services;
 using Godot;
 
@@ -36,10 +35,10 @@ public partial class LinkScene : Line2D
 		var sourceNode = ZoneService.Instance.Zones[Link.Source];
 		var targetNode = ZoneService.Instance.Zones[Link.Target];
 
-		Zone.ZoneType[] zoneTypes = [sourceNode.Type, targetNode.Type];
+		Resources.Zone.ZoneType[] zoneTypes = [sourceNode.Type, targetNode.Type];
         
-		if (zoneTypes.All(type => type == Zone.ZoneType.City)) DefaultHighlightType = HighlightType.CityPortal;
-		if (zoneTypes.Any(type => type == Zone.ZoneType.Road) && zoneTypes.Any(type => type != Zone.ZoneType.Road)) DefaultHighlightType = HighlightType.RoadToContinent;
+		if (zoneTypes.All(type => type == Resources.Zone.ZoneType.City)) DefaultHighlightType = HighlightType.CityPortal;
+		if (zoneTypes.Any(type => type == Resources.Zone.ZoneType.Road) && zoneTypes.Any(type => type != Resources.Zone.ZoneType.Road)) DefaultHighlightType = HighlightType.RoadToContinent;
         
 		Highlight();
 	}

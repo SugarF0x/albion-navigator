@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using AlbionNavigator.Resources;
 using AlbionNavigator.Services;
 using AlbionNavigator.Utils.ForceDirectedGraph;
 using AlbionNavigator.Utils.ForceDirectedGraph.Datum;
@@ -18,8 +16,8 @@ public partial class NodesSimulation : Control
 	[Export] public float PositionScale = 1f;
 	[Export] public float AlphaReheatValue = .5f;
 	
-	private Zone[] _zones = [];
-	public Zone[] Zones
+	private Resources.Zone[] _zones = [];
+	public Resources.Zone[] Zones
 	{
 		get => _zones;
 		set
@@ -155,8 +153,8 @@ public partial class NodesSimulation : Control
 	private void InitializeSimulation()
 	{
 		LinkForce.GetLinkStrength = link =>
-			new List<Zone.ZoneType> { Zones[link.Source].Type, Zones[link.Target].Type }.Count(type =>
-					type == Zone.ZoneType.Road) switch
+			new List<Resources.Zone.ZoneType> { Zones[link.Source].Type, Zones[link.Target].Type }.Count(type =>
+					type == Resources.Zone.ZoneType.Road) switch
 				{
 					1 => 0,
 					2 => .5f,

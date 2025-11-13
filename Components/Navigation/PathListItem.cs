@@ -1,4 +1,3 @@
-using AlbionNavigator.Resources;
 using Godot;
 
 namespace AlbionNavigator.Components.Navigation;
@@ -9,8 +8,8 @@ public partial class PathListItem : HBoxContainer
 	private Label IndexLabel;
 	private Label DisplayName;
 
-	private Zone _zone;
-	[Export] public Zone Zone
+	private Resources.Zone _zone;
+	[Export] public Resources.Zone Zone
 	{
 		get =>  _zone;
 		set

@@ -1,4 +1,3 @@
-using AlbionNavigator.Resources;
 using Godot;
 
 namespace AlbionNavigator.Components.NodesSimulation;
@@ -8,8 +7,8 @@ public partial class NodeScene : Control
 	public TextureRect NodeIcon;
 	public Label DisplayNameLabel;
 
-	private Zone _value;
-	public Zone Value
+	private Resources.Zone _value;
+	public Resources.Zone Value
 	{
 		get => _value;
 		set

@@ -14,8 +14,8 @@ public partial class PathList : VBoxContainer
 	private Button CopyButton;
 	private VBoxContainer PathItemsContainer;
 
-	private Zone[] _zones = [];
-	public Zone[] Zones
+	private Resources.Zone[] _zones = [];
+	public Resources.Zone[] Zones
 	{
 		get =>  _zones;
 		set
