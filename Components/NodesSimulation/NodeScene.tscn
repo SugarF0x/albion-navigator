@@ -11,22 +11,25 @@ script = ExtResource("1_722f8")
 [node name="NodeIcon" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 texture = ExtResource("1_4ld80")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
 layout_mode = 0
-offset_left = -100.0
-offset_top = 12.0
-offset_right = 100.0
-offset_bottom = 36.0
+offset_left = -90.0
+offset_top = 46.999996
+offset_right = 110.0
+offset_bottom = 71.0
+rotation = -0.2617994
 mouse_filter = 2
 
 [node name="DisplayNameLabel" type="Label" parent="CenterContainer"]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 text = "Display Name"
