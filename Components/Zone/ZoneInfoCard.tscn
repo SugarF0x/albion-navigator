@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://chqt74vwf80vd"]
+
+[ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="1_ncgso"]
+[ext_resource type="Script" uid="uid://w07ywnxtwkei" path="res://Components/Zone/ZoneInfoCard.cs" id="2_eeoq6"]
+[ext_resource type="Resource" uid="uid://c24fvk5cfb53x" path="res://Resources/Zones/Mudfoot_Sump.tres" id="3_cdy71"]
+[ext_resource type="PackedScene" uid="uid://di8mt45prjmnl" path="res://Components/Zone/ZoneComponentStack.tscn" id="3_ixqy4"]
+
+[node name="ZoneInfoCard" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme = ExtResource("1_ncgso")
+script = ExtResource("2_eeoq6")
+Zone = ExtResource("3_cdy71")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="DisplayNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mudfoot Sump"
+
+[node name="ZoneComponentStack" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_ixqy4")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+Components = []
