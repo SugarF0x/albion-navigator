@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://knpkkxk8i44i"]
+
+[ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="1_oqmlg"]
+[ext_resource type="Script" uid="uid://c01g62afjx0fe" path="res://Views/Home/ControlPanel/NavigationTab/ConnectedPortals.cs" id="2_5otot"]
+
+[node name="ConnectedPortals" type="FoldableContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme = ExtResource("1_oqmlg")
+theme_override_font_sizes/font_size = 32
+title = "Connected Portals"
+script = ExtResource("2_5otot")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NavigationTargetsContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+columns = 2
+
+[node name="FromLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/NavigationTargetsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "From"
+
+[node name="FromOptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/NavigationTargetsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="HighlightConnectedPortalsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_oqmlg")
+theme_override_font_sizes/font_size = 24
+text = "Highlight Connected Portals"

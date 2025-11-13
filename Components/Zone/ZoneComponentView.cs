@@ -4,7 +4,6 @@ using Godot;
 
 namespace AlbionNavigator.Components.Zone;
 
-[Tool]
 public partial class ZoneComponentView : Control
 {
 	private TextureRect PrimaryTexture;

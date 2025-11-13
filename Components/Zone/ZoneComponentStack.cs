@@ -6,7 +6,6 @@ using Godot;
 
 namespace AlbionNavigator.Components.Zone;
 
-[Tool]
 public partial class ZoneComponentStack : HFlowContainer
 {
 	[Export] public PackedScene ZoneComponentScene;

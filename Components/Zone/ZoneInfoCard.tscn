@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="1_ncgso"]
 [ext_resource type="Script" uid="uid://w07ywnxtwkei" path="res://Components/Zone/ZoneInfoCard.cs" id="2_eeoq6"]
-[ext_resource type="Resource" uid="uid://c24fvk5cfb53x" path="res://Resources/Zones/Mudfoot_Sump.tres" id="3_cdy71"]
+[ext_resource type="Resource" uid="uid://58mkglesna51" path="res://Resources/Zones/Sebos-Oyohun.tres" id="3_cdy71"]
 [ext_resource type="PackedScene" uid="uid://di8mt45prjmnl" path="res://Components/Zone/ZoneComponentStack.tscn" id="3_ixqy4"]
 
 [node name="ZoneInfoCard" type="PanelContainer"]
@@ -27,10 +27,8 @@ layout_mode = 2
 [node name="DisplayNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Mudfoot Sump"
+text = "Sebos-Oyohun"
 
 [node name="ZoneComponentStack" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_ixqy4")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-Components = []

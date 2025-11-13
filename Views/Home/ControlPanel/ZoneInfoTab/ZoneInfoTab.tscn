@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://c4y18v6tjklmb"]
+[gd_scene load_steps=5 format=3 uid="uid://c4y18v6tjklmb"]
 
-[node name="ZoneInfoTab" type="VBoxContainer"]
+[ext_resource type="Theme" uid="uid://cisqadqoygo1h" path="res://Assets/Themes/ContentPanel.tres" id="1_atjgf"]
+[ext_resource type="Script" uid="uid://jkn36n42cuwt" path="res://Views/Home/ControlPanel/ZoneInfoTab/ZoneInfoTab.cs" id="1_g6f63"]
+[ext_resource type="Theme" uid="uid://fbdt8xc4g107" path="res://Assets/Themes/GDLike.tres" id="2_g6f63"]
+[ext_resource type="PackedScene" uid="uid://chqt74vwf80vd" path="res://Components/Zone/ZoneInfoCard.tscn" id="2_lnk4v"]
+
+[node name="ZoneInfoTab" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_g6f63")
+ZoneInfoCardScene = ExtResource("2_lnk4v")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme = ExtResource("1_atjgf")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="ZoneCardsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_g6f63")
+theme_override_constants/separation = 16

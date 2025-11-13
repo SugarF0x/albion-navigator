@@ -10,6 +10,7 @@ anchor_right = 1.0
 offset_bottom = 316.0
 grow_horizontal = 2
 theme = ExtResource("1_sfr47")
+theme_override_font_sizes/font_size = 32
 title = "Find All Paths Out"
 script = ExtResource("2_oyohl")
 

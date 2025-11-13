@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://di8mt45prjmnl"]
+[gd_scene load_steps=4 format=3 uid="uid://di8mt45prjmnl"]
 
 [ext_resource type="Script" uid="uid://dhsmun4rc5nph" path="res://Components/Zone/ZoneComponentStack.cs" id="1_j26av"]
 [ext_resource type="PackedScene" uid="uid://dri7u0vehnpgg" path="res://Components/Zone/ZoneComponentView.tscn" id="2_xup7b"]
-[ext_resource type="Resource" uid="uid://csagxusglqswf" path="res://Resources/ZoneComponents/6-Chest_Big-Gold.tres" id="3_hyfqg"]
-[ext_resource type="Resource" uid="uid://chvywfky168a5" path="res://Resources/ZoneComponents/6-Gather_Small-Hide-Ore.tres" id="4_hyfqg"]
+[ext_resource type="Resource" uid="uid://dnsw3rv7w3461" path="res://Resources/ZoneComponents/8-Dungeon_Undead.tres" id="3_1dne7"]
 
 [node name="ZoneComponentStack" type="HFlowContainer"]
 anchors_preset = 10
@@ -12,4 +11,10 @@ offset_bottom = 132.0
 grow_horizontal = 2
 script = ExtResource("1_j26av")
 ZoneComponentScene = ExtResource("2_xup7b")
-Components = [ExtResource("3_hyfqg"), ExtResource("3_hyfqg"), ExtResource("4_hyfqg")]
+
+[node name="ZoneComponentView" parent="." instance=ExtResource("2_xup7b")]
+layout_mode = 2
+
+[node name="ZoneComponentView2" parent="." instance=ExtResource("2_xup7b")]
+layout_mode = 2
+Component = ExtResource("3_1dne7")

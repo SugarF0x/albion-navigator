@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AlbionNavigator.Resources;
+using AlbionNavigator.Utils;
 
 namespace AlbionNavigator.Services;
 
@@ -122,6 +123,30 @@ public class NavigationService
 
         LastAllPathsOut = results.ToArray();
         return LastAllPathsOut;
+    }
+
+    public Observable<int[]> AdjacentPortals = new() { Value = [] };
+
+    /// <summary>
+    /// get IDs of all portals within same connections ignoring any on-land exits
+    /// </summary>
+    public int[] GetAllAdjacentPortals(int source)
+    {
+        var zones = ZoneService.Instance.Zones;
+        var visited = new HashSet<int>();
+        var stack = new List<int> { source };
+
+        while (stack.Count > 0)
+        {
+            var id = stack.Last();
+            stack.RemoveAt(stack.Count - 1);
+            var zone = zones[id];
+            if (zone.Type != Zone.ZoneType.Road) continue;
+            stack.AddRange(zone.Connections.Where(connection => !visited.Contains(connection)));
+            visited.Add(id);
+        }
+
+        return visited.ToArray();
     }
     
     public static string GetPathExpiration(int[] path)

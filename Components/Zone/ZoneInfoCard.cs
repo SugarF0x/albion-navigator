@@ -3,7 +3,6 @@ using Godot;
 
 namespace AlbionNavigator.Components.Zone;
 
-[Tool]
 public partial class ZoneInfoCard : PanelContainer
 {
 	private Resources.Zone _zone;
