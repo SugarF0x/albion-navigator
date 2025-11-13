@@ -38,3 +38,4 @@ layout_mode = 2
 
 [node name="FindAllPathsOut" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_yx2va")]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
