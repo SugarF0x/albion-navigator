@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cv7chxgi8te8x" path="res://Views/Home/WorldMap/WorldMap.cs" id="1_7ysfx"]
 
 [node name="WorldMap" type="Control" node_paths=PackedStringArray("MapBackground", "NodesSimulation", "PanWrapper")]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

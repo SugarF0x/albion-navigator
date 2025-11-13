@@ -8,7 +8,8 @@ namespace AlbionNavigator.Views.Home.WorldMap;
 
 public partial class WorldMap : Control
 {
-	[Export] public float MapScale = 2f;
+	[Export] public float MapScale = 4f;
+	[Export] public float InitialZoomFactor = .5f;
 	[Export] public TextureRect MapBackground;
 	[Export] public NodesSimulation NodesSimulation;
 	[Export] public Control PanWrapper;
@@ -20,6 +21,7 @@ public partial class WorldMap : Control
 		CallDeferred(nameof(SetupPosition));
 		SetupMapLayout();
 		SetupNodesSimulation();
+		PanWrapper.Scale *= InitialZoomFactor;
 		NodesSimulation.StartSimulation();
 	}
 
