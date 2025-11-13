@@ -1,6 +1,7 @@
 using System.Linq;
 using AlbionNavigator.Services;
 using Godot;
+using OpenCvSharp.Dnn;
 
 namespace AlbionNavigator.Components.NodesSimulation;
 
@@ -86,11 +87,14 @@ public partial class LinkScene : Line2D
 
 	private bool IsLinkInPath(int[] path)
 	{
-		for (var i = 0; i < path.Length - 1; i++) 
-			if (
-				(path[i] == Link.Source && path[i + 1] == Link.Target)
-				|| (path[i] == Link.Target && path[i + 1] == Link.Source)
-				) return true;
+		var isOneMatchFound = false;
+		foreach (var index in path)
+		{
+			if (index != Link.Source && index != Link.Target) continue;
+			if (isOneMatchFound) return true;
+			isOneMatchFound = true;
+		}
+
 		return false;
 	}
 }
