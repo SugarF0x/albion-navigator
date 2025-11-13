@@ -1,6 +1,8 @@
 using Godot;
-using System;
 
+namespace AlbionNavigator.Resources;
+
+[Tool]
 [GlobalClass]
 public partial class ZoneComponent : Resource
 {

@@ -2,6 +2,7 @@ using Godot;
 
 namespace AlbionNavigator.Resources;
 
+[Tool]
 [GlobalClass]
 public partial class Zone : Resource
 {
