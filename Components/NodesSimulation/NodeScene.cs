@@ -6,6 +6,7 @@ namespace AlbionNavigator.Components.NodesSimulation;
 public partial class NodeScene : Control
 {
 	public TextureRect NodeIcon;
+	public Label DisplayNameLabel;
 
 	private Zone _value;
 	public Zone Value
@@ -14,13 +15,24 @@ public partial class NodeScene : Control
 		set
 		{
 			_value = value;
-			NodeIcon.Texture = value.GetZoneTexture();
-			Position = value.Position;
+			SyncData();
 		}
 	}
 
 	public override void _Ready()
 	{
 		NodeIcon = GetNode<TextureRect>("%NodeIcon");
+		DisplayNameLabel = GetNode<Label>("%DisplayNameLabel");
+
+		SyncData();
+	}
+
+	private void SyncData()
+	{
+		if (!IsNodeReady()) return;
+		
+		NodeIcon.Texture = Value?.GetZoneTexture();
+		Position = Value?.Position ?? Vector2.Zero;
+		DisplayNameLabel.Text = Value?.DisplayName ?? "";
 	}
 }
