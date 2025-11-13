@@ -4,7 +4,7 @@ using System.Linq;
 using AlbionNavigator.Resources;
 using Godot;
 
-namespace AlbionNavigator.Components;
+namespace AlbionNavigator.Components.Zone;
 
 [Tool]
 public partial class ZoneComponentStack : HFlowContainer

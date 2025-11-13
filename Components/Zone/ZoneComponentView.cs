@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-namespace AlbionNavigator.Components;
+namespace AlbionNavigator.Components.Zone;
 
 [Tool]
 public partial class ZoneComponentView : Control
