@@ -5,61 +5,89 @@
 **Albion Navigator** (**AN**) is a _Roads of Avalon_ cartography management tool.
 It helps in taking notes on portals as well as in managing them.
 
-## Main
+## Installation
 
-_TBA_
+Head over to [Releases](https://github.com/SugarF0x/albion-navigator/releases) and get the latest
+`AN_{version}.7z` from there. Unpack it into any directory and run `Albion Navigator.exe`.
 
-## Cartography
+The government does not want you to know this but the source code is free and you can build
+the executable yourself.
 
-Cartography tab is where all the mapping takes place. New portals can be registered here.
+## Content
 
-### Portal Registrations
+Planned features:
 
-Start typing cluster or road name in either of the text fields. Auto-complete will suggest
-an appropriate name. Invalid names disallow registration.
+- [ ] On-map zone interaction menu
+- [ ] Zone favorites
+- [ ] Shorter path found alert
+- [ ] Map data sharing
+- [ ] Manual link management
 
-You can cycle between suggested auto-completions by pressing **Up** and **Down** arrows.
-You don't need to fill the name out completely - the name suggested by auto-complete will be used.
+### Portal Registration
 
-Specifying expiration time marks this portal connection for removal in given time from the moment
-of registration. Thus, registering a portal with 10 minutes specified will have it removed in 10
-minutes.
-
-If a portal is being added from a screen capture, then the time difference between what has been
-entered and when the capture has been taken is automatically accounted for (see [Screen Captures](#Screen-Captures))
-
-### Screen Captures
-
-_Currently supported on windows only. I probably will not bother with other platforms but feel free to contribute._
+_Currently only screen capture is supported, manual link registration will be added later on.
+Screen capture is supported on windows only. I probably will not bother with other platforms
+but feel free to contribute._
 
 When the app is running, pressing **Ctrl + S** takes a screenshot of the primary monitor.
-This can be used to take quick snaps of portals and their timers to write the findings down later
-when back in a safe environment. 
+If you do so when hovering over the portal icon in Local Map mode, **AN** will parse the
+image for current zone name, portal name and its expiration timer.
 
-Snaps also provide timestamp on when it was taken. This data is automatically accounted for when
-registering a portal connection from a snap. Thus, entering a portal of 9 hours about 10 minutes
-after having taken a snap will register it as a portal of 8 hours 50 minutes respectively.
+**AN** uses Tesseract for OCR which is not always on-point, especially considering it is using
+the default _traineddata_ - not whatever fonts Albion uses. In case a portal timer is misread
+you can refire the screen capture to override the timer until it gets it right.
+The registered portal timer can be seen in the LogBox menu at the bottom.
 
-## Navigation
+Manual link removal is not currently supported, but it is planned.
+
+This feature is resolution-agnostic, however it has only been tested in FullHD and 4K.
+Game language should also be irrelevant, however it has only been tested in English and Russian.
+
+Taking screenshots is **not agains ToS**
+and what we do with these screenshots afterwards is none of SBI concern.
+
+### Navigation
 
 Navigation tab is where you go to find shortest paths from point A to point B, which includes both
 continents and roads. Given enough roads data, it can highlight a shortcut through the portals.
 
-### Pathfinder
+If you are looking for the shortest path to **any** mainland exit from roads or want to see all
+shortest paths from any black zone or road to the Royal Continent - you can use the
+**Find All Paths Out** control box.
 
-This section allows you to find the shortest path from point A to point B. Enter starting zone
-and target zone to calculate shortest path with proper formatting to paste to a Discord channel.
-This path will also contain timestamp to when the portal shall close.
+If you want to see all the portals interconected by an unbroken chain 
+(e.g. you can get from one portal to another without leaving roads)
+you can use the **Connected Portals** control box.
 
-### Way out finder
+Any paths found here can be copied to clipboard in a ready-to-paste to a Discord server.
+The copy shall have the ordered list of zones with an icon for each zone type.
+If the path includes a portal connection - the earliest portal expiration shall also be included
+in a discord countdown format
+(the one that tells users at what time something happens regardless of their timezone)
 
-This section allows you to find all possible paths leading out of a road to either of the continents.
-You can cycle through the possible paths via the control buttons.
+### Zone Info
 
-Select the road you want to find exists from and hit `Find`. You can then copy either individual paths
-or all possible ways out. This comes very handy when you are looking for a good way out of a Hideout
-to transport goods out to the Royal continent.
+Adding a new link or searching for a path in the [Navigation](#navigation) tab highlights it on map.
+All zones within this highlight at any time are displayed in the [Zone Info](#zone-info) tab.
 
-## Settings
+The list specifies all the zones and shows any specific info on the zone like what resources it has
+or what kind of chests you can find in the given road.
 
-_TBA_
+Currently only Road zones have any metadata associated with them. Expanding this to include
+on-land zones too is planned.
+
+### Settings
+
+Here you can customize several **AN** features.
+
+#### Volume
+
+Some actions like adding/removing portal connections have associated sound-effects to them.
+You can disable these in case you get annoyed by it. It is, however, useful when you dont have
+a second monitor to see the update status and need some que to know how image regocnition went.
+
+#### Icon Map
+
+Here you can specify what icons you want to be copied into your clipboard when
+copying navigation path. Useful if you dont want to have any icons associated with
+zone types or when your discord server has some custom icons to represent zone types.

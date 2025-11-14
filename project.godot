@@ -25,7 +25,7 @@ resources_spreadsheet_view/freeze_first_column=true
 
 config/name="Albion Navigator"
 config/description="Albion Cartography Management Tool"
-config/version="0.1.0"
+config/version="0.2.0"
 run/main_scene="uid://ds2c1h4gnxm5g"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 boot_splash/image="uid://boojlswi3icmp"
